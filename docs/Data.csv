@@ -1,0 +1,244 @@
+Kingdom,Phylum,Class,Order,Family,Genus,Species,Common Name,Model,Max Depth (m),Min Depth (m),count
+Animalia,Chordata,Actinopterygii,Perciformes,Acanthuridae,Acanthurus,Acanthurus bahianus,Ocean Surgeonfish,https://skfb.ly/oAspu,12,12,1
+Animalia,Chordata,Actinopterygii,Perciformes,Acanthuridae,Acanthurus,Acanthurus chirurgus,Black Doctorfish,https://skfb.ly/oAspu,17.98323597,11,2
+Animalia,Chordata,Actinopterygii,Perciformes,Acanthuridae,Acanthurus,Acanthurus coeruleus,Blue Barber,https://skfb.ly/oAspu,21.3,12,4
+Animalia,Cnidaria,Anthozoa,Scleractinia,Acroporidae,Acropora,Acropora cervicornis,Fused Staghorn Coral,https://skfb.ly/oSITy,17.98323597,17.98323597,1
+Animalia,Cnidaria,Anthozoa,Scleractinia,Acroporidae,Acropora,Acropora palmata,Elkhorn Coral,https://skfb.ly/oSITy,25.90805182,7.010414021,8
+Animalia,Cnidaria,Anthozoa,Scleractinia,Acroporidae,Acropora,Acropora striata,Staghorn Coral,https://skfb.ly/oSITy,16.15443231,12.19202438,2
+Animalia,Cnidaria,Anthozoa,Actiniaria,Actiniidae,Condylactis,Condylactis gigantea,Giant Caribbean Sea Anemone,https://skfb.ly/VTGp,30.48006096,11,7
+Animalia,Porifera,Demospongiae,Verongida,Aplysinidae,Aplysina,Aplysina aerophoba,Golden Sponge,https://skfb.ly/6wRRT,12.49682499,3.048006096,3
+Animalia,Porifera,Demospongiae,Verongida,Aplysinidae,Aplysina,Aplysina fistularis,Dead Man's Fingers,https://skfb.ly/6wRRT,24.38404877,11,4
+Animalia,Chordata,Actinopterygii,Syngnathiformes,Aulostomidae,Aulostomus,Aulostomus chinensis,Chinese Trumpetfish,https://skfb.ly/6vHtx,15,15,1
+Animalia,Chordata,Actinopterygii,Syngnathiformes,Aulostomidae,Aulostomus,Aulostomus maculatus,Atlantic Trumpetfish,https://skfb.ly/6vHtx,45,1.79,40
+Animalia,Chordata,Actinopterygii,Tetraodontiformes,Balistidae,Canthidermis,Canthidermis maculata,Rough Triggerfish,https://skfb.ly/o8OCq,27.1,10,5
+Animalia,Chordata,Actinopterygii,Tetraodontiformes,Balistidae,Canthidermis,Canthidermis sufflamen,Ocean Triggerfish,https://skfb.ly/o8OCq,22.86004572,10,5
+Animalia,Chordata,Actinopterygii,Tetraodontiformes,Balistidae,Melichthys,Melichthys niger,Black Triggerfish,https://skfb.ly/o8OCq,36.57607315,10,20
+Animalia,Chordata,Actinopterygii,Pleuronectiformes,Bothidae,Bothus,Bothus lunatus,Peacock Flounder,https://skfb.ly/o8uyp,24.69000762,3.048006096,8
+Animalia,Chordata,Actinopterygii,Pleuronectiformes,Bothidae,Bothus,Bothus ocellatus,Eyed Flounder,https://skfb.ly/o8uyp,21.03,7,2
+Animalia,Chordata,Actinopterygii,Pleuronectiformes,Bothidae,Bothus,Bothus podas,Wide-eyed Flounder,https://skfb.ly/o8uyp,30.48006096,30,3
+Animalia,Arthropoda,Malacostraca,Decapoda,Cancridae,Cancer,Cancer irroratus,Atlantic Rock Crab,https://skfb.ly/oKnV8,30.48006096,15.24003048,7
+Animalia,Chordata,Actinopterygii,Perciformes,Carangidae,Carangoides,Carangoides,Unspecified,https://skfb.ly/o8nwX,8.5,8.5,1
+Animalia,Chordata,Actinopterygii,Perciformes,Carangidae,Carangoides,Carangoides bartholomaei,Yellow Jack,https://skfb.ly/o8nwX,18.8976378,7.010414021,6
+Animalia,Chordata,Actinopterygii,Perciformes,Carangidae,Carangoides,Carangoides ruber,Bar Jack,https://skfb.ly/o8nwX,38.2,11.5,5
+Animalia,Chordata,Elasmobranchii,Carcharhiniformes,Carcharhinidae,Carcharhinus,Carcharhinus amblyrhynchos,Gray Reef Shark,https://skfb.ly/6YuzG,25.14605029,25.14605029,1
+Animalia,Chordata,Elasmobranchii,Carcharhiniformes,Carcharhinidae,Carcharhinus,Carcharhinus falciformis,Blackspot  Shark,https://skfb.ly/6YuzG,26.82245364,26.82245364,1
+Animalia,Chordata,Elasmobranchii,Carcharhiniformes,Carcharhinidae,Carcharhinus,Carcharhinus leucas,Bull Shark,https://skfb.ly/6YuzG,25,12,4
+Animalia,Chordata,Elasmobranchii,Carcharhiniformes,Carcharhinidae,Carcharhinus,Carcharhinus limbatus,Blacktip Shark,https://skfb.ly/6YuzG,26.4,22,2
+Animalia,Chordata,Elasmobranchii,Carcharhiniformes,Carcharhinidae,Carcharhinus,Carcharhinus melanopterus,Blacktip Reef Shark,https://skfb.ly/6YuzG,30.13999492,21.06172212,3
+Animalia,Chordata,Elasmobranchii,Carcharhiniformes,Carcharhinidae,Carcharhinus,Carcharhinus perezii,Caribbean Reef Shark,https://skfb.ly/6YuzG,43,9.753619507,16
+Animalia,Chordata,Actinopterygii,Perciformes,Chaetodontidae,Chaetodon,Chaetodon capistratus,Four Eye Butterflyfish,https://skfb.ly/6RULC,36.57607315,11,13
+Animalia,Chordata,Actinopterygii,Perciformes,Chaetodontidae,Chaetodon,Chaetodon ocellatus,Spotfin Butterflyfish,https://skfb.ly/6RULC,36.57607315,22.86004572,3
+Animalia,Chordata,Actinopterygii,Perciformes,Chaetodontidae,Chaetodon,Chaetodon sedentarius,Reef Butterflyfish,https://skfb.ly/6RULC,26,17.98323597,2
+Animalia,Chordata,Actinopterygii,Perciformes,Chaetodontidae,Chaetodon,Chaetodon striatus,Banded Butterflyfish,https://skfb.ly/6RULC,36.57607315,11.5,4
+Animalia,Chordata,Reptilia,Testudines,Cheloniidae,Caretta,Caretta caretta,Loggerhead Sea Turtle,https://skfb.ly/6QStY,28,12,15
+Animalia,Chordata,Reptilia,Testudines,Cheloniidae,Chelonia,Chelonia,Unspecified,https://skfb.ly/oyx9Z,33.52806706,5.913131826,6
+Animalia,Chordata,Reptilia,Testudines,Cheloniidae,Chelonia,Chelonia mydas,Green Sea Turtles,https://skfb.ly/oyx9Z,70,2,44
+Animalia,Chordata,Reptilia,Testudines,Cheloniidae,Eretmochelys,Eretmochelys,Unspecified,https://skfb.ly/oyxDD,22.2504445,14.50850902,6
+Animalia,Chordata,Reptilia,Testudines,Cheloniidae,Eretmochelys,Eretmochelys imbricata,Hawksbill Sea Turtle,https://skfb.ly/oyxDD,100,11,28
+Animalia,Chordata,Actinopterygii,Anguilliformes,Congridae,Heteroconger,Heteroconger hassi,Black Spotted Garden Eel,https://skfb.ly/o8tnQ,100,10,12
+Animalia,Chordata,Actinopterygii,Anguilliformes,Congridae,Heteroconger,Heteroconger longissimus,Brown Garden Eel,https://skfb.ly/o8tnQ,25.5,9.2,5
+Animalia,Chordata,Elasmobranchii,Rajiformes,Dasyatidae,Dasyatis,Dasyatis akajei,Whip Stingray,https://skfb.ly/6ooYK,17.01000762,17.01000762,1
+Animalia,Chordata,Elasmobranchii,Rajiformes,Dasyatidae,Dasyatis,Dasyatis americana,Southern Stingray,https://skfb.ly/6ooYK,30,2,24
+Animalia,Chordata,Elasmobranchii,Rajiformes,Dasyatidae,Dasyatis,Dasyatis brevicaudata,Short-tail Stingray,https://skfb.ly/6ooYK,18.29,17,3
+Animalia,Chordata,Elasmobranchii,Rajiformes,Dasyatidae,Dasyatis,Dasyatis brevis,Diamond Stingray,https://skfb.ly/6ooYK,11.28,11.28,1
+Animalia,Chordata,Elasmobranchii,Rajiformes,Dasyatidae,Dasyatis,Dasyatis guttata,Longnose Stingray,https://skfb.ly/6ooYK,20,15,3
+Animalia,Chordata,Elasmobranchii,Rajiformes,Dasyatidae,Dasyatis,Dasyatis lata,Brown Stingray,https://skfb.ly/6ooYK,19,19,1
+Animalia,Chordata,Elasmobranchii,Rajiformes,Dasyatidae,Dasyatis,Dasyatis pastinaca,Common Stingray,https://skfb.ly/6ooYK,24.4,24.4,1
+Animalia,Chordata,Elasmobranchii,Rajiformes,Dasyatidae,Dasyatis,Dasyatis sabina,Atlantic Stingray,https://skfb.ly/6ooYK,30.48006096,14,8
+Animalia,Chordata,Elasmobranchii,Rajiformes,Dasyatidae,Dasyatis,Dasyatis say,Bluntnose Stingray,https://skfb.ly/6ooYK,18.8976378,12.4,3
+Animalia,Chordata,Actinopterygii,Tetraodontiformes,Diodontidae,Diodon,Diodon holocanthus,Long-spined Porcupinefish,https://skfb.ly/otU7P,45,9.5,10
+Animalia,Chordata,Actinopterygii,Tetraodontiformes,Diodontidae,Diodon,Diodon liturosus,Black-blotched Porcupinefish,https://skfb.ly/otU7P,18.8976378,17.37363475,4
+Animalia,Arthropoda,Malacostraca,Decapoda,Diogenidae,Petrochirus,Petrochirus diogenes,Giant Hermit Crab,https://skfb.ly/oRRR6,30.48006096,14,7
+Animalia,Cnidaria,Anthozoa,Scleractinia,Faviidae,Montastraea,Montastraea annularis,Boulder Star Coral,None,25,11,2
+Animalia,Cnidaria,Anthozoa,Scleractinia,Faviidae,Montastraea,Montastraea cavernosa,Great Star Coral,None,18.8976378,12,6
+Animalia,Chordata,Elasmobranchii,Orectolobiformes,Ginglymostomatidae,Ginglymostoma,Ginglymostoma cirratum,Nurse Shark,https://www.cgtrader.com/products/nurse-shark-d79cc57f-5ec2-4be4-bbac-c11ce6a3377d,80,5.38,47
+Animalia,Cnidaria,Anthozoa,Alcyonacea,Gorgoniidae,Gorgonia,Gorgonia ventalina,Purple Sea Fan,https://skfb.ly/oyyOH,25.90805182,5.2,15
+Animalia,Chordata,Actinopterygii,Perciformes,Haemulidae,Haemulon,Haemulon carbonarium,Black-tail Grunt,https://www.cgtrader.com/products/fish-3d-6a34c6e0-dff2-4375-9257-469577d423cd,11,11,1
+Animalia,Chordata,Actinopterygii,Perciformes,Haemulidae,Haemulon,Haemulon chrysargyreum,Banana Grunt,https://www.cgtrader.com/products/fish-3d-6a34c6e0-dff2-4375-9257-469577d423cd,16.15443231,11,3
+Animalia,Chordata,Actinopterygii,Perciformes,Haemulidae,Haemulon,Haemulon flavolineatum,Gold Laced Grunt,https://www.cgtrader.com/products/fish-3d-6a34c6e0-dff2-4375-9257-469577d423cd,36.57607315,11,3
+Animalia,Chordata,Actinopterygii,Perciformes,Haemulidae,Haemulon,Haemulon sciurus,Bluestriped Grunt,https://www.cgtrader.com/products/fish-3d-6a34c6e0-dff2-4375-9257-469577d423cd,22.93999492,9.1,11
+Animalia,Chordata,Actinopterygii,Beryciformes,Holocentridae,Holocentrus,Holocentrus adscensionis,Common Squirrelfish,None,66,18.28803658,4
+Animalia,Chordata,Actinopterygii,Beryciformes,Holocentridae,Holocentrus,Holocentrus rufus,Longspine Squirrelfish,None,27,11,5
+Animalia,Chordata,Actinopterygii,Beryciformes,Holocentridae,Sargocentron,Sargocentron coruscum,Reef Squirrelfish,None,45,11.5,12
+Animalia,Chordata,Actinopterygii,Beryciformes,Holocentridae,Sargocentron,Sargocentron tiereoides,Pink Squirrelfish,None,26,26,1
+Animalia,Chordata,Actinopterygii,Beryciformes,Holocentridae,Sargocentron,Sargocentron vexillarium,Dusky Squirrelfish,None,12.8016256,7.010414021,4
+Animalia,Chordata,Actinopterygii,Perciformes,Labridae,Halichoeres,Halichoeres garnoti,Yellowhead Wrasse,https://skfb.ly/o7Mwv,16.76403353,12,3
+Animalia,Chordata,Actinopterygii,Perciformes,Labridae,Halichoeres,Halichoeres maculipinna,Clown Wrasse,https://skfb.ly/o7Mwv,26,18,2
+Animalia,Chordata,Actinopterygii,Perciformes,Labridae,Halichoeres,Halichoeres pictus,Rainbow Wrasse,https://skfb.ly/o7Mwv,26,12.19202438,3
+Animalia,Chordata,Actinopterygii,Perciformes,Labridae,Halichoeres,Halichoeres radiatus,Puddingwife Wrasse,https://skfb.ly/o7Mwv,25,25,1
+Animalia,Mollusca,Cephalopoda,Teuthida,Loliginidae,Sepioteuthis,Sepioteuthis sepioidea,Caribbean Reef Squid,https://skfb.ly/6pVBP,30.48006096,9.2,10
+Animalia,Chordata,Actinopterygii,Perciformes,Lutjanidae,Lutjanus,Lutjanus,Unspecified,https://skfb.ly/oqXzN,14.1,14.1,1
+Animalia,Chordata,Actinopterygii,Perciformes,Lutjanidae,Lutjanus,Lutjanus apodus,Dogtooth Snapper,https://skfb.ly/oqXzN,22.93999492,21.9,2
+Animalia,Chordata,Actinopterygii,Perciformes,Lutjanidae,Lutjanus,Lutjanus campechanus,Northern Red Snapper,https://skfb.ly/oqXzN,24.68884938,24.68884938,1
+Animalia,Chordata,Actinopterygii,Perciformes,Lutjanidae,Lutjanus,Lutjanus guttatus,Spotted Rose Snapper,https://skfb.ly/oqXzN,22.93999492,22.93999492,1
+Animalia,Chordata,Actinopterygii,Perciformes,Lutjanidae,Lutjanus,Lutjanus synagris,Lane Snapper,https://skfb.ly/oqXzN,15.85,6.705613411,3
+Animalia,Chordata,Actinopterygii,Perciformes,Lutjanidae,Ocyurus,Ocyurus chrysurus,Yellowtail Snapper,https://skfb.ly/oqXzN,30.48006096,9.1,7
+Animalia,Cnidaria,Anthozoa,Scleractinia,Meandrinidae,Dendrogyra,Dendrogyra cylindrus,Pillar Coral,https://skfb.ly/oDrWN,25,11,7
+Animalia,Chordata,Actinopterygii,Elopiformes,Megalopidae,Megalops,Megalops atlanticus,Atlantic Tarpon,https://skfb.ly/oDp6H,30,7,15
+Animalia,Cnidaria,Hydrozoa,Anthoathecata,Milleporidae,Millepora,Millepora alcicornis,Branching Fire Coral,None,30.48006096,11,9
+Animalia,Chordata,Actinopterygii,Tetraodontiformes,Monacanthidae,Aluterus,Aluterus schoepfii,Orange Filefish,https://skfb.ly/o7wNF,13.71602743,13.71602743,1
+Animalia,Chordata,Actinopterygii,Tetraodontiformes,Monacanthidae,Aluterus,Aluterus scriptus,Scrawled Filefish,https://skfb.ly/o7wNF,33.26014732,11,7
+Animalia,Chordata,Actinopterygii,Anguilliformes,Muraenidae,Echidna,Echidna catenata,Chain Moray,https://skfb.ly/6VIsR,80,6.705613411,14
+Animalia,Chordata,Actinopterygii,Anguilliformes,Muraenidae,Gymnothorax,Gymnothorax afer,Dark Moray,https://skfb.ly/6VIsR,15,15,1
+Animalia,Chordata,Actinopterygii,Anguilliformes,Muraenidae,Gymnothorax,Gymnothorax dovii,Speckled Moray,https://skfb.ly/6VIsR,14.12,14.12,1
+Animalia,Chordata,Actinopterygii,Anguilliformes,Muraenidae,Gymnothorax,Gymnothorax equatorialis,Spottail Moray,https://skfb.ly/6VIsR,29.26085852,18.59283719,3
+Animalia,Chordata,Actinopterygii,Anguilliformes,Muraenidae,Gymnothorax,Gymnothorax flavimarginatus,Yellowmargin Moray,https://skfb.ly/6VIsR,33.52806706,21.03,4
+Animalia,Chordata,Actinopterygii,Anguilliformes,Muraenidae,Gymnothorax,Gymnothorax funebris,Black Moray,https://skfb.ly/6VIsR,31.39446279,8.5,28
+Animalia,Chordata,Actinopterygii,Anguilliformes,Muraenidae,Gymnothorax,Gymnothorax fuscomaculatus,Brown Spotted Moray,https://skfb.ly/6VIsR,18,18,1
+Animalia,Chordata,Actinopterygii,Anguilliformes,Muraenidae,Gymnothorax,Gymnothorax isingteena,Spotted Moray,https://skfb.ly/6VIsR,21,11,4
+Animalia,Chordata,Actinopterygii,Anguilliformes,Muraenidae,Gymnothorax,Gymnothorax javanicus,Giant Moray,https://skfb.ly/6VIsR,39.86,15.54,2
+Animalia,Chordata,Actinopterygii,Anguilliformes,Muraenidae,Gymnothorax,Gymnothorax miliaris,Goldentail Moray,https://skfb.ly/6VIsR,29.7,11,7
+Animalia,Chordata,Actinopterygii,Anguilliformes,Muraenidae,Gymnothorax,Gymnothorax minor,Lesser Moray,https://skfb.ly/6VIsR,20,20,1
+Animalia,Chordata,Actinopterygii,Anguilliformes,Muraenidae,Gymnothorax,Gymnothorax moringa,Common Conger,https://skfb.ly/6VIsR,30.48006096,6.705613411,22
+Animalia,Chordata,Actinopterygii,Anguilliformes,Muraenidae,Gymnothorax,Gymnothorax pictus,Bar-cheeked Eel,https://skfb.ly/6VIsR,19.77000762,16,2
+Animalia,Chordata,Actinopterygii,Anguilliformes,Muraenidae,Gymnothorax,Gymnothorax polyuranodon,Freshwater Moray,https://skfb.ly/6VIsR,30.48006096,30.48006096,2
+Animalia,Chordata,Actinopterygii,Anguilliformes,Muraenidae,Gymnothorax,Gymnothorax prasinus,Brown Reef Eel,https://skfb.ly/6VIsR,30.48006096,15,5
+Animalia,Chordata,Actinopterygii,Anguilliformes,Muraenidae,Gymnothorax,Gymnothorax rueppellii,Ruppell's Moray,https://skfb.ly/6VIsR,30.48006096,30.48006096,1
+Animalia,Chordata,Actinopterygii,Anguilliformes,Muraenidae,Gymnothorax,Gymnothorax vicinus,Brown Conger,https://skfb.ly/6VIsR,6.705613411,6.705613411,1
+Animalia,Cnidaria,Anthozoa,Scleractinia,Mussidae,Mussa,Mussa angulosa,Spiny Flower Coral,https://skfb.ly/oHRuA,25,11,7
+Animalia,Chordata,Elasmobranchii,Rajiformes,Myliobatidae,Aetobatus,Aetobatus narinari,Spotted Eagle Ray,https://skfb.ly/oRuTp,66,2,22
+Animalia,Chordata,Elasmobranchii,Rajiformes,Myliobatidae,Myliobatis,Myliobatis aquila,Common Eagle Ray,https://skfb.ly/oRuTp,31,17.07,6
+Animalia,Chordata,Elasmobranchii,Rajiformes,Myliobatidae,Myliobatis,Myliobatis tenuicaudatus,New Zealand Eagle Ray,https://skfb.ly/oRuTp,20.11684023,15,5
+Animalia,Mollusca,Cephalopoda,Octopoda,Octopodidae,Octopus,Octopus,Unspecified,https://skfb.ly/oNyPu,13.10642621,13.10642621,1
+Animalia,Mollusca,Cephalopoda,Octopoda,Octopodidae,Octopus,Octopus briareus,Caribbean Reef Octopus,https://skfb.ly/oNyPu,30.48006096,11.88722377,8
+Animalia,Mollusca,Cephalopoda,Octopoda,Octopodidae,Octopus,Octopus hubbsorum,Hubbs' Octopus,https://skfb.ly/oNyPu,14,14,1
+Animalia,Mollusca,Cephalopoda,Octopoda,Octopodidae,Octopus,Octopus vulgaris,Common Octopus,https://skfb.ly/oNyPu,17,17,1
+Animalia,Chordata,Actinopterygii,Anguilliformes,Ophichthidae,Myrichthys,Myrichthys breviceps,Sharptail Eel,https://skfb.ly/o9t8q,35,11.88722377,9
+Animalia,Chordata,Actinopterygii,Anguilliformes,Ophichthidae,Myrichthys,Myrichthys ocellatus,Goldspotted Eel,https://skfb.ly/o9t8q,14,14,1
+Animalia,Chordata,Actinopterygii,Tetraodontiformes,Ostraciidae,Acanthostracion,Acanthostracion polygonius,Honeycomb Cowfish,https://skfb.ly/6TDNQ,36.57607315,8.2,16
+Animalia,Chordata,Actinopterygii,Tetraodontiformes,Ostraciidae,Acanthostracion,Acanthostracion quadricornis,Scrawled Cowfish,https://skfb.ly/6TDNQ,28.95605791,14,9
+Animalia,Chordata,Actinopterygii,Tetraodontiformes,Ostraciidae,Lactophrys,Lactophrys,Unspecified,https://skfb.ly/6TDNQ,8.077216154,8.077216154,1
+Animalia,Chordata,Actinopterygii,Tetraodontiformes,Ostraciidae,Lactophrys,Lactophrys bicaudalis,Spotted Trunkfish,https://skfb.ly/6TDNQ,36.57607315,10,12
+Animalia,Chordata,Actinopterygii,Tetraodontiformes,Ostraciidae,Lactophrys,Lactophrys trigonus,Buffalo Trunkfish,https://skfb.ly/6TDNQ,17.98323597,16,2
+Animalia,Arthropoda,Malacostraca,Decapoda,Palinuridae,Palinurus,Palinurus elephas,European Spiny Lobster,https://skfb.ly/6WRrI,25.2984506,6,10
+Animalia,Arthropoda,Malacostraca,Decapoda,Palinuridae,Panulirus,Panulirus argus,Caribbean Spiny Lobster,https://skfb.ly/6WRrI,45,7,50
+Animalia,Arthropoda,Malacostraca,Decapoda,Palinuridae,Panulirus,Panulirus guttatus,Spotted Spiny Lobster,https://skfb.ly/6WRrI,24.38404877,17,2
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacanthidae,Centropyge,Centropyge argi,Cherubfish,None,36.57607315,6.705613411,11
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacanthidae,Holacanthus,Holacanthus africanus,West African Angelfish,https://skfb.ly/p9BA8 ,3.048006096,3.048006096,1
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacanthidae,Holacanthus,Holacanthus bermudensis,Bermuda Blue Angelfish,https://skfb.ly/p9BA9,24.68884938,20.42164084,2
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacanthidae,Holacanthus,Holacanthus ciliaris,Queen Angelfish,https://skfb.ly/p9BA10,36.57607315,6.705613411,34
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacanthidae,Holacanthus,Holacanthus isabelita,Blue Angelfish,https://skfb.ly/p9BA11,22.6,21.3,2
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacanthidae,Holacanthus,Holacanthus tricolor,Rock Beauty,https://skfb.ly/p9BA12,36.57607315,6.705613411,13
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacanthidae,Pomacanthus,Pomacanthus arcuatus,Gray Angelfish,https://skfb.ly/oKqSy ,21.06172212,6.705613411,11
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacanthidae,Pomacanthus,Pomacanthus imperator,Emperor Angelfish,https://skfb.ly/oKqSy ,26.51765304,15.24003048,14
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacanthidae,Pomacanthus,Pomacanthus paru,French Angelfish,https://skfb.ly/oKqSy ,32.46004572,6.705613411,18
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacentridae,Abudefduf,Abudefduf saxatilis,Sergeant Major,https://free3d.com/3d-model/yellowtai-damselfish-v2--744069.html,24.4,17.5,2
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacentridae,Abudefduf,Abudefduf troschelii,Panamic Sergeant Major,https://free3d.com/3d-model/yellowtai-damselfish-v2--744069.html,15,15,1
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacentridae,Abudefduf,Abudefduf vaigiensis,Indo-Pacific Sergeant Major,https://free3d.com/3d-model/yellowtai-damselfish-v2--744069.html,30.48006096,12,9
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacentridae,Chromis,Chromis atrilobata,Scissortail Damselfish,https://free3d.com/3d-model/yellowtai-damselfish-v2--744069.html,10,10,1
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacentridae,Chromis,Chromis cyanea,Blue Chromis,https://free3d.com/3d-model/yellowtai-damselfish-v2--744069.html,22.86004572,12,8
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacentridae,Chromis,Chromis multilineata,Brown Chromis,https://free3d.com/3d-model/yellowtai-damselfish-v2--744069.html,12.49682499,3.048006096,3
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacentridae,Pomacentrus,Pomacentrus bankanensis,Speckled Damselfish,https://free3d.com/3d-model/yellowtai-damselfish-v2--744069.html,30.48006096,30.48006096,2
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacentridae,Pomacentrus,Pomacentrus brachialis,Bar-finned Damselfish,https://free3d.com/3d-model/yellowtai-damselfish-v2--744069.html,30.48006096,30.48006096,2
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacentridae,Pomacentrus,Pomacentrus coelestis,Neon Damselfish,https://free3d.com/3d-model/yellowtai-damselfish-v2--744069.html,16.2,16.2,1
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacentridae,Pomacentrus,Pomacentrus imitator,Imitator Damselfish,https://free3d.com/3d-model/yellowtai-damselfish-v2--744069.html,12.19202438,12.19202438,1
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacentridae,Pomacentrus,Pomacentrus simsiang,Lemon Damselfish,https://free3d.com/3d-model/yellowtai-damselfish-v2--744069.html,16.15443231,16.15443231,1
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacentridae,Stegastes,Stegastes diencaeus,Honey Damselfish,https://free3d.com/3d-model/yellowtai-damselfish-v2--744069.html,12.4,8.2,4
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacentridae,Stegastes,Stegastes partitus,Bicolor Damselfish,https://free3d.com/3d-model/yellowtai-damselfish-v2--744069.html,30,22.86004572,2
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacentridae,Stegastes,Stegastes planifrons,Threespot Damselfish,https://free3d.com/3d-model/yellowtai-damselfish-v2--744069.html,16.15443231,16.15443231,1
+Animalia,Chordata,Actinopterygii,Perciformes,Scaridae,Scarus,Scarus guacamaia,Rainbow Parrotfish,https://skfb.ly/owWuU,17,17,1
+Animalia,Chordata,Actinopterygii,Perciformes,Scaridae,Scarus,Scarus psittacus,Common Parrotfish,https://skfb.ly/owWuU,22.93999492,4,5
+Animalia,Chordata,Actinopterygii,Perciformes,Scaridae,Scarus,Scarus rubroviolaceus,Bicolor Parrotfish,https://skfb.ly/owWuU,30.48006096,1.79,3
+Animalia,Chordata,Actinopterygii,Perciformes,Scaridae,Scarus,Scarus vetula,Queen Parrotfish,https://skfb.ly/owWuU,70,12,11
+Animalia,Chordata,Actinopterygii,Perciformes,Scaridae,Sparisoma,Sparisoma amplum,Reef Parrotfish,https://skfb.ly/owWuU,11,11,1
+Animalia,Chordata,Actinopterygii,Perciformes,Scaridae,Sparisoma,Sparisoma aurofrenatum,Redband Parrotfish,https://skfb.ly/owWuU,20,17.67843536,2
+Animalia,Chordata,Actinopterygii,Perciformes,Scaridae,Sparisoma,Sparisoma chrysopterum,Blue Parrotfish,https://skfb.ly/owWuU,20,11,3
+Animalia,Chordata,Actinopterygii,Perciformes,Scaridae,Sparisoma,Sparisoma viride,Dark Green Parrotfish,https://skfb.ly/owWuU,43.5,9.2,23
+Animalia,Chordata,Actinopterygii,Perciformes,Sciaenidae,Equetus,Equetus lanceolatus,Jackknife Fish,https://skfb.ly/opyxq,45,8.84,4
+Animalia,Chordata,Actinopterygii,Perciformes,Sciaenidae,Equetus,Equetus punctatus,Spotted Drum,https://skfb.ly/opyxq,36.57607315,9.2,17
+Animalia,Chordata,Actinopterygii,Perciformes,Scombridae,Acanthocybium,Acanthocybium solandri,Wahoo,https://skfb.ly/6U8CM,26,15,8
+Animalia,Chordata,Actinopterygii,Scorpaeniformes,Scorpaenidae,Pterois,Pterois,Unspecified,https://skfb.ly/orJVW,35.1,5.913131826,9
+Animalia,Chordata,Actinopterygii,Scorpaeniformes,Scorpaenidae,Pterois,Pterois antennata,Banded Lionfish,https://skfb.ly/orJVW,17.98323597,11,2
+Animalia,Chordata,Actinopterygii,Scorpaeniformes,Scorpaenidae,Pterois,Pterois volitans,Red Lionfish,https://skfb.ly/orJVW,100,6,75
+Animalia,Chordata,Actinopterygii,Scorpaeniformes,Scorpaenidae,Scorpaena,Scorpaena grandicornis,Grass Scorpionfish,https://skfb.ly/ovpEo,30.48006096,18.28803658,2
+Animalia,Chordata,Actinopterygii,Scorpaeniformes,Scorpaenidae,Scorpaena,Scorpaena inermis,Mushroom Scorpionfish,https://skfb.ly/ovpEo,17,17,1
+Animalia,Chordata,Actinopterygii,Scorpaeniformes,Scorpaenidae,Scorpaena,Scorpaena plumieri,Spotted Scorpionfish,https://skfb.ly/ovpEo,17,15,3
+Animalia,Chordata,Actinopterygii,Scorpaeniformes,Scorpaenidae,Scorpaena,Scorpaena porcus,Black Scorpionfish,https://skfb.ly/ovpEo,30,18,3
+Animalia,Chordata,Actinopterygii,Perciformes,Serranidae,Epinephelus,Epinephelus,Unspecified,https://skfb.ly/orZV9,16.79451359,16.79451359,1
+Animalia,Chordata,Actinopterygii,Perciformes,Serranidae,Epinephelus,Epinephelus aeneus,White Grouper,https://skfb.ly/orZV10,14.99618999,14.99618999,1
+Animalia,Chordata,Actinopterygii,Perciformes,Serranidae,Epinephelus,Epinephelus analogus,Spotted Grouper,https://skfb.ly/orZV11,30.48006096,13.71602743,3
+Animalia,Chordata,Actinopterygii,Perciformes,Serranidae,Epinephelus,Epinephelus itajara,Atlantic Goliath Grouper,https://skfb.ly/orZV12,25.5,14.5,7
+Animalia,Chordata,Actinopterygii,Perciformes,Serranidae,Epinephelus,Epinephelus morio,Red Grouper,https://skfb.ly/orZV13,17.98323597,17.98323597,1
+Animalia,Chordata,Actinopterygii,Perciformes,Serranidae,Epinephelus,Epinephelus striatus,Nassau Grouper,https://skfb.ly/orZV14,80,11.5,13
+Animalia,Chordata,Actinopterygii,Perciformes,Serranidae,Mycteroperca,Mycteroperca bonaci,Black Grouper,https://skfb.ly/orZV9,30,8.23,8
+Animalia,Chordata,Actinopterygii,Perciformes,Serranidae,Mycteroperca,Mycteroperca venenosa,Yellowfin Grouper,https://skfb.ly/orZV10,30.48006096,7.62001524,12
+Animalia,Chordata,Actinopterygii,Perciformes,Sphyraenidae,Sphyraena,Sphyraena,Unspecified,https://skfb.ly/o8U8J,30.48006096,5.913131826,2
+Animalia,Chordata,Actinopterygii,Perciformes,Sphyraenidae,Sphyraena,Sphyraena barracuda,Great Barracuda,https://skfb.ly/o8U8J,80,5.38,45
+Animalia,Chordata,Actinopterygii,Perciformes,Sphyraenidae,Sphyraena,Sphyraena ensis,Mexican Barracuda,https://skfb.ly/o8U8J,80,16.2,2
+Animalia,Chordata,Actinopterygii,Perciformes,Sphyraenidae,Sphyraena,Sphyraena guachancho,Guachanche Barracuda,https://skfb.ly/o8U8J,18.59283719,16,4
+Animalia,Chordata,Actinopterygii,Perciformes,Sphyraenidae,Sphyraena,Sphyraena japonica,Japanese Barracuda,https://skfb.ly/o8U8J,66,66,1
+Animalia,Chordata,Actinopterygii,Perciformes,Sphyraenidae,Sphyraena,Sphyraena lucasana,Lucas Barracuda,https://skfb.ly/o8U8J,32.31,16,4
+Animalia,Chordata,Actinopterygii,Perciformes,Sphyraenidae,Sphyraena,Sphyraena picudilla,Little Barracuda,https://skfb.ly/o8U8J,22,17.98323597,3
+Animalia,Chordata,Actinopterygii,Perciformes,Sphyraenidae,Sphyraena,Sphyraena putnamae,Blackfin Barracuda,https://skfb.ly/o8U8J,33,9.144018288,7
+Animalia,Chordata,Actinopterygii,Perciformes,Sphyraenidae,Sphyraena,Sphyraena sphyraena,European Barracuda,https://skfb.ly/o8U8J,18.8976378,10,7
+Animalia,Chordata,Actinopterygii,Syngnathiformes,Syngnathidae,Hippocampus,Hippocampus,Unspecified,https://skfb.ly/oRKNs,9.5,9.5,1
+Animalia,Chordata,Actinopterygii,Syngnathiformes,Syngnathidae,Hippocampus,Hippocampus erectus,Lined Seahorse,https://skfb.ly/oRKNs,15,15,1
+Animalia,Chordata,Actinopterygii,Syngnathiformes,Syngnathidae,Hippocampus,Hippocampus guttulatus,Long-snouted Seahorse,https://skfb.ly/oRKNs,10.5,9.753619507,3
+Animalia,Chordata,Actinopterygii,Syngnathiformes,Syngnathidae,Hippocampus,Hippocampus hippocampus,Short-snouted Seahorse,https://skfb.ly/oRKNs,24.68884938,24.68884938,1
+Animalia,Chordata,Actinopterygii,Syngnathiformes,Syngnathidae,Hippocampus,Hippocampus ingens,Pacific Seahorse,https://skfb.ly/oRKNs,9.5,9.5,1
+Animalia,Chordata,Actinopterygii,Syngnathiformes,Syngnathidae,Hippocampus,Hippocampus kelloggi,Great Seahorse,https://skfb.ly/oRKNs,16,16,3
+Animalia,Chordata,Actinopterygii,Syngnathiformes,Syngnathidae,Hippocampus,Hippocampus kuda,Common Seahorse,https://skfb.ly/oRKNs,18.28803658,18.28803658,1
+Animalia,Chordata,Actinopterygii,Syngnathiformes,Syngnathidae,Hippocampus,Hippocampus reidi,Longsnout Seahorse,https://skfb.ly/oRKNs,21.3,21.3,1
+Animalia,Chordata,Actinopterygii,Tetraodontiformes,Tetraodontidae,Sphoeroides,Sphoeroides nephelus,Southern Puffer,https://skfb.ly/o7FUJ,20,10,3
+Animalia,Chordata,Actinopterygii,Tetraodontiformes,Tetraodontidae,Sphoeroides,Sphoeroides rosenblatti,Oval Puffer,https://skfb.ly/o7FUJ,29.26085852,29.26085852,1
+Animalia,Chordata,Actinopterygii,Tetraodontiformes,Tetraodontidae,Sphoeroides,Sphoeroides spengleri,Bandtail Puffer,https://skfb.ly/o7FUJ,20,15.2,3
+Animalia,Chordata,Actinopterygii,Tetraodontiformes,Tetraodontidae,Sphoeroides,Sphoeroides testudineus,Checkered Puffer,https://skfb.ly/o7FUJ,17,15,2
+Animalia,Chordata,Actinopterygii,Tetraodontiformes,Tetraodontidae,Sphoeroides,Sphoeroides yergeri,Speckled Puffer,https://skfb.ly/o7FUJ,14,14,1
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
+,,,,,,,,,,,
