@@ -5,7 +5,7 @@ Animalia,Chordata,Actinopterygii,Perciformes,Acanthuridae,Acanthurus,Acanthurus 
 Animalia,Cnidaria,Anthozoa,Scleractinia,Acroporidae,Acropora,Acropora cervicornis,Fused Staghorn Coral,Assets/SpecimenPrefabs/Acroporidae.prefab,Family,TRUE,17.98323597,17.98323597,1
 Animalia,Cnidaria,Anthozoa,Scleractinia,Acroporidae,Acropora,Acropora palmata,Elkhorn Coral,Assets/SpecimenPrefabs/Acroporidae.prefab,Family,TRUE,25.90805182,7.010414021,8
 Animalia,Cnidaria,Anthozoa,Scleractinia,Acroporidae,Acropora,Acropora striata,Staghorn Coral,Assets/SpecimenPrefabs/Acroporidae.prefab,Family,TRUE,16.15443231,12.19202438,2
-Animalia,Cnidaria,Anthozoa,Actiniaria,Actiniidae,Condylactis,Condylactis gigantea,Giant Caribbean Sea Anemone,https://skfb.ly/VTGp ,,TRUE,30.48006096,11,7
+Animalia,Cnidaria,Anthozoa,Actiniaria,Actiniidae,Condylactis,Condylactis gigantea,Giant Caribbean Sea Anemone,Assets/SpecimenPrefabs/Actiniidae.prefab,Family,TRUE,30.48006096,11,7
 Animalia,Porifera,Demospongiae,Verongida,Aplysinidae,Aplysina,Aplysina aerophoba,Golden Sponge,Assets/SpecimenPrefabs/Aplysinidae.prefab,Family,TRUE,12.49682499,3.048006096,3
 Animalia,Porifera,Demospongiae,Verongida,Aplysinidae,Aplysina,Aplysina fistularis,Dead Man's Fingers,Assets/SpecimenPrefabs/Aplysinidae.prefab,Family,TRUE,24.38404877,11,4
 Animalia,Chordata,Actinopterygii,Syngnathiformes,Aulostomidae,Aulostomus,Aulostomus chinensis,Chinese Trumpetfish,Assets/SpecimenPrefabs/Aulostomidae.prefab,Family,FALSE,15,15,1
