@@ -2336,7 +2336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb58ba084f75bb34d9f3fdaa5c874c57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: MainScene
+  scene: Ethan-MainScene
 --- !u!65 &1914837131
 BoxCollider:
   m_ObjectHideFlags: 0
