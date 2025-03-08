@@ -1,0 +1,186 @@
+Kingdom,Phylum,Class,Order,Family,Genus,Species,Common Name,Model,Model Level,Sedentary,Max Depth (m),Min Depth (m),count
+Animalia,Chordata,Actinopterygii,Perciformes,Acanthuridae,Acanthurus,Acanthurus bahianus,Ocean Surgeonfish,Assets/SpecimenPrefabs/Acanthuridae.prefab,Family,FALSE,12,12,1
+Animalia,Chordata,Actinopterygii,Perciformes,Acanthuridae,Acanthurus,Acanthurus chirurgus,Black Doctorfish,Assets/SpecimenPrefabs/Acanthuridae.prefab,Family,FALSE,17.98323597,11,2
+Animalia,Chordata,Actinopterygii,Perciformes,Acanthuridae,Acanthurus,Acanthurus coeruleus,Blue Barber,Assets/SpecimenPrefabs/Acanthuridae.prefab,Family,FALSE,21.3,12,4
+Animalia,Cnidaria,Anthozoa,Scleractinia,Acroporidae,Acropora,Acropora cervicornis,Fused Staghorn Coral,Assets/SpecimenPrefabs/Acroporidae.prefab,Family,TRUE,17.98323597,17.98323597,1
+Animalia,Cnidaria,Anthozoa,Scleractinia,Acroporidae,Acropora,Acropora palmata,Elkhorn Coral,Assets/SpecimenPrefabs/Acroporidae.prefab,Family,TRUE,25.90805182,7.010414021,8
+Animalia,Cnidaria,Anthozoa,Scleractinia,Acroporidae,Acropora,Acropora striata,Staghorn Coral,Assets/SpecimenPrefabs/Acroporidae.prefab,Family,TRUE,16.15443231,12.19202438,2
+Animalia,Cnidaria,Anthozoa,Actiniaria,Actiniidae,Condylactis,Condylactis gigantea,Giant Caribbean Sea Anemone,Assets/SpecimenPrefabs/Actiniidae.prefab,Family,TRUE,30.48006096,11,7
+Animalia,Porifera,Demospongiae,Verongida,Aplysinidae,Aplysina,Aplysina aerophoba,Golden Sponge,Assets/SpecimenPrefabs/Aplysinidae.prefab,Family,TRUE,12.49682499,3.048006096,3
+Animalia,Porifera,Demospongiae,Verongida,Aplysinidae,Aplysina,Aplysina fistularis,Dead Man's Fingers,Assets/SpecimenPrefabs/Aplysinidae.prefab,Family,TRUE,24.38404877,11,4
+Animalia,Chordata,Actinopterygii,Syngnathiformes,Aulostomidae,Aulostomus,Aulostomus chinensis,Chinese Trumpetfish,Assets/SpecimenPrefabs/Aulostomidae.prefab,Family,FALSE,15,15,1
+Animalia,Chordata,Actinopterygii,Syngnathiformes,Aulostomidae,Aulostomus,Aulostomus maculatus,Atlantic Trumpetfish,Assets/SpecimenPrefabs/Aulostomidae.prefab,Family,FALSE,45,1.79,40
+Animalia,Chordata,Actinopterygii,Tetraodontiformes,Balistidae,Canthidermis,Canthidermis maculata,Rough Triggerfish,Assets/SpecimenPrefabs/Balistidae.prefab,Family,FALSE,27.1,10,5
+Animalia,Chordata,Actinopterygii,Tetraodontiformes,Balistidae,Canthidermis,Canthidermis sufflamen,Ocean Triggerfish,Assets/SpecimenPrefabs/Balistidae.prefab,Family,FALSE,22.86004572,10,5
+Animalia,Chordata,Actinopterygii,Tetraodontiformes,Balistidae,Melichthys,Melichthys niger,Black Triggerfish,Assets/SpecimenPrefabs/Balistidae.prefab,Family,FALSE,36.57607315,10,20
+Animalia,Chordata,Actinopterygii,Pleuronectiformes,Bothidae,Bothus,Bothus lunatus,Peacock Flounder,Assets/SpecimenPrefabs/Bothidae.prefab,Family,FALSE,24.69000762,3.048006096,8
+Animalia,Chordata,Actinopterygii,Pleuronectiformes,Bothidae,Bothus,Bothus ocellatus,Eyed Flounder,Assets/SpecimenPrefabs/Bothidae.prefab,Family,FALSE,21.03,7,2
+Animalia,Chordata,Actinopterygii,Pleuronectiformes,Bothidae,Bothus,Bothus podas,Wide-eyed Flounder,Assets/SpecimenPrefabs/Bothidae.prefab,Family,FALSE,30.48006096,30,3
+Animalia,Arthropoda,Malacostraca,Decapoda,Cancridae,Cancer,Cancer irroratus,Atlantic Rock Crab,Assets/SpecimenPrefabs/Cancridae.prefab,Family,FALSE,30.48006096,15.24003048,7
+Animalia,Chordata,Actinopterygii,Perciformes,Carangidae,Carangoides,Carangoides,Unspecified,Assets/SpecimenPrefabs/Carangidae.prefab,Family,FALSE,8.5,8.5,1
+Animalia,Chordata,Actinopterygii,Perciformes,Carangidae,Carangoides,Carangoides bartholomaei,Yellow Jack,Assets/SpecimenPrefabs/Carangidae.prefab,Family,FALSE,18.8976378,7.010414021,6
+Animalia,Chordata,Actinopterygii,Perciformes,Carangidae,Carangoides,Carangoides ruber,Bar Jack,Assets/SpecimenPrefabs/Carangidae.prefab,Family,FALSE,38.2,11.5,5
+Animalia,Chordata,Elasmobranchii,Carcharhiniformes,Carcharhinidae,Carcharhinus,Carcharhinus amblyrhynchos,Gray Reef Shark,Assets/SpecimenPrefabs/Carcharhinidae.prefab,Family,FALSE,25.14605029,25.14605029,1
+Animalia,Chordata,Elasmobranchii,Carcharhiniformes,Carcharhinidae,Carcharhinus,Carcharhinus falciformis,Blackspot  Shark,Assets/SpecimenPrefabs/Carcharhinidae.prefab,Family,FALSE,26.82245364,26.82245364,1
+Animalia,Chordata,Elasmobranchii,Carcharhiniformes,Carcharhinidae,Carcharhinus,Carcharhinus leucas,Bull Shark,Assets/SpecimenPrefabs/Carcharhinidae.prefab,Family,FALSE,25,12,4
+Animalia,Chordata,Elasmobranchii,Carcharhiniformes,Carcharhinidae,Carcharhinus,Carcharhinus limbatus,Blacktip Shark,Assets/SpecimenPrefabs/Carcharhinidae.prefab,Family,FALSE,26.4,22,2
+Animalia,Chordata,Elasmobranchii,Carcharhiniformes,Carcharhinidae,Carcharhinus,Carcharhinus melanopterus,Blacktip Reef Shark,Assets/SpecimenPrefabs/Carcharhinidae.prefab,Family,FALSE,30.13999492,21.06172212,3
+Animalia,Chordata,Elasmobranchii,Carcharhiniformes,Carcharhinidae,Carcharhinus,Carcharhinus perezii,Caribbean Reef Shark,Assets/SpecimenPrefabs/Carcharhinidae.prefab,Family,FALSE,43,9.753619507,16
+Animalia,Chordata,Actinopterygii,Perciformes,Chaetodontidae,Chaetodon,Chaetodon capistratus,Four Eye Butterflyfish,Assets/SpecimenPrefabs/Chaetodontidae.prefab,Family,FALSE,36.57607315,11,13
+Animalia,Chordata,Actinopterygii,Perciformes,Chaetodontidae,Chaetodon,Chaetodon ocellatus,Spotfin Butterflyfish,Assets/SpecimenPrefabs/Chaetodontidae.prefab,Family,FALSE,36.57607315,22.86004572,3
+Animalia,Chordata,Actinopterygii,Perciformes,Chaetodontidae,Chaetodon,Chaetodon sedentarius,Reef Butterflyfish,Assets/SpecimenPrefabs/Chaetodontidae.prefab,Family,FALSE,26,17.98323597,2
+Animalia,Chordata,Actinopterygii,Perciformes,Chaetodontidae,Chaetodon,Chaetodon striatus,Banded Butterflyfish,Assets/SpecimenPrefabs/Chaetodontidae.prefab,Family,FALSE,36.57607315,11.5,4
+Animalia,Chordata,Reptilia,Testudines,Cheloniidae,Caretta,Caretta caretta,Loggerhead Sea Turtle,Assets/SpecimenPrefabs/Caretta.prefab,Genus,FALSE,28,12,15
+Animalia,Chordata,Reptilia,Testudines,Cheloniidae,Chelonia,Chelonia,Unspecified,Assets/SpecimenPrefabs/Chelonia.prefab,Genus,FALSE,33.52806706,5.913131826,6
+Animalia,Chordata,Reptilia,Testudines,Cheloniidae,Chelonia,Chelonia mydas,Green Sea Turtles,Assets/SpecimenPrefabs/Chelonia.prefab,Genus,FALSE,70,2,44
+Animalia,Chordata,Reptilia,Testudines,Cheloniidae,Eretmochelys,Eretmochelys,Unspecified,Assets/SpecimenPrefabs/Eretmochelys.prefab,Genus,FALSE,22.2504445,14.50850902,6
+Animalia,Chordata,Reptilia,Testudines,Cheloniidae,Eretmochelys,Eretmochelys imbricata,Hawksbill Sea Turtle,Assets/SpecimenPrefabs/Eretmochelys.prefab,Genus,FALSE,100,11,28
+Animalia,Chordata,Actinopterygii,Anguilliformes,Congridae,Heteroconger,Heteroconger hassi,Black Spotted Garden Eel,Assets/SpecimenPrefabs/Congridae.prefab,Family,FALSE,100,10,12
+Animalia,Chordata,Actinopterygii,Anguilliformes,Congridae,Heteroconger,Heteroconger longissimus,Brown Garden Eel,Assets/SpecimenPrefabs/Congridae.prefab,Family,FALSE,25.5,9.2,5
+Animalia,Chordata,Elasmobranchii,Rajiformes,Dasyatidae,Dasyatis,Dasyatis akajei,Whip Stingray,Assets/SpecimenPrefabs/Dasyatidae.prefab,Family,FALSE,17.01000762,17.01000762,1
+Animalia,Chordata,Elasmobranchii,Rajiformes,Dasyatidae,Dasyatis,Dasyatis americana,Southern Stingray,Assets/SpecimenPrefabs/Dasyatidae.prefab,Family,FALSE,30,2,24
+Animalia,Chordata,Elasmobranchii,Rajiformes,Dasyatidae,Dasyatis,Dasyatis brevicaudata,Short-tail Stingray,Assets/SpecimenPrefabs/Dasyatidae.prefab,Family,FALSE,18.29,17,3
+Animalia,Chordata,Elasmobranchii,Rajiformes,Dasyatidae,Dasyatis,Dasyatis brevis,Diamond Stingray,Assets/SpecimenPrefabs/Dasyatidae.prefab,Family,FALSE,11.28,11.28,1
+Animalia,Chordata,Elasmobranchii,Rajiformes,Dasyatidae,Dasyatis,Dasyatis guttata,Longnose Stingray,Assets/SpecimenPrefabs/Dasyatidae.prefab,Family,FALSE,20,15,3
+Animalia,Chordata,Elasmobranchii,Rajiformes,Dasyatidae,Dasyatis,Dasyatis lata,Brown Stingray,Assets/SpecimenPrefabs/Dasyatidae.prefab,Family,FALSE,19,19,1
+Animalia,Chordata,Elasmobranchii,Rajiformes,Dasyatidae,Dasyatis,Dasyatis pastinaca,Common Stingray,Assets/SpecimenPrefabs/Dasyatidae.prefab,Family,FALSE,24.4,24.4,1
+Animalia,Chordata,Elasmobranchii,Rajiformes,Dasyatidae,Dasyatis,Dasyatis sabina,Atlantic Stingray,Assets/SpecimenPrefabs/Dasyatidae.prefab,Family,FALSE,30.48006096,14,8
+Animalia,Chordata,Elasmobranchii,Rajiformes,Dasyatidae,Dasyatis,Dasyatis say,Bluntnose Stingray,Assets/SpecimenPrefabs/Dasyatidae.prefab,Family,FALSE,18.8976378,12.4,3
+Animalia,Chordata,Actinopterygii,Tetraodontiformes,Diodontidae,Diodon,Diodon holocanthus,Long-spined Porcupinefish,Assets/SpecimenPrefabs/Diodontidae.prefab,Family,FALSE,45,9.5,10
+Animalia,Chordata,Actinopterygii,Tetraodontiformes,Diodontidae,Diodon,Diodon liturosus,Black-blotched Porcupinefish,Assets/SpecimenPrefabs/Diodontidae.prefab,Family,FALSE,18.8976378,17.37363475,4
+Animalia,Arthropoda,Malacostraca,Decapoda,Diogenidae,Petrochirus,Petrochirus diogenes,Giant Hermit Crab,Assets/SpecimenPrefabs/Diogenidae.prefab,Family,FALSE,30.48006096,14,7
+Animalia,Cnidaria,Anthozoa,Scleractinia,Faviidae,Montastraea,Montastraea annularis,Boulder Star Coral,None,Family,TRUE,25,11,2
+Animalia,Cnidaria,Anthozoa,Scleractinia,Faviidae,Montastraea,Montastraea cavernosa,Great Star Coral,None,Family,TRUE,18.8976378,12,6
+Animalia,Chordata,Elasmobranchii,Orectolobiformes,Ginglymostomatidae,Ginglymostoma,Ginglymostoma cirratum,Nurse Shark,Assets/SpecimenPrefabs/Ginglymostomatidae.prefab,Family,FALSE,80,5.38,47
+Animalia,Cnidaria,Anthozoa,Alcyonacea,Gorgoniidae,Gorgonia,Gorgonia ventalina,Purple Sea Fan,Assets/SpecimenPrefabs/Gorgoniidae.prefab,Family,TRUE,25.90805182,5.2,15
+Animalia,Chordata,Actinopterygii,Perciformes,Haemulidae,Haemulon,Haemulon carbonarium,Black-tail Grunt,Assets/SpecimenPrefabs/Haemulidae.prefab,Family,FALSE,11,11,1
+Animalia,Chordata,Actinopterygii,Perciformes,Haemulidae,Haemulon,Haemulon chrysargyreum,Banana Grunt,Assets/SpecimenPrefabs/Haemulidae.prefab,Family,FALSE,16.15443231,11,3
+Animalia,Chordata,Actinopterygii,Perciformes,Haemulidae,Haemulon,Haemulon flavolineatum,Gold Laced Grunt,Assets/SpecimenPrefabs/Haemulidae.prefab,Family,FALSE,36.57607315,11,3
+Animalia,Chordata,Actinopterygii,Perciformes,Haemulidae,Haemulon,Haemulon sciurus,Bluestriped Grunt,Assets/SpecimenPrefabs/Haemulidae.prefab,Family,FALSE,22.93999492,9.1,11
+Animalia,Chordata,Actinopterygii,Beryciformes,Holocentridae,Holocentrus,Holocentrus adscensionis,Common Squirrelfish,None,Family,FALSE,66,18.28803658,4
+Animalia,Chordata,Actinopterygii,Beryciformes,Holocentridae,Holocentrus,Holocentrus rufus,Longspine Squirrelfish,None,Family,FALSE,27,11,5
+Animalia,Chordata,Actinopterygii,Beryciformes,Holocentridae,Sargocentron,Sargocentron coruscum,Reef Squirrelfish,None,Family,FALSE,45,11.5,12
+Animalia,Chordata,Actinopterygii,Beryciformes,Holocentridae,Sargocentron,Sargocentron tiereoides,Pink Squirrelfish,None,Family,FALSE,26,26,1
+Animalia,Chordata,Actinopterygii,Beryciformes,Holocentridae,Sargocentron,Sargocentron vexillarium,Dusky Squirrelfish,None,Family,FALSE,12.8016256,7.010414021,4
+Animalia,Chordata,Actinopterygii,Perciformes,Labridae,Halichoeres,Halichoeres garnoti,Yellowhead Wrasse,Assets/SpecimenPrefabs/Labridae.prefab,Family,FALSE,16.76403353,12,3
+Animalia,Chordata,Actinopterygii,Perciformes,Labridae,Halichoeres,Halichoeres maculipinna,Clown Wrasse,Assets/SpecimenPrefabs/Labridae.prefab,Family,FALSE,26,18,2
+Animalia,Chordata,Actinopterygii,Perciformes,Labridae,Halichoeres,Halichoeres pictus,Rainbow Wrasse,Assets/SpecimenPrefabs/Labridae.prefab,Family,FALSE,26,12.19202438,3
+Animalia,Chordata,Actinopterygii,Perciformes,Labridae,Halichoeres,Halichoeres radiatus,Puddingwife Wrasse,Assets/SpecimenPrefabs/Labridae.prefab,Family,FALSE,25,25,1
+Animalia,Mollusca,Cephalopoda,Teuthida,Loliginidae,Sepioteuthis,Sepioteuthis sepioidea,Caribbean Reef Squid,Assets/SpecimenPrefabs/Loliginidae.prefab,Family,FALSE,30.48006096,9.2,10
+Animalia,Chordata,Actinopterygii,Perciformes,Lutjanidae,Lutjanus,Lutjanus,Unspecified,Assets/SpecimenPrefabs/Lutjanidae.prefab,Family,FALSE,14.1,14.1,1
+Animalia,Chordata,Actinopterygii,Perciformes,Lutjanidae,Lutjanus,Lutjanus apodus,Dogtooth Snapper,Assets/SpecimenPrefabs/Lutjanidae.prefab,Family,FALSE,22.93999492,21.9,2
+Animalia,Chordata,Actinopterygii,Perciformes,Lutjanidae,Lutjanus,Lutjanus campechanus,Northern Red Snapper,Assets/SpecimenPrefabs/Lutjanidae.prefab,Family,FALSE,24.68884938,24.68884938,1
+Animalia,Chordata,Actinopterygii,Perciformes,Lutjanidae,Lutjanus,Lutjanus guttatus,Spotted Rose Snapper,Assets/SpecimenPrefabs/Lutjanidae.prefab,Family,FALSE,22.93999492,22.93999492,1
+Animalia,Chordata,Actinopterygii,Perciformes,Lutjanidae,Lutjanus,Lutjanus synagris,Lane Snapper,Assets/SpecimenPrefabs/Lutjanidae.prefab,Family,FALSE,15.85,6.705613411,3
+Animalia,Chordata,Actinopterygii,Perciformes,Lutjanidae,Ocyurus,Ocyurus chrysurus,Yellowtail Snapper,Assets/SpecimenPrefabs/Lutjanidae.prefab,Family,FALSE,30.48006096,9.1,7
+Animalia,Cnidaria,Anthozoa,Scleractinia,Meandrinidae,Dendrogyra,Dendrogyra cylindrus,Pillar Coral,Assets/SpecimenPrefabs/Meandrinidae.prefab,Family,TRUE,25,11,7
+Animalia,Chordata,Actinopterygii,Elopiformes,Megalopidae,Megalops,Megalops atlanticus,Atlantic Tarpon,Assets/SpecimenPrefabs/Megalopidae.prefab,Family,FALSE,30,7,15
+Animalia,Cnidaria,Hydrozoa,Anthoathecata,Milleporidae,Millepora,Millepora alcicornis,Branching Fire Coral,None,Family,TRUE,30.48006096,11,9
+Animalia,Chordata,Actinopterygii,Tetraodontiformes,Monacanthidae,Aluterus,Aluterus schoepfii,Orange Filefish,Assets/SpecimenPrefabs/Monacanthidae.prefab,Family,FALSE,13.71602743,13.71602743,1
+Animalia,Chordata,Actinopterygii,Tetraodontiformes,Monacanthidae,Aluterus,Aluterus scriptus,Scrawled Filefish,Assets/SpecimenPrefabs/Monacanthidae.prefab,Family,FALSE,33.26014732,11,7
+Animalia,Chordata,Actinopterygii,Anguilliformes,Muraenidae,Echidna,Echidna catenata,Chain Moray,Assets/SpecimenPrefabs/Muraenidae.prefab,Family,FALSE,80,6.705613411,14
+Animalia,Chordata,Actinopterygii,Anguilliformes,Muraenidae,Gymnothorax,Gymnothorax afer,Dark Moray,Assets/SpecimenPrefabs/Muraenidae.prefab,Family,FALSE,15,15,1
+Animalia,Chordata,Actinopterygii,Anguilliformes,Muraenidae,Gymnothorax,Gymnothorax dovii,Speckled Moray,Assets/SpecimenPrefabs/Muraenidae.prefab,Family,FALSE,14.12,14.12,1
+Animalia,Chordata,Actinopterygii,Anguilliformes,Muraenidae,Gymnothorax,Gymnothorax equatorialis,Spottail Moray,Assets/SpecimenPrefabs/Muraenidae.prefab,Family,FALSE,29.26085852,18.59283719,3
+Animalia,Chordata,Actinopterygii,Anguilliformes,Muraenidae,Gymnothorax,Gymnothorax flavimarginatus,Yellowmargin Moray,Assets/SpecimenPrefabs/Muraenidae.prefab,Family,FALSE,33.52806706,21.03,4
+Animalia,Chordata,Actinopterygii,Anguilliformes,Muraenidae,Gymnothorax,Gymnothorax funebris,Black Moray,Assets/SpecimenPrefabs/Muraenidae.prefab,Family,FALSE,31.39446279,8.5,28
+Animalia,Chordata,Actinopterygii,Anguilliformes,Muraenidae,Gymnothorax,Gymnothorax fuscomaculatus,Brown Spotted Moray,Assets/SpecimenPrefabs/Muraenidae.prefab,Family,FALSE,18,18,1
+Animalia,Chordata,Actinopterygii,Anguilliformes,Muraenidae,Gymnothorax,Gymnothorax isingteena,Spotted Moray,Assets/SpecimenPrefabs/Muraenidae.prefab,Family,FALSE,21,11,4
+Animalia,Chordata,Actinopterygii,Anguilliformes,Muraenidae,Gymnothorax,Gymnothorax javanicus,Giant Moray,Assets/SpecimenPrefabs/Muraenidae.prefab,Family,FALSE,39.86,15.54,2
+Animalia,Chordata,Actinopterygii,Anguilliformes,Muraenidae,Gymnothorax,Gymnothorax miliaris,Goldentail Moray,Assets/SpecimenPrefabs/Muraenidae.prefab,Family,FALSE,29.7,11,7
+Animalia,Chordata,Actinopterygii,Anguilliformes,Muraenidae,Gymnothorax,Gymnothorax minor,Lesser Moray,Assets/SpecimenPrefabs/Muraenidae.prefab,Family,FALSE,20,20,1
+Animalia,Chordata,Actinopterygii,Anguilliformes,Muraenidae,Gymnothorax,Gymnothorax moringa,Common Conger,Assets/SpecimenPrefabs/Muraenidae.prefab,Family,FALSE,30.48006096,6.705613411,22
+Animalia,Chordata,Actinopterygii,Anguilliformes,Muraenidae,Gymnothorax,Gymnothorax pictus,Bar-cheeked Eel,Assets/SpecimenPrefabs/Muraenidae.prefab,Family,FALSE,19.77000762,16,2
+Animalia,Chordata,Actinopterygii,Anguilliformes,Muraenidae,Gymnothorax,Gymnothorax polyuranodon,Freshwater Moray,Assets/SpecimenPrefabs/Muraenidae.prefab,Family,FALSE,30.48006096,30.48006096,2
+Animalia,Chordata,Actinopterygii,Anguilliformes,Muraenidae,Gymnothorax,Gymnothorax prasinus,Brown Reef Eel,Assets/SpecimenPrefabs/Muraenidae.prefab,Family,FALSE,30.48006096,15,5
+Animalia,Chordata,Actinopterygii,Anguilliformes,Muraenidae,Gymnothorax,Gymnothorax rueppellii,Ruppell's Moray,Assets/SpecimenPrefabs/Muraenidae.prefab,Family,FALSE,30.48006096,30.48006096,1
+Animalia,Chordata,Actinopterygii,Anguilliformes,Muraenidae,Gymnothorax,Gymnothorax vicinus,Brown Conger,Assets/SpecimenPrefabs/Muraenidae.prefab,Family,FALSE,6.705613411,6.705613411,1
+Animalia,Cnidaria,Anthozoa,Scleractinia,Mussidae,Mussa,Mussa angulosa,Spiny Flower Coral,Assets/SpecimenPrefabs/Mussidae.prefab,Family,FALSE,25,11,7
+Animalia,Chordata,Elasmobranchii,Rajiformes,Myliobatidae,Aetobatus,Aetobatus narinari,Spotted Eagle Ray,Assets/SpecimenPrefabs/Myliobatidae.prefab,Family,FALSE,66,2,22
+Animalia,Chordata,Elasmobranchii,Rajiformes,Myliobatidae,Myliobatis,Myliobatis aquila,Common Eagle Ray,Assets/SpecimenPrefabs/Myliobatidae.prefab,Family,FALSE,31,17.07,6
+Animalia,Chordata,Elasmobranchii,Rajiformes,Myliobatidae,Myliobatis,Myliobatis tenuicaudatus,New Zealand Eagle Ray,Assets/SpecimenPrefabs/Myliobatidae.prefab,Family,FALSE,20.11684023,15,5
+Animalia,Mollusca,Cephalopoda,Octopoda,Octopodidae,Octopus,Octopus,Unspecified,Assets/SpecimenPrefabs/Octopodidae.prefab,Family,FALSE,13.10642621,13.10642621,1
+Animalia,Mollusca,Cephalopoda,Octopoda,Octopodidae,Octopus,Octopus briareus,Caribbean Reef Octopus,Assets/SpecimenPrefabs/Octopodidae.prefab,Family,FALSE,30.48006096,11.88722377,8
+Animalia,Mollusca,Cephalopoda,Octopoda,Octopodidae,Octopus,Octopus hubbsorum,Hubbs' Octopus,Assets/SpecimenPrefabs/Octopodidae.prefab,Family,FALSE,14,14,1
+Animalia,Mollusca,Cephalopoda,Octopoda,Octopodidae,Octopus,Octopus vulgaris,Common Octopus,Assets/SpecimenPrefabs/Octopodidae.prefab,Family,FALSE,17,17,1
+Animalia,Chordata,Actinopterygii,Anguilliformes,Ophichthidae,Myrichthys,Myrichthys breviceps,Sharptail Eel,Assets/SpecimenPrefabs/Ophichthidae.prefab,Family,FALSE,35,11.88722377,9
+Animalia,Chordata,Actinopterygii,Anguilliformes,Ophichthidae,Myrichthys,Myrichthys ocellatus,Goldspotted Eel,Assets/SpecimenPrefabs/Ophichthidae.prefab,Family,FALSE,14,14,1
+Animalia,Chordata,Actinopterygii,Tetraodontiformes,Ostraciidae,Acanthostracion,Acanthostracion polygonius,Honeycomb Cowfish,Assets/SpecimenPrefabs/Ostraciidae.prefab,Family,FALSE,36.57607315,8.2,16
+Animalia,Chordata,Actinopterygii,Tetraodontiformes,Ostraciidae,Acanthostracion,Acanthostracion quadricornis,Scrawled Cowfish,Assets/SpecimenPrefabs/Ostraciidae.prefab,Family,FALSE,28.95605791,14,9
+Animalia,Chordata,Actinopterygii,Tetraodontiformes,Ostraciidae,Lactophrys,Lactophrys,Unspecified,Assets/SpecimenPrefabs/Ostraciidae.prefab,Family,FALSE,8.077216154,8.077216154,1
+Animalia,Chordata,Actinopterygii,Tetraodontiformes,Ostraciidae,Lactophrys,Lactophrys bicaudalis,Spotted Trunkfish,Assets/SpecimenPrefabs/Ostraciidae.prefab,Family,FALSE,36.57607315,10,12
+Animalia,Chordata,Actinopterygii,Tetraodontiformes,Ostraciidae,Lactophrys,Lactophrys trigonus,Buffalo Trunkfish,Assets/SpecimenPrefabs/Ostraciidae.prefab,Family,FALSE,17.98323597,16,2
+Animalia,Arthropoda,Malacostraca,Decapoda,Palinuridae,Palinurus,Palinurus elephas,European Spiny Lobster,Assets/SpecimenPrefabs/Palinuridae.prefab,Family,FALSE,25.2984506,6,10
+Animalia,Arthropoda,Malacostraca,Decapoda,Palinuridae,Panulirus,Panulirus argus,Caribbean Spiny Lobster,Assets/SpecimenPrefabs/Palinuridae.prefab,Family,FALSE,45,7,50
+Animalia,Arthropoda,Malacostraca,Decapoda,Palinuridae,Panulirus,Panulirus guttatus,Spotted Spiny Lobster,Assets/SpecimenPrefabs/Palinuridae.prefab,Family,FALSE,24.38404877,17,2
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacanthidae,Centropyge,Centropyge argi,Cherubfish,None,,,36.57607315,6.705613411,11
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacanthidae,Holacanthus,Holacanthus africanus,West African Angelfish,Assets/SpecimenPrefabs/Holacanthus.prefab,Genus,FALSE,3.048006096,3.048006096,1
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacanthidae,Holacanthus,Holacanthus bermudensis,Bermuda Blue Angelfish,Assets/SpecimenPrefabs/Holacanthus.prefab,Genus,FALSE,24.68884938,20.42164084,2
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacanthidae,Holacanthus,Holacanthus ciliaris,Queen Angelfish,Assets/SpecimenPrefabs/Holacanthus.prefab,Genus,FALSE,36.57607315,6.705613411,34
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacanthidae,Holacanthus,Holacanthus isabelita,Blue Angelfish,Assets/SpecimenPrefabs/Holacanthus.prefab,Genus,FALSE,22.6,21.3,2
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacanthidae,Holacanthus,Holacanthus tricolor,Rock Beauty,Assets/SpecimenPrefabs/Holacanthus.prefab,Genus,FALSE,36.57607315,6.705613411,13
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacanthidae,Pomacanthus,Pomacanthus arcuatus,Gray Angelfish,Assets/SpecimenPrefabs/Pomacanthus.prefab,Genus,FALSE,21.06172212,6.705613411,11
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacanthidae,Pomacanthus,Pomacanthus imperator,Emperor Angelfish,Assets/SpecimenPrefabs/Pomacanthus.prefab,Genus,FALSE,26.51765304,15.24003048,14
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacanthidae,Pomacanthus,Pomacanthus paru,French Angelfish,Assets/SpecimenPrefabs/Pomacanthus.prefab,Genus,FALSE,32.46004572,6.705613411,18
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacentridae,Abudefduf,Abudefduf saxatilis,Sergeant Major,Assets/SpecimenPrefabs/Pomacentridae.prefab,Family,FALSE,24.4,17.5,2
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacentridae,Abudefduf,Abudefduf troschelii,Panamic Sergeant Major,Assets/SpecimenPrefabs/Pomacentridae.prefab,Family,FALSE,15,15,1
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacentridae,Abudefduf,Abudefduf vaigiensis,Indo-Pacific Sergeant Major,Assets/SpecimenPrefabs/Pomacentridae.prefab,Family,FALSE,30.48006096,12,9
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacentridae,Chromis,Chromis atrilobata,Scissortail Damselfish,Assets/SpecimenPrefabs/Pomacentridae.prefab,Family,FALSE,10,10,1
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacentridae,Chromis,Chromis cyanea,Blue Chromis,Assets/SpecimenPrefabs/Pomacentridae.prefab,Family,FALSE,22.86004572,12,8
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacentridae,Chromis,Chromis multilineata,Brown Chromis,Assets/SpecimenPrefabs/Pomacentridae.prefab,Family,FALSE,12.49682499,3.048006096,3
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacentridae,Pomacentrus,Pomacentrus bankanensis,Speckled Damselfish,Assets/SpecimenPrefabs/Pomacentridae.prefab,Family,FALSE,30.48006096,30.48006096,2
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacentridae,Pomacentrus,Pomacentrus brachialis,Bar-finned Damselfish,Assets/SpecimenPrefabs/Pomacentridae.prefab,Family,FALSE,30.48006096,30.48006096,2
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacentridae,Pomacentrus,Pomacentrus coelestis,Neon Damselfish,Assets/SpecimenPrefabs/Pomacentridae.prefab,Family,FALSE,16.2,16.2,1
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacentridae,Pomacentrus,Pomacentrus imitator,Imitator Damselfish,Assets/SpecimenPrefabs/Pomacentridae.prefab,Family,FALSE,12.19202438,12.19202438,1
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacentridae,Pomacentrus,Pomacentrus simsiang,Lemon Damselfish,Assets/SpecimenPrefabs/Pomacentridae.prefab,Family,FALSE,16.15443231,16.15443231,1
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacentridae,Stegastes,Stegastes diencaeus,Honey Damselfish,Assets/SpecimenPrefabs/Pomacentridae.prefab,Family,FALSE,12.4,8.2,4
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacentridae,Stegastes,Stegastes partitus,Bicolor Damselfish,Assets/SpecimenPrefabs/Pomacentridae.prefab,Family,FALSE,30,22.86004572,2
+Animalia,Chordata,Actinopterygii,Perciformes,Pomacentridae,Stegastes,Stegastes planifrons,Threespot Damselfish,Assets/SpecimenPrefabs/Pomacentridae.prefab,Family,FALSE,16.15443231,16.15443231,1
+Animalia,Chordata,Actinopterygii,Perciformes,Scaridae,Scarus,Scarus guacamaia,Rainbow Parrotfish,Assets/SpecimenPrefabs/Scaridae.prefab,Family,FALSE,17,17,1
+Animalia,Chordata,Actinopterygii,Perciformes,Scaridae,Scarus,Scarus psittacus,Common Parrotfish,Assets/SpecimenPrefabs/Scaridae.prefab,Family,FALSE,22.93999492,4,5
+Animalia,Chordata,Actinopterygii,Perciformes,Scaridae,Scarus,Scarus rubroviolaceus,Bicolor Parrotfish,Assets/SpecimenPrefabs/Scaridae.prefab,Family,FALSE,30.48006096,1.79,3
+Animalia,Chordata,Actinopterygii,Perciformes,Scaridae,Scarus,Scarus vetula,Queen Parrotfish,Assets/SpecimenPrefabs/Scaridae.prefab,Family,FALSE,70,12,11
+Animalia,Chordata,Actinopterygii,Perciformes,Scaridae,Sparisoma,Sparisoma amplum,Reef Parrotfish,Assets/SpecimenPrefabs/Scaridae.prefab,Family,FALSE,11,11,1
+Animalia,Chordata,Actinopterygii,Perciformes,Scaridae,Sparisoma,Sparisoma aurofrenatum,Redband Parrotfish,Assets/SpecimenPrefabs/Scaridae.prefab,Family,FALSE,20,17.67843536,2
+Animalia,Chordata,Actinopterygii,Perciformes,Scaridae,Sparisoma,Sparisoma chrysopterum,Blue Parrotfish,Assets/SpecimenPrefabs/Scaridae.prefab,Family,FALSE,20,11,3
+Animalia,Chordata,Actinopterygii,Perciformes,Scaridae,Sparisoma,Sparisoma viride,Dark Green Parrotfish,Assets/SpecimenPrefabs/Scaridae.prefab,Family,FALSE,43.5,9.2,23
+Animalia,Chordata,Actinopterygii,Perciformes,Sciaenidae,Equetus,Equetus lanceolatus,Jackknife Fish,Assets/SpecimenPrefabs/Sciaenidae.prefab,Family,FALSE,45,8.84,4
+Animalia,Chordata,Actinopterygii,Perciformes,Sciaenidae,Equetus,Equetus punctatus,Spotted Drum,Assets/SpecimenPrefabs/Sciaenidae.prefab,Family,FALSE,36.57607315,9.2,17
+Animalia,Chordata,Actinopterygii,Perciformes,Scombridae,Acanthocybium,Acanthocybium solandri,Wahoo,Assets/SpecimenPrefabs/Scombridae.prefab,Family,FALSE,26,15,8
+Animalia,Chordata,Actinopterygii,Scorpaeniformes,Scorpaenidae,Pterois,Pterois,Unspecified,Assets/SpecimenPrefabs/Pterois.prefab,Genus,FALSE,35.1,5.913131826,9
+Animalia,Chordata,Actinopterygii,Scorpaeniformes,Scorpaenidae,Pterois,Pterois antennata,Banded Lionfish,Assets/SpecimenPrefabs/Pterois.prefab,Genus,FALSE,17.98323597,11,2
+Animalia,Chordata,Actinopterygii,Scorpaeniformes,Scorpaenidae,Pterois,Pterois volitans,Red Lionfish,Assets/SpecimenPrefabs/Pterois.prefab,Genus,FALSE,100,6,75
+Animalia,Chordata,Actinopterygii,Scorpaeniformes,Scorpaenidae,Scorpaena,Scorpaena grandicornis,Grass Scorpionfish,Assets/SpecimenPrefabs/Scorpaena.prefab,Genus,FALSE,30.48006096,18.28803658,2
+Animalia,Chordata,Actinopterygii,Scorpaeniformes,Scorpaenidae,Scorpaena,Scorpaena inermis,Mushroom Scorpionfish,Assets/SpecimenPrefabs/Scorpaena.prefab,Genus,FALSE,17,17,1
+Animalia,Chordata,Actinopterygii,Scorpaeniformes,Scorpaenidae,Scorpaena,Scorpaena plumieri,Spotted Scorpionfish,Assets/SpecimenPrefabs/Scorpaena.prefab,Genus,FALSE,17,15,3
+Animalia,Chordata,Actinopterygii,Scorpaeniformes,Scorpaenidae,Scorpaena,Scorpaena porcus,Black Scorpionfish,Assets/SpecimenPrefabs/Scorpaena.prefab,Genus,FALSE,30,18,3
+Animalia,Chordata,Actinopterygii,Perciformes,Serranidae,Epinephelus,Epinephelus,Unspecified,Assets/SpecimenPrefabs/Serranidae.prefab,Family,FALSE,16.79451359,16.79451359,1
+Animalia,Chordata,Actinopterygii,Perciformes,Serranidae,Epinephelus,Epinephelus aeneus,White Grouper,Assets/SpecimenPrefabs/Serranidae.prefab,Family,FALSE,14.99618999,14.99618999,1
+Animalia,Chordata,Actinopterygii,Perciformes,Serranidae,Epinephelus,Epinephelus analogus,Spotted Grouper,Assets/SpecimenPrefabs/Serranidae.prefab,Family,FALSE,30.48006096,13.71602743,3
+Animalia,Chordata,Actinopterygii,Perciformes,Serranidae,Epinephelus,Epinephelus itajara,Atlantic Goliath Grouper,Assets/SpecimenPrefabs/Serranidae.prefab,Family,FALSE,25.5,14.5,7
+Animalia,Chordata,Actinopterygii,Perciformes,Serranidae,Epinephelus,Epinephelus morio,Red Grouper,Assets/SpecimenPrefabs/Serranidae.prefab,Family,FALSE,17.98323597,17.98323597,1
+Animalia,Chordata,Actinopterygii,Perciformes,Serranidae,Epinephelus,Epinephelus striatus,Nassau Grouper,Assets/SpecimenPrefabs/Serranidae.prefab,Family,FALSE,80,11.5,13
+Animalia,Chordata,Actinopterygii,Perciformes,Serranidae,Mycteroperca,Mycteroperca bonaci,Black Grouper,Assets/SpecimenPrefabs/Serranidae.prefab,Family,FALSE,30,8.23,8
+Animalia,Chordata,Actinopterygii,Perciformes,Serranidae,Mycteroperca,Mycteroperca venenosa,Yellowfin Grouper,Assets/SpecimenPrefabs/Serranidae.prefab,Family,FALSE,30.48006096,7.62001524,12
+Animalia,Chordata,Actinopterygii,Perciformes,Sphyraenidae,Sphyraena,Sphyraena,Unspecified,Assets/SpecimenPrefabs/Sphyraenidae.prefab,Family,FALSE,30.48006096,5.913131826,2
+Animalia,Chordata,Actinopterygii,Perciformes,Sphyraenidae,Sphyraena,Sphyraena barracuda,Great Barracuda,Assets/SpecimenPrefabs/Sphyraenidae.prefab,Family,FALSE,80,5.38,45
+Animalia,Chordata,Actinopterygii,Perciformes,Sphyraenidae,Sphyraena,Sphyraena ensis,Mexican Barracuda,Assets/SpecimenPrefabs/Sphyraenidae.prefab,Family,FALSE,80,16.2,2
+Animalia,Chordata,Actinopterygii,Perciformes,Sphyraenidae,Sphyraena,Sphyraena guachancho,Guachanche Barracuda,Assets/SpecimenPrefabs/Sphyraenidae.prefab,Family,FALSE,18.59283719,16,4
+Animalia,Chordata,Actinopterygii,Perciformes,Sphyraenidae,Sphyraena,Sphyraena japonica,Japanese Barracuda,Assets/SpecimenPrefabs/Sphyraenidae.prefab,Family,FALSE,66,66,1
+Animalia,Chordata,Actinopterygii,Perciformes,Sphyraenidae,Sphyraena,Sphyraena lucasana,Lucas Barracuda,Assets/SpecimenPrefabs/Sphyraenidae.prefab,Family,FALSE,32.31,16,4
+Animalia,Chordata,Actinopterygii,Perciformes,Sphyraenidae,Sphyraena,Sphyraena picudilla,Little Barracuda,Assets/SpecimenPrefabs/Sphyraenidae.prefab,Family,FALSE,22,17.98323597,3
+Animalia,Chordata,Actinopterygii,Perciformes,Sphyraenidae,Sphyraena,Sphyraena putnamae,Blackfin Barracuda,Assets/SpecimenPrefabs/Sphyraenidae.prefab,Family,FALSE,33,9.144018288,7
+Animalia,Chordata,Actinopterygii,Perciformes,Sphyraenidae,Sphyraena,Sphyraena sphyraena,European Barracuda,Assets/SpecimenPrefabs/Sphyraenidae.prefab,Family,FALSE,18.8976378,10,7
+Animalia,Chordata,Actinopterygii,Syngnathiformes,Syngnathidae,Hippocampus,Hippocampus,Unspecified,Assets/SpecimenPrefabs/Syngnathidae.prefab,Family,FALSE,9.5,9.5,1
+Animalia,Chordata,Actinopterygii,Syngnathiformes,Syngnathidae,Hippocampus,Hippocampus erectus,Lined Seahorse,Assets/SpecimenPrefabs/Syngnathidae.prefab,Family,FALSE,15,15,1
+Animalia,Chordata,Actinopterygii,Syngnathiformes,Syngnathidae,Hippocampus,Hippocampus guttulatus,Long-snouted Seahorse,Assets/SpecimenPrefabs/Syngnathidae.prefab,Family,FALSE,10.5,9.753619507,3
+Animalia,Chordata,Actinopterygii,Syngnathiformes,Syngnathidae,Hippocampus,Hippocampus hippocampus,Short-snouted Seahorse,Assets/SpecimenPrefabs/Syngnathidae.prefab,Family,FALSE,24.68884938,24.68884938,1
+Animalia,Chordata,Actinopterygii,Syngnathiformes,Syngnathidae,Hippocampus,Hippocampus ingens,Pacific Seahorse,Assets/SpecimenPrefabs/Syngnathidae.prefab,Family,FALSE,9.5,9.5,1
+Animalia,Chordata,Actinopterygii,Syngnathiformes,Syngnathidae,Hippocampus,Hippocampus kelloggi,Great Seahorse,Assets/SpecimenPrefabs/Syngnathidae.prefab,Family,FALSE,16,16,3
+Animalia,Chordata,Actinopterygii,Syngnathiformes,Syngnathidae,Hippocampus,Hippocampus kuda,Common Seahorse,Assets/SpecimenPrefabs/Syngnathidae.prefab,Family,FALSE,18.28803658,18.28803658,1
+Animalia,Chordata,Actinopterygii,Syngnathiformes,Syngnathidae,Hippocampus,Hippocampus reidi,Longsnout Seahorse,Assets/SpecimenPrefabs/Syngnathidae.prefab,Family,FALSE,21.3,21.3,1
+Animalia,Chordata,Actinopterygii,Tetraodontiformes,Tetraodontidae,Sphoeroides,Sphoeroides nephelus,Southern Puffer,Assets/SpecimenPrefabs/Tetraodontidae.prefab,Family,FALSE,20,10,3
+Animalia,Chordata,Actinopterygii,Tetraodontiformes,Tetraodontidae,Sphoeroides,Sphoeroides rosenblatti,Oval Puffer,Assets/SpecimenPrefabs/Tetraodontidae.prefab,Family,FALSE,29.26085852,29.26085852,1
+Animalia,Chordata,Actinopterygii,Tetraodontiformes,Tetraodontidae,Sphoeroides,Sphoeroides spengleri,Bandtail Puffer,Assets/SpecimenPrefabs/Tetraodontidae.prefab,Family,FALSE,20,15.2,3
+Animalia,Chordata,Actinopterygii,Tetraodontiformes,Tetraodontidae,Sphoeroides,Sphoeroides testudineus,Checkered Puffer,Assets/SpecimenPrefabs/Tetraodontidae.prefab,Family,FALSE,17,15,2
+Animalia,Chordata,Actinopterygii,Tetraodontiformes,Tetraodontidae,Sphoeroides,Sphoeroides yergeri,Speckled Puffer,Assets/SpecimenPrefabs/Tetraodontidae.prefab,Family,FALSE,14,14,1
