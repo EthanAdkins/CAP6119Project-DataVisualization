@@ -3,10 +3,11 @@ using NUnit.Framework;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
+using System.Linq;
 
 public class SpecimenDataManager : MonoBehaviour
 {
-    private struct DataPoint
+    public struct DataPoint
     {
         public float Distribution;
         public string SpeciesName;
@@ -15,7 +16,7 @@ public class SpecimenDataManager : MonoBehaviour
         // Class Attribute --> create some that are general i.e. size etc. and then create a generic one to represent
         // any that are not? Or just represent as string?
         // Class Attribute<T> --> string name, T Value
-
+        
         public DataPoint(string name, float dist, GameObject prefab, IEnumerable<string> attr)
         {
             SpeciesName = name;
@@ -37,13 +38,18 @@ public class SpecimenDataManager : MonoBehaviour
     private List<DataPoint> data;
     private bool _loaded = false;
     private bool _spawned = false;
-    private string current_spawned_filter = ""; //empty = all
+    private string current_spawned_filter; //empty = all
     
     private List<SpeciesManager> SpeciesControllers;
     // Needs to be a list of attributes to filter to
     // (Figuring this out will be a stretch depending on how robust we want)
-    private string filter; 
+    private string filter = ""; 
     public GameObject PlaceHolderPrefabTest;
+    // Total count of spawned instances --> will wanna mess with this and rendering to ensure that 
+    // runtime is not negatively impacted too much as well as allow good representation of data
+    public int TotalDensity = 1000;
+    public CreateSpawnPoints SpawnPointManager;
+
     bool LoadData()
     {
         //return dataLoader.Load();
@@ -60,18 +66,33 @@ public class SpecimenDataManager : MonoBehaviour
         
         foreach (DataPoint s in data)
         {
-            SpeciesControllers.Add(new SpeciesManager(s));
+            // need to create new objects with SpeciesManager components
+            // Create a Prefab Species Manager
+            GameObject nObj = new GameObject();
+            nObj.AddComponent<SpeciesManager>();
+            nObj.transform.SetParent(gameObject.transform);
+
+            SpeciesManager manager = nObj.GetComponent<SpeciesManager>();
+            manager.Setup(s);
+            
+            SpeciesControllers.Add(manager);
             // Add listener for spawn/filter event
         }
+        
+        // Process lowest distr to ensure TotalDensity * lowest_distr >= 1
+
+        _spawned = false;
 
         return true;
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (SpawnPointManager is null) SpawnPointManager = FindFirstObjectByType<CreateSpawnPoints>();
+        
         // set the data loader component and activate?
         if (!_loaded)
-            LoadData();
+            _loaded = LoadData();
 
         if (_loaded)
             Spawn();
@@ -81,26 +102,32 @@ public class SpecimenDataManager : MonoBehaviour
     {
         // Only trigger the spawn if we have loaded the data and
         // the current spawn is different from the new filter
-        if (!_loaded || current_spawned_filter.Equals(filter)) return;
-
+        if (!_loaded /*|| (current_spawned_filter is not null && current_spawned_filter.Equals(filter))*/) return;
+        
+        // Create a random co-ord within a spawn zone
+        // Inst. an object at this spawn zone
+        // Repeat
+        // Can this be threaded AND avoid collisions
+        
+        // For filtering actually avoid using SPAWN method:
+        // Just set active / deactive as needed
+        
         foreach (SpeciesManager m in SpeciesControllers)
         {
             // Change to be a managed event
             m.Spawn(filter);
         }
-
+        
         current_spawned_filter = filter;
     }
 
     // Update is called once per frame
     void Update()
     {
-        foreach (SpeciesManager m in SpeciesControllers)
-        {
-            // Setup some control for checking that spawn has been handled
-            if (m._spawned) _spawned = true;
-        }
-        
+        if (SpeciesControllers.All(m => m.spawned))
+            _spawned = true;
+     
+        // Raise spawn event ONCE when filter changes and after everything loads for the first time
         if (!_spawned) Spawn();
     }
 
