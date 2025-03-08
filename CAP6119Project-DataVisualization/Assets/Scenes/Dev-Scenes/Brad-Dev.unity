@@ -435,7 +435,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8df5549473fa4e40a5577f978979f9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlaceHolderPrefabTest: {fileID: 1075654218358562149, guid: 8361b218e6179864cafdc5301e364681, type: 3}
+  PlaceHolderPrefabTest: {fileID: 8128668236925612103, guid: 6375b756bdc52cf4a8b5d2816baacb06, type: 3}
+  PlaceHolderPrefabTest2: {fileID: -6689036041284674117, guid: ed8cfc690a8612b45b65556851d66acb, type: 3}
+  PlaceHolderPrefabTest3: {fileID: 8128668236925612103, guid: 0d34481c127db1a47889d4574a2dd4fa, type: 3}
   TotalDensity: 100
   SpawnPointManager: {fileID: 2008846234}
 --- !u!4 &1795841375

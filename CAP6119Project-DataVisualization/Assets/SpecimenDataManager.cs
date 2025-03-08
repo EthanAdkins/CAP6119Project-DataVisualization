@@ -45,6 +45,9 @@ public class SpecimenDataManager : MonoBehaviour
     // (Figuring this out will be a stretch depending on how robust we want)
     private string filter = ""; 
     public GameObject PlaceHolderPrefabTest;
+    public GameObject PlaceHolderPrefabTest2;
+    public GameObject PlaceHolderPrefabTest3;
+
     // Total count of spawned instances --> will wanna mess with this and rendering to ensure that 
     // runtime is not negatively impacted too much as well as allow good representation of data
     public int TotalDensity = 1000;
@@ -56,8 +59,8 @@ public class SpecimenDataManager : MonoBehaviour
         data = new List<DataPoint>();
         string[] attr = { "TestAttr" };
         data.Add(new DataPoint("Test1", 0.1f, PlaceHolderPrefabTest, attr));
-        data.Add(new DataPoint("Test2", 0.5f, PlaceHolderPrefabTest, attr));
-        data.Add(new DataPoint("Test3", 0.4f, PlaceHolderPrefabTest, new []{"TestAttr2"}));
+        data.Add(new DataPoint("Test2", 0.5f, PlaceHolderPrefabTest2, attr));
+        data.Add(new DataPoint("Test3", 0.4f, PlaceHolderPrefabTest3, new []{"TestAttr2"}));
 
         if (SpeciesControllers is not null)
             SpeciesControllers.Clear();

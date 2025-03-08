@@ -43,12 +43,10 @@ public class CreateSpawnPoints : MonoBehaviour
 
     public Vector3 GetSpawnPoint()
     {
+        // Remove check for open points and don't pre-create points just create dynamically and store
+        // Used locations
         IEnumerable<Vector3> open = SpawnPoints.Where(p => p.Value == false)
             .Select(p => p.Key);
-        
-        //int count = open.Count();
-        
-        //return open.ElementAt(Random.Range(0, count));
         
         //since point creation is random just select first available
         try
