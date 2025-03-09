@@ -1,11 +1,11 @@
 {
-    "totalCount": 1275,
+    "totalCount": 1268,
     "numKingdoms": 1,
     "Kingdoms": [
         {
             "name": "Animalia",
             "model": "",
-            "count": 1275,
+            "count": 1268,
             "numPhyla": 5,
             "Phyla": [
                 {
@@ -2246,14 +2246,14 @@
                 {
                     "name": "Cnidaria",
                     "model": "",
-                    "count": 64,
+                    "count": 57,
                     "numClasses": 2,
                     "Classes": [
                         {
                             "name": "Anthozoa",
                             "model": "",
-                            "count": 55,
-                            "numOrders": 3,
+                            "count": 48,
+                            "numOrders": 2,
                             "Orders": [
                                 {
                                     "name": "Scleractinia",
@@ -2382,39 +2382,6 @@
                                                             "count": 7,
                                                             "sedentary": false,
                                                             "maxDepth": 25,
-                                                            "minDepth": 11
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                    "name": "Actiniaria",
-                                    "model": "",
-                                    "count": 7,
-                                    "numFamilies": 1,
-                                    "Families": [
-                                        {
-                                            "name": "Actiniidae",
-                                            "model": "Assets/SpecimenPrefabs/Actiniidae.prefab",
-                                            "count": 7,
-                                            "numGenera": 1,
-                                            "Genera": [
-                                                {
-                                                    "name": "Condylactis",
-                                                    "model": "",
-                                                    "count": 7,
-                                                    "numSpecies": 1,
-                                                    "Species": [
-                                                        {
-                                                            "name": "Condylactis gigantea",
-                                                            "commonName": "Giant Caribbean Sea Anemone",
-                                                            "model": "",
-                                                            "count": 7,
-                                                            "sedentary": false,
-                                                            "maxDepth": 30,
                                                             "minDepth": 11
                                                         }
                                                     ]
