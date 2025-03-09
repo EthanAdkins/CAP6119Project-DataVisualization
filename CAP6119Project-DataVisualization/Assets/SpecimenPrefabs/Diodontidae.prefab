@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6689036041284674117, guid: fd6fef99ef4496648836432d951a2a15, type: 3}
       propertyPath: m_Name
-      value: cc0___inflated_balloonfish
+      value: Diodontidae
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: fd6fef99ef4496648836432d951a2a15, type: 3}
       propertyPath: m_LocalScale.x
@@ -26,15 +26,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: fd6fef99ef4496648836432d951a2a15, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.025
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: fd6fef99ef4496648836432d951a2a15, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.31
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: fd6fef99ef4496648836432d951a2a15, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.286
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: fd6fef99ef4496648836432d951a2a15, type: 3}
       propertyPath: m_LocalRotation.w
