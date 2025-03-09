@@ -10,23 +10,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8128668236925612103, guid: 86867519a738a0d4485712c4930643e3, type: 3}
       propertyPath: m_Name
-      value: model_50a_-_hawksbill_sea_turtle
+      value: Eretmochelys
       objectReference: {fileID: 0}
     - target: {fileID: 8897093224900880590, guid: 86867519a738a0d4485712c4930643e3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.23
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8897093224900880590, guid: 86867519a738a0d4485712c4930643e3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.36
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8897093224900880590, guid: 86867519a738a0d4485712c4930643e3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.41
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8897093224900880590, guid: 86867519a738a0d4485712c4930643e3, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 8897093224900880590, guid: 86867519a738a0d4485712c4930643e3, type: 3}
       propertyPath: m_LocalRotation.x
@@ -34,7 +34,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8897093224900880590, guid: 86867519a738a0d4485712c4930643e3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 8897093224900880590, guid: 86867519a738a0d4485712c4930643e3, type: 3}
       propertyPath: m_LocalRotation.z
@@ -46,7 +46,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8897093224900880590, guid: 86867519a738a0d4485712c4930643e3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 8897093224900880590, guid: 86867519a738a0d4485712c4930643e3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
