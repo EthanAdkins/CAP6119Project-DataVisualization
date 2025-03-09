@@ -35,8 +35,8 @@ with open("docs/Data.csv", "r", encoding="utf-8") as observations:
                         "name": kingdom,
                         "model": modelLocation if modelLevel == "Kingdom" else "",
                         "count": count,
-                        "numPhylums": 1,
-                        "Phylums": 
+                        "numPhyla": 1,
+                        "Phyla": 
                         [
                             {
                                 "name": phylum,
@@ -98,9 +98,9 @@ with open("docs/Data.csv", "r", encoding="utf-8") as observations:
             else:
                 k = next(k for k in data["Kingdoms"] if k["name"] == kingdom)
                 k["count"] += count
-                k["numPhylums"] += 1
-                if not any(p["name"] == phylum for p in k["Phylums"]):
-                    k["Phylums"].append(
+                if not any(p["name"] == phylum for p in k["Phyla"]):
+                    k["numPhyla"] += 1
+                    k["Phyla"].append(
                         {
                             "name": phylum,
                             "model": modelLocation if modelLevel == "Phylum" else "",
@@ -157,10 +157,10 @@ with open("docs/Data.csv", "r", encoding="utf-8") as observations:
                         }
                     )
                 else:
-                    p = next(p for p in k["Phylums"] if p["name"] == phylum)
+                    p = next(p for p in k["Phyla"] if p["name"] == phylum)
                     p["count"] += count
-                    p["numClasses"] += 1
                     if not any(c["name"] == dataClass for c in p["Classes"]):
+                        p["numClasses"] += 1
                         p["Classes"].append(
                             {
                                 "name": dataClass,
@@ -211,8 +211,8 @@ with open("docs/Data.csv", "r", encoding="utf-8") as observations:
                     else:
                         c = next(c for c in p["Classes"] if c["name"] == dataClass)
                         c["count"] += count
-                        c["numOrders"] += 1
                         if not any(o["name"] == order for o in c["Orders"]):
+                            c["numOrders"] += 1
                             c["Orders"].append(
                                 {
                                     "name": order,
@@ -254,8 +254,8 @@ with open("docs/Data.csv", "r", encoding="utf-8") as observations:
                         else:
                             o = next(o for o in c["Orders"] if o["name"] == order)
                             o["count"] += count
-                            o["numFamilies"] += 1
                             if not any(f["name"] == family for f in o["Families"]):
+                                o["numFamilies"] += 1
                                 o["Families"].append(
                                     {
                                         "name": family,
@@ -288,8 +288,8 @@ with open("docs/Data.csv", "r", encoding="utf-8") as observations:
                             else:
                                 f = next(f for f in o["Families"] if f["name"] == family)
                                 f["count"] += count
-                                f["numGenera"] += 1
                                 if not any(g["name"] == genus for g in f["Genera"]):
+                                    f["numGenera"] += 1
                                     f["Genera"].append(
                                         {
                                             "name": genus,
@@ -313,8 +313,8 @@ with open("docs/Data.csv", "r", encoding="utf-8") as observations:
                                 else:
                                     g = next(g for g in f["Genera"] if g["name"] == genus)
                                     g["count"] += count
-                                    g["numSpecies"] += 1
                                     if not any(s["name"] == species for s in g["Species"]):
+                                        g["numSpecies"] += 1
                                         g["Species"].append(
                                             {
                                                 "name": species,
