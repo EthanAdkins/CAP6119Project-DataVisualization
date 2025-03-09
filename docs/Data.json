@@ -44,8 +44,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 12.0,
-                                                            "minDepth": 12.0
+                                                            "maxDepth": 12,
+                                                            "minDepth": 12
                                                         },
                                                         {
                                                             "name": "Acanthurus chirurgus",
@@ -53,8 +53,8 @@
                                                             "model": "",
                                                             "count": 2,
                                                             "sedentary": false,
-                                                            "maxDepth": 17.98,
-                                                            "minDepth": 11.0
+                                                            "maxDepth": 18,
+                                                            "minDepth": 11
                                                         },
                                                         {
                                                             "name": "Acanthurus coeruleus",
@@ -62,8 +62,8 @@
                                                             "model": "",
                                                             "count": 4,
                                                             "sedentary": false,
-                                                            "maxDepth": 21.3,
-                                                            "minDepth": 12.0
+                                                            "maxDepth": 21,
+                                                            "minDepth": 12
                                                         }
                                                     ]
                                                 }
@@ -87,8 +87,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 8.5,
-                                                            "minDepth": 8.5
+                                                            "maxDepth": 8,
+                                                            "minDepth": 8
                                                         },
                                                         {
                                                             "name": "Carangoides bartholomaei",
@@ -96,8 +96,8 @@
                                                             "model": "",
                                                             "count": 6,
                                                             "sedentary": false,
-                                                            "maxDepth": 18.9,
-                                                            "minDepth": 7.01
+                                                            "maxDepth": 19,
+                                                            "minDepth": 7
                                                         },
                                                         {
                                                             "name": "Carangoides ruber",
@@ -105,8 +105,8 @@
                                                             "model": "",
                                                             "count": 5,
                                                             "sedentary": false,
-                                                            "maxDepth": 38.2,
-                                                            "minDepth": 11.5
+                                                            "maxDepth": 38,
+                                                            "minDepth": 12
                                                         }
                                                     ]
                                                 }
@@ -130,8 +130,8 @@
                                                             "model": "",
                                                             "count": 13,
                                                             "sedentary": false,
-                                                            "maxDepth": 36.58,
-                                                            "minDepth": 11.0
+                                                            "maxDepth": 37,
+                                                            "minDepth": 11
                                                         },
                                                         {
                                                             "name": "Chaetodon ocellatus",
@@ -139,8 +139,8 @@
                                                             "model": "",
                                                             "count": 3,
                                                             "sedentary": false,
-                                                            "maxDepth": 36.58,
-                                                            "minDepth": 22.86
+                                                            "maxDepth": 37,
+                                                            "minDepth": 23
                                                         },
                                                         {
                                                             "name": "Chaetodon sedentarius",
@@ -148,8 +148,8 @@
                                                             "model": "",
                                                             "count": 2,
                                                             "sedentary": false,
-                                                            "maxDepth": 26.0,
-                                                            "minDepth": 17.98
+                                                            "maxDepth": 26,
+                                                            "minDepth": 18
                                                         },
                                                         {
                                                             "name": "Chaetodon striatus",
@@ -157,8 +157,8 @@
                                                             "model": "",
                                                             "count": 4,
                                                             "sedentary": false,
-                                                            "maxDepth": 36.58,
-                                                            "minDepth": 11.5
+                                                            "maxDepth": 37,
+                                                            "minDepth": 12
                                                         }
                                                     ]
                                                 }
@@ -182,8 +182,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 11.0,
-                                                            "minDepth": 11.0
+                                                            "maxDepth": 11,
+                                                            "minDepth": 11
                                                         },
                                                         {
                                                             "name": "Haemulon chrysargyreum",
@@ -191,8 +191,8 @@
                                                             "model": "",
                                                             "count": 3,
                                                             "sedentary": false,
-                                                            "maxDepth": 16.15,
-                                                            "minDepth": 11.0
+                                                            "maxDepth": 16,
+                                                            "minDepth": 11
                                                         },
                                                         {
                                                             "name": "Haemulon flavolineatum",
@@ -200,8 +200,8 @@
                                                             "model": "",
                                                             "count": 3,
                                                             "sedentary": false,
-                                                            "maxDepth": 36.58,
-                                                            "minDepth": 11.0
+                                                            "maxDepth": 37,
+                                                            "minDepth": 11
                                                         },
                                                         {
                                                             "name": "Haemulon sciurus",
@@ -209,8 +209,8 @@
                                                             "model": "",
                                                             "count": 11,
                                                             "sedentary": false,
-                                                            "maxDepth": 22.94,
-                                                            "minDepth": 9.1
+                                                            "maxDepth": 23,
+                                                            "minDepth": 9
                                                         }
                                                     ]
                                                 }
@@ -234,8 +234,8 @@
                                                             "model": "",
                                                             "count": 3,
                                                             "sedentary": false,
-                                                            "maxDepth": 16.76,
-                                                            "minDepth": 12.0
+                                                            "maxDepth": 17,
+                                                            "minDepth": 12
                                                         },
                                                         {
                                                             "name": "Halichoeres maculipinna",
@@ -243,8 +243,8 @@
                                                             "model": "",
                                                             "count": 2,
                                                             "sedentary": false,
-                                                            "maxDepth": 26.0,
-                                                            "minDepth": 18.0
+                                                            "maxDepth": 26,
+                                                            "minDepth": 18
                                                         },
                                                         {
                                                             "name": "Halichoeres pictus",
@@ -252,8 +252,8 @@
                                                             "model": "",
                                                             "count": 3,
                                                             "sedentary": false,
-                                                            "maxDepth": 26.0,
-                                                            "minDepth": 12.19
+                                                            "maxDepth": 26,
+                                                            "minDepth": 12
                                                         },
                                                         {
                                                             "name": "Halichoeres radiatus",
@@ -261,8 +261,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 25.0,
-                                                            "minDepth": 25.0
+                                                            "maxDepth": 25,
+                                                            "minDepth": 25
                                                         }
                                                     ]
                                                 }
@@ -286,8 +286,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 14.1,
-                                                            "minDepth": 14.1
+                                                            "maxDepth": 14,
+                                                            "minDepth": 14
                                                         },
                                                         {
                                                             "name": "Lutjanus apodus",
@@ -295,8 +295,8 @@
                                                             "model": "",
                                                             "count": 2,
                                                             "sedentary": false,
-                                                            "maxDepth": 22.94,
-                                                            "minDepth": 21.9
+                                                            "maxDepth": 23,
+                                                            "minDepth": 22
                                                         },
                                                         {
                                                             "name": "Lutjanus campechanus",
@@ -304,8 +304,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 24.69,
-                                                            "minDepth": 24.69
+                                                            "maxDepth": 25,
+                                                            "minDepth": 25
                                                         },
                                                         {
                                                             "name": "Lutjanus guttatus",
@@ -313,8 +313,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 22.94,
-                                                            "minDepth": 22.94
+                                                            "maxDepth": 23,
+                                                            "minDepth": 23
                                                         },
                                                         {
                                                             "name": "Lutjanus synagris",
@@ -322,8 +322,8 @@
                                                             "model": "",
                                                             "count": 3,
                                                             "sedentary": false,
-                                                            "maxDepth": 15.85,
-                                                            "minDepth": 6.71
+                                                            "maxDepth": 16,
+                                                            "minDepth": 7
                                                         }
                                                     ]
                                                 },
@@ -339,8 +339,8 @@
                                                             "model": "",
                                                             "count": 7,
                                                             "sedentary": false,
-                                                            "maxDepth": 30.48,
-                                                            "minDepth": 9.1
+                                                            "maxDepth": 30,
+                                                            "minDepth": 9
                                                         }
                                                     ]
                                                 }
@@ -364,8 +364,8 @@
                                                             "model": "",
                                                             "count": 11,
                                                             "sedentary": false,
-                                                            "maxDepth": 36.58,
-                                                            "minDepth": 6.71
+                                                            "maxDepth": 37,
+                                                            "minDepth": 7
                                                         }
                                                     ]
                                                 },
@@ -381,8 +381,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 3.05,
-                                                            "minDepth": 3.05
+                                                            "maxDepth": 3,
+                                                            "minDepth": 3
                                                         },
                                                         {
                                                             "name": "Holacanthus bermudensis",
@@ -390,8 +390,8 @@
                                                             "model": "",
                                                             "count": 2,
                                                             "sedentary": false,
-                                                            "maxDepth": 24.69,
-                                                            "minDepth": 20.42
+                                                            "maxDepth": 25,
+                                                            "minDepth": 20
                                                         },
                                                         {
                                                             "name": "Holacanthus ciliaris",
@@ -399,8 +399,8 @@
                                                             "model": "",
                                                             "count": 34,
                                                             "sedentary": false,
-                                                            "maxDepth": 36.58,
-                                                            "minDepth": 6.71
+                                                            "maxDepth": 37,
+                                                            "minDepth": 7
                                                         },
                                                         {
                                                             "name": "Holacanthus isabelita",
@@ -408,8 +408,8 @@
                                                             "model": "",
                                                             "count": 2,
                                                             "sedentary": false,
-                                                            "maxDepth": 22.6,
-                                                            "minDepth": 21.3
+                                                            "maxDepth": 23,
+                                                            "minDepth": 21
                                                         },
                                                         {
                                                             "name": "Holacanthus tricolor",
@@ -417,8 +417,8 @@
                                                             "model": "",
                                                             "count": 13,
                                                             "sedentary": false,
-                                                            "maxDepth": 36.58,
-                                                            "minDepth": 6.71
+                                                            "maxDepth": 37,
+                                                            "minDepth": 7
                                                         }
                                                     ]
                                                 },
@@ -434,8 +434,8 @@
                                                             "model": "",
                                                             "count": 11,
                                                             "sedentary": false,
-                                                            "maxDepth": 21.06,
-                                                            "minDepth": 6.71
+                                                            "maxDepth": 21,
+                                                            "minDepth": 7
                                                         },
                                                         {
                                                             "name": "Pomacanthus imperator",
@@ -443,8 +443,8 @@
                                                             "model": "",
                                                             "count": 14,
                                                             "sedentary": false,
-                                                            "maxDepth": 26.52,
-                                                            "minDepth": 15.24
+                                                            "maxDepth": 27,
+                                                            "minDepth": 15
                                                         },
                                                         {
                                                             "name": "Pomacanthus paru",
@@ -452,8 +452,8 @@
                                                             "model": "",
                                                             "count": 18,
                                                             "sedentary": false,
-                                                            "maxDepth": 32.46,
-                                                            "minDepth": 6.71
+                                                            "maxDepth": 32,
+                                                            "minDepth": 7
                                                         }
                                                     ]
                                                 }
@@ -477,8 +477,8 @@
                                                             "model": "",
                                                             "count": 2,
                                                             "sedentary": false,
-                                                            "maxDepth": 24.4,
-                                                            "minDepth": 17.5
+                                                            "maxDepth": 24,
+                                                            "minDepth": 18
                                                         },
                                                         {
                                                             "name": "Abudefduf troschelii",
@@ -486,8 +486,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 15.0,
-                                                            "minDepth": 15.0
+                                                            "maxDepth": 15,
+                                                            "minDepth": 15
                                                         },
                                                         {
                                                             "name": "Abudefduf vaigiensis",
@@ -495,8 +495,8 @@
                                                             "model": "",
                                                             "count": 9,
                                                             "sedentary": false,
-                                                            "maxDepth": 30.48,
-                                                            "minDepth": 12.0
+                                                            "maxDepth": 30,
+                                                            "minDepth": 12
                                                         }
                                                     ]
                                                 },
@@ -512,8 +512,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 10.0,
-                                                            "minDepth": 10.0
+                                                            "maxDepth": 10,
+                                                            "minDepth": 10
                                                         },
                                                         {
                                                             "name": "Chromis cyanea",
@@ -521,8 +521,8 @@
                                                             "model": "",
                                                             "count": 8,
                                                             "sedentary": false,
-                                                            "maxDepth": 22.86,
-                                                            "minDepth": 12.0
+                                                            "maxDepth": 23,
+                                                            "minDepth": 12
                                                         },
                                                         {
                                                             "name": "Chromis multilineata",
@@ -530,8 +530,8 @@
                                                             "model": "",
                                                             "count": 3,
                                                             "sedentary": false,
-                                                            "maxDepth": 12.5,
-                                                            "minDepth": 3.05
+                                                            "maxDepth": 12,
+                                                            "minDepth": 3
                                                         }
                                                     ]
                                                 },
@@ -547,8 +547,8 @@
                                                             "model": "",
                                                             "count": 2,
                                                             "sedentary": false,
-                                                            "maxDepth": 30.48,
-                                                            "minDepth": 30.48
+                                                            "maxDepth": 30,
+                                                            "minDepth": 30
                                                         },
                                                         {
                                                             "name": "Pomacentrus brachialis",
@@ -556,8 +556,8 @@
                                                             "model": "",
                                                             "count": 2,
                                                             "sedentary": false,
-                                                            "maxDepth": 30.48,
-                                                            "minDepth": 30.48
+                                                            "maxDepth": 30,
+                                                            "minDepth": 30
                                                         },
                                                         {
                                                             "name": "Pomacentrus coelestis",
@@ -565,8 +565,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 16.2,
-                                                            "minDepth": 16.2
+                                                            "maxDepth": 16,
+                                                            "minDepth": 16
                                                         },
                                                         {
                                                             "name": "Pomacentrus imitator",
@@ -574,8 +574,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 12.19,
-                                                            "minDepth": 12.19
+                                                            "maxDepth": 12,
+                                                            "minDepth": 12
                                                         },
                                                         {
                                                             "name": "Pomacentrus simsiang",
@@ -583,8 +583,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 16.15,
-                                                            "minDepth": 16.15
+                                                            "maxDepth": 16,
+                                                            "minDepth": 16
                                                         }
                                                     ]
                                                 },
@@ -600,8 +600,8 @@
                                                             "model": "",
                                                             "count": 4,
                                                             "sedentary": false,
-                                                            "maxDepth": 12.4,
-                                                            "minDepth": 8.2
+                                                            "maxDepth": 12,
+                                                            "minDepth": 8
                                                         },
                                                         {
                                                             "name": "Stegastes partitus",
@@ -609,8 +609,8 @@
                                                             "model": "",
                                                             "count": 2,
                                                             "sedentary": false,
-                                                            "maxDepth": 30.0,
-                                                            "minDepth": 22.86
+                                                            "maxDepth": 30,
+                                                            "minDepth": 23
                                                         },
                                                         {
                                                             "name": "Stegastes planifrons",
@@ -618,8 +618,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 16.15,
-                                                            "minDepth": 16.15
+                                                            "maxDepth": 16,
+                                                            "minDepth": 16
                                                         }
                                                     ]
                                                 }
@@ -643,8 +643,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 17.0,
-                                                            "minDepth": 17.0
+                                                            "maxDepth": 17,
+                                                            "minDepth": 17
                                                         },
                                                         {
                                                             "name": "Scarus psittacus",
@@ -652,8 +652,8 @@
                                                             "model": "",
                                                             "count": 5,
                                                             "sedentary": false,
-                                                            "maxDepth": 22.94,
-                                                            "minDepth": 4.0
+                                                            "maxDepth": 23,
+                                                            "minDepth": 4
                                                         },
                                                         {
                                                             "name": "Scarus rubroviolaceus",
@@ -661,8 +661,8 @@
                                                             "model": "",
                                                             "count": 3,
                                                             "sedentary": false,
-                                                            "maxDepth": 30.48,
-                                                            "minDepth": 1.79
+                                                            "maxDepth": 30,
+                                                            "minDepth": 2
                                                         },
                                                         {
                                                             "name": "Scarus vetula",
@@ -670,8 +670,8 @@
                                                             "model": "",
                                                             "count": 11,
                                                             "sedentary": false,
-                                                            "maxDepth": 70.0,
-                                                            "minDepth": 12.0
+                                                            "maxDepth": 70,
+                                                            "minDepth": 12
                                                         }
                                                     ]
                                                 },
@@ -687,8 +687,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 11.0,
-                                                            "minDepth": 11.0
+                                                            "maxDepth": 11,
+                                                            "minDepth": 11
                                                         },
                                                         {
                                                             "name": "Sparisoma aurofrenatum",
@@ -696,8 +696,8 @@
                                                             "model": "",
                                                             "count": 2,
                                                             "sedentary": false,
-                                                            "maxDepth": 20.0,
-                                                            "minDepth": 17.68
+                                                            "maxDepth": 20,
+                                                            "minDepth": 18
                                                         },
                                                         {
                                                             "name": "Sparisoma chrysopterum",
@@ -705,8 +705,8 @@
                                                             "model": "",
                                                             "count": 3,
                                                             "sedentary": false,
-                                                            "maxDepth": 20.0,
-                                                            "minDepth": 11.0
+                                                            "maxDepth": 20,
+                                                            "minDepth": 11
                                                         },
                                                         {
                                                             "name": "Sparisoma viride",
@@ -714,8 +714,8 @@
                                                             "model": "",
                                                             "count": 23,
                                                             "sedentary": false,
-                                                            "maxDepth": 43.5,
-                                                            "minDepth": 9.2
+                                                            "maxDepth": 44,
+                                                            "minDepth": 9
                                                         }
                                                     ]
                                                 }
@@ -739,8 +739,8 @@
                                                             "model": "",
                                                             "count": 4,
                                                             "sedentary": false,
-                                                            "maxDepth": 45.0,
-                                                            "minDepth": 8.84
+                                                            "maxDepth": 45,
+                                                            "minDepth": 9
                                                         },
                                                         {
                                                             "name": "Equetus punctatus",
@@ -748,8 +748,8 @@
                                                             "model": "",
                                                             "count": 17,
                                                             "sedentary": false,
-                                                            "maxDepth": 36.58,
-                                                            "minDepth": 9.2
+                                                            "maxDepth": 37,
+                                                            "minDepth": 9
                                                         }
                                                     ]
                                                 }
@@ -773,8 +773,8 @@
                                                             "model": "",
                                                             "count": 8,
                                                             "sedentary": false,
-                                                            "maxDepth": 26.0,
-                                                            "minDepth": 15.0
+                                                            "maxDepth": 26,
+                                                            "minDepth": 15
                                                         }
                                                     ]
                                                 }
@@ -798,8 +798,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 16.79,
-                                                            "minDepth": 16.79
+                                                            "maxDepth": 17,
+                                                            "minDepth": 17
                                                         },
                                                         {
                                                             "name": "Epinephelus aeneus",
@@ -807,8 +807,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 15.0,
-                                                            "minDepth": 15.0
+                                                            "maxDepth": 15,
+                                                            "minDepth": 15
                                                         },
                                                         {
                                                             "name": "Epinephelus analogus",
@@ -816,8 +816,8 @@
                                                             "model": "",
                                                             "count": 3,
                                                             "sedentary": false,
-                                                            "maxDepth": 30.48,
-                                                            "minDepth": 13.72
+                                                            "maxDepth": 30,
+                                                            "minDepth": 14
                                                         },
                                                         {
                                                             "name": "Epinephelus itajara",
@@ -825,8 +825,8 @@
                                                             "model": "",
                                                             "count": 7,
                                                             "sedentary": false,
-                                                            "maxDepth": 25.5,
-                                                            "minDepth": 14.5
+                                                            "maxDepth": 26,
+                                                            "minDepth": 14
                                                         },
                                                         {
                                                             "name": "Epinephelus morio",
@@ -834,8 +834,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 17.98,
-                                                            "minDepth": 17.98
+                                                            "maxDepth": 18,
+                                                            "minDepth": 18
                                                         },
                                                         {
                                                             "name": "Epinephelus striatus",
@@ -843,8 +843,8 @@
                                                             "model": "",
                                                             "count": 13,
                                                             "sedentary": false,
-                                                            "maxDepth": 80.0,
-                                                            "minDepth": 11.5
+                                                            "maxDepth": 80,
+                                                            "minDepth": 12
                                                         }
                                                     ]
                                                 },
@@ -860,8 +860,8 @@
                                                             "model": "",
                                                             "count": 8,
                                                             "sedentary": false,
-                                                            "maxDepth": 30.0,
-                                                            "minDepth": 8.23
+                                                            "maxDepth": 30,
+                                                            "minDepth": 8
                                                         },
                                                         {
                                                             "name": "Mycteroperca venenosa",
@@ -869,8 +869,8 @@
                                                             "model": "",
                                                             "count": 12,
                                                             "sedentary": false,
-                                                            "maxDepth": 30.48,
-                                                            "minDepth": 7.62
+                                                            "maxDepth": 30,
+                                                            "minDepth": 8
                                                         }
                                                     ]
                                                 }
@@ -894,8 +894,8 @@
                                                             "model": "",
                                                             "count": 2,
                                                             "sedentary": false,
-                                                            "maxDepth": 30.48,
-                                                            "minDepth": 5.91
+                                                            "maxDepth": 30,
+                                                            "minDepth": 6
                                                         },
                                                         {
                                                             "name": "Sphyraena barracuda",
@@ -903,8 +903,8 @@
                                                             "model": "",
                                                             "count": 45,
                                                             "sedentary": false,
-                                                            "maxDepth": 80.0,
-                                                            "minDepth": 5.38
+                                                            "maxDepth": 80,
+                                                            "minDepth": 5
                                                         },
                                                         {
                                                             "name": "Sphyraena ensis",
@@ -912,8 +912,8 @@
                                                             "model": "",
                                                             "count": 2,
                                                             "sedentary": false,
-                                                            "maxDepth": 80.0,
-                                                            "minDepth": 16.2
+                                                            "maxDepth": 80,
+                                                            "minDepth": 16
                                                         },
                                                         {
                                                             "name": "Sphyraena guachancho",
@@ -921,8 +921,8 @@
                                                             "model": "",
                                                             "count": 4,
                                                             "sedentary": false,
-                                                            "maxDepth": 18.59,
-                                                            "minDepth": 16.0
+                                                            "maxDepth": 19,
+                                                            "minDepth": 16
                                                         },
                                                         {
                                                             "name": "Sphyraena japonica",
@@ -930,8 +930,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 66.0,
-                                                            "minDepth": 66.0
+                                                            "maxDepth": 66,
+                                                            "minDepth": 66
                                                         },
                                                         {
                                                             "name": "Sphyraena lucasana",
@@ -939,8 +939,8 @@
                                                             "model": "",
                                                             "count": 4,
                                                             "sedentary": false,
-                                                            "maxDepth": 32.31,
-                                                            "minDepth": 16.0
+                                                            "maxDepth": 32,
+                                                            "minDepth": 16
                                                         },
                                                         {
                                                             "name": "Sphyraena picudilla",
@@ -948,8 +948,8 @@
                                                             "model": "",
                                                             "count": 3,
                                                             "sedentary": false,
-                                                            "maxDepth": 22.0,
-                                                            "minDepth": 17.98
+                                                            "maxDepth": 22,
+                                                            "minDepth": 18
                                                         },
                                                         {
                                                             "name": "Sphyraena putnamae",
@@ -957,8 +957,8 @@
                                                             "model": "",
                                                             "count": 7,
                                                             "sedentary": false,
-                                                            "maxDepth": 33.0,
-                                                            "minDepth": 9.14
+                                                            "maxDepth": 33,
+                                                            "minDepth": 9
                                                         },
                                                         {
                                                             "name": "Sphyraena sphyraena",
@@ -966,8 +966,8 @@
                                                             "model": "",
                                                             "count": 7,
                                                             "sedentary": false,
-                                                            "maxDepth": 18.9,
-                                                            "minDepth": 10.0
+                                                            "maxDepth": 19,
+                                                            "minDepth": 10
                                                         }
                                                     ]
                                                 }
@@ -999,8 +999,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 15.0,
-                                                            "minDepth": 15.0
+                                                            "maxDepth": 15,
+                                                            "minDepth": 15
                                                         },
                                                         {
                                                             "name": "Aulostomus maculatus",
@@ -1008,8 +1008,8 @@
                                                             "model": "",
                                                             "count": 40,
                                                             "sedentary": false,
-                                                            "maxDepth": 45.0,
-                                                            "minDepth": 1.79
+                                                            "maxDepth": 45,
+                                                            "minDepth": 2
                                                         }
                                                     ]
                                                 }
@@ -1033,8 +1033,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 9.5,
-                                                            "minDepth": 9.5
+                                                            "maxDepth": 10,
+                                                            "minDepth": 10
                                                         },
                                                         {
                                                             "name": "Hippocampus erectus",
@@ -1042,8 +1042,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 15.0,
-                                                            "minDepth": 15.0
+                                                            "maxDepth": 15,
+                                                            "minDepth": 15
                                                         },
                                                         {
                                                             "name": "Hippocampus guttulatus",
@@ -1051,8 +1051,8 @@
                                                             "model": "",
                                                             "count": 3,
                                                             "sedentary": false,
-                                                            "maxDepth": 10.5,
-                                                            "minDepth": 9.75
+                                                            "maxDepth": 10,
+                                                            "minDepth": 10
                                                         },
                                                         {
                                                             "name": "Hippocampus hippocampus",
@@ -1060,8 +1060,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 24.69,
-                                                            "minDepth": 24.69
+                                                            "maxDepth": 25,
+                                                            "minDepth": 25
                                                         },
                                                         {
                                                             "name": "Hippocampus ingens",
@@ -1069,8 +1069,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 9.5,
-                                                            "minDepth": 9.5
+                                                            "maxDepth": 10,
+                                                            "minDepth": 10
                                                         },
                                                         {
                                                             "name": "Hippocampus kelloggi",
@@ -1078,8 +1078,8 @@
                                                             "model": "",
                                                             "count": 3,
                                                             "sedentary": false,
-                                                            "maxDepth": 16.0,
-                                                            "minDepth": 16.0
+                                                            "maxDepth": 16,
+                                                            "minDepth": 16
                                                         },
                                                         {
                                                             "name": "Hippocampus kuda",
@@ -1087,8 +1087,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 18.29,
-                                                            "minDepth": 18.29
+                                                            "maxDepth": 18,
+                                                            "minDepth": 18
                                                         },
                                                         {
                                                             "name": "Hippocampus reidi",
@@ -1096,8 +1096,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 21.3,
-                                                            "minDepth": 21.3
+                                                            "maxDepth": 21,
+                                                            "minDepth": 21
                                                         }
                                                     ]
                                                 }
@@ -1129,8 +1129,8 @@
                                                             "model": "",
                                                             "count": 5,
                                                             "sedentary": false,
-                                                            "maxDepth": 27.1,
-                                                            "minDepth": 10.0
+                                                            "maxDepth": 27,
+                                                            "minDepth": 10
                                                         },
                                                         {
                                                             "name": "Canthidermis sufflamen",
@@ -1138,8 +1138,8 @@
                                                             "model": "",
                                                             "count": 5,
                                                             "sedentary": false,
-                                                            "maxDepth": 22.86,
-                                                            "minDepth": 10.0
+                                                            "maxDepth": 23,
+                                                            "minDepth": 10
                                                         }
                                                     ]
                                                 },
@@ -1155,8 +1155,8 @@
                                                             "model": "",
                                                             "count": 20,
                                                             "sedentary": false,
-                                                            "maxDepth": 36.58,
-                                                            "minDepth": 10.0
+                                                            "maxDepth": 37,
+                                                            "minDepth": 10
                                                         }
                                                     ]
                                                 }
@@ -1180,8 +1180,8 @@
                                                             "model": "",
                                                             "count": 10,
                                                             "sedentary": false,
-                                                            "maxDepth": 45.0,
-                                                            "minDepth": 9.5
+                                                            "maxDepth": 45,
+                                                            "minDepth": 10
                                                         },
                                                         {
                                                             "name": "Diodon liturosus",
@@ -1189,8 +1189,8 @@
                                                             "model": "",
                                                             "count": 4,
                                                             "sedentary": false,
-                                                            "maxDepth": 18.9,
-                                                            "minDepth": 17.37
+                                                            "maxDepth": 19,
+                                                            "minDepth": 17
                                                         }
                                                     ]
                                                 }
@@ -1214,8 +1214,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 13.72,
-                                                            "minDepth": 13.72
+                                                            "maxDepth": 14,
+                                                            "minDepth": 14
                                                         },
                                                         {
                                                             "name": "Aluterus scriptus",
@@ -1223,8 +1223,8 @@
                                                             "model": "",
                                                             "count": 7,
                                                             "sedentary": false,
-                                                            "maxDepth": 33.26,
-                                                            "minDepth": 11.0
+                                                            "maxDepth": 33,
+                                                            "minDepth": 11
                                                         }
                                                     ]
                                                 }
@@ -1248,8 +1248,8 @@
                                                             "model": "",
                                                             "count": 16,
                                                             "sedentary": false,
-                                                            "maxDepth": 36.58,
-                                                            "minDepth": 8.2
+                                                            "maxDepth": 37,
+                                                            "minDepth": 8
                                                         },
                                                         {
                                                             "name": "Acanthostracion quadricornis",
@@ -1257,8 +1257,8 @@
                                                             "model": "",
                                                             "count": 9,
                                                             "sedentary": false,
-                                                            "maxDepth": 28.96,
-                                                            "minDepth": 14.0
+                                                            "maxDepth": 29,
+                                                            "minDepth": 14
                                                         }
                                                     ]
                                                 },
@@ -1274,8 +1274,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 8.08,
-                                                            "minDepth": 8.08
+                                                            "maxDepth": 8,
+                                                            "minDepth": 8
                                                         },
                                                         {
                                                             "name": "Lactophrys bicaudalis",
@@ -1283,8 +1283,8 @@
                                                             "model": "",
                                                             "count": 12,
                                                             "sedentary": false,
-                                                            "maxDepth": 36.58,
-                                                            "minDepth": 10.0
+                                                            "maxDepth": 37,
+                                                            "minDepth": 10
                                                         },
                                                         {
                                                             "name": "Lactophrys trigonus",
@@ -1292,8 +1292,8 @@
                                                             "model": "",
                                                             "count": 2,
                                                             "sedentary": false,
-                                                            "maxDepth": 17.98,
-                                                            "minDepth": 16.0
+                                                            "maxDepth": 18,
+                                                            "minDepth": 16
                                                         }
                                                     ]
                                                 }
@@ -1317,8 +1317,8 @@
                                                             "model": "",
                                                             "count": 3,
                                                             "sedentary": false,
-                                                            "maxDepth": 20.0,
-                                                            "minDepth": 10.0
+                                                            "maxDepth": 20,
+                                                            "minDepth": 10
                                                         },
                                                         {
                                                             "name": "Sphoeroides rosenblatti",
@@ -1326,8 +1326,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 29.26,
-                                                            "minDepth": 29.26
+                                                            "maxDepth": 29,
+                                                            "minDepth": 29
                                                         },
                                                         {
                                                             "name": "Sphoeroides spengleri",
@@ -1335,8 +1335,8 @@
                                                             "model": "",
                                                             "count": 3,
                                                             "sedentary": false,
-                                                            "maxDepth": 20.0,
-                                                            "minDepth": 15.2
+                                                            "maxDepth": 20,
+                                                            "minDepth": 15
                                                         },
                                                         {
                                                             "name": "Sphoeroides testudineus",
@@ -1344,8 +1344,8 @@
                                                             "model": "",
                                                             "count": 2,
                                                             "sedentary": false,
-                                                            "maxDepth": 17.0,
-                                                            "minDepth": 15.0
+                                                            "maxDepth": 17,
+                                                            "minDepth": 15
                                                         },
                                                         {
                                                             "name": "Sphoeroides yergeri",
@@ -1353,8 +1353,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 14.0,
-                                                            "minDepth": 14.0
+                                                            "maxDepth": 14,
+                                                            "minDepth": 14
                                                         }
                                                     ]
                                                 }
@@ -1386,8 +1386,8 @@
                                                             "model": "",
                                                             "count": 8,
                                                             "sedentary": false,
-                                                            "maxDepth": 24.69,
-                                                            "minDepth": 3.05
+                                                            "maxDepth": 25,
+                                                            "minDepth": 3
                                                         },
                                                         {
                                                             "name": "Bothus ocellatus",
@@ -1395,8 +1395,8 @@
                                                             "model": "",
                                                             "count": 2,
                                                             "sedentary": false,
-                                                            "maxDepth": 21.03,
-                                                            "minDepth": 7.0
+                                                            "maxDepth": 21,
+                                                            "minDepth": 7
                                                         },
                                                         {
                                                             "name": "Bothus podas",
@@ -1404,8 +1404,8 @@
                                                             "model": "",
                                                             "count": 3,
                                                             "sedentary": false,
-                                                            "maxDepth": 30.48,
-                                                            "minDepth": 30.0
+                                                            "maxDepth": 30,
+                                                            "minDepth": 30
                                                         }
                                                     ]
                                                 }
@@ -1437,8 +1437,8 @@
                                                             "model": "",
                                                             "count": 12,
                                                             "sedentary": false,
-                                                            "maxDepth": 100.0,
-                                                            "minDepth": 10.0
+                                                            "maxDepth": 100,
+                                                            "minDepth": 10
                                                         },
                                                         {
                                                             "name": "Heteroconger longissimus",
@@ -1446,8 +1446,8 @@
                                                             "model": "",
                                                             "count": 5,
                                                             "sedentary": false,
-                                                            "maxDepth": 25.5,
-                                                            "minDepth": 9.2
+                                                            "maxDepth": 26,
+                                                            "minDepth": 9
                                                         }
                                                     ]
                                                 }
@@ -1471,8 +1471,8 @@
                                                             "model": "",
                                                             "count": 14,
                                                             "sedentary": false,
-                                                            "maxDepth": 80.0,
-                                                            "minDepth": 6.71
+                                                            "maxDepth": 80,
+                                                            "minDepth": 7
                                                         }
                                                     ]
                                                 },
@@ -1488,8 +1488,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 15.0,
-                                                            "minDepth": 15.0
+                                                            "maxDepth": 15,
+                                                            "minDepth": 15
                                                         },
                                                         {
                                                             "name": "Gymnothorax dovii",
@@ -1497,8 +1497,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 14.12,
-                                                            "minDepth": 14.12
+                                                            "maxDepth": 14,
+                                                            "minDepth": 14
                                                         },
                                                         {
                                                             "name": "Gymnothorax equatorialis",
@@ -1506,8 +1506,8 @@
                                                             "model": "",
                                                             "count": 3,
                                                             "sedentary": false,
-                                                            "maxDepth": 29.26,
-                                                            "minDepth": 18.59
+                                                            "maxDepth": 29,
+                                                            "minDepth": 19
                                                         },
                                                         {
                                                             "name": "Gymnothorax flavimarginatus",
@@ -1515,8 +1515,8 @@
                                                             "model": "",
                                                             "count": 4,
                                                             "sedentary": false,
-                                                            "maxDepth": 33.53,
-                                                            "minDepth": 21.03
+                                                            "maxDepth": 34,
+                                                            "minDepth": 21
                                                         },
                                                         {
                                                             "name": "Gymnothorax funebris",
@@ -1524,8 +1524,8 @@
                                                             "model": "",
                                                             "count": 28,
                                                             "sedentary": false,
-                                                            "maxDepth": 31.39,
-                                                            "minDepth": 8.5
+                                                            "maxDepth": 31,
+                                                            "minDepth": 8
                                                         },
                                                         {
                                                             "name": "Gymnothorax fuscomaculatus",
@@ -1533,8 +1533,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 18.0,
-                                                            "minDepth": 18.0
+                                                            "maxDepth": 18,
+                                                            "minDepth": 18
                                                         },
                                                         {
                                                             "name": "Gymnothorax isingteena",
@@ -1542,8 +1542,8 @@
                                                             "model": "",
                                                             "count": 4,
                                                             "sedentary": false,
-                                                            "maxDepth": 21.0,
-                                                            "minDepth": 11.0
+                                                            "maxDepth": 21,
+                                                            "minDepth": 11
                                                         },
                                                         {
                                                             "name": "Gymnothorax javanicus",
@@ -1551,8 +1551,8 @@
                                                             "model": "",
                                                             "count": 2,
                                                             "sedentary": false,
-                                                            "maxDepth": 39.86,
-                                                            "minDepth": 15.54
+                                                            "maxDepth": 40,
+                                                            "minDepth": 16
                                                         },
                                                         {
                                                             "name": "Gymnothorax miliaris",
@@ -1560,8 +1560,8 @@
                                                             "model": "",
                                                             "count": 7,
                                                             "sedentary": false,
-                                                            "maxDepth": 29.7,
-                                                            "minDepth": 11.0
+                                                            "maxDepth": 30,
+                                                            "minDepth": 11
                                                         },
                                                         {
                                                             "name": "Gymnothorax minor",
@@ -1569,8 +1569,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 20.0,
-                                                            "minDepth": 20.0
+                                                            "maxDepth": 20,
+                                                            "minDepth": 20
                                                         },
                                                         {
                                                             "name": "Gymnothorax moringa",
@@ -1578,8 +1578,8 @@
                                                             "model": "",
                                                             "count": 22,
                                                             "sedentary": false,
-                                                            "maxDepth": 30.48,
-                                                            "minDepth": 6.71
+                                                            "maxDepth": 30,
+                                                            "minDepth": 7
                                                         },
                                                         {
                                                             "name": "Gymnothorax pictus",
@@ -1587,8 +1587,8 @@
                                                             "model": "",
                                                             "count": 2,
                                                             "sedentary": false,
-                                                            "maxDepth": 19.77,
-                                                            "minDepth": 16.0
+                                                            "maxDepth": 20,
+                                                            "minDepth": 16
                                                         },
                                                         {
                                                             "name": "Gymnothorax polyuranodon",
@@ -1596,8 +1596,8 @@
                                                             "model": "",
                                                             "count": 2,
                                                             "sedentary": false,
-                                                            "maxDepth": 30.48,
-                                                            "minDepth": 30.48
+                                                            "maxDepth": 30,
+                                                            "minDepth": 30
                                                         },
                                                         {
                                                             "name": "Gymnothorax prasinus",
@@ -1605,8 +1605,8 @@
                                                             "model": "",
                                                             "count": 5,
                                                             "sedentary": false,
-                                                            "maxDepth": 30.48,
-                                                            "minDepth": 15.0
+                                                            "maxDepth": 30,
+                                                            "minDepth": 15
                                                         },
                                                         {
                                                             "name": "Gymnothorax rueppellii",
@@ -1614,8 +1614,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 30.48,
-                                                            "minDepth": 30.48
+                                                            "maxDepth": 30,
+                                                            "minDepth": 30
                                                         },
                                                         {
                                                             "name": "Gymnothorax vicinus",
@@ -1623,8 +1623,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 6.71,
-                                                            "minDepth": 6.71
+                                                            "maxDepth": 7,
+                                                            "minDepth": 7
                                                         }
                                                     ]
                                                 }
@@ -1648,8 +1648,8 @@
                                                             "model": "",
                                                             "count": 9,
                                                             "sedentary": false,
-                                                            "maxDepth": 35.0,
-                                                            "minDepth": 11.89
+                                                            "maxDepth": 35,
+                                                            "minDepth": 12
                                                         },
                                                         {
                                                             "name": "Myrichthys ocellatus",
@@ -1657,8 +1657,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 14.0,
-                                                            "minDepth": 14.0
+                                                            "maxDepth": 14,
+                                                            "minDepth": 14
                                                         }
                                                     ]
                                                 }
@@ -1690,8 +1690,8 @@
                                                             "model": "",
                                                             "count": 4,
                                                             "sedentary": false,
-                                                            "maxDepth": 66.0,
-                                                            "minDepth": 18.29
+                                                            "maxDepth": 66,
+                                                            "minDepth": 18
                                                         },
                                                         {
                                                             "name": "Holocentrus rufus",
@@ -1699,8 +1699,8 @@
                                                             "model": "",
                                                             "count": 5,
                                                             "sedentary": false,
-                                                            "maxDepth": 27.0,
-                                                            "minDepth": 11.0
+                                                            "maxDepth": 27,
+                                                            "minDepth": 11
                                                         }
                                                     ]
                                                 },
@@ -1716,8 +1716,8 @@
                                                             "model": "",
                                                             "count": 12,
                                                             "sedentary": false,
-                                                            "maxDepth": 45.0,
-                                                            "minDepth": 11.5
+                                                            "maxDepth": 45,
+                                                            "minDepth": 12
                                                         },
                                                         {
                                                             "name": "Sargocentron tiereoides",
@@ -1725,8 +1725,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 26.0,
-                                                            "minDepth": 26.0
+                                                            "maxDepth": 26,
+                                                            "minDepth": 26
                                                         },
                                                         {
                                                             "name": "Sargocentron vexillarium",
@@ -1734,8 +1734,8 @@
                                                             "model": "",
                                                             "count": 4,
                                                             "sedentary": false,
-                                                            "maxDepth": 12.8,
-                                                            "minDepth": 7.01
+                                                            "maxDepth": 13,
+                                                            "minDepth": 7
                                                         }
                                                     ]
                                                 }
@@ -1767,8 +1767,8 @@
                                                             "model": "",
                                                             "count": 15,
                                                             "sedentary": false,
-                                                            "maxDepth": 30.0,
-                                                            "minDepth": 7.0
+                                                            "maxDepth": 30,
+                                                            "minDepth": 7
                                                         }
                                                     ]
                                                 }
@@ -1800,8 +1800,8 @@
                                                             "model": "",
                                                             "count": 9,
                                                             "sedentary": false,
-                                                            "maxDepth": 35.1,
-                                                            "minDepth": 5.91
+                                                            "maxDepth": 35,
+                                                            "minDepth": 6
                                                         },
                                                         {
                                                             "name": "Pterois antennata",
@@ -1809,8 +1809,8 @@
                                                             "model": "",
                                                             "count": 2,
                                                             "sedentary": false,
-                                                            "maxDepth": 17.98,
-                                                            "minDepth": 11.0
+                                                            "maxDepth": 18,
+                                                            "minDepth": 11
                                                         },
                                                         {
                                                             "name": "Pterois volitans",
@@ -1818,8 +1818,8 @@
                                                             "model": "",
                                                             "count": 75,
                                                             "sedentary": false,
-                                                            "maxDepth": 100.0,
-                                                            "minDepth": 6.0
+                                                            "maxDepth": 100,
+                                                            "minDepth": 6
                                                         }
                                                     ]
                                                 },
@@ -1835,8 +1835,8 @@
                                                             "model": "",
                                                             "count": 2,
                                                             "sedentary": false,
-                                                            "maxDepth": 30.48,
-                                                            "minDepth": 18.29
+                                                            "maxDepth": 30,
+                                                            "minDepth": 18
                                                         },
                                                         {
                                                             "name": "Scorpaena inermis",
@@ -1844,8 +1844,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 17.0,
-                                                            "minDepth": 17.0
+                                                            "maxDepth": 17,
+                                                            "minDepth": 17
                                                         },
                                                         {
                                                             "name": "Scorpaena plumieri",
@@ -1853,8 +1853,8 @@
                                                             "model": "",
                                                             "count": 3,
                                                             "sedentary": false,
-                                                            "maxDepth": 17.0,
-                                                            "minDepth": 15.0
+                                                            "maxDepth": 17,
+                                                            "minDepth": 15
                                                         },
                                                         {
                                                             "name": "Scorpaena porcus",
@@ -1862,8 +1862,8 @@
                                                             "model": "",
                                                             "count": 3,
                                                             "sedentary": false,
-                                                            "maxDepth": 30.0,
-                                                            "minDepth": 18.0
+                                                            "maxDepth": 30,
+                                                            "minDepth": 18
                                                         }
                                                     ]
                                                 }
@@ -1903,8 +1903,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 25.15,
-                                                            "minDepth": 25.15
+                                                            "maxDepth": 25,
+                                                            "minDepth": 25
                                                         },
                                                         {
                                                             "name": "Carcharhinus falciformis",
@@ -1912,8 +1912,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 26.82,
-                                                            "minDepth": 26.82
+                                                            "maxDepth": 27,
+                                                            "minDepth": 27
                                                         },
                                                         {
                                                             "name": "Carcharhinus leucas",
@@ -1921,8 +1921,8 @@
                                                             "model": "",
                                                             "count": 4,
                                                             "sedentary": false,
-                                                            "maxDepth": 25.0,
-                                                            "minDepth": 12.0
+                                                            "maxDepth": 25,
+                                                            "minDepth": 12
                                                         },
                                                         {
                                                             "name": "Carcharhinus limbatus",
@@ -1930,8 +1930,8 @@
                                                             "model": "",
                                                             "count": 2,
                                                             "sedentary": false,
-                                                            "maxDepth": 26.4,
-                                                            "minDepth": 22.0
+                                                            "maxDepth": 26,
+                                                            "minDepth": 22
                                                         },
                                                         {
                                                             "name": "Carcharhinus melanopterus",
@@ -1939,8 +1939,8 @@
                                                             "model": "",
                                                             "count": 3,
                                                             "sedentary": false,
-                                                            "maxDepth": 30.14,
-                                                            "minDepth": 21.06
+                                                            "maxDepth": 30,
+                                                            "minDepth": 21
                                                         },
                                                         {
                                                             "name": "Carcharhinus perezii",
@@ -1948,8 +1948,8 @@
                                                             "model": "",
                                                             "count": 16,
                                                             "sedentary": false,
-                                                            "maxDepth": 43.0,
-                                                            "minDepth": 9.75
+                                                            "maxDepth": 43,
+                                                            "minDepth": 10
                                                         }
                                                     ]
                                                 }
@@ -1981,8 +1981,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 17.01,
-                                                            "minDepth": 17.01
+                                                            "maxDepth": 17,
+                                                            "minDepth": 17
                                                         },
                                                         {
                                                             "name": "Dasyatis americana",
@@ -1990,8 +1990,8 @@
                                                             "model": "",
                                                             "count": 24,
                                                             "sedentary": false,
-                                                            "maxDepth": 30.0,
-                                                            "minDepth": 2.0
+                                                            "maxDepth": 30,
+                                                            "minDepth": 2
                                                         },
                                                         {
                                                             "name": "Dasyatis brevicaudata",
@@ -1999,8 +1999,8 @@
                                                             "model": "",
                                                             "count": 3,
                                                             "sedentary": false,
-                                                            "maxDepth": 18.29,
-                                                            "minDepth": 17.0
+                                                            "maxDepth": 18,
+                                                            "minDepth": 17
                                                         },
                                                         {
                                                             "name": "Dasyatis brevis",
@@ -2008,8 +2008,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 11.28,
-                                                            "minDepth": 11.28
+                                                            "maxDepth": 11,
+                                                            "minDepth": 11
                                                         },
                                                         {
                                                             "name": "Dasyatis guttata",
@@ -2017,8 +2017,8 @@
                                                             "model": "",
                                                             "count": 3,
                                                             "sedentary": false,
-                                                            "maxDepth": 20.0,
-                                                            "minDepth": 15.0
+                                                            "maxDepth": 20,
+                                                            "minDepth": 15
                                                         },
                                                         {
                                                             "name": "Dasyatis lata",
@@ -2026,8 +2026,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 19.0,
-                                                            "minDepth": 19.0
+                                                            "maxDepth": 19,
+                                                            "minDepth": 19
                                                         },
                                                         {
                                                             "name": "Dasyatis pastinaca",
@@ -2035,8 +2035,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 24.4,
-                                                            "minDepth": 24.4
+                                                            "maxDepth": 24,
+                                                            "minDepth": 24
                                                         },
                                                         {
                                                             "name": "Dasyatis sabina",
@@ -2044,8 +2044,8 @@
                                                             "model": "",
                                                             "count": 8,
                                                             "sedentary": false,
-                                                            "maxDepth": 30.48,
-                                                            "minDepth": 14.0
+                                                            "maxDepth": 30,
+                                                            "minDepth": 14
                                                         },
                                                         {
                                                             "name": "Dasyatis say",
@@ -2053,8 +2053,8 @@
                                                             "model": "",
                                                             "count": 3,
                                                             "sedentary": false,
-                                                            "maxDepth": 18.9,
-                                                            "minDepth": 12.4
+                                                            "maxDepth": 19,
+                                                            "minDepth": 12
                                                         }
                                                     ]
                                                 }
@@ -2078,8 +2078,8 @@
                                                             "model": "",
                                                             "count": 22,
                                                             "sedentary": false,
-                                                            "maxDepth": 66.0,
-                                                            "minDepth": 2.0
+                                                            "maxDepth": 66,
+                                                            "minDepth": 2
                                                         }
                                                     ]
                                                 },
@@ -2095,8 +2095,8 @@
                                                             "model": "",
                                                             "count": 6,
                                                             "sedentary": false,
-                                                            "maxDepth": 31.0,
-                                                            "minDepth": 17.07
+                                                            "maxDepth": 31,
+                                                            "minDepth": 17
                                                         },
                                                         {
                                                             "name": "Myliobatis tenuicaudatus",
@@ -2104,8 +2104,8 @@
                                                             "model": "",
                                                             "count": 5,
                                                             "sedentary": false,
-                                                            "maxDepth": 20.12,
-                                                            "minDepth": 15.0
+                                                            "maxDepth": 20,
+                                                            "minDepth": 15
                                                         }
                                                     ]
                                                 }
@@ -2137,8 +2137,8 @@
                                                             "model": "",
                                                             "count": 47,
                                                             "sedentary": false,
-                                                            "maxDepth": 80.0,
-                                                            "minDepth": 5.38
+                                                            "maxDepth": 80,
+                                                            "minDepth": 5
                                                         }
                                                     ]
                                                 }
@@ -2178,8 +2178,8 @@
                                                             "model": "",
                                                             "count": 15,
                                                             "sedentary": false,
-                                                            "maxDepth": 28.0,
-                                                            "minDepth": 12.0
+                                                            "maxDepth": 28,
+                                                            "minDepth": 12
                                                         }
                                                     ]
                                                 },
@@ -2195,8 +2195,8 @@
                                                             "model": "",
                                                             "count": 6,
                                                             "sedentary": false,
-                                                            "maxDepth": 33.53,
-                                                            "minDepth": 5.91
+                                                            "maxDepth": 34,
+                                                            "minDepth": 6
                                                         },
                                                         {
                                                             "name": "Chelonia mydas",
@@ -2204,8 +2204,8 @@
                                                             "model": "",
                                                             "count": 44,
                                                             "sedentary": false,
-                                                            "maxDepth": 70.0,
-                                                            "minDepth": 2.0
+                                                            "maxDepth": 70,
+                                                            "minDepth": 2
                                                         }
                                                     ]
                                                 },
@@ -2221,8 +2221,8 @@
                                                             "model": "",
                                                             "count": 6,
                                                             "sedentary": false,
-                                                            "maxDepth": 22.25,
-                                                            "minDepth": 14.51
+                                                            "maxDepth": 22,
+                                                            "minDepth": 15
                                                         },
                                                         {
                                                             "name": "Eretmochelys imbricata",
@@ -2230,8 +2230,8 @@
                                                             "model": "",
                                                             "count": 28,
                                                             "sedentary": false,
-                                                            "maxDepth": 100.0,
-                                                            "minDepth": 11.0
+                                                            "maxDepth": 100,
+                                                            "minDepth": 11
                                                         }
                                                     ]
                                                 }
@@ -2279,8 +2279,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 17.98,
-                                                            "minDepth": 17.98
+                                                            "maxDepth": 18,
+                                                            "minDepth": 18
                                                         },
                                                         {
                                                             "name": "Acropora palmata",
@@ -2288,8 +2288,8 @@
                                                             "model": "",
                                                             "count": 8,
                                                             "sedentary": false,
-                                                            "maxDepth": 25.91,
-                                                            "minDepth": 7.01
+                                                            "maxDepth": 26,
+                                                            "minDepth": 7
                                                         },
                                                         {
                                                             "name": "Acropora striata",
@@ -2297,8 +2297,8 @@
                                                             "model": "",
                                                             "count": 2,
                                                             "sedentary": false,
-                                                            "maxDepth": 16.15,
-                                                            "minDepth": 12.19
+                                                            "maxDepth": 16,
+                                                            "minDepth": 12
                                                         }
                                                     ]
                                                 }
@@ -2322,8 +2322,8 @@
                                                             "model": "",
                                                             "count": 2,
                                                             "sedentary": false,
-                                                            "maxDepth": 25.0,
-                                                            "minDepth": 11.0
+                                                            "maxDepth": 25,
+                                                            "minDepth": 11
                                                         },
                                                         {
                                                             "name": "Montastraea cavernosa",
@@ -2331,8 +2331,8 @@
                                                             "model": "",
                                                             "count": 6,
                                                             "sedentary": false,
-                                                            "maxDepth": 18.9,
-                                                            "minDepth": 12.0
+                                                            "maxDepth": 19,
+                                                            "minDepth": 12
                                                         }
                                                     ]
                                                 }
@@ -2356,8 +2356,8 @@
                                                             "model": "",
                                                             "count": 7,
                                                             "sedentary": false,
-                                                            "maxDepth": 25.0,
-                                                            "minDepth": 11.0
+                                                            "maxDepth": 25,
+                                                            "minDepth": 11
                                                         }
                                                     ]
                                                 }
@@ -2381,8 +2381,8 @@
                                                             "model": "",
                                                             "count": 7,
                                                             "sedentary": false,
-                                                            "maxDepth": 25.0,
-                                                            "minDepth": 11.0
+                                                            "maxDepth": 25,
+                                                            "minDepth": 11
                                                         }
                                                     ]
                                                 }
@@ -2414,8 +2414,8 @@
                                                             "model": "",
                                                             "count": 7,
                                                             "sedentary": false,
-                                                            "maxDepth": 30.48,
-                                                            "minDepth": 11.0
+                                                            "maxDepth": 30,
+                                                            "minDepth": 11
                                                         }
                                                     ]
                                                 }
@@ -2447,8 +2447,8 @@
                                                             "model": "",
                                                             "count": 15,
                                                             "sedentary": false,
-                                                            "maxDepth": 25.91,
-                                                            "minDepth": 5.2
+                                                            "maxDepth": 26,
+                                                            "minDepth": 5
                                                         }
                                                     ]
                                                 }
@@ -2488,8 +2488,8 @@
                                                             "model": "",
                                                             "count": 9,
                                                             "sedentary": false,
-                                                            "maxDepth": 30.48,
-                                                            "minDepth": 11.0
+                                                            "maxDepth": 30,
+                                                            "minDepth": 11
                                                         }
                                                     ]
                                                 }
@@ -2537,8 +2537,8 @@
                                                             "model": "",
                                                             "count": 3,
                                                             "sedentary": false,
-                                                            "maxDepth": 12.5,
-                                                            "minDepth": 3.05
+                                                            "maxDepth": 12,
+                                                            "minDepth": 3
                                                         },
                                                         {
                                                             "name": "Aplysina fistularis",
@@ -2546,8 +2546,8 @@
                                                             "model": "",
                                                             "count": 4,
                                                             "sedentary": false,
-                                                            "maxDepth": 24.38,
-                                                            "minDepth": 11.0
+                                                            "maxDepth": 24,
+                                                            "minDepth": 11
                                                         }
                                                     ]
                                                 }
@@ -2595,8 +2595,8 @@
                                                             "model": "",
                                                             "count": 7,
                                                             "sedentary": false,
-                                                            "maxDepth": 30.48,
-                                                            "minDepth": 15.24
+                                                            "maxDepth": 30,
+                                                            "minDepth": 15
                                                         }
                                                     ]
                                                 }
@@ -2620,8 +2620,8 @@
                                                             "model": "",
                                                             "count": 7,
                                                             "sedentary": false,
-                                                            "maxDepth": 30.48,
-                                                            "minDepth": 14.0
+                                                            "maxDepth": 30,
+                                                            "minDepth": 14
                                                         }
                                                     ]
                                                 }
@@ -2645,8 +2645,8 @@
                                                             "model": "",
                                                             "count": 10,
                                                             "sedentary": false,
-                                                            "maxDepth": 25.3,
-                                                            "minDepth": 6.0
+                                                            "maxDepth": 25,
+                                                            "minDepth": 6
                                                         }
                                                     ]
                                                 },
@@ -2662,8 +2662,8 @@
                                                             "model": "",
                                                             "count": 50,
                                                             "sedentary": false,
-                                                            "maxDepth": 45.0,
-                                                            "minDepth": 7.0
+                                                            "maxDepth": 45,
+                                                            "minDepth": 7
                                                         },
                                                         {
                                                             "name": "Panulirus guttatus",
@@ -2671,8 +2671,8 @@
                                                             "model": "",
                                                             "count": 2,
                                                             "sedentary": false,
-                                                            "maxDepth": 24.38,
-                                                            "minDepth": 17.0
+                                                            "maxDepth": 24,
+                                                            "minDepth": 17
                                                         }
                                                     ]
                                                 }
@@ -2720,8 +2720,8 @@
                                                             "model": "",
                                                             "count": 10,
                                                             "sedentary": false,
-                                                            "maxDepth": 30.48,
-                                                            "minDepth": 9.2
+                                                            "maxDepth": 30,
+                                                            "minDepth": 9
                                                         }
                                                     ]
                                                 }
@@ -2753,8 +2753,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 13.11,
-                                                            "minDepth": 13.11
+                                                            "maxDepth": 13,
+                                                            "minDepth": 13
                                                         },
                                                         {
                                                             "name": "Octopus briareus",
@@ -2762,8 +2762,8 @@
                                                             "model": "",
                                                             "count": 8,
                                                             "sedentary": false,
-                                                            "maxDepth": 30.48,
-                                                            "minDepth": 11.89
+                                                            "maxDepth": 30,
+                                                            "minDepth": 12
                                                         },
                                                         {
                                                             "name": "Octopus hubbsorum",
@@ -2771,8 +2771,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 14.0,
-                                                            "minDepth": 14.0
+                                                            "maxDepth": 14,
+                                                            "minDepth": 14
                                                         },
                                                         {
                                                             "name": "Octopus vulgaris",
@@ -2780,8 +2780,8 @@
                                                             "model": "",
                                                             "count": 1,
                                                             "sedentary": false,
-                                                            "maxDepth": 17.0,
-                                                            "minDepth": 17.0
+                                                            "maxDepth": 17,
+                                                            "minDepth": 17
                                                         }
                                                     ]
                                                 }

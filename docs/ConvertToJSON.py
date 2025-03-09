@@ -23,8 +23,8 @@ with open("docs/Data.csv", "r", encoding="utf-8") as observations:
             modelLocation = row["Model"]
             modelLevel = row["Model Level"]
             sedentary = bool(row["Sedentary"].strip().lower() == "TRUE")
-            maxDepth = round(float(row["Max Depth (m)"]), 2)
-            minDepth = round(float(row["Min Depth (m)"]), 2)
+            maxDepth = round(float(row["Max Depth (m)"]))
+            minDepth = round(float(row["Min Depth (m)"]))
             count = int(row["count"])
 
             data["totalCount"] += count
