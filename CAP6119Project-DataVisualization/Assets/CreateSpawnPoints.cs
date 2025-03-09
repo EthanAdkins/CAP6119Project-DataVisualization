@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine.UIElements;
 
 public class CreateSpawnPoints : MonoBehaviour
@@ -45,6 +46,15 @@ public class CreateSpawnPoints : MonoBehaviour
     {
         // Remove check for open points and don't pre-create points just create dynamically and store
         // Used locations
+        SpawnPoints ??= new Dictionary<Vector3, bool>();
+        if (SpawnPoints.Count == 0)
+        {
+            Vector3 point = CreateNewValidPoint();
+            SpawnPoints.Add(point, true);
+            return point;
+        }
+        
+        // Null error here SpawnPoints cannot be null or empty
         IEnumerable<Vector3> open = SpawnPoints.Where(p => p.Value == false)
             .Select(p => p.Key);
         
