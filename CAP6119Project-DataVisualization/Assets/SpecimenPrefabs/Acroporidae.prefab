@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6689036041284674117, guid: 7cf87667c5c1b694eac6108cf29b63fb, type: 3}
       propertyPath: m_Name
-      value: acropora_cervicornis_staghorn_coral
+      value: Acroporidae
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 7cf87667c5c1b694eac6108cf29b63fb, type: 3}
       propertyPath: m_LocalScale.x
@@ -26,15 +26,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 7cf87667c5c1b694eac6108cf29b63fb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.911
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 7cf87667c5c1b694eac6108cf29b63fb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.95
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 7cf87667c5c1b694eac6108cf29b63fb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.787
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 7cf87667c5c1b694eac6108cf29b63fb, type: 3}
       propertyPath: m_LocalRotation.w

@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6689036041284674117, guid: 7b390c1c5fda8e242a69f038e7af1c9e, type: 3}
       propertyPath: m_Name
-      value: cc0___japanese_jack_mackerel_t._japonicus
+      value: Carangidae
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 7b390c1c5fda8e242a69f038e7af1c9e, type: 3}
       propertyPath: m_LocalScale.x
@@ -26,15 +26,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 7b390c1c5fda8e242a69f038e7af1c9e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.47
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 7b390c1c5fda8e242a69f038e7af1c9e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.648
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 7b390c1c5fda8e242a69f038e7af1c9e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.5772834
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 7b390c1c5fda8e242a69f038e7af1c9e, type: 3}
       propertyPath: m_LocalRotation.w
