@@ -344,7 +344,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 1, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -426,6 +426,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 293382880556720579, guid: 822b7186bc6bc814680ed182b4e7ec4c, type: 3}
+      propertyPath: TotalDensity
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 293382880556720579, guid: 822b7186bc6bc814680ed182b4e7ec4c, type: 3}
       propertyPath: SpawnPointManager
       value: 
       objectReference: {fileID: 2008846234}
@@ -502,13 +506,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2597257849170215079, guid: 4b998aacc1e18dc41a71b16f2eea6a11, type: 3}
+      propertyPath: TotalDistribution
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 4730311704650323105, guid: 4b998aacc1e18dc41a71b16f2eea6a11, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4730311704650323105, guid: 4b998aacc1e18dc41a71b16f2eea6a11, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4730311704650323105, guid: 4b998aacc1e18dc41a71b16f2eea6a11, type: 3}
       propertyPath: m_LocalPosition.z
@@ -541,6 +549,22 @@ PrefabInstance:
     - target: {fileID: 4730311704650323105, guid: 4b998aacc1e18dc41a71b16f2eea6a11, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051125728621877119, guid: 4b998aacc1e18dc41a71b16f2eea6a11, type: 3}
+      propertyPath: m_Size.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051125728621877119, guid: 4b998aacc1e18dc41a71b16f2eea6a11, type: 3}
+      propertyPath: m_Size.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051125728621877119, guid: 4b998aacc1e18dc41a71b16f2eea6a11, type: 3}
+      propertyPath: m_Size.z
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 8051125728621877119, guid: 4b998aacc1e18dc41a71b16f2eea6a11, type: 3}
+      propertyPath: m_Center.y
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
