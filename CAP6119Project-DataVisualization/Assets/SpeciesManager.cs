@@ -72,6 +72,8 @@ public class SpeciesManager : MonoBehaviour
                 // Create a new GameObject from prefab
                 Vector3 point = SpawnPointManager.GetSpawnPoint();
                 
+                // Need to set parent to the SpawnPointManager to ensure correct placement regardless of
+                // Location of manager in the world
                 GameObject instance = Instantiate(SpeciesPrefab, point, 
                     quaternion.identity, SpawnPointManager.gameObject.transform);
                 // Also need to figure out spawn placement and want to avoid overlaps, perhaps consider using waypoints
