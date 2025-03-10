@@ -1,23 +1,8 @@
 fileFormatVersion: 2
-guid: aefa62ee04789e745b9c2b7d23a21e67
-labels:
-- Beach
-- Ground
-- Nature
-- Pattern
-- Sand
-- Terrain
-- Wave
+guid: 11378b6ddb88ec54c9ffc1fdda63ad3e
 NativeFormatImporter:
   externalObjects: {}
-  mainObjectFileID: 0
+  mainObjectFileID: 2100000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-AssetOrigin:
-  serializedVersion: 1
-  productId: 12964
-  packageName: Sand Textures Pack
-  packageVersion: 1.00
-  assetPath: Assets/Sand textures pack/Sand 01/Sand pattern 01.mat
-  uploadId: 29422
