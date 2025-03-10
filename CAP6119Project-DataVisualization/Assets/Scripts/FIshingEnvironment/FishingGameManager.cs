@@ -1,7 +1,12 @@
+using System.Drawing;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class FishingGameManager : MonoBehaviour
 {
+    [SerializeField] private GameObject _SpeciesPrefab;
+    [SerializeField] private Transform _SpawnLocation;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,5 +22,7 @@ public class FishingGameManager : MonoBehaviour
     public void caughtFish()
     {
         print("CAUGHT FISH");
+        GameObject instance = Instantiate(_SpeciesPrefab, _SpawnLocation.position,
+                    _SpawnLocation.rotation);
     }
 }

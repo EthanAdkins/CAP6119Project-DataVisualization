@@ -10,39 +10,39 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6689036041284674117, guid: fd6fef99ef4496648836432d951a2a15, type: 3}
       propertyPath: m_Name
-      value: cc0___inflated_balloonfish
+      value: Diodontidae
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: fd6fef99ef4496648836432d951a2a15, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.01
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: fd6fef99ef4496648836432d951a2a15, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.01
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: fd6fef99ef4496648836432d951a2a15, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.01
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: fd6fef99ef4496648836432d951a2a15, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.025
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: fd6fef99ef4496648836432d951a2a15, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.31
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: fd6fef99ef4496648836432d951a2a15, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.286
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: fd6fef99ef4496648836432d951a2a15, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: fd6fef99ef4496648836432d951a2a15, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: fd6fef99ef4496648836432d951a2a15, type: 3}
       propertyPath: m_LocalRotation.y
@@ -63,6 +63,30 @@ PrefabInstance:
     - target: {fileID: 2774220344278030320, guid: fd6fef99ef4496648836432d951a2a15, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2936483111911040555, guid: fd6fef99ef4496648836432d951a2a15, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2936483111911040555, guid: fd6fef99ef4496648836432d951a2a15, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2936483111911040555, guid: fd6fef99ef4496648836432d951a2a15, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 2936483111911040555, guid: fd6fef99ef4496648836432d951a2a15, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2936483111911040555, guid: fd6fef99ef4496648836432d951a2a15, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2936483111911040555, guid: fd6fef99ef4496648836432d951a2a15, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

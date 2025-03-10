@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class ExitScene : MonoBehaviour
 {
+    [SerializeField] private string scene;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,8 +20,8 @@ public class ExitScene : MonoBehaviour
         print(collision.gameObject.tag);
         if (collision.gameObject.tag == "player")
         {
-            print("LOADING SCENE");
-            SceneManager.LoadScene("MainScene");
+            print("LOADING SCENE: " + scene);
+            SceneManager.LoadScene(scene);
         }
     }
 }
