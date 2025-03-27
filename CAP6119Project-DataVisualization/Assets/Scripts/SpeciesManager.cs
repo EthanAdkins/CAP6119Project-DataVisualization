@@ -11,30 +11,44 @@ public class SpeciesManager : MonoBehaviour
     private string current_spawned_filter = ""; //empty = all
 
     public SpecimenDataManager DataMan;
-    public string SpeciesName;
+    public string SpeciesName => species.name;
+
     public float Distribution;
     public GameObject SpeciesPrefab;
 
     private List<GameObject> specimens; //instances of this species
 
-    public bool Ready
-    {
-        get
-        {
-            return _ready;
-        }
-    }
+    public Kingdom kingdom;
+    public Phylum phylum;
+    public TaxonClass taxclass;
+    public Family family;
+    public Order order;
+    public Genus genus;
+    public Species species;
+    public TaxonomicLevels model_lvl = TaxonomicLevels.Species; //default to species level model
+
+    public bool Ready => _ready;
 
     private bool _ready = false;
 
     public CreateSpawnPoints SpawnPointManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    public void Setup(SpecimenDataManager.DataPoint dataPoint)
+    public void Setup(Kingdom k, Phylum p, TaxonClass c, Order o, Family f, Genus g,
+        Species dataPoint, int TotalSampleCount, GameObject model, TaxonomicLevels lvl)
     {
-        SpeciesName = dataPoint.SpeciesName;
-        Distribution = dataPoint.Distribution;
-        SpeciesPrefab = dataPoint.SpeciesPrefab;
+        // we can just use the Species Object instead of copying the data
+        kingdom = k;
+        phylum = p;
+        taxclass = c;
+        family = f;
+        order = o;
+        genus = g;
+        species = dataPoint;
+        SpeciesPrefab = model;
+        model_lvl = lvl;
+        
+        Distribution = species.count / TotalSampleCount;
 
         _ready = true;
         spawned = false;
