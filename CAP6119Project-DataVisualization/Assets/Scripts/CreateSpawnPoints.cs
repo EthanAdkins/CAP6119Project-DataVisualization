@@ -1,96 +1,67 @@
+using System;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine.UIElements;
+using Random = UnityEngine.Random;
 
 public class CreateSpawnPoints : MonoBehaviour
 {
     public int TotalDistribution = 100;
-
-    // private struct SpawnPoint
-    // {
-    //     private bool in_use;
-    //     private Vector3 coord;
-    // }
     
-    // Somehow set the bounds 
-    
-    private Dictionary<Vector3, bool> SpawnPoints;
-
-    //public float x_min, y_min, z_min = 0;
-
-    //public float x_max, y_max, z_max = 10;
+    private List<Vector3> SpawnPointsInUse;
 
     public BoxCollider box;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        // Generate *Distr* number of spawn points
-        // This will likely need to change for updated spawn method that considers depth and other properties
-
-        SpawnPoints = new Dictionary<Vector3, bool>();
-
-        while(SpawnPoints.Count < TotalDistribution * 2)
-        {
-            Vector3 point = CreateNewValidPoint();
-            
-            // before add we need to check if in 
-            SpawnPoints.Add(point, false);
-        }
-        //generate more points than needed
-
+        SpawnPointsInUse = new List<Vector3>();
     }
 
-    public Vector3 GetSpawnPoint()
+    public void SetMaxDepth(float depth)
     {
-        // Remove check for open points and don't pre-create points just create dynamically and store
-        // Used locations
-        SpawnPoints ??= new Dictionary<Vector3, bool>();
-        if (SpawnPoints.Count == 0)
-        {
-            Vector3 point = CreateNewValidPoint();
-            SpawnPoints.Add(point, true);
-            return point;
-        }
+        Vector3 oldSize = box.size;
+        Vector3 newSize = new Vector3(oldSize.x, depth, oldSize.z);
         
-        // Null error here SpawnPoints cannot be null or empty
-        IEnumerable<Vector3> open = SpawnPoints.Where(p => p.Value == false)
-            .Select(p => p.Key);
+        Vector3 oldCenter = box.center;
+        Vector3 newCenter = new Vector3(oldCenter.x, depth / 2, oldCenter.z);
         
-        //since point creation is random just select first available
-        try
-        {
-            Vector3 point = open.First();
-            SpawnPoints[point] = true;
-            return point;
-        }
-        catch
-        {
-            //create a new spawn point that meets requirements (useful for filter or when we use depth)
-            // Need to repeat randomization until req are met unless we use some kind of zoning
-            // and can just create a new within the right zone
-            Vector3 point = CreateNewValidPoint();
-            SpawnPoints.Add(point, true);
-            return point;
-        }
+        box.size = newSize;
+        box.center = newCenter;
     }
 
-    private Vector3 CreateNewValidPoint()
+    public Vector3 GetSpawnPoint(float minDepth, float maxDepth)
+    {
+        Vector3 point = CreateNewValidPoint(minDepth, maxDepth);
+        SpawnPointsInUse.Add(point);
+        return point;
+    }
+
+    private Vector3 CreateNewValidPoint(float minDepth, float maxDepth)
     {
         bool valid = false;
         Vector3 point = Vector3.zero;
         while (!valid)
         {
+            // Bounds are from top - minDepth to top - maxDepth
+            // I believe this is box.bounds.max.y == top of box
+            
             Vector3 min = box.bounds.min;
             Vector3 max = box.bounds.max;
+
+            // ensure we dont go out of bounds of environ (will want to make sure we set the bounds after loading data
+            // to ensure bounds go from globalMinDepth to globalMaxDepth) but keep this as failsafe
+            float min_y = Math.Max(max.y - maxDepth, min.y);
+            float max_y = max.y - minDepth;
             
             float x = Random.Range(min.x, max.x);
-            float y = Random.Range(min.y, max.y);
+            float y = Random.Range(min_y, max_y);
             float z = Random.Range(min.z, max.z);
             point = new Vector3(x, y, z);
 
-            if (!SpawnPoints.Keys.Contains(point)) valid = true;
+            if (!SpawnPointsInUse.Contains(point)) valid = true;
         }
 
         return point;
