@@ -1,10 +1,13 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 using System.Linq;
 using Unity.VisualScripting.Antlr3.Runtime;
+using Debug = UnityEngine.Debug;
 
 public class SpecimenDataManager : MonoBehaviour
 {
@@ -28,24 +31,68 @@ public class SpecimenDataManager : MonoBehaviour
     public int TotalDensity = 1000;
     public CreateSpawnPoints SpawnPointManager;
 
+    public bool Loaded
+    {
+        get
+        {
+            return _loaded;
+        }
+        private set
+        {
+            _loaded = value;
+            if (_loaded && OnLoaded != null)
+            {
+                OnLoaded();
+            }
+        }
+    }
+    
+    public delegate void SpawnManagersLoadedAction();
+
+    public static event SpawnManagersLoadedAction OnLoaded;
+
+    private bool _modelsReady = false;
+    private bool ModelsReady
+    {
+        get
+        {
+            return _modelsReady;
+        }
+        set
+        {
+            _modelsReady = value;
+            if (_modelsReady && JSONDataManager is not null 
+                             && JSONDataManager.Loaded)
+                ProcessData();
+        }
+    }
+
+    private void JSONDataReady()
+    {
+        if (ModelsReady) ProcessData();
+    }
+
     private AssetBundle _modelPrefabs;
     private GameObject LoadPrefabFromString(string s)
     {
+        if (_modelPrefabs is null) throw new InvalidAsynchronousStateException("Assets Not Loaded");
         if (string.IsNullOrEmpty(s))
         {
             throw new ArgumentException("Model String cannot be null or empty - please pass a model file");
         }
 
-        var loadedObject = _modelPrefabs.LoadAsset<GameObject>(s); // figure out how the model is stored and prepend path as needed
-        if (loadedObject == null)
+        var loadedObject = _modelPrefabs.LoadAsset<GameObject>(s);
+        if (loadedObject is null)
         {
             throw new FileNotFoundException("no file found - please check the configuration");
         }
-        return loadedObject as GameObject;
+        return loadedObject;
     }
     
-    private bool ProcessData()
+    private void ProcessData()
     {
+        if (_loading) return;
+        _loading = true;
         
         sample_count = JSONDataManager.specimenData.totalCount;
         
@@ -109,18 +156,36 @@ public class SpecimenDataManager : MonoBehaviour
                                         m_string = s.model;
                                         lvl = TaxonomicLevels.Species;
                                     }
-                                    
-                                    GameObject model = LoadPrefabFromString(m_string);
 
+                                    GameObject model = null;
+                                    try
+                                    {
+                                        model = LoadPrefabFromString(m_string);
+
+                                    }
+                                    catch (ArgumentException e) //might actually catch other exceptions could make custom exception class
+                                    {
+                                        Debug.Log(
+                                            $"Missing model for: {k.name} {p.name} {c.name} {o.name} {f.name} {g.name} {s.name}");
+                                        Debug.LogException(e);
+                                        continue; // avoid making manager obj if we have an error
+                                    }
+                                    catch(FileNotFoundException fe)
+                                    {
+                                        Debug.Log($"Cannot find {m_string} file for: : {k.name} {p.name} {c.name} {o.name} {f.name} {g.name} {s.name} ");
+                                        Debug.LogException(fe);
+                                        continue; // ignore faulty data
+                                    }
+                                    
                                     GameObject nObj = new GameObject();
                                     nObj.AddComponent<SpeciesManager>();
                                     nObj.name = s.name + " Manager";
                                     nObj.transform.SetParent(gameObject.transform);
                                     SpeciesManager manager = nObj.GetComponent<SpeciesManager>();
-                                    
+
                                     // Current issue link to which level the model came from: Should be doable
-                                    
-                                    manager.Setup(k,p,c,o,f,g,s, sample_count, model, lvl);
+
+                                    manager.Setup(k, p, c, o, f, g, s, sample_count, model, lvl);
 
                                     SpeciesControllers.Add(manager);
 
@@ -142,37 +207,53 @@ public class SpecimenDataManager : MonoBehaviour
                 if (lvl == TaxonomicLevels.Phylum) m_string = "";
             }
         }
-
-        //return false if error?
         
-        //JSONDataManager.OnLoad -= ProcessData()
-        return true;
+        // Add More error handling?
+
+        //TaxonomyManager.OnLoad -= ProcessData;
+        // Trigger spawn when done
+        Loaded = true;
+        _loading = false;
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         if (SpawnPointManager is null) SpawnPointManager = FindFirstObjectByType<CreateSpawnPoints>();
         
+        // Need to ensure this is loaded before triggering ProcessData -- Currently it is not
+        // Should this be moved into the DataManager so Loaded is only fired after these assets are ready?
+        
         _modelPrefabs = AssetBundle.LoadFromFile("Assets/AssetBundles/specimenmodels");
         if (_modelPrefabs is null)
         {
             Debug.LogError("Failed To Load Model Prefab Asset Bundle");
         }
+
+        ModelsReady = true;
+
+        OnLoaded += Spawn;
+    }
+
+    private void OnDestroy()
+    {
+        OnLoaded -= Spawn;
+        // Check if the JSONDataManager is null
+        // If not null unsub ProcessData from OnLoad
+        TaxonomyManager.OnLoad -= JSONDataReady;  //ProcessData;
     }
 
     private void Awake()
     {
         JSONDataManager ??= FindFirstObjectByType<TaxonomyManager>();
         
-        // set the data loader component and activate?
-        if (!_loaded && JSONDataManager.Loaded)
+        // JSONDataManager is already loaded so event wont fire Manually call process
+        if (!_loaded && !_loading && JSONDataManager.Loaded && ModelsReady)
         {
             // If JSONDataManager Loaded:
-            _loading = true;
-            _loaded = ProcessData();
+            ProcessData();
         }
-        // Else callback:
-            // JSONDataManager.OnLoad += ProcessData()
+        else
+            TaxonomyManager.OnLoad += JSONDataReady; //ProcessData;
 
         if (_loaded && !_spawned)
             Spawn();
@@ -192,27 +273,19 @@ public class SpecimenDataManager : MonoBehaviour
         // For filtering actually avoid using SPAWN method:
         // Just set active / deactive as needed
         
-        // Make Async - Multi-thread?
         foreach (SpeciesManager m in SpeciesControllers)
         {
             // Change to be a managed event
             m.Spawn(filter);
         }
         
+        // trigger after processing all spawns --> Should the event pass the current filter?
         current_spawned_filter = filter;
     }
 
     // Update is called once per frame
     void Update()
     {
-        // process data is an expensive method: we really want to ensure this is done before scene is displayed
-        if (!_loaded && JSONDataManager.Loaded && !_loading)
-        {
-            _loading = true;
-            _loaded = ProcessData();
-            // For now just only attempt to load once
-            //_loading = false;
-        }
         if (SpeciesControllers.All(m => m.spawned))
             _spawned = true;
      

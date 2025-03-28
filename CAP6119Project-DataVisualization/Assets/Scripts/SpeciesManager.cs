@@ -13,7 +13,7 @@ public class SpeciesManager : MonoBehaviour
     public SpecimenDataManager DataMan;
     public string SpeciesName => species.name;
 
-    public float Distribution;
+    public double Distribution;
     public GameObject SpeciesPrefab;
 
     private List<GameObject> specimens; //instances of this species
@@ -48,7 +48,7 @@ public class SpeciesManager : MonoBehaviour
         SpeciesPrefab = model;
         model_lvl = lvl;
         
-        Distribution = species.count / TotalSampleCount;
+        Distribution = ((double)species.count) / (double)TotalSampleCount;
 
         _ready = true;
         spawned = false;
