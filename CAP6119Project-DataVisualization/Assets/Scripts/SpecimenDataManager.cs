@@ -51,6 +51,10 @@ public class SpecimenDataManager : MonoBehaviour
 
     public static event SpawnManagersLoadedAction OnLoaded;
 
+
+    public delegate void FilterChangedAction(string newFilter, string oldFilter);
+    public event FilterChangedAction OnFilterChanged;
+    
     private bool _modelsReady = false;
     private bool ModelsReady
     {
@@ -89,6 +93,7 @@ public class SpecimenDataManager : MonoBehaviour
         return loadedObject;
     }
     
+    // Update to use coroutines so that this does not block the user/scene during setup (enable background async loading)
     private void ProcessData()
     {
         if (_loading) return;
@@ -104,6 +109,7 @@ public class SpecimenDataManager : MonoBehaviour
         
         // walk through and create SpeciesManagers
         // Need to clear strings once going back to the level that that model is from
+        float maxDepth = 0;
         foreach (Kingdom k in JSONDataManager.specimenData.Kingdoms)
         {
             string m_string = k.model;
@@ -183,6 +189,8 @@ public class SpecimenDataManager : MonoBehaviour
                                     nObj.transform.SetParent(gameObject.transform);
                                     SpeciesManager manager = nObj.GetComponent<SpeciesManager>();
 
+                                    if (s.maxDepth > maxDepth) maxDepth = s.maxDepth;
+
                                     // Current issue link to which level the model came from: Should be doable
 
                                     manager.Setup(k, p, c, o, f, g, s, sample_count, model, lvl);
@@ -207,10 +215,10 @@ public class SpecimenDataManager : MonoBehaviour
                 if (lvl == TaxonomicLevels.Phylum) m_string = "";
             }
         }
+
+        SpawnPointManager.SetMaxDepth(maxDepth);
         
         // Add More error handling?
-
-        //TaxonomyManager.OnLoad -= ProcessData;
         // Trigger spawn when done
         Loaded = true;
         _loading = false;
@@ -220,9 +228,11 @@ public class SpecimenDataManager : MonoBehaviour
     {
         if (SpawnPointManager is null) SpawnPointManager = FindFirstObjectByType<CreateSpawnPoints>();
         
-        // Need to ensure this is loaded before triggering ProcessData -- Currently it is not
+        // Need to ensure this is loaded before triggering ProcessData
         // Should this be moved into the DataManager so Loaded is only fired after these assets are ready?
-        
+        // Leverage coroutines to load AssetBundle async?
+        // Definitely want this to be DontDestroyOnLoad like the JSON data therefore move to DataManager?
+        // Create a new ModelAssetBundle singleton that is DontDestroyOnLoad and loads these models?
         _modelPrefabs = AssetBundle.LoadFromFile("Assets/AssetBundles/specimenmodels");
         if (_modelPrefabs is null)
         {
@@ -259,11 +269,12 @@ public class SpecimenDataManager : MonoBehaviour
             Spawn();
     }
 
+    // First time spawn only?
     void Spawn()
     {
         // Only trigger the spawn if we have loaded the data and
         // the current spawn is different from the new filter
-        if (!_loaded /*|| (current_spawned_filter is not null && current_spawned_filter.Equals(filter))*/) return;
+        if (!_loaded) return;
         
         // Create a random co-ord within a spawn zone
         // Inst. an object at this spawn zone
@@ -275,8 +286,7 @@ public class SpecimenDataManager : MonoBehaviour
         
         foreach (SpeciesManager m in SpeciesControllers)
         {
-            // Change to be a managed event
-            m.Spawn(filter);
+            m.Spawn();
         }
         
         // trigger after processing all spawns --> Should the event pass the current filter?
