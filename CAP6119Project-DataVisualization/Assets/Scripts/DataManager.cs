@@ -8,6 +8,25 @@ public class TaxonomyManager : MonoBehaviour
     public static TaxonomyManager Instance; // Only one instance (Singelton)
     public SpecimenData specimenData;
 
+    public delegate void LoadedAction();
+
+    public static event LoadedAction OnLoad;
+
+    public bool Loaded
+    {
+        get
+        {
+            return _loaded;
+        }
+        private set
+        {
+            _loaded = value;
+            if (_loaded && OnLoad != null)
+                OnLoad();
+        }
+    }
+
+    private bool _loaded = false;
     void Awake()
     {
         // Ensure only one instance exists
@@ -34,6 +53,8 @@ public class TaxonomyManager : MonoBehaviour
             string text = File.ReadAllText(file);
             specimenData = JsonUtility.FromJson<SpecimenData>(text);
             Debug.Log("JSON Data Loaded Successfully.");
+            
+            Loaded = true;
         }
         else
         {

@@ -4,8 +4,11 @@ using System.Collections.Generic;
 [Serializable]
 public class SpecimenData
 {
+    // Total Number of Specimen in DataSet
     public int totalCount;
+    // Number of Kingdoms in DataSet
     public int numKingdoms;
+    // List of Kingdoms in Dataset
     public List<Kingdom> Kingdoms;
 }
 
@@ -81,3 +84,13 @@ public class Species
     public float minDepth;
 }
 
+public enum TaxonomicLevels
+{
+    Kingdom,
+    Phylum,
+    Class,
+    Order,
+    Family,
+    Genus,
+    Species
+}

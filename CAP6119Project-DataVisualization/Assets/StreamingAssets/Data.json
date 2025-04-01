@@ -28,7 +28,7 @@
                                     "Families": [
                                         {
                                             "name": "Acanthuridae",
-                                            "model": "Assets/SpecimenPrefabs/Acanthuridae.prefab",
+                                            "model": "Acanthuridae.prefab",
                                             "count": 7,
                                             "numGenera": 1,
                                             "Genera": [
@@ -71,7 +71,7 @@
                                         },
                                         {
                                             "name": "Carangidae",
-                                            "model": "Assets/SpecimenPrefabs/Carangidae.prefab",
+                                            "model": "Carangidae.prefab",
                                             "count": 12,
                                             "numGenera": 1,
                                             "Genera": [
@@ -166,7 +166,7 @@
                                         },
                                         {
                                             "name": "Haemulidae",
-                                            "model": "Assets/SpecimenPrefabs/Haemulidae.prefab",
+                                            "model": "Haemulidae.prefab",
                                             "count": 18,
                                             "numGenera": 1,
                                             "Genera": [
@@ -218,7 +218,7 @@
                                         },
                                         {
                                             "name": "Labridae",
-                                            "model": "Assets/SpecimenPrefabs/Labridae.prefab",
+                                            "model": "Labridae.prefab",
                                             "count": 9,
                                             "numGenera": 1,
                                             "Genera": [
@@ -270,7 +270,7 @@
                                         },
                                         {
                                             "name": "Lutjanidae",
-                                            "model": "Assets/SpecimenPrefabs/Lutjanidae.prefab",
+                                            "model": "Lutjanidae.prefab",
                                             "count": 15,
                                             "numGenera": 2,
                                             "Genera": [
@@ -371,7 +371,7 @@
                                                 },
                                                 {
                                                     "name": "Holacanthus",
-                                                    "model": "Assets/SpecimenPrefabs/Holacanthus.prefab",
+                                                    "model": "Holacanthus.prefab",
                                                     "count": 52,
                                                     "numSpecies": 5,
                                                     "Species": [
@@ -424,7 +424,7 @@
                                                 },
                                                 {
                                                     "name": "Pomacanthus",
-                                                    "model": "Assets/SpecimenPrefabs/Pomacanthus.prefab",
+                                                    "model": "Pomacanthus.prefab",
                                                     "count": 43,
                                                     "numSpecies": 3,
                                                     "Species": [
@@ -461,7 +461,7 @@
                                         },
                                         {
                                             "name": "Pomacentridae",
-                                            "model": "Assets/SpecimenPrefabs/Pomacentridae.prefab",
+                                            "model": "Pomacentridae.prefab",
                                             "count": 38,
                                             "numGenera": 4,
                                             "Genera": [
@@ -627,7 +627,7 @@
                                         },
                                         {
                                             "name": "Scaridae",
-                                            "model": "Assets/SpecimenPrefabs/Scaridae.prefab",
+                                            "model": "Scaridae.prefab",
                                             "count": 49,
                                             "numGenera": 2,
                                             "Genera": [
@@ -723,7 +723,7 @@
                                         },
                                         {
                                             "name": "Sciaenidae",
-                                            "model": "Assets/SpecimenPrefabs/Sciaenidae.prefab",
+                                            "model": "Sciaenidae.prefab",
                                             "count": 21,
                                             "numGenera": 1,
                                             "Genera": [
@@ -757,7 +757,7 @@
                                         },
                                         {
                                             "name": "Scombridae",
-                                            "model": "Assets/SpecimenPrefabs/Scombridae.prefab",
+                                            "model": "Scombridae.prefab",
                                             "count": 8,
                                             "numGenera": 1,
                                             "Genera": [
@@ -782,7 +782,7 @@
                                         },
                                         {
                                             "name": "Serranidae",
-                                            "model": "Assets/SpecimenPrefabs/Serranidae.prefab",
+                                            "model": "Serranidae.prefab",
                                             "count": 46,
                                             "numGenera": 2,
                                             "Genera": [
@@ -878,7 +878,7 @@
                                         },
                                         {
                                             "name": "Sphyraenidae",
-                                            "model": "Assets/SpecimenPrefabs/Sphyraenidae.prefab",
+                                            "model": "Sphyraenidae.prefab",
                                             "count": 75,
                                             "numGenera": 1,
                                             "Genera": [
@@ -983,7 +983,7 @@
                                     "Families": [
                                         {
                                             "name": "Aulostomidae",
-                                            "model": "Assets/SpecimenPrefabs/Aulostomidae.prefab",
+                                            "model": "Aulostomidae.prefab",
                                             "count": 41,
                                             "numGenera": 1,
                                             "Genera": [
@@ -1017,7 +1017,7 @@
                                         },
                                         {
                                             "name": "Syngnathidae",
-                                            "model": "Assets/SpecimenPrefabs/Syngnathidae.prefab",
+                                            "model": "Syngnathidae.prefab",
                                             "count": 12,
                                             "numGenera": 1,
                                             "Genera": [
@@ -1113,7 +1113,7 @@
                                     "Families": [
                                         {
                                             "name": "Balistidae",
-                                            "model": "Assets/SpecimenPrefabs/Balistidae.prefab",
+                                            "model": "Balistidae.prefab",
                                             "count": 30,
                                             "numGenera": 2,
                                             "Genera": [
@@ -1164,7 +1164,7 @@
                                         },
                                         {
                                             "name": "Diodontidae",
-                                            "model": "Assets/SpecimenPrefabs/Diodontidae.prefab",
+                                            "model": "Diodontidae.prefab",
                                             "count": 14,
                                             "numGenera": 1,
                                             "Genera": [
@@ -1198,7 +1198,7 @@
                                         },
                                         {
                                             "name": "Monacanthidae",
-                                            "model": "Assets/SpecimenPrefabs/Monacanthidae.prefab",
+                                            "model": "Monacanthidae.prefab",
                                             "count": 8,
                                             "numGenera": 1,
                                             "Genera": [
@@ -1232,7 +1232,7 @@
                                         },
                                         {
                                             "name": "Ostraciidae",
-                                            "model": "Assets/SpecimenPrefabs/Ostraciidae.prefab",
+                                            "model": "Ostraciidae.prefab",
                                             "count": 40,
                                             "numGenera": 2,
                                             "Genera": [
@@ -1301,7 +1301,7 @@
                                         },
                                         {
                                             "name": "Tetraodontidae",
-                                            "model": "Assets/SpecimenPrefabs/Tetraodontidae.prefab",
+                                            "model": "Tetraodontidae.prefab",
                                             "count": 10,
                                             "numGenera": 1,
                                             "Genera": [
@@ -1370,7 +1370,7 @@
                                     "Families": [
                                         {
                                             "name": "Bothidae",
-                                            "model": "Assets/SpecimenPrefabs/Bothidae.prefab",
+                                            "model": "Bothidae.prefab",
                                             "count": 13,
                                             "numGenera": 1,
                                             "Genera": [
@@ -1421,7 +1421,7 @@
                                     "Families": [
                                         {
                                             "name": "Congridae",
-                                            "model": "Assets/SpecimenPrefabs/Congridae.prefab",
+                                            "model": "Congridae.prefab",
                                             "count": 17,
                                             "numGenera": 1,
                                             "Genera": [
@@ -1455,7 +1455,7 @@
                                         },
                                         {
                                             "name": "Muraenidae",
-                                            "model": "Assets/SpecimenPrefabs/Muraenidae.prefab",
+                                            "model": "Muraenidae.prefab",
                                             "count": 99,
                                             "numGenera": 2,
                                             "Genera": [
@@ -1632,7 +1632,7 @@
                                         },
                                         {
                                             "name": "Ophichthidae",
-                                            "model": "Assets/SpecimenPrefabs/Ophichthidae.prefab",
+                                            "model": "Ophichthidae.prefab",
                                             "count": 10,
                                             "numGenera": 1,
                                             "Genera": [
@@ -1751,7 +1751,7 @@
                                     "Families": [
                                         {
                                             "name": "Megalopidae",
-                                            "model": "Assets/SpecimenPrefabs/Megalopidae.prefab",
+                                            "model": "Megalopidae.prefab",
                                             "count": 15,
                                             "numGenera": 1,
                                             "Genera": [
@@ -1790,7 +1790,7 @@
                                             "Genera": [
                                                 {
                                                     "name": "Pterois",
-                                                    "model": "Assets/SpecimenPrefabs/Pterois.prefab",
+                                                    "model": "Pterois.prefab",
                                                     "count": 86,
                                                     "numSpecies": 3,
                                                     "Species": [
@@ -1825,7 +1825,7 @@
                                                 },
                                                 {
                                                     "name": "Scorpaena",
-                                                    "model": "Assets/SpecimenPrefabs/Scorpaena.prefab",
+                                                    "model": "Scorpaena.prefab",
                                                     "count": 9,
                                                     "numSpecies": 4,
                                                     "Species": [
@@ -1887,7 +1887,7 @@
                                     "Families": [
                                         {
                                             "name": "Carcharhinidae",
-                                            "model": "Assets/SpecimenPrefabs/Carcharhinidae.prefab",
+                                            "model": "Carcharhinidae.prefab",
                                             "count": 27,
                                             "numGenera": 1,
                                             "Genera": [
@@ -1965,7 +1965,7 @@
                                     "Families": [
                                         {
                                             "name": "Dasyatidae",
-                                            "model": "Assets/SpecimenPrefabs/Dasyatidae.prefab",
+                                            "model": "Dasyatidae.prefab",
                                             "count": 45,
                                             "numGenera": 1,
                                             "Genera": [
@@ -2062,7 +2062,7 @@
                                         },
                                         {
                                             "name": "Myliobatidae",
-                                            "model": "Assets/SpecimenPrefabs/Myliobatidae.prefab",
+                                            "model": "Myliobatidae.prefab",
                                             "count": 33,
                                             "numGenera": 2,
                                             "Genera": [
@@ -2121,7 +2121,7 @@
                                     "Families": [
                                         {
                                             "name": "Ginglymostomatidae",
-                                            "model": "Assets/SpecimenPrefabs/Ginglymostomatidae.prefab",
+                                            "model": "Ginglymostomatidae.prefab",
                                             "count": 47,
                                             "numGenera": 1,
                                             "Genera": [
@@ -2168,7 +2168,7 @@
                                             "Genera": [
                                                 {
                                                     "name": "Caretta",
-                                                    "model": "Assets/SpecimenPrefabs/Caretta.prefab",
+                                                    "model": "Caretta.prefab",
                                                     "count": 15,
                                                     "numSpecies": 1,
                                                     "Species": [
@@ -2185,7 +2185,7 @@
                                                 },
                                                 {
                                                     "name": "Chelonia",
-                                                    "model": "Assets/SpecimenPrefabs/Chelonia.prefab",
+                                                    "model": "Chelonia.prefab",
                                                     "count": 50,
                                                     "numSpecies": 2,
                                                     "Species": [
@@ -2211,7 +2211,7 @@
                                                 },
                                                 {
                                                     "name": "Eretmochelys",
-                                                    "model": "Assets/SpecimenPrefabs/Eretmochelys.prefab",
+                                                    "model": "Eretmochelys.prefab",
                                                     "count": 34,
                                                     "numSpecies": 2,
                                                     "Species": [
@@ -2263,7 +2263,7 @@
                                     "Families": [
                                         {
                                             "name": "Acroporidae",
-                                            "model": "Assets/SpecimenPrefabs/Acroporidae.prefab",
+                                            "model": "Acroporidae.prefab",
                                             "count": 11,
                                             "numGenera": 1,
                                             "Genera": [
@@ -2340,7 +2340,7 @@
                                         },
                                         {
                                             "name": "Meandrinidae",
-                                            "model": "Assets/SpecimenPrefabs/Meandrinidae.prefab",
+                                            "model": "Meandrinidae.prefab",
                                             "count": 7,
                                             "numGenera": 1,
                                             "Genera": [
@@ -2365,7 +2365,7 @@
                                         },
                                         {
                                             "name": "Mussidae",
-                                            "model": "Assets/SpecimenPrefabs/Mussidae.prefab",
+                                            "model": "Mussidae.prefab",
                                             "count": 7,
                                             "numGenera": 1,
                                             "Genera": [
@@ -2398,7 +2398,7 @@
                                     "Families": [
                                         {
                                             "name": "Gorgoniidae",
-                                            "model": "Assets/SpecimenPrefabs/Gorgoniidae.prefab",
+                                            "model": "Gorgoniidae.prefab",
                                             "count": 15,
                                             "numGenera": 1,
                                             "Genera": [
@@ -2488,7 +2488,7 @@
                                     "Families": [
                                         {
                                             "name": "Aplysinidae",
-                                            "model": "Assets/SpecimenPrefabs/Aplysinidae.prefab",
+                                            "model": "Aplysinidae.prefab",
                                             "count": 7,
                                             "numGenera": 1,
                                             "Genera": [
@@ -2546,7 +2546,7 @@
                                     "Families": [
                                         {
                                             "name": "Cancridae",
-                                            "model": "Assets/SpecimenPrefabs/Cancridae.prefab",
+                                            "model": "Cancridae.prefab",
                                             "count": 7,
                                             "numGenera": 1,
                                             "Genera": [
@@ -2571,7 +2571,7 @@
                                         },
                                         {
                                             "name": "Diogenidae",
-                                            "model": "Assets/SpecimenPrefabs/Diogenidae.prefab",
+                                            "model": "Diogenidae.prefab",
                                             "count": 7,
                                             "numGenera": 1,
                                             "Genera": [
@@ -2596,7 +2596,7 @@
                                         },
                                         {
                                             "name": "Palinuridae",
-                                            "model": "Assets/SpecimenPrefabs/Palinuridae.prefab",
+                                            "model": "Palinuridae.prefab",
                                             "count": 62,
                                             "numGenera": 2,
                                             "Genera": [
@@ -2671,7 +2671,7 @@
                                     "Families": [
                                         {
                                             "name": "Loliginidae",
-                                            "model": "Assets/SpecimenPrefabs/Loliginidae.prefab",
+                                            "model": "Loliginidae.prefab",
                                             "count": 10,
                                             "numGenera": 1,
                                             "Genera": [
@@ -2704,7 +2704,7 @@
                                     "Families": [
                                         {
                                             "name": "Octopodidae",
-                                            "model": "Assets/SpecimenPrefabs/Octopodidae.prefab",
+                                            "model": "Octopodidae.prefab",
                                             "count": 11,
                                             "numGenera": 1,
                                             "Genera": [
