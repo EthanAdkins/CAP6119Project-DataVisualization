@@ -389,6 +389,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7190880915088009290}
+  - component: {fileID: -2258216989567683801}
   m_Layer: 0
   m_Name: Cancridae
   m_TagString: Untagged
@@ -412,6 +413,23 @@ Transform:
   - {fileID: 2067461578359295369}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-2258216989567683801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7377146373992309249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f6607a3c11dba84cac14a1063a245c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0.75
+  rotationSpeed: 2
+  buffer: 0.1
+  verticalDrift: 1
+  waterObject: {fileID: 0}
 --- !u!1 &7778681232659725574
 GameObject:
   m_ObjectHideFlags: 0

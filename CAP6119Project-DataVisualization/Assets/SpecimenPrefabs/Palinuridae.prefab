@@ -4543,6 +4543,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 518323539387324462}
+  - component: {fileID: 1554976637838133627}
   m_Layer: 0
   m_Name: Palinuridae
   m_TagString: Untagged
@@ -4566,6 +4567,23 @@ Transform:
   - {fileID: 2165205934666520148}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1554976637838133627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629174923901996811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f6607a3c11dba84cac14a1063a245c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0.75
+  rotationSpeed: 2
+  buffer: 0.1
+  verticalDrift: 1
+  waterObject: {fileID: 0}
 --- !u!1 &1641914526722539914
 GameObject:
   m_ObjectHideFlags: 0
