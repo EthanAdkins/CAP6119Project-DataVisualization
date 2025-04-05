@@ -30,7 +30,7 @@ public class SpecimenDataManager : MonoBehaviour
     // runtime is not negatively impacted too much as well as allow good representation of data
     public int TotalDensity = 1000;
     public CreateSpawnPoints SpawnPointManager;
-
+    [SerializeField] private bool initialSpawn = true;
     public bool Loaded
     {
         get
@@ -296,11 +296,14 @@ public class SpecimenDataManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SpeciesControllers.All(m => m.spawned))
-            _spawned = true;
-     
-        // Raise spawn event ONCE when filter changes and after everything loads for the first time
-        if (!_spawned) Spawn();
+        if (initialSpawn)
+        {
+            if (SpeciesControllers.All(m => m.spawned))
+                _spawned = true;
+
+            // Raise spawn event ONCE when filter changes and after everything loads for the first time
+            if (!_spawned) Spawn();
+        }
     }
 
     void FilterChangeEvent(string newFilter)
@@ -308,4 +311,16 @@ public class SpecimenDataManager : MonoBehaviour
         _spawned = false;
         filter = newFilter;
     }
+
+    public SpeciesManager GetRandomFish()
+    {
+        if (SpeciesControllers == null || SpeciesControllers.Count == 0)
+        {
+            Debug.LogWarning("No species controllers available.");
+            return null;
+        }
+
+        return SpeciesControllers[UnityEngine.Random.Range(0, SpeciesControllers.Count)];
+    }
+
 }
