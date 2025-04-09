@@ -6,6 +6,10 @@ TagManager:
   tags:
   - bobber
   - player
+  - Tank
+  - AquariumWater
+  - OverheadCamera
+  - AngledCamera
   layers:
   - Default
   - TransparentFX

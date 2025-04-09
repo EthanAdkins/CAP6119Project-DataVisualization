@@ -92,5 +92,30 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: -8582962172235683961, guid: c20d661728b7d7f45bf31f482ed850e5, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -6689036041284674117, guid: c20d661728b7d7f45bf31f482ed850e5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -222582677164162926}
   m_SourcePrefab: {fileID: -5645937942226959685, guid: c20d661728b7d7f45bf31f482ed850e5, type: 3}
+--- !u!1 &8425784943753615455 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6689036041284674117, guid: c20d661728b7d7f45bf31f482ed850e5, type: 3}
+  m_PrefabInstance: {fileID: 6324641480001832420}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-222582677164162926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8425784943753615455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f6607a3c11dba84cac14a1063a245c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0.75
+  rotationSpeed: 2
+  buffer: 0.1
+  verticalDrift: 1
+  waterObject: {fileID: 0}
