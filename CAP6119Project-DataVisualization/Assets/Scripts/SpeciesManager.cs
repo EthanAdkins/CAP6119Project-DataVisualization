@@ -97,6 +97,12 @@ public class SpeciesManager : MonoBehaviour
                 // Behavior will be secondary --> but how they move if we want movement to avoid weird behavior
                 // is gonna be a challenge
                 
+                // Add reference to this manager to spawned instance for selection
+                if (instance.TryGetComponent<SpecimenBehavior>(out SpecimenBehavior behavior))
+                {
+                    behavior.manager = this;
+                }
+
                 specimens.Add(instance);
             }
         }
