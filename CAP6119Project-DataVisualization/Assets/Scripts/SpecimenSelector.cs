@@ -24,7 +24,6 @@ public class SpecimenSelector : MonoBehaviour
 
         private void OnTriggerPressed(InputAction.CallbackContext context)
     {
-        Debug.Log("Collided?: " + rayInteractor.TryGetCurrent3DRaycastHit(out RaycastHit hit2));
         if (rayInteractor.TryGetCurrent3DRaycastHit(out RaycastHit hit))
         {
             if (hit.collider.TryGetComponent<SpecimenBehavior>(out var specimen))

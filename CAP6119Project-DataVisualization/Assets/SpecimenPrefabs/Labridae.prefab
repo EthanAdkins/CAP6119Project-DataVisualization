@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6343242456790005186}
   - component: {fileID: 4111897302538941888}
   - component: {fileID: 8327527922624443347}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Q11477-1all-4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6933294580632782103}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Camera.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4967414434773137357}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,7 +163,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8499721545047036772}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6402682287496561623}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +228,8 @@ GameObject:
   - component: {fileID: 3481884858986821648}
   - component: {fileID: -58446600259529595}
   - component: {fileID: 7927561225420346747}
-  m_Layer: 0
+  - component: {fileID: 176706446246355818}
+  m_Layer: 9
   m_Name: Labridae
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,8 +274,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -412,6 +413,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7da69fda432f5ee449c9bc80ff9134f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
+--- !u!136 &176706446246355818
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6692264825979691820}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 3.0572796
+  m_Direction: 0
+  m_Center: {x: -0.023501396, y: 0, z: 0}
 --- !u!1 &8282099912511163203
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,7 +446,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3616475878802125047}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Light.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}

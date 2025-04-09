@@ -58,7 +58,7 @@ public class FloatingMenuController : MonoBehaviour
         if (positionTarget == null) return;
 
         // Offset from the wrist
-        Vector3 offset = positionTarget.forward * 0.01f + positionTarget.up * .1f + positionTarget.right * .1f;
+        Vector3 offset = positionTarget.forward * 0.01f + positionTarget.up * .2f + positionTarget.right * .2f;
         transform.position = positionTarget.position + offset;
 
         // Face the camera

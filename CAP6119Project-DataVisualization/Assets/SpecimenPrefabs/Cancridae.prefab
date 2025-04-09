@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4861231462715595325}
   - component: {fileID: 1676262235187154763}
   - component: {fileID: 8169212273669043749}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Object_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 461714001932263198}
   - component: {fileID: 8120003507634454875}
   - component: {fileID: 2584902183246367117}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Object_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2067461578359295369}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Crab sf deci poly.obj.cleaner.materialmerger.gles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 3504382074528889522}
   - component: {fileID: 4612501175835218711}
   - component: {fileID: 1788175982762835221}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Object_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -305,7 +305,7 @@ GameObject:
   - component: {fileID: 7362400651870577711}
   - component: {fileID: 1130097162162600772}
   - component: {fileID: 533756297269915450}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Object_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -392,7 +392,8 @@ GameObject:
   - component: {fileID: -620369391923715031}
   - component: {fileID: 8013693447207004819}
   - component: {fileID: -1770909161308471806}
-  m_Layer: 0
+  - component: {fileID: -2083540102358439997}
+  m_Layer: 9
   m_Name: Cancridae
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -437,8 +438,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -576,6 +577,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7da69fda432f5ee449c9bc80ff9134f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
+--- !u!135 &-2083540102358439997
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7377146373992309249}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 1
+  m_Center: {x: 0, y: -0.2, z: 0}
 --- !u!1 &7778681232659725574
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,7 +610,7 @@ GameObject:
   - component: {fileID: 6457050424891382255}
   - component: {fileID: 6160474520200500001}
   - component: {fileID: 2258251291391194286}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Object_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}

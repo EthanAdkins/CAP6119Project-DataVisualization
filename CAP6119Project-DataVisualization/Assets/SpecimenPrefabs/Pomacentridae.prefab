@@ -22,15 +22,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e39aa5026513a924488083ba8f5775b5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -16.90515
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e39aa5026513a924488083ba8f5775b5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.748
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e39aa5026513a924488083ba8f5775b5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1.7945803
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e39aa5026513a924488083ba8f5775b5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -101,6 +101,10 @@ PrefabInstance:
       value: Pomacentridae
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e39aa5026513a924488083ba8f5775b5, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e39aa5026513a924488083ba8f5775b5, type: 3}
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
@@ -108,6 +112,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: d6227d3df441c4747a19570442cbefd1, type: 2}
+    - target: {fileID: 4026960960656737764, guid: e39aa5026513a924488083ba8f5775b5, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -121,6 +129,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e39aa5026513a924488083ba8f5775b5, type: 3}
       insertIndex: -1
       addedObject: {fileID: -1819335984826855539}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: e39aa5026513a924488083ba8f5775b5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -8635316535670259654}
   m_SourcePrefab: {fileID: 100100000, guid: e39aa5026513a924488083ba8f5775b5, type: 3}
 --- !u!1 &6325518111960071071 stripped
 GameObject:
@@ -149,8 +160,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -288,3 +299,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7da69fda432f5ee449c9bc80ff9134f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
+--- !u!135 &-8635316535670259654
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6325518111960071071}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.2
+  m_Center: {x: 0, y: 0.1, z: 0}
