@@ -14,7 +14,7 @@ public class FishingGameManager : MonoBehaviour
     public BarChart barChart;
     private Dictionary<SpeciesManager, int> _CaughtFishSpeciesManagersCounts = new Dictionary<SpeciesManager, int>();
     private GameObject _lastCaughtFish;
-
+    public string currentLevel = "name";
     private void Awake()
     {
         barChart.ClearData();
@@ -67,25 +67,72 @@ public class FishingGameManager : MonoBehaviour
         {
             _CaughtFishSpeciesManagersCounts[caughtFish] = 1;
         }
-        UpdateFishChart(_CaughtFishSpeciesManagersCounts);
+        UpdateFishChart(currentLevel, false);
 
     }
 
-    public void UpdateFishChart(Dictionary<SpeciesManager, int> _CaughtFishSpeciesManagersCounts)
+    public void UpdateFishChart(string level="name", bool changeLevel=false)
     {
+        if (changeLevel)
+        {
+            currentLevel = level;
+        }
+        level = level.ToLower();
         barChart.ClearData();
         int maxValue = 0;
+        Dictionary<string, int> fishLevelCounts = new Dictionary<string, int>();
         foreach (var kvp in _CaughtFishSpeciesManagersCounts)
         {
-            string fishName = kvp.Key.SpeciesName;
-            int count = kvp.Value;
-            if (count > maxValue)
+            string fishName = "";
+            if (level == "kingdom")
             {
-                maxValue = count;
+                fishName = kvp.Key.kingdom.name;
+            }
+            else if (level == "phylum")
+            {
+                fishName = kvp.Key.phylum.name;
+            }
+            else if (level == "taxclass")
+            {
+                fishName = kvp.Key.taxclass.name;
+            }
+            else if (level == "family")
+            {
+                fishName = kvp.Key.family.name;
+            }
+            else if (level == "order")
+            {
+                fishName = kvp.Key.order.name;
+            }
+            else if (level == "genus")
+            {
+                fishName = kvp.Key.genus.name;
+            }
+            else if (level == "species")
+            {
+                fishName = kvp.Key.species.name;
+            } else
+            {
+                fishName = kvp.Key.SpeciesName;
             }
 
-            barChart.AddXAxisData(fishName);
-            barChart.AddData(0, count); // 0 is the index of the first serie
+            if (fishLevelCounts.ContainsKey(fishName))
+            {
+                fishLevelCounts[fishName] += kvp.Value;
+            }
+            else
+            {
+                fishLevelCounts[fishName] = kvp.Value;
+            }
+        }
+        foreach (var entry in fishLevelCounts)
+        {
+            barChart.AddXAxisData(entry.Key); 
+            barChart.AddData(0, entry.Value); 
+            if (entry.Value > maxValue)
+            {
+                maxValue = entry.Value; 
+            }
         }
 
         var yAxis = barChart.EnsureChartComponent<YAxis>();
@@ -94,6 +141,6 @@ public class FishingGameManager : MonoBehaviour
         yAxis.type = Axis.AxisType.Value;
         yAxis.splitNumber = 5;
 
-        barChart.RefreshChart(); // Optional: force a refresh
+        barChart.RefreshChart(); 
     }
 }
