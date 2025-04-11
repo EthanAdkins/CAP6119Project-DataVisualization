@@ -218,8 +218,10 @@ public class SpecimenDataManager : MonoBehaviour
         if (SpawnPointManager is null) SpawnPointManager = FindFirstObjectByType<CreateSpawnPoints>();
         
        
-        
-        OnLoaded += Spawn;
+        if (initialSpawn) 
+        {
+            OnLoaded += Spawn;
+        }
     }
 
     System.Collections.IEnumerator LoadPrefabs()
@@ -246,7 +248,10 @@ public class SpecimenDataManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        OnLoaded -= Spawn;
+        if (initialSpawn) 
+        {
+            OnLoaded -= Spawn;
+        }
     }
 
     private void Awake()
