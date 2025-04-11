@@ -13,6 +13,7 @@ public class CreateSpawnPoints : MonoBehaviour
     private List<Vector3> SpawnPointsInUse;
 
     public BoxCollider box;
+    public GameObject waterObject;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,14 +23,22 @@ public class CreateSpawnPoints : MonoBehaviour
 
     public void SetMaxDepth(float depth)
     {
-        Vector3 oldSize = box.size;
-        Vector3 newSize = new Vector3(oldSize.x, depth, oldSize.z);
-        
-        Vector3 oldCenter = box.center;
-        Vector3 newCenter = new Vector3(oldCenter.x, depth / 2, oldCenter.z);
-        
-        box.size = newSize;
-        box.center = newCenter;
+        if (waterObject != null)
+        {
+            waterObject.transform.localScale = new Vector3(waterObject.transform.localScale.x, depth, waterObject.transform.localScale.z);
+            waterObject.transform.position = new Vector3(waterObject.transform.position.x, depth / 2, waterObject.transform.position.z);
+        }
+        else if (box != null)
+        {
+            Vector3 oldSize = box.size;
+            Vector3 newSize = new Vector3(oldSize.x, depth, oldSize.z);
+
+            Vector3 oldCenter = box.center;
+            Vector3 newCenter = new Vector3(oldCenter.x, depth / 2, oldCenter.z);
+
+            box.size = newSize;
+            box.center = newCenter;
+        }
     }
 
     public Vector3 GetSpawnPoint(float minDepth, float maxDepth)
