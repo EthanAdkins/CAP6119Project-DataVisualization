@@ -1,10 +1,16 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using TMPro;
 
 public class FloatingMenuController : MonoBehaviour
 {
     public Transform positionTarget; // Assign to player's controller
     public GameObject menuUI; // Assign to floating menu
+    public TextMeshProUGUI representativeNameText;
+    public TextMeshProUGUI taxonomyText;
+    public TextMeshProUGUI statsText;
+    // public Image speciesImage;
     public InputActionReference toggleKey; // Assign to open/close key on controller
 
     void OnEnable()
@@ -67,6 +73,42 @@ public class FloatingMenuController : MonoBehaviour
 
     public void SetInfo(SpeciesManager manager)
     {
+        if (manager == null) return;
+        
+         switch (manager.model_lvl)
+        {
+            case TaxonomicLevels.Kingdom:
+                representativeNameText.text = manager.kingdom.name;
+                statsText.text = "Observation Count: " + manager.kingdom.count;
+                break;
+            case TaxonomicLevels.Phylum:
+                representativeNameText.text = manager.phylum.name;
+                statsText.text = "Observation Count: " + manager.phylum.count;
+                break;
+            case TaxonomicLevels.Class:
+                representativeNameText.text = manager.taxclass.name;
+                statsText.text = "Observation Count: " + manager.taxclass.count;
+                break;
+            case TaxonomicLevels.Order:
+                representativeNameText.text = manager.order.name;
+                statsText.text = "Observation Count: " + manager.order.count;
+                break;
+            case TaxonomicLevels.Family:
+                representativeNameText.text = manager.family.name;
+                statsText.text = "Observation Count: " + manager.family.count;
+                break;
+            case TaxonomicLevels.Genus:
+                representativeNameText.text = manager.genus.name;
+                statsText.text = "Observation Count: " + manager.genus.count;
+                break;
+            case TaxonomicLevels.Species:
+                representativeNameText.text = manager.species.name;
+                statsText.text = "Observation Count: " + manager.species.count;
+                break;
+        }
+
+        taxonomyText.text = manager.kingdom.name + "\n" + manager.phylum.name + "\n" + manager.taxclass.name + "\n" + manager.order.name + "\n" + manager.family.name + "\n" + manager.genus.name + "\n" + manager.species.name;
+        statsText.text = "Common Name: " + manager.species.commonName + "\nMin Depth: " + manager.species.minDepth + "\nMax Depth: " + manager.species.maxDepth;
 
     }
 }
