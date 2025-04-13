@@ -82,7 +82,7 @@ public class SpeciesManager : MonoBehaviour
         if (specimens.Count == 0)
         {
             // Spawn exact count in data (does not allow for adjustable amount of spawns for performance)
-            int count = species.count; //Math.Max((int)Math.Floor(DataMan.TotalDensity * Distribution),1); //spawn min of 1
+            int count = Math.Max((int)Math.Floor(DataMan.TotalDensity * Distribution),1); //spawn min of 1
             for (int i = 0; i < count; i++)
             {
                 // Create a new GameObject from prefab
