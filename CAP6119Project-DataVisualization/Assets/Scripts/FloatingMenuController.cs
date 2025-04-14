@@ -75,7 +75,7 @@ public class FloatingMenuController : MonoBehaviour
     {
         if (manager == null) return;
         
-         switch (manager.model_lvl)
+        switch (manager.model_lvl)
         {
             case TaxonomicLevels.Kingdom:
                 representativeNameText.text = manager.kingdom.name;

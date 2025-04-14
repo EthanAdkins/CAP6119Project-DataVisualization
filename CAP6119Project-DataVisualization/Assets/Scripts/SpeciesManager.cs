@@ -6,12 +6,29 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
-public class SpeciesManager : MonoBehaviour
+public class SpeciesManager : MonoBehaviour // Bit of a misnomer now
 {
     private string current_spawned_filter = ""; //empty = all
 
     public SpecimenDataManager DataMan;
-    public string SpeciesName => species.name;
+    public string SpeciesName
+    {
+        get
+        {
+            return root switch
+            { // Have to use ugly pattern matching because interfaces don't work with JSONUtility
+                Species s     => s.name,
+                Genus g       => g.name,
+                Family f      => f.name,
+                Order o       => o.name,
+                TaxonClass c  => c.name,
+                Phylum p      => p.name,
+                Kingdom k     => k.name,
+                _             => "Unknown"
+            };
+        }
+    }
+
 
     public double Distribution;
     public GameObject SpeciesPrefab;
@@ -26,7 +43,7 @@ public class SpeciesManager : MonoBehaviour
     public Genus genus;
     public Species species;
     public TaxonomicLevels model_lvl = TaxonomicLevels.Species; //default to species level model
-
+    public object root;
     public bool Ready => _ready;
 
     private bool _ready = false;
@@ -41,14 +58,51 @@ public class SpeciesManager : MonoBehaviour
         kingdom = k;
         phylum = p;
         taxclass = c;
-        family = f;
         order = o;
+        family = f;
         genus = g;
         species = dataPoint;
         SpeciesPrefab = model;
         model_lvl = lvl;
+
+        switch (model_lvl)
+        {
+            case TaxonomicLevels.Kingdom:
+                root = kingdom;
+                break;
+            case TaxonomicLevels.Phylum:
+                root = phylum;
+                break;
+            case TaxonomicLevels.Class:
+                root = taxclass;
+                break;
+            case TaxonomicLevels.Order:
+                root = order;
+                break;
+            case TaxonomicLevels.Family:
+                root = family;
+                break;
+            case TaxonomicLevels.Genus:
+                root = genus;
+                break;
+            case TaxonomicLevels.Species:
+                root = species;
+                break;
+        }
         
-        Distribution = ((double)species.count) / (double)TotalSampleCount;
+        int count = root switch
+        { // Have to use ugly pattern matching because interfaces don't work with JSONUtility
+            Species sp     => sp.count,
+            Genus ge       => ge.count,
+            Family fa      => fa.count,
+            Order or       => or.count,
+            TaxonClass cl  => cl.count,
+            Phylum ph      => ph.count,
+            Kingdom ki     => ki.count,
+            _             => 0
+        };
+
+        Distribution = ((double)count) / (double)TotalSampleCount;
 
         _ready = true;
         spawned = false;
@@ -70,6 +124,11 @@ public class SpeciesManager : MonoBehaviour
     // Look into performance and rendering things we can do to ensure no issues with larger spawns
     public void Spawn()
     {
+        if (root == null)
+        {
+            Debug.LogWarning($"{gameObject.name} SpeciesManager has null root.");
+            return;
+        }
         // do nothing if not ready to spawn
         if (!_ready) return;
         DataMan ??= FindFirstObjectByType<SpecimenDataManager>();
@@ -81,12 +140,23 @@ public class SpeciesManager : MonoBehaviour
         specimens ??= new List<GameObject>();
         if (specimens.Count == 0)
         {
+            (float min, float max) = root switch
+            { // Have to use ugly pattern matching because interfaces don't work with JSONUtility
+                Species s     => (s.minDepth, s.maxDepth),
+                Genus g       => (g.minDepth, g.maxDepth),
+                Family f      => (f.minDepth, f.maxDepth),
+                Order o       => (o.minDepth, o.maxDepth),
+                TaxonClass c  => (c.minDepth, c.maxDepth),
+                Phylum p      => (p.minDepth, p.maxDepth),
+                Kingdom k     => (k.minDepth, k.maxDepth),
+                _             => (0f, 0f)
+            };
             // Spawn exact count in data (does not allow for adjustable amount of spawns for performance)
             int count = Math.Max((int)Math.Floor(DataMan.TotalDensity * Distribution),1); //spawn min of 1
             for (int i = 0; i < count; i++)
             {
                 // Create a new GameObject from prefab
-                Vector3 point = SpawnPointManager.GetSpawnPoint(species.minDepth, species.maxDepth);
+                Vector3 point = SpawnPointManager.GetSpawnPoint(min, max);
                 
                 // Need to set parent to the SpawnPointManager to ensure correct placement regardless of
                 // Location of manager in the world
@@ -123,7 +193,7 @@ public class SpeciesManager : MonoBehaviour
         }
 
     }
-
+    
     // Update is called once per frame
     void Update()
     {
