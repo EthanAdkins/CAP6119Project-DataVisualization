@@ -30,7 +30,7 @@ public class SpecimenDataManager : MonoBehaviour
     // runtime is not negatively impacted too much as well as allow good representation of data
     public int TotalDensity = 1000;
     public CreateSpawnPoints SpawnPointManager;
-
+    [SerializeField] private bool initialSpawn = true;
     public bool Loaded
     {
         get
@@ -218,8 +218,10 @@ public class SpecimenDataManager : MonoBehaviour
         if (SpawnPointManager is null) SpawnPointManager = FindFirstObjectByType<CreateSpawnPoints>();
         
        
-        
-        OnLoaded += Spawn;
+        if (initialSpawn) 
+        {
+            OnLoaded += Spawn;
+        }
     }
 
     System.Collections.IEnumerator LoadPrefabs()
@@ -246,7 +248,10 @@ public class SpecimenDataManager : MonoBehaviour
 
     private void OnDestroy()
     {
-        OnLoaded -= Spawn;
+        if (initialSpawn) 
+        {
+            OnLoaded -= Spawn;
+        }
     }
 
     private void Awake()
@@ -293,7 +298,7 @@ public class SpecimenDataManager : MonoBehaviour
                                            // (currently spawn one species manager per iteration)
             Debug.Log("Processing Started: " + Time.time);
         }
-        else if (_loaded)
+        else if (_loaded && initialSpawn)
         {
             if (SpeciesControllers.All(m => m.spawned))
                 _spawned = true;
@@ -308,4 +313,16 @@ public class SpecimenDataManager : MonoBehaviour
         _spawned = false;
         filter = newFilter;
     }
+
+    public SpeciesManager GetRandomFish()
+    {
+        if (SpeciesControllers == null || SpeciesControllers.Count == 0)
+        {
+            Debug.LogWarning("No species controllers available.");
+            return null;
+        }
+
+        return SpeciesControllers[UnityEngine.Random.Range(0, SpeciesControllers.Count)];
+    }
+
 }
