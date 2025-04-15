@@ -319,7 +319,10 @@ public class SpecimenDataManager : MonoBehaviour
         _loading = false;
 
         Debug.Log("Processing Done: " + Time.time);
+
+        yield return null;
     }
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
