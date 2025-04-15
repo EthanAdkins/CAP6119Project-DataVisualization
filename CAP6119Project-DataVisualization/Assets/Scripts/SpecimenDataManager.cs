@@ -30,7 +30,7 @@ public class SpecimenDataManager : MonoBehaviour
     // runtime is not negatively impacted too much as well as allow good representation of data
     public int TotalDensity = 1000;
     public CreateSpawnPoints SpawnPointManager;
-
+    [SerializeField] private bool initialSpawn = true;
     public bool Loaded
     {
         get
@@ -54,26 +54,13 @@ public class SpecimenDataManager : MonoBehaviour
 
     public delegate void FilterChangedAction(string newFilter, string oldFilter);
     public event FilterChangedAction OnFilterChanged;
-    
+
+    private bool _modelsLoading;
     private bool _modelsReady = false;
     private bool ModelsReady
     {
-        get
-        {
-            return _modelsReady;
-        }
-        set
-        {
-            _modelsReady = value;
-            if (_modelsReady && JSONDataManager is not null 
-                             && JSONDataManager.Loaded)
-                ProcessData();
-        }
-    }
-
-    private void JSONDataReady()
-    {
-        if (ModelsReady) ProcessData();
+        get => _modelsReady;
+        set => _modelsReady = value;
     }
 
     private AssetBundle _modelPrefabs;
@@ -117,11 +104,8 @@ public class SpecimenDataManager : MonoBehaviour
     }
 
     // Update to use coroutines so that this does not block the user/scene during setup (enable background async loading)
-    private void ProcessData()
+    private System.Collections.IEnumerator ProcessData()
     {
-        if (_loading) return;
-        _loading = true;
-        
         sample_count = JSONDataManager.specimenData.totalCount;
         
         if (SpeciesControllers is not null)
@@ -292,6 +276,7 @@ public class SpecimenDataManager : MonoBehaviour
                                     SpeciesControllers.Add(manager);
 
                                     continue; // No need to continue if model represents this group
+
                                 }
                                 
                                 foreach (Species s in g.Species)
@@ -325,58 +310,61 @@ public class SpecimenDataManager : MonoBehaviour
                 }
             }
         }
-
+        
         SpawnPointManager.SetMaxDepth(maxDepth);
         
         // Add More error handling?
         // Trigger spawn when done
         Loaded = true;
         _loading = false;
+
+        Debug.Log("Processing Done: " + Time.time);
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         if (SpawnPointManager is null) SpawnPointManager = FindFirstObjectByType<CreateSpawnPoints>();
         
+       
+        if (initialSpawn) 
+        {
+            OnLoaded += Spawn;
+        }
+    }
+
+    System.Collections.IEnumerator LoadPrefabs()
+    {
         // Need to ensure this is loaded before triggering ProcessData
         // Should this be moved into the DataManager so Loaded is only fired after these assets are ready?
-        // Leverage coroutines to load AssetBundle async?
         // Definitely want this to be DontDestroyOnLoad like the JSON data therefore move to DataManager?
         // Create a new ModelAssetBundle singleton that is DontDestroyOnLoad and loads these models?
-        _modelPrefabs = AssetBundle.LoadFromFile("Assets/AssetBundles/specimenmodels");
+         AssetBundleCreateRequest loadRequest = AssetBundle.LoadFromFileAsync("Assets/AssetBundles/specimenmodels");
+
+         yield return loadRequest;
+         
+         _modelPrefabs = loadRequest.assetBundle;
         if (_modelPrefabs is null)
         {
             Debug.LogError("Failed To Load Model Prefab Asset Bundle");
         }
 
         ModelsReady = true;
-
-        OnLoaded += Spawn;
+        _modelsLoading = false;
+        
+        Debug.Log("Models Loaded: " + Time.time);
     }
 
     private void OnDestroy()
     {
-        OnLoaded -= Spawn;
-        // Check if the JSONDataManager is null
-        // If not null unsub ProcessData from OnLoad
-        TaxonomyManager.OnLoad -= JSONDataReady;  //ProcessData;
+        if (initialSpawn) 
+        {
+            OnLoaded -= Spawn;
+        }
     }
 
     private void Awake()
     {
         JSONDataManager ??= FindFirstObjectByType<TaxonomyManager>();
-        
-        // JSONDataManager is already loaded so event wont fire Manually call process
-        if (!_loaded && !_loading && JSONDataManager.Loaded && ModelsReady)
-        {
-            // If JSONDataManager Loaded:
-            ProcessData();
-        }
-        else
-            TaxonomyManager.OnLoad += JSONDataReady; //ProcessData;
-
-        if (_loaded && !_spawned)
-            Spawn();
     }
 
     // First time spawn only?
@@ -385,18 +373,13 @@ public class SpecimenDataManager : MonoBehaviour
         // Only trigger the spawn if we have loaded the data and
         // the current spawn is different from the new filter
         if (!_loaded) return;
-        
-        // Create a random co-ord within a spawn zone
-        // Inst. an object at this spawn zone
-        // Repeat
-        // Can this be threaded AND avoid collisions
-        
+ 
         // For filtering actually avoid using SPAWN method:
         // Just set active / deactive as needed
-        
         foreach (SpeciesManager m in SpeciesControllers)
         {
-            m.Spawn();
+            m.Spawn(); // change this to a managed event call
+                       // Start a coroutine within each manager
         }
         
         // trigger after processing all spawns --> Should the event pass the current filter?
@@ -406,11 +389,31 @@ public class SpecimenDataManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (SpeciesControllers.All(m => m.spawned))
-            _spawned = true;
-     
-        // Raise spawn event ONCE when filter changes and after everything loads for the first time
-        if (!_spawned) Spawn();
+        if (!ModelsReady && !_modelsLoading)
+        {
+            _modelsLoading = true;
+            Debug.Log("Start Model Loading: " + Time.time);
+            StartCoroutine(LoadPrefabs());
+            // get progress of request via loadRequest??
+        }
+        // If not done processing/loading data into this manager and JSON data and Model data is ready
+        // Start the coroutine for loading
+        if (!_loaded && !_loading && JSONDataManager.Loaded && ModelsReady)
+        {
+            _loading = true;
+            // If JSONDataManager Loaded:
+            StartCoroutine(ProcessData()); // Analyze if we need to yield return in other points
+                                           // (currently spawn one species manager per iteration)
+            Debug.Log("Processing Started: " + Time.time);
+        }
+        else if (_loaded && initialSpawn)
+        {
+            if (SpeciesControllers.All(m => m.spawned))
+                _spawned = true;
+
+            // Raise spawn event ONCE when filter changes and after everything loads for the first time
+            if (!_spawned) Spawn(); // make this a coroutine too?
+        }
     }
 
     void FilterChangeEvent(string newFilter)
@@ -418,4 +421,16 @@ public class SpecimenDataManager : MonoBehaviour
         _spawned = false;
         filter = newFilter;
     }
+
+    public SpeciesManager GetRandomFish()
+    {
+        if (SpeciesControllers == null || SpeciesControllers.Count == 0)
+        {
+            Debug.LogWarning("No species controllers available.");
+            return null;
+        }
+
+        return SpeciesControllers[UnityEngine.Random.Range(0, SpeciesControllers.Count)];
+    }
+
 }
