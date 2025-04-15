@@ -50,24 +50,31 @@ public class FishingGameManager : MonoBehaviour
         }
         
         SpeciesManager caughtFish = DataMan.GetRandomFish();
-        // _CaughtFishSpeciesManagers.Add(caughtFish);
-        GameObject instance = Instantiate(caughtFish.SpeciesPrefab, _SpawnLocation.position,
-                    _SpawnLocation.rotation);
-        instance.AddComponent<XRGrabInteractable>();
-        instance.GetComponent<Rigidbody>().useGravity = false;
-        instance.GetComponent<Rigidbody>().isKinematic = true;
-
-        _lastCaughtFish = instance;
-
-        if (_CaughtFishSpeciesManagersCounts.ContainsKey(caughtFish))
+        if (caughtFish != null)
         {
-            _CaughtFishSpeciesManagersCounts[caughtFish]++;
+            GameObject instance = Instantiate(caughtFish.SpeciesPrefab, _SpawnLocation.position,
+                        _SpawnLocation.rotation);
+            instance.AddComponent<XRGrabInteractable>();
+            instance.GetComponent<Rigidbody>().useGravity = false;
+            instance.GetComponent<Rigidbody>().isKinematic = true;
+
+            _lastCaughtFish = instance;
+
+            if (_CaughtFishSpeciesManagersCounts.ContainsKey(caughtFish))
+            {
+                _CaughtFishSpeciesManagersCounts[caughtFish]++;
+            }
+            else
+            {
+                _CaughtFishSpeciesManagersCounts[caughtFish] = 1;
+            }
+            UpdateFishChart(currentLevel, false);
         }
         else
         {
-            _CaughtFishSpeciesManagersCounts[caughtFish] = 1;
+            Debug.Log("Models not loaded yet!");
         }
-        UpdateFishChart(currentLevel, false);
+        
 
     }
 
