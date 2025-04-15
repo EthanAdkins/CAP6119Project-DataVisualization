@@ -198,7 +198,6 @@ public class FloatingMenuController : MonoBehaviour
         };
         statsText.text = $"Observation Count: {count}\nMinimum Depth Observed: {minDepth} meters\nMaximum Depth Observed: {maxDepth} meters";
 
-        taxonomyText.text = $"Species Represented by This Model:\n";
-        taxonomyText.text += BuildPhyloTree(manager.root);
+        taxonomyText.text = BuildPhyloTree(manager.root);
     }
 }
