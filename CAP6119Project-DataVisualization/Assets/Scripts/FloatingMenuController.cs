@@ -71,44 +71,134 @@ public class FloatingMenuController : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(transform.position - Camera.main.transform.position);
     }
 
-    public void SetInfo(SpeciesManager manager)
+    // Recursively builds ASCII phylogenetic tree
+    private string BuildPhyloTree(object root, int depth = 0)
     {
-        if (manager == null) return;
-        
-        switch (manager.model_lvl)
+        // Creates 4-space indentation for each depth level
+        string Indent(int depth) => new string(' ', depth * 4);
+
+        // Recursive version called after root is identified
+        // - Skip to bottom of this definition for start of function logic
+        string BuildPhyloTreeRecursive(object node, int depth)
         {
-            case TaxonomicLevels.Kingdom:
-                representativeNameText.text = manager.kingdom.name;
-                statsText.text = "Observation Count: " + manager.kingdom.count;
-                break;
-            case TaxonomicLevels.Phylum:
-                representativeNameText.text = manager.phylum.name;
-                statsText.text = "Observation Count: " + manager.phylum.count;
-                break;
-            case TaxonomicLevels.Class:
-                representativeNameText.text = manager.taxclass.name;
-                statsText.text = "Observation Count: " + manager.taxclass.count;
-                break;
-            case TaxonomicLevels.Order:
-                representativeNameText.text = manager.order.name;
-                statsText.text = "Observation Count: " + manager.order.count;
-                break;
-            case TaxonomicLevels.Family:
-                representativeNameText.text = manager.family.name;
-                statsText.text = "Observation Count: " + manager.family.count;
-                break;
-            case TaxonomicLevels.Genus:
-                representativeNameText.text = manager.genus.name;
-                statsText.text = "Observation Count: " + manager.genus.count;
-                break;
-            case TaxonomicLevels.Species:
-                representativeNameText.text = manager.species.name;
-                statsText.text = "Observation Count: " + manager.species.count;
-                break;
+            if (node is Species s) // Base case
+            {
+                return $"{Indent(depth)}└── Species: {s.name}\n{Indent(depth + 2)} Common Name: {s.commonName}\n{Indent(depth + 2)} Depth range (meters): {s.minDepth}-{s.maxDepth}\n{Indent(depth + 2)} Count: {s.count}\n";
+            }
+            else if (node is Genus g)
+            {
+                string result = $"{Indent(depth)}└── Genus: {g.name}\n";
+                foreach (var sp in g.Species)
+                    result += BuildPhyloTreeRecursive(sp, depth + 1);
+                return result;
+            }
+            else if (node is Family f)
+            {
+                string result = $"{Indent(depth)}└── Family: {f.name}\n";
+                foreach (var ge in f.Genera)
+                    result += BuildPhyloTreeRecursive(ge, depth + 1);
+                return result;
+            }
+            else if (node is Order o)
+            {
+                string result = $"{Indent(depth)}└── Order: {o.name}\n";
+                foreach (var fa in o.Families)
+                    result += BuildPhyloTreeRecursive(fa, depth + 1);
+                return result;
+            }
+            else if (node is TaxonClass c)
+            {
+                string result = $"{Indent(depth)}└── Class: {c.name}\n";
+                foreach (var or in c.Orders)
+                    result += BuildPhyloTreeRecursive(or, depth + 1);
+                return result;
+            }
+            else if (node is Phylum p)
+            {
+                string result = $"{Indent(depth)}└── Phylum: {p.name}\n";
+                foreach (var cl in p.Classes)
+                    result += BuildPhyloTreeRecursive(cl, depth + 1);
+                return result;
+            }
+            else if (node is Kingdom k)
+            {
+                string result = $"Kingdom: {k.name}\n";
+                foreach (var ph in k.Phyla)
+                    result += BuildPhyloTreeRecursive(ph, 1);
+                return result;
+            }
+            else return "";
         }
 
-        taxonomyText.text = manager.kingdom.name + "\n" + manager.phylum.name + "\n" + manager.taxclass.name + "\n" + manager.order.name + "\n" + manager.family.name + "\n" + manager.genus.name + "\n" + manager.species.name;
-        statsText.text = "Common Name: " + manager.species.commonName + "\nMin Depth: " + manager.species.minDepth + "\nMax Depth: " + manager.species.maxDepth;
+        if (root is Species s) // Base case
+        {
+            return $"Species: {s.name}\nCommon Name: {s.commonName}\nDepth range (meters): {s.minDepth}-{s.maxDepth}\nCount: {s.count}\n";
+        }
+        else if (root is Genus g)
+        {
+            string result = $"Genus: {g.name}\n";
+            foreach (var sp in g.Species)
+                result += BuildPhyloTreeRecursive(sp, depth + 1);
+            return result;
+        }
+        else if (root is Family f)
+        {
+            string result = $"Family: {f.name}\n";
+            foreach (var ge in f.Genera)
+                result += BuildPhyloTreeRecursive(ge, depth + 1);
+            return result;
+        }
+        else if (root is Order o)
+        {
+            string result = $"Order: {o.name}\n";
+            foreach (var fa in o.Families)
+                result += BuildPhyloTreeRecursive(fa, depth + 1);
+            return result;
+        }
+        else if (root is TaxonClass c)
+        {
+            string result = $"Class: {c.name}\n";
+            foreach (var or in c.Orders)
+                result += BuildPhyloTreeRecursive(or, depth + 1);
+            return result;
+        }
+        else if (root is Phylum p)
+        {
+            string result = $"Phylum: {p.name}\n";
+            foreach (var cl in p.Classes)
+                result += BuildPhyloTreeRecursive(cl, depth + 1);
+            return result;
+        }
+        else if (root is Kingdom k)
+        {
+            string result = $"Kingdom: {k.name}\n";
+            foreach (var ph in k.Phyla)
+                result += BuildPhyloTreeRecursive(ph, depth + 1);
+            return result;
+        }
+        else return "No taxonomic info found.";
+    }
 
+    public void SetInfo(SpeciesManager manager)
+    {
+        if (manager == null || manager.root == null) return;
+        
+        representativeNameText.text = manager.SpeciesName;
+        
+        (int count, float minDepth, float maxDepth) = manager.root switch
+        {
+            Species s     => (s.count, s.minDepth, s.maxDepth),
+            Genus g       => (g.count, g.minDepth, g.maxDepth),
+            Family f      => (f.count, f.minDepth, f.maxDepth),
+            Order o       => (o.count, o.minDepth, o.maxDepth),
+            TaxonClass c  => (c.count, c.minDepth, c.maxDepth),
+            Phylum p      => (p.count, p.minDepth, p.maxDepth),
+            Kingdom k     => (k.count, k.minDepth, k.maxDepth),
+            _             => (0, 0f, 0f)
+        };
+        statsText.text = $"Observation Count: {count}\nMinimum Depth Observed: {minDepth} meters\nMaximum Depth Observed: {maxDepth} meters";
+
+        taxonomyText.text = $"Species Represented by This Model:\n";
+        taxonomyText.text += BuildPhyloTree(manager.root);
     }
 }
