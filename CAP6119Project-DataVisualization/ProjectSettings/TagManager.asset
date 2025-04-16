@@ -10,6 +10,7 @@ TagManager:
   - AquariumWater
   - OverheadCamera
   - AngledCamera
+  - Specimen
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - NearGrabOnly
   - Bobber
   - DockColliders
-  - 
+  - Specimens
   - 
   - 
   - 

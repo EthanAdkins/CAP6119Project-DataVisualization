@@ -53,7 +53,7 @@ public class TaxonomyManager : MonoBehaviour
             string text = File.ReadAllText(file);
             specimenData = JsonUtility.FromJson<SpecimenData>(text);
             Debug.Log("JSON Data Loaded Successfully.");
-            
+
             Loaded = true;
         }
         else
