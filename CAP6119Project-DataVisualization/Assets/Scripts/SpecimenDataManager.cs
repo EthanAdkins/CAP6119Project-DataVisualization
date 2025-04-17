@@ -31,6 +31,7 @@ public class SpecimenDataManager : MonoBehaviour
     public int TotalDensity = 1000;
     public CreateSpawnPoints SpawnPointManager;
     [SerializeField] private bool initialSpawn = true;
+    [SerializeField] private GameObject cameraCanvas;
     public bool Loaded
     {
         get
@@ -337,11 +338,15 @@ public class SpecimenDataManager : MonoBehaviour
 
     System.Collections.IEnumerator LoadPrefabs()
     {
+        if (cameraCanvas != null)
+        {
+            cameraCanvas.SetActive(true);
+        }
         // Need to ensure this is loaded before triggering ProcessData
         // Should this be moved into the DataManager so Loaded is only fired after these assets are ready?
         // Definitely want this to be DontDestroyOnLoad like the JSON data therefore move to DataManager?
         // Create a new ModelAssetBundle singleton that is DontDestroyOnLoad and loads these models?
-         AssetBundleCreateRequest loadRequest = AssetBundle.LoadFromFileAsync("Assets/AssetBundles/specimenmodels");
+        AssetBundleCreateRequest loadRequest = AssetBundle.LoadFromFileAsync("Assets/AssetBundles/specimenmodels");
 
          yield return loadRequest;
          
@@ -355,6 +360,10 @@ public class SpecimenDataManager : MonoBehaviour
         _modelsLoading = false;
         
         Debug.Log("Models Loaded: " + Time.time);
+
+        if (cameraCanvas != null) { 
+            cameraCanvas.SetActive(false);
+        }
     }
 
     private void OnDestroy()
