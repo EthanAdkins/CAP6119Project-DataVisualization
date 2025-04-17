@@ -18,6 +18,9 @@ public class Kingdom
     public string name;
     public string model;
     public int count;
+    public bool sedentary;
+    public float maxDepth;
+    public float minDepth;
     public int numPhyla;
     public List<Phylum> Phyla;
 }
@@ -28,6 +31,9 @@ public class Phylum
     public string name;
     public string model;
     public int count;
+    public bool sedentary;
+    public float maxDepth;
+    public float minDepth;
     public int numClasses;
     public List<TaxonClass> Classes;
 }
@@ -38,6 +44,9 @@ public class TaxonClass
     public string name;
     public string model;
     public int count;
+    public bool sedentary;
+    public float maxDepth;
+    public float minDepth;
     public int numOrders;
     public List<Order> Orders;
 }
@@ -48,6 +57,9 @@ public class Order
     public string name;
     public string model;
     public int count;
+    public bool sedentary;
+    public float maxDepth;
+    public float minDepth;
     public int numFamilies;
     public List<Family> Families;
 }
@@ -58,6 +70,9 @@ public class Family
     public string name;
     public string model;
     public int count;
+    public bool sedentary;
+    public float maxDepth;
+    public float minDepth;
     public int numGenera;
     public List<Genus> Genera;
 }
@@ -68,6 +83,9 @@ public class Genus
     public string name;
     public string model;
     public int count;
+    public bool sedentary;
+    public float maxDepth;
+    public float minDepth;
     public int numSpecies;
     public List<Species> Species;
 }

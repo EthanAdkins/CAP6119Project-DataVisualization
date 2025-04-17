@@ -6,36 +6,54 @@
             "name": "Animalia",
             "model": "",
             "count": 1268,
+            "sedentary": false,
+            "maxDepth": 100,
+            "minDepth": 2,
             "numPhyla": 5,
             "Phyla": [
                 {
                     "name": "Chordata",
                     "model": "",
                     "count": 1107,
+                    "sedentary": false,
+                    "maxDepth": 100,
+                    "minDepth": 2,
                     "numClasses": 3,
                     "Classes": [
                         {
                             "name": "Actinopterygii",
                             "model": "",
                             "count": 856,
+                            "sedentary": false,
+                            "maxDepth": 100,
+                            "minDepth": 2,
                             "numOrders": 8,
                             "Orders": [
                                 {
                                     "name": "Perciformes",
                                     "model": "",
                                     "count": 426,
+                                    "sedentary": false,
+                                    "maxDepth": 80,
+                                    "minDepth": 2,
                                     "numFamilies": 13,
                                     "Families": [
                                         {
                                             "name": "Acanthuridae",
                                             "model": "Assets/SpecimenPrefabs/Acanthuridae.prefab",
                                             "count": 7,
+                                            "sedentary": false,
+                                            "maxDepth": 21,
+                                            "minDepth": 11,
                                             "numGenera": 1,
                                             "Genera": [
                                                 {
                                                     "name": "Acanthurus",
                                                     "model": "",
                                                     "count": 7,
+                                                    "sedentary": false,
+                                                    "maxDepth": 21,
+                                                    "minDepth": 11,
                                                     "numSpecies": 3,
                                                     "Species": [
                                                         {
@@ -73,12 +91,18 @@
                                             "name": "Carangidae",
                                             "model": "Assets/SpecimenPrefabs/Carangidae.prefab",
                                             "count": 12,
+                                            "sedentary": false,
+                                            "maxDepth": 38,
+                                            "minDepth": 7,
                                             "numGenera": 1,
                                             "Genera": [
                                                 {
                                                     "name": "Carangoides",
                                                     "model": "",
                                                     "count": 12,
+                                                    "sedentary": false,
+                                                    "maxDepth": 38,
+                                                    "minDepth": 7,
                                                     "numSpecies": 3,
                                                     "Species": [
                                                         {
@@ -116,12 +140,18 @@
                                             "name": "Chaetodontidae",
                                             "model": "Assets/SpecimenPrefabs/Chaetodontidae.prefab",
                                             "count": 22,
+                                            "sedentary": false,
+                                            "maxDepth": 37,
+                                            "minDepth": 11,
                                             "numGenera": 1,
                                             "Genera": [
                                                 {
                                                     "name": "Chaetodon",
                                                     "model": "",
                                                     "count": 22,
+                                                    "sedentary": false,
+                                                    "maxDepth": 37,
+                                                    "minDepth": 11,
                                                     "numSpecies": 4,
                                                     "Species": [
                                                         {
@@ -168,12 +198,18 @@
                                             "name": "Haemulidae",
                                             "model": "Assets/SpecimenPrefabs/Haemulidae.prefab",
                                             "count": 18,
+                                            "sedentary": false,
+                                            "maxDepth": 37,
+                                            "minDepth": 9,
                                             "numGenera": 1,
                                             "Genera": [
                                                 {
                                                     "name": "Haemulon",
                                                     "model": "",
                                                     "count": 18,
+                                                    "sedentary": false,
+                                                    "maxDepth": 37,
+                                                    "minDepth": 9,
                                                     "numSpecies": 4,
                                                     "Species": [
                                                         {
@@ -220,12 +256,18 @@
                                             "name": "Labridae",
                                             "model": "Assets/SpecimenPrefabs/Labridae.prefab",
                                             "count": 9,
+                                            "sedentary": false,
+                                            "maxDepth": 26,
+                                            "minDepth": 12,
                                             "numGenera": 1,
                                             "Genera": [
                                                 {
                                                     "name": "Halichoeres",
                                                     "model": "",
                                                     "count": 9,
+                                                    "sedentary": false,
+                                                    "maxDepth": 26,
+                                                    "minDepth": 12,
                                                     "numSpecies": 4,
                                                     "Species": [
                                                         {
@@ -272,12 +314,18 @@
                                             "name": "Lutjanidae",
                                             "model": "Assets/SpecimenPrefabs/Lutjanidae.prefab",
                                             "count": 15,
+                                            "sedentary": false,
+                                            "maxDepth": 30,
+                                            "minDepth": 7,
                                             "numGenera": 2,
                                             "Genera": [
                                                 {
                                                     "name": "Lutjanus",
                                                     "model": "",
                                                     "count": 8,
+                                                    "sedentary": false,
+                                                    "maxDepth": 25,
+                                                    "minDepth": 7,
                                                     "numSpecies": 5,
                                                     "Species": [
                                                         {
@@ -331,6 +379,9 @@
                                                     "name": "Ocyurus",
                                                     "model": "",
                                                     "count": 7,
+                                                    "sedentary": false,
+                                                    "maxDepth": 30,
+                                                    "minDepth": 9,
                                                     "numSpecies": 1,
                                                     "Species": [
                                                         {
@@ -350,12 +401,18 @@
                                             "name": "Pomacanthidae",
                                             "model": "",
                                             "count": 106,
+                                            "sedentary": false,
+                                            "maxDepth": 37,
+                                            "minDepth": 3,
                                             "numGenera": 3,
                                             "Genera": [
                                                 {
                                                     "name": "Centropyge",
                                                     "model": "",
                                                     "count": 11,
+                                                    "sedentary": false,
+                                                    "maxDepth": 37,
+                                                    "minDepth": 7,
                                                     "numSpecies": 1,
                                                     "Species": [
                                                         {
@@ -373,6 +430,9 @@
                                                     "name": "Holacanthus",
                                                     "model": "Assets/SpecimenPrefabs/Holacanthus.prefab",
                                                     "count": 52,
+                                                    "sedentary": false,
+                                                    "maxDepth": 37,
+                                                    "minDepth": 3,
                                                     "numSpecies": 5,
                                                     "Species": [
                                                         {
@@ -426,6 +486,9 @@
                                                     "name": "Pomacanthus",
                                                     "model": "Assets/SpecimenPrefabs/Pomacanthus.prefab",
                                                     "count": 43,
+                                                    "sedentary": false,
+                                                    "maxDepth": 32,
+                                                    "minDepth": 7,
                                                     "numSpecies": 3,
                                                     "Species": [
                                                         {
@@ -463,12 +526,18 @@
                                             "name": "Pomacentridae",
                                             "model": "Assets/SpecimenPrefabs/Pomacentridae.prefab",
                                             "count": 38,
+                                            "sedentary": false,
+                                            "maxDepth": 30,
+                                            "minDepth": 3,
                                             "numGenera": 4,
                                             "Genera": [
                                                 {
                                                     "name": "Abudefduf",
                                                     "model": "",
                                                     "count": 12,
+                                                    "sedentary": false,
+                                                    "maxDepth": 30,
+                                                    "minDepth": 12,
                                                     "numSpecies": 3,
                                                     "Species": [
                                                         {
@@ -504,6 +573,9 @@
                                                     "name": "Chromis",
                                                     "model": "",
                                                     "count": 12,
+                                                    "sedentary": false,
+                                                    "maxDepth": 23,
+                                                    "minDepth": 3,
                                                     "numSpecies": 3,
                                                     "Species": [
                                                         {
@@ -539,6 +611,9 @@
                                                     "name": "Pomacentrus",
                                                     "model": "",
                                                     "count": 7,
+                                                    "sedentary": false,
+                                                    "maxDepth": 30,
+                                                    "minDepth": 12,
                                                     "numSpecies": 5,
                                                     "Species": [
                                                         {
@@ -592,6 +667,9 @@
                                                     "name": "Stegastes",
                                                     "model": "",
                                                     "count": 7,
+                                                    "sedentary": false,
+                                                    "maxDepth": 30,
+                                                    "minDepth": 8,
                                                     "numSpecies": 3,
                                                     "Species": [
                                                         {
@@ -629,12 +707,18 @@
                                             "name": "Scaridae",
                                             "model": "Assets/SpecimenPrefabs/Scaridae.prefab",
                                             "count": 49,
+                                            "sedentary": false,
+                                            "maxDepth": 70,
+                                            "minDepth": 2,
                                             "numGenera": 2,
                                             "Genera": [
                                                 {
                                                     "name": "Scarus",
                                                     "model": "",
                                                     "count": 20,
+                                                    "sedentary": false,
+                                                    "maxDepth": 70,
+                                                    "minDepth": 2,
                                                     "numSpecies": 4,
                                                     "Species": [
                                                         {
@@ -679,6 +763,9 @@
                                                     "name": "Sparisoma",
                                                     "model": "",
                                                     "count": 29,
+                                                    "sedentary": false,
+                                                    "maxDepth": 44,
+                                                    "minDepth": 9,
                                                     "numSpecies": 4,
                                                     "Species": [
                                                         {
@@ -725,12 +812,18 @@
                                             "name": "Sciaenidae",
                                             "model": "Assets/SpecimenPrefabs/Sciaenidae.prefab",
                                             "count": 21,
+                                            "sedentary": false,
+                                            "maxDepth": 45,
+                                            "minDepth": 9,
                                             "numGenera": 1,
                                             "Genera": [
                                                 {
                                                     "name": "Equetus",
                                                     "model": "",
                                                     "count": 21,
+                                                    "sedentary": false,
+                                                    "maxDepth": 45,
+                                                    "minDepth": 9,
                                                     "numSpecies": 2,
                                                     "Species": [
                                                         {
@@ -759,12 +852,18 @@
                                             "name": "Scombridae",
                                             "model": "Assets/SpecimenPrefabs/Scombridae.prefab",
                                             "count": 8,
+                                            "sedentary": false,
+                                            "maxDepth": 26,
+                                            "minDepth": 15,
                                             "numGenera": 1,
                                             "Genera": [
                                                 {
                                                     "name": "Acanthocybium",
                                                     "model": "",
                                                     "count": 8,
+                                                    "sedentary": false,
+                                                    "maxDepth": 26,
+                                                    "minDepth": 15,
                                                     "numSpecies": 1,
                                                     "Species": [
                                                         {
@@ -784,12 +883,18 @@
                                             "name": "Serranidae",
                                             "model": "Assets/SpecimenPrefabs/Serranidae.prefab",
                                             "count": 46,
+                                            "sedentary": false,
+                                            "maxDepth": 80,
+                                            "minDepth": 8,
                                             "numGenera": 2,
                                             "Genera": [
                                                 {
                                                     "name": "Epinephelus",
                                                     "model": "",
                                                     "count": 26,
+                                                    "sedentary": false,
+                                                    "maxDepth": 80,
+                                                    "minDepth": 12,
                                                     "numSpecies": 6,
                                                     "Species": [
                                                         {
@@ -852,6 +957,9 @@
                                                     "name": "Mycteroperca",
                                                     "model": "",
                                                     "count": 20,
+                                                    "sedentary": false,
+                                                    "maxDepth": 30,
+                                                    "minDepth": 8,
                                                     "numSpecies": 2,
                                                     "Species": [
                                                         {
@@ -880,12 +988,18 @@
                                             "name": "Sphyraenidae",
                                             "model": "Assets/SpecimenPrefabs/Sphyraenidae.prefab",
                                             "count": 75,
+                                            "sedentary": false,
+                                            "maxDepth": 80,
+                                            "minDepth": 5,
                                             "numGenera": 1,
                                             "Genera": [
                                                 {
                                                     "name": "Sphyraena",
                                                     "model": "",
                                                     "count": 75,
+                                                    "sedentary": false,
+                                                    "maxDepth": 80,
+                                                    "minDepth": 5,
                                                     "numSpecies": 9,
                                                     "Species": [
                                                         {
@@ -979,18 +1093,27 @@
                                     "name": "Syngnathiformes",
                                     "model": "",
                                     "count": 53,
+                                    "sedentary": false,
+                                    "maxDepth": 45,
+                                    "minDepth": 2,
                                     "numFamilies": 2,
                                     "Families": [
                                         {
                                             "name": "Aulostomidae",
                                             "model": "Assets/SpecimenPrefabs/Aulostomidae.prefab",
                                             "count": 41,
+                                            "sedentary": false,
+                                            "maxDepth": 45,
+                                            "minDepth": 2,
                                             "numGenera": 1,
                                             "Genera": [
                                                 {
                                                     "name": "Aulostomus",
                                                     "model": "",
                                                     "count": 41,
+                                                    "sedentary": false,
+                                                    "maxDepth": 45,
+                                                    "minDepth": 2,
                                                     "numSpecies": 2,
                                                     "Species": [
                                                         {
@@ -1019,12 +1142,18 @@
                                             "name": "Syngnathidae",
                                             "model": "Assets/SpecimenPrefabs/Syngnathidae.prefab",
                                             "count": 12,
+                                            "sedentary": false,
+                                            "maxDepth": 25,
+                                            "minDepth": 10,
                                             "numGenera": 1,
                                             "Genera": [
                                                 {
                                                     "name": "Hippocampus",
                                                     "model": "",
                                                     "count": 12,
+                                                    "sedentary": false,
+                                                    "maxDepth": 25,
+                                                    "minDepth": 10,
                                                     "numSpecies": 8,
                                                     "Species": [
                                                         {
@@ -1109,18 +1238,27 @@
                                     "name": "Tetraodontiformes",
                                     "model": "",
                                     "count": 102,
+                                    "sedentary": false,
+                                    "maxDepth": 45,
+                                    "minDepth": 8,
                                     "numFamilies": 5,
                                     "Families": [
                                         {
                                             "name": "Balistidae",
                                             "model": "Assets/SpecimenPrefabs/Balistidae.prefab",
                                             "count": 30,
+                                            "sedentary": false,
+                                            "maxDepth": 37,
+                                            "minDepth": 10,
                                             "numGenera": 2,
                                             "Genera": [
                                                 {
                                                     "name": "Canthidermis",
                                                     "model": "",
                                                     "count": 10,
+                                                    "sedentary": false,
+                                                    "maxDepth": 27,
+                                                    "minDepth": 10,
                                                     "numSpecies": 2,
                                                     "Species": [
                                                         {
@@ -1147,6 +1285,9 @@
                                                     "name": "Melichthys",
                                                     "model": "",
                                                     "count": 20,
+                                                    "sedentary": false,
+                                                    "maxDepth": 37,
+                                                    "minDepth": 10,
                                                     "numSpecies": 1,
                                                     "Species": [
                                                         {
@@ -1166,12 +1307,18 @@
                                             "name": "Diodontidae",
                                             "model": "Assets/SpecimenPrefabs/Diodontidae.prefab",
                                             "count": 14,
+                                            "sedentary": false,
+                                            "maxDepth": 45,
+                                            "minDepth": 10,
                                             "numGenera": 1,
                                             "Genera": [
                                                 {
                                                     "name": "Diodon",
                                                     "model": "",
                                                     "count": 14,
+                                                    "sedentary": false,
+                                                    "maxDepth": 45,
+                                                    "minDepth": 10,
                                                     "numSpecies": 2,
                                                     "Species": [
                                                         {
@@ -1200,12 +1347,18 @@
                                             "name": "Monacanthidae",
                                             "model": "Assets/SpecimenPrefabs/Monacanthidae.prefab",
                                             "count": 8,
+                                            "sedentary": false,
+                                            "maxDepth": 33,
+                                            "minDepth": 11,
                                             "numGenera": 1,
                                             "Genera": [
                                                 {
                                                     "name": "Aluterus",
                                                     "model": "",
                                                     "count": 8,
+                                                    "sedentary": false,
+                                                    "maxDepth": 33,
+                                                    "minDepth": 11,
                                                     "numSpecies": 2,
                                                     "Species": [
                                                         {
@@ -1234,12 +1387,18 @@
                                             "name": "Ostraciidae",
                                             "model": "Assets/SpecimenPrefabs/Ostraciidae.prefab",
                                             "count": 40,
+                                            "sedentary": false,
+                                            "maxDepth": 37,
+                                            "minDepth": 8,
                                             "numGenera": 2,
                                             "Genera": [
                                                 {
                                                     "name": "Acanthostracion",
                                                     "model": "",
                                                     "count": 25,
+                                                    "sedentary": false,
+                                                    "maxDepth": 37,
+                                                    "minDepth": 8,
                                                     "numSpecies": 2,
                                                     "Species": [
                                                         {
@@ -1266,6 +1425,9 @@
                                                     "name": "Lactophrys",
                                                     "model": "",
                                                     "count": 15,
+                                                    "sedentary": false,
+                                                    "maxDepth": 37,
+                                                    "minDepth": 8,
                                                     "numSpecies": 3,
                                                     "Species": [
                                                         {
@@ -1303,12 +1465,18 @@
                                             "name": "Tetraodontidae",
                                             "model": "Assets/SpecimenPrefabs/Tetraodontidae.prefab",
                                             "count": 10,
+                                            "sedentary": false,
+                                            "maxDepth": 29,
+                                            "minDepth": 10,
                                             "numGenera": 1,
                                             "Genera": [
                                                 {
                                                     "name": "Sphoeroides",
                                                     "model": "",
                                                     "count": 10,
+                                                    "sedentary": false,
+                                                    "maxDepth": 29,
+                                                    "minDepth": 10,
                                                     "numSpecies": 5,
                                                     "Species": [
                                                         {
@@ -1366,18 +1534,27 @@
                                     "name": "Pleuronectiformes",
                                     "model": "",
                                     "count": 13,
+                                    "sedentary": false,
+                                    "maxDepth": 30,
+                                    "minDepth": 3,
                                     "numFamilies": 1,
                                     "Families": [
                                         {
                                             "name": "Bothidae",
                                             "model": "Assets/SpecimenPrefabs/Bothidae.prefab",
                                             "count": 13,
+                                            "sedentary": false,
+                                            "maxDepth": 30,
+                                            "minDepth": 3,
                                             "numGenera": 1,
                                             "Genera": [
                                                 {
                                                     "name": "Bothus",
                                                     "model": "",
                                                     "count": 13,
+                                                    "sedentary": false,
+                                                    "maxDepth": 30,
+                                                    "minDepth": 3,
                                                     "numSpecies": 3,
                                                     "Species": [
                                                         {
@@ -1417,18 +1594,27 @@
                                     "name": "Anguilliformes",
                                     "model": "",
                                     "count": 126,
+                                    "sedentary": false,
+                                    "maxDepth": 100,
+                                    "minDepth": 7,
                                     "numFamilies": 3,
                                     "Families": [
                                         {
                                             "name": "Congridae",
                                             "model": "Assets/SpecimenPrefabs/Congridae.prefab",
                                             "count": 17,
+                                            "sedentary": false,
+                                            "maxDepth": 100,
+                                            "minDepth": 9,
                                             "numGenera": 1,
                                             "Genera": [
                                                 {
                                                     "name": "Heteroconger",
                                                     "model": "",
                                                     "count": 17,
+                                                    "sedentary": false,
+                                                    "maxDepth": 100,
+                                                    "minDepth": 9,
                                                     "numSpecies": 2,
                                                     "Species": [
                                                         {
@@ -1457,12 +1643,18 @@
                                             "name": "Muraenidae",
                                             "model": "Assets/SpecimenPrefabs/Muraenidae.prefab",
                                             "count": 99,
+                                            "sedentary": false,
+                                            "maxDepth": 80,
+                                            "minDepth": 7,
                                             "numGenera": 2,
                                             "Genera": [
                                                 {
                                                     "name": "Echidna",
                                                     "model": "",
                                                     "count": 14,
+                                                    "sedentary": false,
+                                                    "maxDepth": 80,
+                                                    "minDepth": 7,
                                                     "numSpecies": 1,
                                                     "Species": [
                                                         {
@@ -1480,6 +1672,9 @@
                                                     "name": "Gymnothorax",
                                                     "model": "",
                                                     "count": 85,
+                                                    "sedentary": false,
+                                                    "maxDepth": 40,
+                                                    "minDepth": 7,
                                                     "numSpecies": 16,
                                                     "Species": [
                                                         {
@@ -1634,12 +1829,18 @@
                                             "name": "Ophichthidae",
                                             "model": "Assets/SpecimenPrefabs/Ophichthidae.prefab",
                                             "count": 10,
+                                            "sedentary": false,
+                                            "maxDepth": 35,
+                                            "minDepth": 12,
                                             "numGenera": 1,
                                             "Genera": [
                                                 {
                                                     "name": "Myrichthys",
                                                     "model": "",
                                                     "count": 10,
+                                                    "sedentary": false,
+                                                    "maxDepth": 35,
+                                                    "minDepth": 12,
                                                     "numSpecies": 2,
                                                     "Species": [
                                                         {
@@ -1670,18 +1871,27 @@
                                     "name": "Beryciformes",
                                     "model": "",
                                     "count": 26,
+                                    "sedentary": false,
+                                    "maxDepth": 66,
+                                    "minDepth": 7,
                                     "numFamilies": 1,
                                     "Families": [
                                         {
                                             "name": "Holocentridae",
                                             "model": "None",
                                             "count": 26,
+                                            "sedentary": false,
+                                            "maxDepth": 66,
+                                            "minDepth": 7,
                                             "numGenera": 2,
                                             "Genera": [
                                                 {
                                                     "name": "Holocentrus",
                                                     "model": "",
                                                     "count": 9,
+                                                    "sedentary": false,
+                                                    "maxDepth": 66,
+                                                    "minDepth": 11,
                                                     "numSpecies": 2,
                                                     "Species": [
                                                         {
@@ -1708,6 +1918,9 @@
                                                     "name": "Sargocentron",
                                                     "model": "",
                                                     "count": 17,
+                                                    "sedentary": false,
+                                                    "maxDepth": 45,
+                                                    "minDepth": 7,
                                                     "numSpecies": 3,
                                                     "Species": [
                                                         {
@@ -1747,18 +1960,27 @@
                                     "name": "Elopiformes",
                                     "model": "",
                                     "count": 15,
+                                    "sedentary": false,
+                                    "maxDepth": 30,
+                                    "minDepth": 7,
                                     "numFamilies": 1,
                                     "Families": [
                                         {
                                             "name": "Megalopidae",
                                             "model": "Assets/SpecimenPrefabs/Megalopidae.prefab",
                                             "count": 15,
+                                            "sedentary": false,
+                                            "maxDepth": 30,
+                                            "minDepth": 7,
                                             "numGenera": 1,
                                             "Genera": [
                                                 {
                                                     "name": "Megalops",
                                                     "model": "",
                                                     "count": 15,
+                                                    "sedentary": false,
+                                                    "maxDepth": 30,
+                                                    "minDepth": 7,
                                                     "numSpecies": 1,
                                                     "Species": [
                                                         {
@@ -1780,18 +2002,27 @@
                                     "name": "Scorpaeniformes",
                                     "model": "",
                                     "count": 95,
+                                    "sedentary": false,
+                                    "maxDepth": 100,
+                                    "minDepth": 6,
                                     "numFamilies": 1,
                                     "Families": [
                                         {
                                             "name": "Scorpaenidae",
                                             "model": "",
                                             "count": 95,
+                                            "sedentary": false,
+                                            "maxDepth": 100,
+                                            "minDepth": 6,
                                             "numGenera": 2,
                                             "Genera": [
                                                 {
                                                     "name": "Pterois",
                                                     "model": "Assets/SpecimenPrefabs/Pterois.prefab",
                                                     "count": 86,
+                                                    "sedentary": false,
+                                                    "maxDepth": 100,
+                                                    "minDepth": 6,
                                                     "numSpecies": 3,
                                                     "Species": [
                                                         {
@@ -1827,6 +2058,9 @@
                                                     "name": "Scorpaena",
                                                     "model": "Assets/SpecimenPrefabs/Scorpaena.prefab",
                                                     "count": 9,
+                                                    "sedentary": false,
+                                                    "maxDepth": 30,
+                                                    "minDepth": 15,
                                                     "numSpecies": 4,
                                                     "Species": [
                                                         {
@@ -1877,24 +2111,36 @@
                             "name": "Elasmobranchii",
                             "model": "",
                             "count": 152,
+                            "sedentary": false,
+                            "maxDepth": 80,
+                            "minDepth": 2,
                             "numOrders": 3,
                             "Orders": [
                                 {
                                     "name": "Carcharhiniformes",
                                     "model": "",
                                     "count": 27,
+                                    "sedentary": false,
+                                    "maxDepth": 43,
+                                    "minDepth": 10,
                                     "numFamilies": 1,
                                     "Families": [
                                         {
                                             "name": "Carcharhinidae",
                                             "model": "Assets/SpecimenPrefabs/Carcharhinidae.prefab",
                                             "count": 27,
+                                            "sedentary": false,
+                                            "maxDepth": 43,
+                                            "minDepth": 10,
                                             "numGenera": 1,
                                             "Genera": [
                                                 {
                                                     "name": "Carcharhinus",
                                                     "model": "",
                                                     "count": 27,
+                                                    "sedentary": false,
+                                                    "maxDepth": 43,
+                                                    "minDepth": 10,
                                                     "numSpecies": 6,
                                                     "Species": [
                                                         {
@@ -1961,18 +2207,27 @@
                                     "name": "Rajiformes",
                                     "model": "",
                                     "count": 78,
+                                    "sedentary": false,
+                                    "maxDepth": 66,
+                                    "minDepth": 2,
                                     "numFamilies": 2,
                                     "Families": [
                                         {
                                             "name": "Dasyatidae",
                                             "model": "Assets/SpecimenPrefabs/Dasyatidae.prefab",
                                             "count": 45,
+                                            "sedentary": false,
+                                            "maxDepth": 30,
+                                            "minDepth": 2,
                                             "numGenera": 1,
                                             "Genera": [
                                                 {
                                                     "name": "Dasyatis",
                                                     "model": "",
                                                     "count": 45,
+                                                    "sedentary": false,
+                                                    "maxDepth": 30,
+                                                    "minDepth": 2,
                                                     "numSpecies": 9,
                                                     "Species": [
                                                         {
@@ -2064,12 +2319,18 @@
                                             "name": "Myliobatidae",
                                             "model": "Assets/SpecimenPrefabs/Myliobatidae.prefab",
                                             "count": 33,
+                                            "sedentary": false,
+                                            "maxDepth": 66,
+                                            "minDepth": 2,
                                             "numGenera": 2,
                                             "Genera": [
                                                 {
                                                     "name": "Aetobatus",
                                                     "model": "",
                                                     "count": 22,
+                                                    "sedentary": false,
+                                                    "maxDepth": 66,
+                                                    "minDepth": 2,
                                                     "numSpecies": 1,
                                                     "Species": [
                                                         {
@@ -2087,6 +2348,9 @@
                                                     "name": "Myliobatis",
                                                     "model": "",
                                                     "count": 11,
+                                                    "sedentary": false,
+                                                    "maxDepth": 31,
+                                                    "minDepth": 15,
                                                     "numSpecies": 2,
                                                     "Species": [
                                                         {
@@ -2117,18 +2381,27 @@
                                     "name": "Orectolobiformes",
                                     "model": "",
                                     "count": 47,
+                                    "sedentary": false,
+                                    "maxDepth": 80,
+                                    "minDepth": 5,
                                     "numFamilies": 1,
                                     "Families": [
                                         {
                                             "name": "Ginglymostomatidae",
                                             "model": "Assets/SpecimenPrefabs/Ginglymostomatidae.prefab",
                                             "count": 47,
+                                            "sedentary": false,
+                                            "maxDepth": 80,
+                                            "minDepth": 5,
                                             "numGenera": 1,
                                             "Genera": [
                                                 {
                                                     "name": "Ginglymostoma",
                                                     "model": "",
                                                     "count": 47,
+                                                    "sedentary": false,
+                                                    "maxDepth": 80,
+                                                    "minDepth": 5,
                                                     "numSpecies": 1,
                                                     "Species": [
                                                         {
@@ -2152,24 +2425,36 @@
                             "name": "Reptilia",
                             "model": "",
                             "count": 99,
+                            "sedentary": false,
+                            "maxDepth": 100,
+                            "minDepth": 2,
                             "numOrders": 1,
                             "Orders": [
                                 {
                                     "name": "Testudines",
                                     "model": "",
                                     "count": 99,
+                                    "sedentary": false,
+                                    "maxDepth": 100,
+                                    "minDepth": 2,
                                     "numFamilies": 1,
                                     "Families": [
                                         {
                                             "name": "Cheloniidae",
                                             "model": "",
                                             "count": 99,
+                                            "sedentary": false,
+                                            "maxDepth": 100,
+                                            "minDepth": 2,
                                             "numGenera": 3,
                                             "Genera": [
                                                 {
                                                     "name": "Caretta",
                                                     "model": "Assets/SpecimenPrefabs/Caretta.prefab",
                                                     "count": 15,
+                                                    "sedentary": false,
+                                                    "maxDepth": 28,
+                                                    "minDepth": 12,
                                                     "numSpecies": 1,
                                                     "Species": [
                                                         {
@@ -2187,6 +2472,9 @@
                                                     "name": "Chelonia",
                                                     "model": "Assets/SpecimenPrefabs/Chelonia.prefab",
                                                     "count": 50,
+                                                    "sedentary": false,
+                                                    "maxDepth": 70,
+                                                    "minDepth": 2,
                                                     "numSpecies": 2,
                                                     "Species": [
                                                         {
@@ -2200,7 +2488,7 @@
                                                         },
                                                         {
                                                             "name": "Chelonia mydas",
-                                                            "commonName": "Green Sea Turtle",
+                                                            "commonName": "Green Sea Turtles",
                                                             "model": "",
                                                             "count": 44,
                                                             "sedentary": false,
@@ -2213,6 +2501,9 @@
                                                     "name": "Eretmochelys",
                                                     "model": "Assets/SpecimenPrefabs/Eretmochelys.prefab",
                                                     "count": 34,
+                                                    "sedentary": false,
+                                                    "maxDepth": 100,
+                                                    "minDepth": 11,
                                                     "numSpecies": 2,
                                                     "Species": [
                                                         {
@@ -2247,30 +2538,45 @@
                     "name": "Cnidaria",
                     "model": "",
                     "count": 57,
+                    "sedentary": false,
+                    "maxDepth": 30,
+                    "minDepth": 5,
                     "numClasses": 2,
                     "Classes": [
                         {
                             "name": "Anthozoa",
                             "model": "",
                             "count": 48,
+                            "sedentary": false,
+                            "maxDepth": 26,
+                            "minDepth": 5,
                             "numOrders": 2,
                             "Orders": [
                                 {
                                     "name": "Scleractinia",
                                     "model": "",
                                     "count": 33,
+                                    "sedentary": false,
+                                    "maxDepth": 26,
+                                    "minDepth": 7,
                                     "numFamilies": 4,
                                     "Families": [
                                         {
                                             "name": "Acroporidae",
                                             "model": "Assets/SpecimenPrefabs/Acroporidae.prefab",
                                             "count": 11,
+                                            "sedentary": false,
+                                            "maxDepth": 26,
+                                            "minDepth": 7,
                                             "numGenera": 1,
                                             "Genera": [
                                                 {
                                                     "name": "Acropora",
                                                     "model": "",
                                                     "count": 11,
+                                                    "sedentary": false,
+                                                    "maxDepth": 26,
+                                                    "minDepth": 7,
                                                     "numSpecies": 3,
                                                     "Species": [
                                                         {
@@ -2308,12 +2614,18 @@
                                             "name": "Faviidae",
                                             "model": "None",
                                             "count": 8,
+                                            "sedentary": false,
+                                            "maxDepth": 25,
+                                            "minDepth": 11,
                                             "numGenera": 1,
                                             "Genera": [
                                                 {
                                                     "name": "Montastraea",
                                                     "model": "",
                                                     "count": 8,
+                                                    "sedentary": false,
+                                                    "maxDepth": 25,
+                                                    "minDepth": 11,
                                                     "numSpecies": 2,
                                                     "Species": [
                                                         {
@@ -2342,12 +2654,18 @@
                                             "name": "Meandrinidae",
                                             "model": "Assets/SpecimenPrefabs/Meandrinidae.prefab",
                                             "count": 7,
+                                            "sedentary": false,
+                                            "maxDepth": 25,
+                                            "minDepth": 11,
                                             "numGenera": 1,
                                             "Genera": [
                                                 {
                                                     "name": "Dendrogyra",
                                                     "model": "",
                                                     "count": 7,
+                                                    "sedentary": false,
+                                                    "maxDepth": 25,
+                                                    "minDepth": 11,
                                                     "numSpecies": 1,
                                                     "Species": [
                                                         {
@@ -2367,12 +2685,18 @@
                                             "name": "Mussidae",
                                             "model": "Assets/SpecimenPrefabs/Mussidae.prefab",
                                             "count": 7,
+                                            "sedentary": false,
+                                            "maxDepth": 25,
+                                            "minDepth": 11,
                                             "numGenera": 1,
                                             "Genera": [
                                                 {
                                                     "name": "Mussa",
                                                     "model": "",
                                                     "count": 7,
+                                                    "sedentary": false,
+                                                    "maxDepth": 25,
+                                                    "minDepth": 11,
                                                     "numSpecies": 1,
                                                     "Species": [
                                                         {
@@ -2394,18 +2718,27 @@
                                     "name": "Alcyonacea",
                                     "model": "",
                                     "count": 15,
+                                    "sedentary": false,
+                                    "maxDepth": 26,
+                                    "minDepth": 5,
                                     "numFamilies": 1,
                                     "Families": [
                                         {
                                             "name": "Gorgoniidae",
                                             "model": "Assets/SpecimenPrefabs/Gorgoniidae.prefab",
                                             "count": 15,
+                                            "sedentary": false,
+                                            "maxDepth": 26,
+                                            "minDepth": 5,
                                             "numGenera": 1,
                                             "Genera": [
                                                 {
                                                     "name": "Gorgonia",
                                                     "model": "",
                                                     "count": 15,
+                                                    "sedentary": false,
+                                                    "maxDepth": 26,
+                                                    "minDepth": 5,
                                                     "numSpecies": 1,
                                                     "Species": [
                                                         {
@@ -2429,24 +2762,36 @@
                             "name": "Hydrozoa",
                             "model": "",
                             "count": 9,
+                            "sedentary": false,
+                            "maxDepth": 30,
+                            "minDepth": 11,
                             "numOrders": 1,
                             "Orders": [
                                 {
                                     "name": "Anthoathecata",
                                     "model": "",
                                     "count": 9,
+                                    "sedentary": false,
+                                    "maxDepth": 30,
+                                    "minDepth": 11,
                                     "numFamilies": 1,
                                     "Families": [
                                         {
                                             "name": "Milleporidae",
                                             "model": "None",
                                             "count": 9,
+                                            "sedentary": false,
+                                            "maxDepth": 30,
+                                            "minDepth": 11,
                                             "numGenera": 1,
                                             "Genera": [
                                                 {
                                                     "name": "Millepora",
                                                     "model": "",
                                                     "count": 9,
+                                                    "sedentary": false,
+                                                    "maxDepth": 30,
+                                                    "minDepth": 11,
                                                     "numSpecies": 1,
                                                     "Species": [
                                                         {
@@ -2472,30 +2817,45 @@
                     "name": "Porifera",
                     "model": "",
                     "count": 7,
+                    "sedentary": false,
+                    "maxDepth": 24,
+                    "minDepth": 3,
                     "numClasses": 1,
                     "Classes": [
                         {
                             "name": "Demospongiae",
                             "model": "",
                             "count": 7,
+                            "sedentary": false,
+                            "maxDepth": 24,
+                            "minDepth": 3,
                             "numOrders": 1,
                             "Orders": [
                                 {
                                     "name": "Verongida",
                                     "model": "",
                                     "count": 7,
+                                    "sedentary": false,
+                                    "maxDepth": 24,
+                                    "minDepth": 3,
                                     "numFamilies": 1,
                                     "Families": [
                                         {
                                             "name": "Aplysinidae",
                                             "model": "Assets/SpecimenPrefabs/Aplysinidae.prefab",
                                             "count": 7,
+                                            "sedentary": false,
+                                            "maxDepth": 24,
+                                            "minDepth": 3,
                                             "numGenera": 1,
                                             "Genera": [
                                                 {
                                                     "name": "Aplysina",
                                                     "model": "",
                                                     "count": 7,
+                                                    "sedentary": false,
+                                                    "maxDepth": 24,
+                                                    "minDepth": 3,
                                                     "numSpecies": 2,
                                                     "Species": [
                                                         {
@@ -2530,30 +2890,45 @@
                     "name": "Arthropoda",
                     "model": "",
                     "count": 76,
+                    "sedentary": false,
+                    "maxDepth": 45,
+                    "minDepth": 6,
                     "numClasses": 1,
                     "Classes": [
                         {
                             "name": "Malacostraca",
                             "model": "",
                             "count": 76,
+                            "sedentary": false,
+                            "maxDepth": 45,
+                            "minDepth": 6,
                             "numOrders": 1,
                             "Orders": [
                                 {
                                     "name": "Decapoda",
                                     "model": "",
                                     "count": 76,
+                                    "sedentary": false,
+                                    "maxDepth": 45,
+                                    "minDepth": 6,
                                     "numFamilies": 3,
                                     "Families": [
                                         {
                                             "name": "Cancridae",
                                             "model": "Assets/SpecimenPrefabs/Cancridae.prefab",
                                             "count": 7,
+                                            "sedentary": false,
+                                            "maxDepth": 30,
+                                            "minDepth": 15,
                                             "numGenera": 1,
                                             "Genera": [
                                                 {
                                                     "name": "Cancer",
                                                     "model": "",
                                                     "count": 7,
+                                                    "sedentary": false,
+                                                    "maxDepth": 30,
+                                                    "minDepth": 15,
                                                     "numSpecies": 1,
                                                     "Species": [
                                                         {
@@ -2573,12 +2948,18 @@
                                             "name": "Diogenidae",
                                             "model": "Assets/SpecimenPrefabs/Diogenidae.prefab",
                                             "count": 7,
+                                            "sedentary": false,
+                                            "maxDepth": 30,
+                                            "minDepth": 14,
                                             "numGenera": 1,
                                             "Genera": [
                                                 {
                                                     "name": "Petrochirus",
                                                     "model": "",
                                                     "count": 7,
+                                                    "sedentary": false,
+                                                    "maxDepth": 30,
+                                                    "minDepth": 14,
                                                     "numSpecies": 1,
                                                     "Species": [
                                                         {
@@ -2598,12 +2979,18 @@
                                             "name": "Palinuridae",
                                             "model": "Assets/SpecimenPrefabs/Palinuridae.prefab",
                                             "count": 62,
+                                            "sedentary": false,
+                                            "maxDepth": 45,
+                                            "minDepth": 6,
                                             "numGenera": 2,
                                             "Genera": [
                                                 {
                                                     "name": "Palinurus",
                                                     "model": "",
                                                     "count": 10,
+                                                    "sedentary": false,
+                                                    "maxDepth": 25,
+                                                    "minDepth": 6,
                                                     "numSpecies": 1,
                                                     "Species": [
                                                         {
@@ -2621,6 +3008,9 @@
                                                     "name": "Panulirus",
                                                     "model": "",
                                                     "count": 52,
+                                                    "sedentary": false,
+                                                    "maxDepth": 45,
+                                                    "minDepth": 7,
                                                     "numSpecies": 2,
                                                     "Species": [
                                                         {
@@ -2655,30 +3045,45 @@
                     "name": "Mollusca",
                     "model": "",
                     "count": 21,
+                    "sedentary": false,
+                    "maxDepth": 30,
+                    "minDepth": 9,
                     "numClasses": 1,
                     "Classes": [
                         {
                             "name": "Cephalopoda",
                             "model": "",
                             "count": 21,
+                            "sedentary": false,
+                            "maxDepth": 30,
+                            "minDepth": 9,
                             "numOrders": 2,
                             "Orders": [
                                 {
                                     "name": "Teuthida",
                                     "model": "",
                                     "count": 10,
+                                    "sedentary": false,
+                                    "maxDepth": 30,
+                                    "minDepth": 9,
                                     "numFamilies": 1,
                                     "Families": [
                                         {
                                             "name": "Loliginidae",
                                             "model": "Assets/SpecimenPrefabs/Loliginidae.prefab",
                                             "count": 10,
+                                            "sedentary": false,
+                                            "maxDepth": 30,
+                                            "minDepth": 9,
                                             "numGenera": 1,
                                             "Genera": [
                                                 {
                                                     "name": "Sepioteuthis",
                                                     "model": "",
                                                     "count": 10,
+                                                    "sedentary": false,
+                                                    "maxDepth": 30,
+                                                    "minDepth": 9,
                                                     "numSpecies": 1,
                                                     "Species": [
                                                         {
@@ -2700,18 +3105,27 @@
                                     "name": "Octopoda",
                                     "model": "",
                                     "count": 11,
+                                    "sedentary": false,
+                                    "maxDepth": 30,
+                                    "minDepth": 12,
                                     "numFamilies": 1,
                                     "Families": [
                                         {
                                             "name": "Octopodidae",
                                             "model": "Assets/SpecimenPrefabs/Octopodidae.prefab",
                                             "count": 11,
+                                            "sedentary": false,
+                                            "maxDepth": 30,
+                                            "minDepth": 12,
                                             "numGenera": 1,
                                             "Genera": [
                                                 {
                                                     "name": "Octopus",
                                                     "model": "",
                                                     "count": 11,
+                                                    "sedentary": false,
+                                                    "maxDepth": 30,
+                                                    "minDepth": 12,
                                                     "numSpecies": 4,
                                                     "Species": [
                                                         {
