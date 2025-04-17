@@ -80,6 +80,29 @@ public class SpecimenDataManager : MonoBehaviour
         return loadedObject;
     }
     
+    private GameObject getModel(string m_string)
+    {
+        GameObject model = null;
+        try
+        {
+            return model = LoadPrefabFromString(m_string);
+
+        }
+        catch (ArgumentException e) //might actually catch other exceptions could make custom exception class
+        {
+            Debug.Log(
+                $"Missing model for: {m_string}");
+            Debug.LogException(e);
+            return null; // avoid making manager obj if we have an error
+        }
+        catch(FileNotFoundException fe)
+        {
+            Debug.Log($"Cannot find {m_string} file for: : {m_string} ");
+            Debug.LogException(fe);
+            return null; // ignore faulty data
+        }
+    }
+
     // Update to use coroutines so that this does not block the user/scene during setup (enable background async loading)
     private System.Collections.IEnumerator ProcessData()
     {
@@ -96,110 +119,195 @@ public class SpecimenDataManager : MonoBehaviour
         float maxDepth = 0;
         foreach (Kingdom k in JSONDataManager.specimenData.Kingdoms)
         {
-            string m_string = k.model;
-            TaxonomicLevels lvl = TaxonomicLevels.Kingdom;
+            if (!String.IsNullOrEmpty(k.model))
+            {    
+                string m_string = k.model;
+                TaxonomicLevels lvl = TaxonomicLevels.Kingdom;
+
+                GameObject nObj = new GameObject();
+                nObj.AddComponent<SpeciesManager>();
+                nObj.name = k.name + " Manager";
+                nObj.transform.SetParent(gameObject.transform);
+                SpeciesManager manager = nObj.GetComponent<SpeciesManager>();
+
+                if (k.maxDepth > maxDepth) maxDepth = k.maxDepth;
+
+                GameObject model = getModel(m_string);
+                // Current issue link to which level the model came from: Should be doable
+
+                manager.Setup(k, null, null, null, null, null, null, sample_count, model, lvl);
+                if (model == null) continue;
+
+                SpeciesControllers.Add(manager);
+
+                continue; // No need to continue if model represents this group
+            }
             
             foreach (Phylum p in k.Phyla)
             {
-                if (String.IsNullOrEmpty(m_string))
-                {
-                    m_string = p.model;
-                    lvl = TaxonomicLevels.Phylum;
+                if (!String.IsNullOrEmpty(p.model))
+                {    
+                    string m_string = p.model;
+                    TaxonomicLevels lvl = TaxonomicLevels.Phylum;
+
+                    GameObject nObj = new GameObject();
+                    nObj.AddComponent<SpeciesManager>();
+                    nObj.name = p.name + " Manager";
+                    nObj.transform.SetParent(gameObject.transform);
+                    SpeciesManager manager = nObj.GetComponent<SpeciesManager>();
+
+                    if (p.maxDepth > maxDepth) maxDepth = p.maxDepth;
+
+                    GameObject model = getModel(m_string);
+                    if (model == null) continue;
+
+                    // Current issue link to which level the model came from: Should be doable
+
+                    manager.Setup(k, p, null, null, null, null, null, sample_count, model, lvl);
+
+                    SpeciesControllers.Add(manager);
+
+                    continue; // No need to continue if model represents this group
                 }
                 
                 foreach (TaxonClass c in p.Classes)
                 {
-                    if (String.IsNullOrEmpty(m_string))
-                    {
-                        m_string = c.model;
-                        lvl = TaxonomicLevels.Class;
-                    }
+                    if (!String.IsNullOrEmpty(c.model))
+                    {    
+                        string m_string = c.model;
+                        TaxonomicLevels lvl = TaxonomicLevels.Class;
+
+                        GameObject nObj = new GameObject();
+                        nObj.AddComponent<SpeciesManager>();
+                        nObj.name = c.name + " Manager";
+                        nObj.transform.SetParent(gameObject.transform);
+                        SpeciesManager manager = nObj.GetComponent<SpeciesManager>();
+
+                        if (c.maxDepth > maxDepth) maxDepth = c.maxDepth;
+
+                        GameObject model = getModel(m_string);
+                        if (model == null) continue;
                     
+                        // Current issue link to which level the model came from: Should be doable
+
+                        manager.Setup(k, p, c, null, null, null, null, sample_count, model, lvl);
+
+                        SpeciesControllers.Add(manager);
+
+                        continue; // No need to continue if model represents this group
+                    }
+
                     foreach (Order o in c.Orders)
                     {
-                        if (String.IsNullOrEmpty(m_string))
-                        {
-                            m_string = o.model;
-                            lvl = TaxonomicLevels.Order;
+                        if (!String.IsNullOrEmpty(o.model))
+                        {    
+                            string m_string = o.model;
+                            TaxonomicLevels lvl = TaxonomicLevels.Order;
+
+                            GameObject nObj = new GameObject();
+                            nObj.AddComponent<SpeciesManager>();
+                            nObj.name = o.name + " Manager";
+                            nObj.transform.SetParent(gameObject.transform);
+                            SpeciesManager manager = nObj.GetComponent<SpeciesManager>();
+
+                            if (o.maxDepth > maxDepth) maxDepth = o.maxDepth;
+
+                            GameObject model = getModel(m_string);
+                            if (model == null) continue;
+                    
+                            // Current issue link to which level the model came from: Should be doable
+
+                            manager.Setup(k, p, c, o, null, null, null, sample_count, model, lvl);
+
+                            SpeciesControllers.Add(manager);
+
+                            continue; // No need to continue if model represents this group
                         }
                         
                         foreach (Family f in o.Families)
                         {
-                            if (String.IsNullOrEmpty(m_string))
-                            {
-                                m_string = f.model;
-                                lvl = TaxonomicLevels.Family;
+                            if (!String.IsNullOrEmpty(f.model))
+                            {    
+                                string m_string = f.model;
+                                TaxonomicLevels lvl = TaxonomicLevels.Family;
+
+                                GameObject nObj = new GameObject();
+                                nObj.AddComponent<SpeciesManager>();
+                                nObj.name = f.name + " Manager";
+                                nObj.transform.SetParent(gameObject.transform);
+                                SpeciesManager manager = nObj.GetComponent<SpeciesManager>();
+
+                                if (f.maxDepth > maxDepth) maxDepth = f.maxDepth;
+
+                                GameObject model = getModel(m_string);
+                                if (model == null) continue;
+                    
+                                // Current issue link to which level the model came from: Should be doable
+
+                                manager.Setup(k, p, c, o, f, null, null, sample_count, model, lvl);
+
+                                SpeciesControllers.Add(manager);
+
+                                continue; // No need to continue if model represents this group
                             }
-                            
+
                             foreach (Genus g in f.Genera)
                             {
-                                if (String.IsNullOrEmpty(m_string))
-                                {
-                                    m_string = g.model;
-                                    lvl = TaxonomicLevels.Genus;
+                                if (!String.IsNullOrEmpty(g.model))
+                                {    
+                                    string m_string = g.model;
+                                    TaxonomicLevels lvl = TaxonomicLevels.Genus;
+
+                                    GameObject nObj = new GameObject();
+                                    nObj.AddComponent<SpeciesManager>();
+                                    nObj.name = g.name + " Manager";
+                                    nObj.transform.SetParent(gameObject.transform);
+                                    SpeciesManager manager = nObj.GetComponent<SpeciesManager>();
+
+                                    if (g.maxDepth > maxDepth) maxDepth = g.maxDepth;
+
+                                    GameObject model = getModel(m_string);
+                                    if (model == null) continue;
+                    
+                                    // Current issue link to which level the model came from: Should be doable
+
+                                    manager.Setup(k, p, c, o, f, g, null, sample_count, model, lvl);
+
+                                    SpeciesControllers.Add(manager);
+
+                                    continue; // No need to continue if model represents this group
+
                                 }
                                 
                                 foreach (Species s in g.Species)
                                 {
-                                    if (String.IsNullOrEmpty(m_string))
-                                    {
-                                        m_string = s.model;
-                                        lvl = TaxonomicLevels.Species;
+                                    if (!String.IsNullOrEmpty(s.model))
+                                    {    
+                                        string m_string = s.model;
+                                        TaxonomicLevels lvl = TaxonomicLevels.Species;
+
+                                        GameObject nObj = new GameObject();
+                                        nObj.AddComponent<SpeciesManager>();
+                                        nObj.name = s.name + " Manager";
+                                        nObj.transform.SetParent(gameObject.transform);
+                                        SpeciesManager manager = nObj.GetComponent<SpeciesManager>();
+
+                                        if (s.maxDepth > maxDepth) maxDepth = s.maxDepth;
+
+                                        GameObject model = getModel(m_string);
+                                        if (model == null) continue;
+                    
+                                        // Current issue link to which level the model came from: Should be doable
+
+                                        manager.Setup(k, p, c, o, f, g, s, sample_count, model, lvl);
+
+                                        SpeciesControllers.Add(manager);
                                     }
-
-                                    GameObject model = null;
-                                    try
-                                    {
-                                        model = LoadPrefabFromString(m_string);
-
-                                    }
-                                    catch (ArgumentException e) //might actually catch other exceptions could make custom exception class
-                                    {
-                                        Debug.Log(
-                                            $"Missing model for: {k.name} {p.name} {c.name} {o.name} {f.name} {g.name} {s.name}");
-                                        Debug.LogException(e);
-                                        continue; // avoid making manager obj if we have an error
-                                    }
-                                    catch(FileNotFoundException fe)
-                                    {
-                                        Debug.Log($"Cannot find {m_string} file for: : {k.name} {p.name} {c.name} {o.name} {f.name} {g.name} {s.name} ");
-                                        Debug.LogException(fe);
-                                        continue; // ignore faulty data
-                                    }
-                                    
-                                    GameObject nObj = new GameObject();
-                                    nObj.AddComponent<SpeciesManager>();
-                                    nObj.name = s.name + " Manager";
-                                    nObj.transform.SetParent(gameObject.transform);
-                                    SpeciesManager manager = nObj.GetComponent<SpeciesManager>();
-
-                                    if (s.maxDepth > maxDepth) maxDepth = s.maxDepth;
-
-                                    // Current issue link to which level the model came from: Should be doable
-
-                                    manager.Setup(k, p, c, o, f, g, s, sample_count, model, lvl);
-
-                                    SpeciesControllers.Add(manager);
-                                    
-                                    Debug.Log("First item processed: " + Time.time);
-                                    yield return null;
-                                    
-                                    if (lvl == TaxonomicLevels.Species) m_string = "";
                                 }
-
-                                if (lvl == TaxonomicLevels.Genus) m_string = "";
                             }
-
-                            if (lvl == TaxonomicLevels.Family) m_string = "";
                         }
-
-                        if (lvl == TaxonomicLevels.Order) m_string = "";
                     }
-
-                    if (lvl == TaxonomicLevels.Class) m_string = "";
                 }
-
-                if (lvl == TaxonomicLevels.Phylum) m_string = "";
             }
         }
         
@@ -211,7 +319,10 @@ public class SpecimenDataManager : MonoBehaviour
         _loading = false;
 
         Debug.Log("Processing Done: " + Time.time);
+
+        yield return null;
     }
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
