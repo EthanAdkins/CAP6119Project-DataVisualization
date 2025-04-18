@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dev-Scenes/Judah-MainScene.unity
     guid: 4b009901dc69d6d4195fb75207edaf85
+  - enabled: 1
+    path: Assets/Scenes/Dev-Scenes/Justin-Dev.unity
+    guid: ddc3e5fb9fafb4042b182d04b1564139
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 2b7bba90e03056141b4d946009502b23, type: 2}

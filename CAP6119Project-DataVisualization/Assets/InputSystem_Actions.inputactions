@@ -81,7 +81,7 @@
                     "name": "Sprint",
                     "type": "Button",
                     "id": "641cd816-40e6-41b4-8c3d-04687c349290",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -90,6 +90,15 @@
                     "name": "ToggleMenu",
                     "type": "Button",
                     "id": "d018b2b9-2093-4f80-891b-87a2b8dc8be0",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TogglePauseMenu",
+                    "type": "Button",
+                    "id": "277017c2-f896-4b83-be85-8ecf717ecdb9",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -490,6 +499,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "ToggleMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bd47cf44-0080-4a1e-875d-e7929ae3a4cf",
+                    "path": "<XRController>{RightHand}/{Menu}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";XR",
+                    "action": "TogglePauseMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
