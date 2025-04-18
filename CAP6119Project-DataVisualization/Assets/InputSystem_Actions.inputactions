@@ -505,7 +505,7 @@
                 {
                     "name": "",
                     "id": "bd47cf44-0080-4a1e-875d-e7929ae3a4cf",
-                    "path": "<XRController>{RightHand}/{Menu}",
+                    "path": "<XRController>/{MenuButton}",
                     "interactions": "",
                     "processors": "",
                     "groups": ";XR",

@@ -7,27 +7,35 @@ using TMPro;
 public class PauseMenuController : MonoBehaviour
 {
     [Header("Tab Content Panels")]
-    [SerializeField] private GameObject filtersTabContent;
-    [SerializeField] private GameObject optionsTabContent;
+    [SerializeField] private GameObject filtersTabContents;
+    [SerializeField] private GameObject optionsTabContents;
+    [Header("Tab Content Buttons")]
+    [SerializeField] private Button optionsTabButton;
+    [SerializeField] private Button filtersTabButton;
+    [Header("Tab Content Colors")]
+    [SerializeField] private Color activeTabColor = new Color(0.2f, 0.5f, 1f); // #3399FF
+    [SerializeField] private Color inactiveTabColor = new Color(0.282f, 0.373f, 0.463f); // #485F76
+
 
     public Transform positionTarget; // Assign to player's camera
     public GameObject menuUI; // Assign to main menu
     public InputActionReference toggleKey; // Assign to open/close menu button on controller
     public TMP_InputField densityInputField; // Assign to model density display
-
     public SpecimenDataManager specimenDataManager;
     public int modelDensity = 634; // Taken from SpecimenDataManager's totalDensity
     private bool isVisible = false;
-
+    public TextMeshProUGUI currentSceneText;
     void OnEnable()
     {
         toggleKey.action.performed += ToggleMenu;
+        SceneManager.sceneLoaded += OnSceneLoaded;
         toggleKey.action.Enable();
     }
 
     void OnDisable()
     {
         toggleKey.action.performed -= ToggleMenu;
+        SceneManager.sceneLoaded -= OnSceneLoaded;
         toggleKey.action.Disable();
     }
 
@@ -35,6 +43,7 @@ public class PauseMenuController : MonoBehaviour
     {
         menuUI.SetActive(false); // Start hidden
         ShowOptionsTab();
+        UpdateSceneLabel();
 
         if (specimenDataManager != null)
         {
@@ -69,14 +78,20 @@ public class PauseMenuController : MonoBehaviour
 
     public void ShowFiltersTab()
     {
-        filtersTabContent.SetActive(true);
-        optionsTabContent.SetActive(false);
+        filtersTabContents.SetActive(true);
+        optionsTabContents.SetActive(false);
+
+        filtersTabButton.image.color = activeTabColor;
+        optionsTabButton.image.color = inactiveTabColor;
     }
 
     public void ShowOptionsTab()
     {
-        filtersTabContent.SetActive(false);
-        optionsTabContent.SetActive(true);
+        filtersTabContents.SetActive(false);
+        optionsTabContents.SetActive(true);
+
+        filtersTabButton.image.color = inactiveTabColor;
+        optionsTabButton.image.color = activeTabColor;
     }
 
     void FollowPosition()
@@ -84,7 +99,7 @@ public class PauseMenuController : MonoBehaviour
         if (positionTarget == null) return;
 
         // Offset from the player camera
-        Vector3 offset = positionTarget.forward * 1f;
+        Vector3 offset = positionTarget.forward * 2f;
         transform.position = positionTarget.position + offset;
 
         // Face the camera
@@ -105,25 +120,35 @@ public class PauseMenuController : MonoBehaviour
         }
     }
 
-    void ResetScene()
+    public void UpdateSceneLabel()
+    {
+        string sceneName = SceneManager.GetActiveScene().name;
+        currentSceneText.text = $"{sceneName}";
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        UpdateSceneLabel();
+    }
+    public void ResetScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    void ChangeModelDensityAndReload()
+    public void ChangeModelDensityAndReload()
     {
         if (specimenDataManager.TotalDensity != modelDensity)
         specimenDataManager.TotalDensity = modelDensity;
         ResetScene();
     }
 
-    void ChangeScene(string sceneName)
+    public void ChangeScene(string sceneName)
     {
          if (!string.IsNullOrEmpty(sceneName))
             SceneManager.LoadScene(sceneName);
     }
 
-    void QuitApp()
+    public void QuitApp()
     {
         Debug.Log("Quitting application...");
         Application.Quit();
