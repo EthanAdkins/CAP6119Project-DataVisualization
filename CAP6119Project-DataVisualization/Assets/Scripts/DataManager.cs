@@ -7,6 +7,17 @@ public class TaxonomyManager : MonoBehaviour
 {
     public static TaxonomyManager Instance; // Only one instance (Singelton)
     public SpecimenData specimenData;
+    
+    private bool _modelsLoading;
+    private bool _modelsReady = false;
+    public bool ModelsReady
+    {
+        get => _modelsReady;
+        private set => _modelsReady = value;
+    }
+
+    private AssetBundle _modelPrefabs;
+    private AssetBundleCreateRequest _loadRequest;
 
     public delegate void LoadedAction();
 
@@ -40,8 +51,11 @@ public class TaxonomyManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
-        LoadJsonData();
+        
+        if (!Loaded)
+            LoadJsonData();
+        if (!ModelsReady)
+            LoadPrefabs();
     }
 
     void LoadJsonData()
@@ -60,5 +74,48 @@ public class TaxonomyManager : MonoBehaviour
         {
             Debug.LogError("JSON file not found at: " + file);
         }
+    }
+    
+    public GameObject LoadPrefabFromString(string s)
+    {
+        if (_modelPrefabs is null) throw new System.ComponentModel.InvalidAsynchronousStateException("Assets Not Loaded");
+        if (string.IsNullOrEmpty(s))
+        {
+            throw new System.ArgumentException("Model String cannot be null or empty - please pass a model file");
+        }
+
+        var loadedObject = _modelPrefabs.LoadAsset<GameObject>(s);
+        if (loadedObject is null)
+        {
+            throw new FileNotFoundException("no file found - please check the configuration");
+        }
+        return loadedObject;
+    }
+    
+    
+    void LoadPrefabs()
+    {
+        _modelsLoading = true;
+        Debug.Log("Start Model Loading: " + Time.time);
+        
+        _loadRequest = AssetBundle.LoadFromFileAsync("Assets/AssetBundles/specimenmodels");
+
+        _loadRequest.completed += HandleAssetBundleLoaded;
+    }
+
+    private void HandleAssetBundleLoaded(AsyncOperation op)
+    {
+        if (!_loadRequest.isDone) return;
+        
+        _modelPrefabs = _loadRequest.assetBundle;
+        if (_modelPrefabs is null)
+        {
+            Debug.LogError("Failed To Load Model Prefab Asset Bundle");
+        }
+
+        ModelsReady = true;
+        _modelsLoading = false;
+        
+        Debug.Log("Models Loaded: " + Time.time);
     }
 }
