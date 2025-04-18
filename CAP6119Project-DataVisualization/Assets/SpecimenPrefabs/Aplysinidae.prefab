@@ -404,6 +404,7 @@ GameObject:
   - component: {fileID: -1798334317271671399}
   - component: {fileID: 7665337812548614623}
   - component: {fileID: -4628967201691856527}
+  - component: {fileID: -9203579189114762721}
   m_Layer: 9
   m_Name: Aplysinidae
   m_TagString: Untagged
@@ -610,6 +611,23 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.41040036
   m_Center: {x: 0, y: 0.28959963, z: 0}
+--- !u!114 &-9203579189114762721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926670865024442661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f6607a3c11dba84cac14a1063a245c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0.75
+  rotationSpeed: 2
+  buffer: 0.1
+  verticalDrift: 1
+  waterObject: {fileID: 0}
 --- !u!1 &2394435822837739188
 GameObject:
   m_ObjectHideFlags: 0

@@ -708,6 +708,7 @@ GameObject:
   - component: {fileID: 8011828991235267411}
   - component: {fileID: -4869557006189317172}
   - component: {fileID: 330374175838222945}
+  - component: {fileID: -6255595374752603278}
   m_Layer: 9
   m_Name: Carcharhinidae
   m_TagString: Untagged
@@ -916,6 +917,23 @@ CapsuleCollider:
   m_Height: 6.277177
   m_Direction: 0
   m_Center: {x: -1.5570388, y: 0.39999998, z: 0.100000024}
+--- !u!114 &-6255595374752603278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5394200975342763119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f6607a3c11dba84cac14a1063a245c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0.75
+  rotationSpeed: 2
+  buffer: 0.1
+  verticalDrift: 1
+  waterObject: {fileID: 0}
 --- !u!1 &5701812825010965572
 GameObject:
   m_ObjectHideFlags: 0

@@ -27,6 +27,10 @@ public class CreateSpawnPoints : MonoBehaviour
         {
             waterObject.transform.localScale = new Vector3(waterObject.transform.localScale.x, depth, waterObject.transform.localScale.z);
             waterObject.transform.position = new Vector3(waterObject.transform.position.x, depth / 2, waterObject.transform.position.z);
+            
+            // Force bounds to update immediately so CreateNewValidPoint() uses the proper y values
+            box.enabled = false;
+            box.enabled = true;
         }
         else if (box != null)
         {
@@ -59,12 +63,12 @@ public class CreateSpawnPoints : MonoBehaviour
             
             Vector3 min = box.bounds.min;
             Vector3 max = box.bounds.max;
-
+            
             // ensure we dont go out of bounds of environ (will want to make sure we set the bounds after loading data
             // to ensure bounds go from globalMinDepth to globalMaxDepth) but keep this as failsafe
             float min_y = Math.Max(max.y - maxDepth, min.y);
             float max_y = max.y - minDepth;
-            
+
             float x = Random.Range(min.x, max.x);
             float y = Random.Range(min_y, max_y);
             float z = Random.Range(min.z, max.z);
