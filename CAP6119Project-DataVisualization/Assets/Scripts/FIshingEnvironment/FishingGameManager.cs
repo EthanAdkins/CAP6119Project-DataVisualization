@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Drawing;
+using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
@@ -15,6 +16,9 @@ public class FishingGameManager : MonoBehaviour
     private Dictionary<SpeciesManager, int> _CaughtFishSpeciesManagersCounts = new Dictionary<SpeciesManager, int>();
     private GameObject _lastCaughtFish;
     public string currentLevel = "name";
+    [SerializeField] private TMP_Text _lastCaughtFishText;
+    private readonly string caughtFishSignTextPrefix = "You Caught a ";
+
     private void Awake()
     {
         barChart.ClearData();
@@ -27,7 +31,7 @@ public class FishingGameManager : MonoBehaviour
     void Start()
     {
         if (DataMan is null) DataMan = FindFirstObjectByType<SpecimenDataManager>();
-
+        _lastCaughtFishText.text = "";
     }
 
     // Update is called once per frame
@@ -69,6 +73,7 @@ public class FishingGameManager : MonoBehaviour
                 _CaughtFishSpeciesManagersCounts[caughtFish] = 1;
             }
             UpdateFishChart(currentLevel, false);
+            _lastCaughtFishText.text = caughtFishSignTextPrefix + GetTaxonDisplayName(caughtFish) + "!";
         }
         else
         {
@@ -149,5 +154,23 @@ public class FishingGameManager : MonoBehaviour
                     _ => "[Unknown Level]"
                 };
         }
+    }
+    private string GetTaxonDisplayName(SpeciesManager manager)
+    {
+        string name = manager.root switch
+        {
+            Species s => s.name,
+            Genus g => g.name,
+            Family f => f.name,
+            Order o => o.name,
+            TaxonClass c => c.name,
+            Phylum p => p.name,
+            Kingdom k => k.name,
+            _ => "Unknown"
+        };
+
+        string level = manager.model_lvl.ToString();
+
+        return $"[{level}] {name}";
     }
 }
