@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Drawing;
+using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
@@ -15,6 +16,9 @@ public class FishingGameManager : MonoBehaviour
     private Dictionary<SpeciesManager, int> _CaughtFishSpeciesManagersCounts = new Dictionary<SpeciesManager, int>();
     private GameObject _lastCaughtFish;
     public string currentLevel = "name";
+    [SerializeField] private TMP_Text _lastCaughtFishText;
+    private readonly string caughtFishSignTextPrefix = "You Caught a ";
+
     private void Awake()
     {
         barChart.ClearData();
@@ -27,7 +31,7 @@ public class FishingGameManager : MonoBehaviour
     void Start()
     {
         if (DataMan is null) DataMan = FindFirstObjectByType<SpecimenDataManager>();
-
+        _lastCaughtFishText.text = "";
     }
 
     // Update is called once per frame
@@ -50,24 +54,32 @@ public class FishingGameManager : MonoBehaviour
         }
         
         SpeciesManager caughtFish = DataMan.GetRandomFish();
-        // _CaughtFishSpeciesManagers.Add(caughtFish);
-        GameObject instance = Instantiate(caughtFish.SpeciesPrefab, _SpawnLocation.position,
-                    _SpawnLocation.rotation);
-        instance.AddComponent<XRGrabInteractable>();
-        instance.GetComponent<Rigidbody>().useGravity = false;
-        instance.GetComponent<Rigidbody>().isKinematic = true;
-
-        _lastCaughtFish = instance;
-
-        if (_CaughtFishSpeciesManagersCounts.ContainsKey(caughtFish))
+        if (caughtFish != null)
         {
-            _CaughtFishSpeciesManagersCounts[caughtFish]++;
+            GameObject instance = Instantiate(caughtFish.SpeciesPrefab, _SpawnLocation.position,
+                        _SpawnLocation.rotation);
+            //instance.AddComponent<XRGrabInteractable>();
+            instance.GetComponent<Rigidbody>().useGravity = false;
+            instance.GetComponent<Rigidbody>().isKinematic = true;
+
+            _lastCaughtFish = instance;
+
+            if (_CaughtFishSpeciesManagersCounts.ContainsKey(caughtFish))
+            {
+                _CaughtFishSpeciesManagersCounts[caughtFish]++;
+            }
+            else
+            {
+                _CaughtFishSpeciesManagersCounts[caughtFish] = 1;
+            }
+            UpdateFishChart(currentLevel, false);
+            _lastCaughtFishText.text = caughtFishSignTextPrefix + GetTaxonDisplayName(caughtFish) + "!";
         }
         else
         {
-            _CaughtFishSpeciesManagersCounts[caughtFish] = 1;
+            Debug.Log("Models not loaded yet!");
         }
-        UpdateFishChart(currentLevel, false);
+        
 
     }
 
@@ -84,37 +96,7 @@ public class FishingGameManager : MonoBehaviour
         foreach (var kvp in _CaughtFishSpeciesManagersCounts)
         {
             string fishName = "";
-            if (level == "kingdom")
-            {
-                fishName = kvp.Key.kingdom.name;
-            }
-            else if (level == "phylum")
-            {
-                fishName = kvp.Key.phylum.name;
-            }
-            else if (level == "taxclass")
-            {
-                fishName = kvp.Key.taxclass.name;
-            }
-            else if (level == "family")
-            {
-                fishName = kvp.Key.family.name;
-            }
-            else if (level == "order")
-            {
-                fishName = kvp.Key.order.name;
-            }
-            else if (level == "genus")
-            {
-                fishName = kvp.Key.genus.name;
-            }
-            else if (level == "species")
-            {
-                fishName = kvp.Key.species.name;
-            } else
-            {
-                fishName = kvp.Key.SpeciesName;
-            }
+            fishName = GetTaxonNameFromSpeciesManager(kvp.Key, level);
 
             if (fishLevelCounts.ContainsKey(fishName))
             {
@@ -142,5 +124,53 @@ public class FishingGameManager : MonoBehaviour
         yAxis.splitNumber = 5;
 
         barChart.RefreshChart(); 
+    }
+
+    private string GetTaxonNameFromSpeciesManager(SpeciesManager manager, string level)
+    {
+        level = level.ToLower();
+
+        // Try direct access first (safe null checks)
+        switch (level)
+        {
+            case "kingdom": return manager.kingdom?.name ?? "[Unknown Kingdom]";
+            case "phylum": return manager.phylum?.name ?? "[Unknown Phylum]";
+            case "taxclass": return manager.taxclass?.name ?? "[Unknown Class]";
+            case "order": return manager.order?.name ?? "[Unknown Order]";
+            case "family": return manager.family?.name ?? "[Unknown Family]";
+            case "genus": return manager.genus?.name ?? "[Unknown Genus]";
+            case "species": return manager.species?.name ?? "[Unknown Species]";
+            default:
+                // Fallback: use model_lvl and root
+                return manager.model_lvl switch
+                {
+                    TaxonomicLevels.Kingdom => ((Kingdom)manager.root).name,
+                    TaxonomicLevels.Phylum => ((Phylum)manager.root).name,
+                    TaxonomicLevels.Class => ((TaxonClass)manager.root).name,
+                    TaxonomicLevels.Order => ((Order)manager.root).name,
+                    TaxonomicLevels.Family => ((Family)manager.root).name,
+                    TaxonomicLevels.Genus => ((Genus)manager.root).name,
+                    TaxonomicLevels.Species => ((Species)manager.root).name,
+                    _ => "[Unknown Level]"
+                };
+        }
+    }
+    private string GetTaxonDisplayName(SpeciesManager manager)
+    {
+        string name = manager.root switch
+        {
+            Species s => s.name,
+            Genus g => g.name,
+            Family f => f.name,
+            Order o => o.name,
+            TaxonClass c => c.name,
+            Phylum p => p.name,
+            Kingdom k => k.name,
+            _ => "Unknown"
+        };
+
+        string level = manager.model_lvl.ToString();
+
+        return $"[{level}] {name}";
     }
 }

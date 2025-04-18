@@ -8,12 +8,19 @@ public class RadioButtonSystem : MonoBehaviour
     private void Start()
     {
         toggleGroup = GetComponent<ToggleGroup>();
-        gameManager = GetComponent<FishingGameManager>();
+        gameManager = FindFirstObjectByType<FishingGameManager>();
     }
 
     public void Submit()
     {
         Toggle toggle = toggleGroup.ActiveToggles().FirstOrDefault();
-        gameManager.UpdateFishChart(toggle.GetComponentInChildren<Text>().text, true);
+        if (toggle == null)
+        {
+            Debug.Log("No toggle selected");
+            return;
+        }else
+        {
+            gameManager.UpdateFishChart(toggle.GetComponentInChildren<Text>().text, true);
+        }
     }
 }
