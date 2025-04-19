@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class TaxonomyManager : MonoBehaviour
     public static TaxonomyManager Instance; // Only one instance (Singelton)
     public SpecimenData specimenData;
     
+    [SerializeField] private GameObject cameraCanvas;
     private bool _modelsLoading;
     private bool _modelsReady = false;
     public bool ModelsReady
@@ -95,12 +97,18 @@ public class TaxonomyManager : MonoBehaviour
     
     void LoadPrefabs()
     {
+        if (cameraCanvas != null)
+        {
+            cameraCanvas.SetActive(true);
+        }
         _modelsLoading = true;
         Debug.Log("Start Model Loading: " + Time.time);
         
         _loadRequest = AssetBundle.LoadFromFileAsync("Assets/AssetBundles/specimenmodels");
 
         _loadRequest.completed += HandleAssetBundleLoaded;
+        
+        
     }
 
     private void HandleAssetBundleLoaded(AsyncOperation op)
@@ -117,5 +125,19 @@ public class TaxonomyManager : MonoBehaviour
         _modelsLoading = false;
         
         Debug.Log("Models Loaded: " + Time.time);
+        
+        if (cameraCanvas != null) { 
+            cameraCanvas.SetActive(false);
+        }
+
+        _loadRequest.completed -= HandleAssetBundleLoaded;
+    }
+
+    private void OnDestroy()
+    {
+        if (_loadRequest is not null)
+        {
+            _loadRequest.completed -= HandleAssetBundleLoaded;
+        }
     }
 }

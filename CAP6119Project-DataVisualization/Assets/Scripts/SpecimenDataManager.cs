@@ -19,7 +19,7 @@ public class SpecimenDataManager : MonoBehaviour
     private List<SpeciesManager> SpeciesControllers;
     // Needs to be a list of attributes to filter to
     // (Figuring this out will be a stretch depending on how robust we want)
-    private string filter = "";
+    private Filter filter = null;
     private int sample_count; //use to get distribution for spawn
     
     public TaxonomyManager JSONDataManager;
@@ -29,7 +29,6 @@ public class SpecimenDataManager : MonoBehaviour
     public int TotalDensity = 1000;
     public CreateSpawnPoints SpawnPointManager;
     [SerializeField] private bool initialSpawn = true;
-    [SerializeField] private GameObject cameraCanvas;
     public bool Loaded
     {
         get
@@ -50,8 +49,7 @@ public class SpecimenDataManager : MonoBehaviour
 
     public static event SpawnManagersLoadedAction OnLoaded;
 
-
-    public delegate void FilterChangedAction(string newFilter, string oldFilter);
+    public delegate void FilterChangedAction(Filter newFilter);
     public event FilterChangedAction OnFilterChanged;
 
     public GameObject getModel(string m_string)
@@ -385,36 +383,6 @@ public class SpecimenDataManager : MonoBehaviour
         }
     }
 
-    System.Collections.IEnumerator LoadPrefabs()
-    {
-        if (cameraCanvas != null)
-        {
-            cameraCanvas.SetActive(true);
-        }
-        // Need to ensure this is loaded before triggering ProcessData
-        // Should this be moved into the DataManager so Loaded is only fired after these assets are ready?
-        // Definitely want this to be DontDestroyOnLoad like the JSON data therefore move to DataManager?
-        // Create a new ModelAssetBundle singleton that is DontDestroyOnLoad and loads these models?
-        AssetBundleCreateRequest loadRequest = AssetBundle.LoadFromFileAsync("Assets/AssetBundles/specimenmodels");
-
-         yield return loadRequest;
-         
-         _modelPrefabs = loadRequest.assetBundle;
-        if (_modelPrefabs is null)
-        {
-            Debug.LogError("Failed To Load Model Prefab Asset Bundle");
-        }
-
-        ModelsReady = true;
-        _modelsLoading = false;
-        
-        Debug.Log("Models Loaded: " + Time.time);
-
-        if (cameraCanvas != null) { 
-            cameraCanvas.SetActive(false);
-        }
-    }
-
     private void OnDestroy()
     {
         if (initialSpawn) 
@@ -485,23 +453,28 @@ public class SpecimenDataManager : MonoBehaviour
             Filter f = new Filter(t);
             
             
-            FilterChangeEvent(f);
+            SetFilter(f);
         }
     }
     
     // Rather than string for filter use a struct
 
-    
-    void FilterChangeEvent(Filter newFilter)
-    {
-        //filter = newFilter;
 
-        // Rather than a foreach manager should we fire some flag
-        // so they can check the filter in their update method?
+    void SetFilter(Filter newFilter)
+    {
+        if (newFilter.Equals(filter)) return; //do nothing if filter has not changed
+
+        Filter of = filter;
+
+        filter = newFilter;
+        
         foreach (SpeciesManager m in SpeciesControllers)
         {
             m.Filter(newFilter); //update to use struct
         }
+
+        OnFilterChanged?.Invoke(newFilter);
+
     }
 
     public SpeciesManager GetRandomFish()

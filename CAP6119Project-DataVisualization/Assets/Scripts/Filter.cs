@@ -5,6 +5,7 @@ public class Filter
     public abstract class FilterComponent
     {
         public abstract bool Match(object specimen);
+        public abstract bool Equals(FilterComponent other);
     }
 
     public class FilterTaxonComponent : FilterComponent
@@ -31,6 +32,16 @@ public class Filter
                 TaxonomicLevels.Phylum => root is Phylum p && p.name.Equals(_name),
                 _ => false
             };
+        }
+
+        public override bool Equals(FilterComponent other)
+        {
+            if (other is FilterTaxonComponent ot)
+            {
+                return (_taxon == ot._taxon) && _name.Equals(ot._name);
+            }
+            
+            return false;
         }
     }
 
@@ -66,6 +77,16 @@ public class Filter
                                  speci.maxDepth <= _maxDepth,
                 _ => false
             };
+        }
+        
+        public override bool Equals(FilterComponent other)
+        {
+            if (other is FilterDepthComponent od)
+            {
+                return _minDepth == od._minDepth && _maxDepth == od._maxDepth;
+            }
+            
+            return false;
         }
     }
 
@@ -116,6 +137,16 @@ public class Filter
                 _ => false
             };
         }
+        
+        public override bool Equals(FilterComponent other)
+        {
+            if (other is FilterObservationCount oc)
+            {
+                return _count == oc._count && _type == oc._type;
+            }
+            
+            return false;
+        }
     }
     private List<FilterComponent> _components = new List<FilterComponent>();
     
@@ -135,5 +166,51 @@ public class Filter
         m = _components.All(c => c.Match(root));
 
         return m;
+    }
+
+    public bool Equals(Filter other)
+    {
+        if (other is null)
+        {
+            return _components.Count == 0;
+        }
+        
+        // Check lists are same length
+        // and then check for a counterpart for each component
+        if (_components.Count != other._components.Count) return false;
+
+        bool match = true;
+        foreach (FilterComponent c in _components)
+        {
+            // search for an equivalent in other
+            if (!other._components.Any(comp => comp.Equals(c)))
+            {
+                match = false;
+                break;
+            }
+        }
+
+        return match;
+    }
+
+    public static bool Equals(Filter f1, Filter f2)
+    {
+        if (f1 is null && f2 is null) return true;
+
+        if (f1 is null) return f2._components.Count == 0;
+        if (f2 is null) return f1._components.Count == 0;
+        
+        if (f1._components.Count != f2._components.Count) return false;
+
+        foreach (FilterComponent c in f1._components)
+        {
+            // search for an equivalent in other
+            if (!f2._components.Any(comp => comp.Equals(c)))
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
