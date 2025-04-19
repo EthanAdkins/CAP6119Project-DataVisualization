@@ -49,9 +49,9 @@ public class FishController : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(UnityEngine.Collider other)
     {
-        if (collision.gameObject.tag == "bobber")
+        if (other.gameObject.tag == "bobber")
         {
             fishingGameManager.caughtFish();
         }
