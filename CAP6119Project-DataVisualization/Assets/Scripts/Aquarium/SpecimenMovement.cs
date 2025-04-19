@@ -18,6 +18,8 @@ public class SpecimenMovement : MonoBehaviour
     private float modelXZRadius;
     private float modelYRadius;
     private float initialY;
+    private Coroutine movementCoroutine;
+    private bool isPaused = false;
 
     private void Awake()
     {
@@ -55,6 +57,7 @@ public class SpecimenMovement : MonoBehaviour
         if (waterObject != null)
         {
             waterBounds = GetObjectBounds(waterObject);
+            WaterBoundsCache.CurrentWaterBounds = waterBounds;
         }
         else
         {
@@ -63,7 +66,7 @@ public class SpecimenMovement : MonoBehaviour
         }
 
         PickNewDestination();
-        StartCoroutine(MovementRoutine());       
+        movementCoroutine = StartCoroutine(MovementRoutine());     
     }
 
     Bounds GetObjectBounds(GameObject obj)
@@ -145,5 +148,29 @@ public class SpecimenMovement : MonoBehaviour
 
             yield return new WaitForSeconds(Random.Range(0.5f, 1.5f));
         }
+    }
+
+    public void PauseMovement()
+    {
+        isPaused = true;
+        if (movementCoroutine != null)
+            StopCoroutine(movementCoroutine);
+    }
+
+    public void ResumeMovement()
+    {
+        if (!isPaused) return;
+        isPaused = false;
+        movementCoroutine = StartCoroutine(MovementRoutine());
+    }
+
+    public void SetWaterBounds(Bounds b)
+    {
+        waterBounds = b;
+    }
+
+    public void UpdateInitialY()
+    {
+        initialY = transform.position.y;
     }
 }

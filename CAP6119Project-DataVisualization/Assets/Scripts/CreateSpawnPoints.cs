@@ -14,7 +14,8 @@ public class CreateSpawnPoints : MonoBehaviour
 
     public BoxCollider box;
     public GameObject waterObject;
-    
+    public GameObject tankObject;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,11 +24,26 @@ public class CreateSpawnPoints : MonoBehaviour
 
     public void SetMaxDepth(float depth)
     {
-        if (waterObject != null)
+        if (waterObject != null && tankObject != null)
         {
-            waterObject.transform.localScale = new Vector3(waterObject.transform.localScale.x, depth, waterObject.transform.localScale.z);
-            waterObject.transform.position = new Vector3(waterObject.transform.position.x, depth / 2, waterObject.transform.position.z);
-            
+            // Lock the top of the water (so if user scrolls before this function is called)
+            float waterTopY = waterObject.transform.position.y + waterObject.transform.localScale.y / 2f;
+
+            // Set new height 
+            waterObject.transform.localScale = new Vector3(
+                waterObject.transform.localScale.x,
+                depth,
+                waterObject.transform.localScale.z
+            );
+
+            // Move tank so top stays the same
+            float newCenterY = waterTopY - depth / 2f;
+            tankObject.transform.position = new Vector3(
+                tankObject.transform.position.x,
+                newCenterY,
+                tankObject.transform.position.z
+            );
+
             // Force bounds to update immediately so CreateNewValidPoint() uses the proper y values
             box.enabled = false;
             box.enabled = true;
