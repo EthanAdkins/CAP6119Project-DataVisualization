@@ -12,6 +12,8 @@ public class CreateSpawnPoints : MonoBehaviour
     
     private List<Vector3> SpawnPointsInUse;
 
+    private Vector3 buffer = new Vector3(1, 1, 1);
+
     public BoxCollider box;
     public GameObject waterObject;
     public GameObject tankObject;
@@ -61,15 +63,37 @@ public class CreateSpawnPoints : MonoBehaviour
         }
     }
 
-    public Vector3 GetSpawnPoint(float minDepth, float maxDepth)
+    public Vector3 GetSpawnPoint(float minDepth, float maxDepth, GameObject model)
     {
-        Vector3 point = CreateNewValidPoint(minDepth, maxDepth);
+        var modelExtents = GetModelExtents(model);
+        Vector3 point = CreateNewValidPoint(minDepth, maxDepth, modelExtents);
         SpawnPointsInUse.Add(point);
         return point;
     }
 
-    private Vector3 CreateNewValidPoint(float minDepth, float maxDepth)
+    private Vector3 GetModelExtents(GameObject model)
     {
+        Renderer[] renderers = model.GetComponentsInChildren<Renderer>();
+        if (renderers.Length > 0)
+        {
+            var combinedBounds = renderers[0].bounds;
+            for (int i = 1; i < renderers.Length; i++)
+            {
+                combinedBounds.Encapsulate(renderers[i].bounds);
+            }
+
+            Vector3 extents = combinedBounds.extents;
+            return extents;
+            //modelXZRadius = Mathf.Max(extents.x, extents.z);
+            //modelYRadius = extents.y;
+        }
+
+        return Vector3.zero;
+    }
+
+    private Vector3 CreateNewValidPoint(float minDepth, float maxDepth, Vector3 modelExtents)
+    {
+        var totalBuffer = buffer + modelExtents;
         bool valid = false;
         Vector3 point = Vector3.zero;
         while (!valid)
@@ -85,9 +109,9 @@ public class CreateSpawnPoints : MonoBehaviour
             float min_y = Math.Max(max.y - maxDepth, min.y);
             float max_y = max.y - minDepth;
 
-            float x = Random.Range(min.x, max.x);
-            float y = Random.Range(min_y, max_y);
-            float z = Random.Range(min.z, max.z);
+            float x = Random.Range(min.x + totalBuffer.x, max.x - totalBuffer.x);
+            float y = Random.Range(min_y + totalBuffer.y, max_y - totalBuffer.y);
+            float z = Random.Range(min.z + totalBuffer.z, max.z - totalBuffer.z);
             point = new Vector3(x, y, z);
 
             if (!SpawnPointsInUse.Contains(point)) valid = true;

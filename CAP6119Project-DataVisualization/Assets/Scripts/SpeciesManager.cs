@@ -157,7 +157,7 @@ public class SpeciesManager : MonoBehaviour // Bit of a misnomer now
             for (int i = 0; i < count; i++)
             {
                 // Create a new GameObject from prefab
-                Vector3 point = SpawnPointManager.GetSpawnPoint(min, max);
+                Vector3 point = SpawnPointManager.GetSpawnPoint(min, max, SpeciesPrefab);
                 
                 // Need to set parent to the SpawnPointManager to ensure correct placement regardless of
                 // Location of manager in the world
