@@ -594,6 +594,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -8582962172235683961, guid: 3e9b0b5dbd8102b44b7c51068269db8d, type: 3}
+    - {fileID: 2484665033948473043, guid: 3e9b0b5dbd8102b44b7c51068269db8d, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2774220344278030320, guid: 3e9b0b5dbd8102b44b7c51068269db8d, type: 3}
       insertIndex: -1
