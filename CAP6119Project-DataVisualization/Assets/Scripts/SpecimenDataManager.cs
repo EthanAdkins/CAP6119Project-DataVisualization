@@ -1,27 +1,25 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
-using System.IO;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 using System.Linq;
-using Unity.VisualScripting.Antlr3.Runtime;
 using Debug = UnityEngine.Debug;
 
 public class SpecimenDataManager : MonoBehaviour
 {
-       
+    // TODO: REMOVE THIS
+    private bool TestFiltering = false;
+    
     //private MonoBehaviour dataLoader; // set to whatever class Justin creates for loading the data
     private bool _loaded = false;
     private bool _loading = false;
+    private Awaitable _processingRequest;
 
     private bool _spawned = false;
     private string current_spawned_filter; //empty = all
     private List<SpeciesManager> SpeciesControllers;
     // Needs to be a list of attributes to filter to
     // (Figuring this out will be a stretch depending on how robust we want)
-    private string filter = "";
+    private Filter filter = null;
     private int sample_count; //use to get distribution for spawn
     
     public TaxonomyManager JSONDataManager;
@@ -31,7 +29,6 @@ public class SpecimenDataManager : MonoBehaviour
     public int TotalDensity = 1000;
     public CreateSpawnPoints SpawnPointManager;
     [SerializeField] private bool initialSpawn = true;
-    [SerializeField] private GameObject cameraCanvas;
     public bool Loaded
     {
         get
@@ -52,42 +49,14 @@ public class SpecimenDataManager : MonoBehaviour
 
     public static event SpawnManagersLoadedAction OnLoaded;
 
-
-    public delegate void FilterChangedAction(string newFilter, string oldFilter);
+    public delegate void FilterChangedAction(Filter newFilter);
     public event FilterChangedAction OnFilterChanged;
 
-    private bool _modelsLoading;
-    private bool _modelsReady = false;
-    private bool ModelsReady
+    public GameObject getModel(string m_string)
     {
-        get => _modelsReady;
-        set => _modelsReady = value;
-    }
-
-    private AssetBundle _modelPrefabs;
-    private GameObject LoadPrefabFromString(string s)
-    {
-        if (_modelPrefabs is null) throw new InvalidAsynchronousStateException("Assets Not Loaded");
-        if (string.IsNullOrEmpty(s))
-        {
-            throw new ArgumentException("Model String cannot be null or empty - please pass a model file");
-        }
-
-        var loadedObject = _modelPrefabs.LoadAsset<GameObject>(s);
-        if (loadedObject is null)
-        {
-            throw new FileNotFoundException("no file found - please check the configuration");
-        }
-        return loadedObject;
-    }
-    
-    private GameObject getModel(string m_string)
-    {
-        GameObject model = null;
         try
         {
-            return model = LoadPrefabFromString(m_string);
-
+            return JSONDataManager.LoadPrefabFromString(m_string);
         }
         catch (ArgumentException e) //might actually catch other exceptions could make custom exception class
         {
@@ -96,7 +65,7 @@ public class SpecimenDataManager : MonoBehaviour
             Debug.LogException(e);
             return null; // avoid making manager obj if we have an error
         }
-        catch(FileNotFoundException fe)
+        catch(System.IO.FileNotFoundException fe)
         {
             Debug.Log($"Cannot find {m_string} file for: : {m_string} ");
             Debug.LogException(fe);
@@ -104,9 +73,9 @@ public class SpecimenDataManager : MonoBehaviour
         }
     }
 
-    // Update to use coroutines so that this does not block the user/scene during setup (enable background async loading)
-    private System.Collections.IEnumerator ProcessData()
+    private async Awaitable ProcessData()
     {
+        await Awaitable.MainThreadAsync();
         sample_count = JSONDataManager.specimenData.totalCount;
         
         if (SpeciesControllers is not null)
@@ -118,12 +87,27 @@ public class SpecimenDataManager : MonoBehaviour
         // walk through and create SpeciesManagers
         // Need to clear strings once going back to the level that that model is from
         float maxDepth = 0;
+        
         foreach (Kingdom k in JSONDataManager.specimenData.Kingdoms)
         {
             if (!String.IsNullOrEmpty(k.model))
             {    
                 string m_string = k.model;
+                if (m_string.Equals("None"))
+                {
+                    Debug.LogError($"No model for {k.name}. Skipping.");
+                    continue;
+                }
                 TaxonomicLevels lvl = TaxonomicLevels.Kingdom;
+                GameObject model = getModel(m_string);
+                    
+                // Error getting model from model string
+                // Continue will skip this from data set
+                if (model is null)
+                {
+                    Debug.LogError($"Error finding model {m_string} for {k.name}");
+                    continue;
+                }
 
                 GameObject nObj = new GameObject();
                 nObj.AddComponent<SpeciesManager>();
@@ -132,13 +116,10 @@ public class SpecimenDataManager : MonoBehaviour
                 SpeciesManager manager = nObj.GetComponent<SpeciesManager>();
 
                 if (k.maxDepth > maxDepth) maxDepth = k.maxDepth;
-
-                GameObject model = getModel(m_string);
                 // Current issue link to which level the model came from: Should be doable
 
                 manager.Setup(k, null, null, null, null, null, null, sample_count, model, lvl);
-                if (model == null) continue;
-
+                
                 SpeciesControllers.Add(manager);
 
                 continue; // No need to continue if model represents this group
@@ -149,7 +130,21 @@ public class SpecimenDataManager : MonoBehaviour
                 if (!String.IsNullOrEmpty(p.model))
                 {    
                     string m_string = p.model;
+                    if (m_string.Equals("None"))
+                    {
+                        Debug.LogError($"No model for {p.name}. Skipping.");
+                        continue;
+                    }
                     TaxonomicLevels lvl = TaxonomicLevels.Phylum;
+                    GameObject model = getModel(m_string);
+                    
+                    // Error getting model from model string
+                    // Continue will skip this from data set
+                    if (model is null)
+                    {
+                        Debug.LogError($"Error finding model {m_string} for {p.name}");
+                        continue;
+                    }
 
                     GameObject nObj = new GameObject();
                     nObj.AddComponent<SpeciesManager>();
@@ -159,16 +154,13 @@ public class SpecimenDataManager : MonoBehaviour
 
                     if (p.maxDepth > maxDepth) maxDepth = p.maxDepth;
 
-                    GameObject model = getModel(m_string);
-                    if (model == null) continue;
-
                     // Current issue link to which level the model came from: Should be doable
 
                     manager.Setup(k, p, null, null, null, null, null, sample_count, model, lvl);
 
                     SpeciesControllers.Add(manager);
 
-                    continue; // No need to continue if model represents this group
+                    continue; // Do not proceed further down tree when model found
                 }
                 
                 foreach (TaxonClass c in p.Classes)
@@ -176,7 +168,21 @@ public class SpecimenDataManager : MonoBehaviour
                     if (!String.IsNullOrEmpty(c.model))
                     {    
                         string m_string = c.model;
+                        if (m_string.Equals("None"))
+                        {
+                            Debug.LogError($"No model for {c.name}. Skipping.");
+                            continue;
+                        }
                         TaxonomicLevels lvl = TaxonomicLevels.Class;
+                        GameObject model = getModel(m_string);
+                    
+                        // Error getting model from model string
+                        // Continue will skip this from data set
+                        if (model is null)
+                        {
+                            Debug.LogError($"Error finding model {m_string} for {c.name}");
+                            continue;
+                        }
 
                         GameObject nObj = new GameObject();
                         nObj.AddComponent<SpeciesManager>();
@@ -186,8 +192,6 @@ public class SpecimenDataManager : MonoBehaviour
 
                         if (c.maxDepth > maxDepth) maxDepth = c.maxDepth;
 
-                        GameObject model = getModel(m_string);
-                        if (model == null) continue;
                     
                         // Current issue link to which level the model came from: Should be doable
 
@@ -195,7 +199,7 @@ public class SpecimenDataManager : MonoBehaviour
 
                         SpeciesControllers.Add(manager);
 
-                        continue; // No need to continue if model represents this group
+                        continue; // Do not proceed further down tree when model found
                     }
 
                     foreach (Order o in c.Orders)
@@ -203,7 +207,21 @@ public class SpecimenDataManager : MonoBehaviour
                         if (!String.IsNullOrEmpty(o.model))
                         {    
                             string m_string = o.model;
+                            if (m_string.Equals("None"))
+                            {
+                                Debug.LogError($"No model for {o.name}. Skipping.");
+                                continue;
+                            }
                             TaxonomicLevels lvl = TaxonomicLevels.Order;
+                            GameObject model = getModel(m_string);
+                    
+                            // Error getting model from model string
+                            // Continue will skip this from data set
+                            if (model is null)
+                            {
+                                Debug.LogError($"Error finding model {m_string} for {o.name}");
+                                continue;
+                            }
 
                             GameObject nObj = new GameObject();
                             nObj.AddComponent<SpeciesManager>();
@@ -213,16 +231,13 @@ public class SpecimenDataManager : MonoBehaviour
 
                             if (o.maxDepth > maxDepth) maxDepth = o.maxDepth;
 
-                            GameObject model = getModel(m_string);
-                            if (model == null) continue;
-                    
                             // Current issue link to which level the model came from: Should be doable
 
                             manager.Setup(k, p, c, o, null, null, null, sample_count, model, lvl);
 
                             SpeciesControllers.Add(manager);
 
-                            continue; // No need to continue if model represents this group
+                            continue; // Do not proceed further down tree when model found
                         }
                         
                         foreach (Family f in o.Families)
@@ -230,7 +245,21 @@ public class SpecimenDataManager : MonoBehaviour
                             if (!String.IsNullOrEmpty(f.model))
                             {    
                                 string m_string = f.model;
+                                if (m_string.Equals("None"))
+                                {
+                                    Debug.LogError($"No model for {f.name}. Skipping.");
+                                    continue;
+                                }
                                 TaxonomicLevels lvl = TaxonomicLevels.Family;
+                                GameObject model = getModel(m_string);
+                    
+                                // Error getting model from model string
+                                // Continue will skip this from data set
+                                if (model is null)
+                                {
+                                    Debug.LogError($"Error finding model {m_string} for {f.name}");
+                                    continue;
+                                }
 
                                 GameObject nObj = new GameObject();
                                 nObj.AddComponent<SpeciesManager>();
@@ -240,8 +269,6 @@ public class SpecimenDataManager : MonoBehaviour
 
                                 if (f.maxDepth > maxDepth) maxDepth = f.maxDepth;
 
-                                GameObject model = getModel(m_string);
-                                if (model == null) continue;
                     
                                 // Current issue link to which level the model came from: Should be doable
 
@@ -249,7 +276,7 @@ public class SpecimenDataManager : MonoBehaviour
 
                                 SpeciesControllers.Add(manager);
 
-                                continue; // No need to continue if model represents this group
+                                continue; // Do not proceed further down tree when model found
                             }
 
                             foreach (Genus g in f.Genera)
@@ -257,7 +284,21 @@ public class SpecimenDataManager : MonoBehaviour
                                 if (!String.IsNullOrEmpty(g.model))
                                 {    
                                     string m_string = g.model;
+                                    if (m_string.Equals("None"))
+                                    {
+                                        Debug.LogError($"No model for {g.name}. Skipping.");
+                                        continue;
+                                    }
                                     TaxonomicLevels lvl = TaxonomicLevels.Genus;
+                                    GameObject model = getModel(m_string);
+                    
+                                    // Error getting model from model string
+                                    // Continue will skip this from data set
+                                    if (model is null)
+                                    {
+                                        Debug.LogError($"Error finding model {m_string} for {g.name}");
+                                        continue;
+                                    }
 
                                     GameObject nObj = new GameObject();
                                     nObj.AddComponent<SpeciesManager>();
@@ -267,16 +308,13 @@ public class SpecimenDataManager : MonoBehaviour
 
                                     if (g.maxDepth > maxDepth) maxDepth = g.maxDepth;
 
-                                    GameObject model = getModel(m_string);
-                                    if (model == null) continue;
-                    
                                     // Current issue link to which level the model came from: Should be doable
 
                                     manager.Setup(k, p, c, o, f, g, null, sample_count, model, lvl);
 
                                     SpeciesControllers.Add(manager);
 
-                                    continue; // No need to continue if model represents this group
+                                    continue; // Do not proceed further down tree when model found
 
                                 }
                                 
@@ -285,7 +323,21 @@ public class SpecimenDataManager : MonoBehaviour
                                     if (!String.IsNullOrEmpty(s.model))
                                     {    
                                         string m_string = s.model;
+                                        if (m_string.Equals("None"))
+                                        {
+                                            Debug.LogError($"No model for {s.name}. Skipping.");
+                                            continue;
+                                        }
                                         TaxonomicLevels lvl = TaxonomicLevels.Species;
+                                        GameObject model = getModel(m_string);
+                    
+                                        // Error getting model from model string
+                                        // Continue will skip this from data set
+                                        if (model is null)
+                                        {
+                                            Debug.LogError($"Error finding model {m_string} for {s.name}");
+                                            continue;
+                                        }
 
                                         GameObject nObj = new GameObject();
                                         nObj.AddComponent<SpeciesManager>();
@@ -294,12 +346,8 @@ public class SpecimenDataManager : MonoBehaviour
                                         SpeciesManager manager = nObj.GetComponent<SpeciesManager>();
 
                                         if (s.maxDepth > maxDepth) maxDepth = s.maxDepth;
-
-                                        GameObject model = getModel(m_string);
-                                        if (model == null) continue;
                     
                                         // Current issue link to which level the model came from: Should be doable
-
                                         manager.Setup(k, p, c, o, f, g, s, sample_count, model, lvl);
 
                                         SpeciesControllers.Add(manager);
@@ -316,12 +364,11 @@ public class SpecimenDataManager : MonoBehaviour
         
         // Add More error handling?
         // Trigger spawn when done
-        Loaded = true;
-        _loading = false;
+        //Loaded = true;
+        //_loading = false;
 
         Debug.Log("Processing Done: " + Time.time);
-
-        yield return null;
+        
     }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -333,36 +380,6 @@ public class SpecimenDataManager : MonoBehaviour
         if (initialSpawn) 
         {
             OnLoaded += Spawn;
-        }
-    }
-
-    System.Collections.IEnumerator LoadPrefabs()
-    {
-        if (cameraCanvas != null)
-        {
-            cameraCanvas.SetActive(true);
-        }
-        // Need to ensure this is loaded before triggering ProcessData
-        // Should this be moved into the DataManager so Loaded is only fired after these assets are ready?
-        // Definitely want this to be DontDestroyOnLoad like the JSON data therefore move to DataManager?
-        // Create a new ModelAssetBundle singleton that is DontDestroyOnLoad and loads these models?
-        AssetBundleCreateRequest loadRequest = AssetBundle.LoadFromFileAsync("Assets/AssetBundles/specimenmodels");
-
-         yield return loadRequest;
-         
-         _modelPrefabs = loadRequest.assetBundle;
-        if (_modelPrefabs is null)
-        {
-            Debug.LogError("Failed To Load Model Prefab Asset Bundle");
-        }
-
-        ModelsReady = true;
-        _modelsLoading = false;
-        
-        Debug.Log("Models Loaded: " + Time.time);
-
-        if (cameraCanvas != null) { 
-            cameraCanvas.SetActive(false);
         }
     }
 
@@ -395,30 +412,34 @@ public class SpecimenDataManager : MonoBehaviour
         }
         
         // trigger after processing all spawns --> Should the event pass the current filter?
-        current_spawned_filter = filter;
+        //current_spawned_filter = filter;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!ModelsReady && !_modelsLoading)
-        {
-            _modelsLoading = true;
-            Debug.Log("Start Model Loading: " + Time.time);
-            StartCoroutine(LoadPrefabs());
-            // get progress of request via loadRequest??
-        }
         // If not done processing/loading data into this manager and JSON data and Model data is ready
         // Start the coroutine for loading
-        if (!_loaded && !_loading && JSONDataManager.Loaded && ModelsReady)
+        if (!_loaded && !_loading && JSONDataManager.Loaded && JSONDataManager.ModelsReady)
         {
             _loading = true;
             // If JSONDataManager Loaded:
-            StartCoroutine(ProcessData()); // Analyze if we need to yield return in other points
+            _processingRequest = ProcessData();
+            
+            //StartCoroutine(ProcessData()); // Analyze if we need to yield return in other points
                                            // (currently spawn one species manager per iteration)
             Debug.Log("Processing Started: " + Time.time);
         }
-        else if (_loaded && initialSpawn)
+        else if (_loading && !_processingRequest.IsCompleted)
+        {
+            Debug.Log($"Processing: {Time.deltaTime}");
+        }
+        else if (_loading && _processingRequest.IsCompleted)
+        {
+            _loading = false;
+            Loaded = true;
+        }
+        else if (Loaded && initialSpawn && !_spawned)
         {
             if (SpeciesControllers.All(m => m.spawned))
                 _spawned = true;
@@ -426,12 +447,34 @@ public class SpecimenDataManager : MonoBehaviour
             // Raise spawn event ONCE when filter changes and after everything loads for the first time
             if (!_spawned) Spawn(); // make this a coroutine too?
         }
+        else if (_spawned && TestFiltering)
+        {
+            Filter.FilterTaxonComponent t = new Filter.FilterTaxonComponent(TaxonomicLevels.Family, "Cancridae");
+            Filter f = new Filter(t);
+            
+            
+            SetFilter(f);
+        }
     }
+    
+    // Rather than string for filter use a struct
 
-    void FilterChangeEvent(string newFilter)
+
+    void SetFilter(Filter newFilter)
     {
-        _spawned = false;
+        if (newFilter.Equals(filter)) return; //do nothing if filter has not changed
+
+        Filter of = filter;
+
         filter = newFilter;
+        
+        foreach (SpeciesManager m in SpeciesControllers)
+        {
+            m.Filter(newFilter); //update to use struct
+        }
+
+        OnFilterChanged?.Invoke(newFilter);
+
     }
 
     public SpeciesManager GetRandomFish()

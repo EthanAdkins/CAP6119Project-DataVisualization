@@ -47,6 +47,7 @@ public class SpeciesManager : MonoBehaviour // Bit of a misnomer now
     public bool Ready => _ready;
 
     private bool _ready = false;
+    private bool _active = false;
 
     public CreateSpawnPoints SpawnPointManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -178,20 +179,24 @@ public class SpeciesManager : MonoBehaviour // Bit of a misnomer now
         }
 
         spawned = true;
+        _active = true;
     }
 
-    public void Filter(string newFilter)
+    public void Filter(Filter newFilter)
     {
         // Do we need the old filter here actually?
         // check if we match the filter somehow -- need to create some scheme for this
         // Disable the entities if not
-        bool match = true;
-        
-        foreach (GameObject s in specimens)
-        {
-            s.SetActive(match);
-        }
+        bool match = newFilter.Match(root);
 
+        if (match != _active)
+        {
+            _active = match;
+            foreach (GameObject s in specimens)
+            {
+                s.SetActive(match);
+            }
+        }
     }
     
     // Update is called once per frame

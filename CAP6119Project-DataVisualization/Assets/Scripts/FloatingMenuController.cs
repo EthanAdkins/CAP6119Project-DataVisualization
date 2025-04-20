@@ -11,7 +11,8 @@ public class FloatingMenuController : MonoBehaviour
     public TextMeshProUGUI taxonomyText;
     public TextMeshProUGUI statsText;
     // public Image speciesImage;
-    public InputActionReference toggleKey; // Assign to open/close key on controller
+    public InputActionReference toggleKey; // Assign to open/close button on controller
+    private bool isVisible = false;
 
     void OnEnable()
     {
@@ -25,8 +26,6 @@ public class FloatingMenuController : MonoBehaviour
         toggleKey.action.Disable();
     }
 
-    private bool isVisible = false;
-
     void Start()
     {
         menuUI.SetActive(false); // Start hidden
@@ -37,7 +36,7 @@ public class FloatingMenuController : MonoBehaviour
         // If visible, follow the player’s view
         if (isVisible)
         {
-            FollowWrist();
+            FollowPosition();
         }
     }
 
@@ -47,19 +46,10 @@ public class FloatingMenuController : MonoBehaviour
         menuUI.SetActive(isVisible);
     }
 
-    public void ShowMenu()
-    {
-        isVisible = true;
-        menuUI.SetActive(isVisible);
-    }
+    public void ShowMenu() => menuUI.SetActive(isVisible = true);
+    public void HideMenu() => menuUI.SetActive(false);
 
-    public void HideMenu()
-    {
-        isVisible = false;
-        menuUI.SetActive(isVisible);
-    }
-
-    void FollowWrist()
+    void FollowPosition()
     {
         if (positionTarget == null) return;
 
