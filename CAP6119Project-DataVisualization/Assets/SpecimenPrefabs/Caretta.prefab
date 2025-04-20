@@ -709,6 +709,7 @@ GameObject:
   - component: {fileID: 6340864988476142082}
   - component: {fileID: -4575912541771353774}
   - component: {fileID: -5615155937181199155}
+  - component: {fileID: -4394478132894730999}
   m_Layer: 9
   m_Name: Caretta
   m_TagString: Untagged
@@ -915,6 +916,23 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.8
   m_Center: {x: 0.4, y: 0.5, z: 0.5}
+--- !u!114 &-4394478132894730999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4919383629876437390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f6607a3c11dba84cac14a1063a245c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0.75
+  rotationSpeed: 2
+  buffer: 0.1
+  verticalDrift: 1
+  waterObject: {fileID: 0}
 --- !u!1 &4920179973823398568
 GameObject:
   m_ObjectHideFlags: 0

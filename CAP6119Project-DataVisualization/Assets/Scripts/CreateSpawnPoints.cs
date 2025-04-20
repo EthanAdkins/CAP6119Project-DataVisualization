@@ -13,7 +13,9 @@ public class CreateSpawnPoints : MonoBehaviour
     private List<Vector3> SpawnPointsInUse;
 
     public BoxCollider box;
-    
+    public GameObject waterObject;
+    public GameObject tankObject;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,14 +24,41 @@ public class CreateSpawnPoints : MonoBehaviour
 
     public void SetMaxDepth(float depth)
     {
-        Vector3 oldSize = box.size;
-        Vector3 newSize = new Vector3(oldSize.x, depth, oldSize.z);
-        
-        Vector3 oldCenter = box.center;
-        Vector3 newCenter = new Vector3(oldCenter.x, depth / 2, oldCenter.z);
-        
-        box.size = newSize;
-        box.center = newCenter;
+        if (waterObject != null && tankObject != null)
+        {
+            // Lock the top of the water (so if user scrolls before this function is called)
+            float waterTopY = waterObject.transform.position.y + waterObject.transform.localScale.y / 2f;
+
+            // Set new height 
+            waterObject.transform.localScale = new Vector3(
+                waterObject.transform.localScale.x,
+                depth,
+                waterObject.transform.localScale.z
+            );
+
+            // Move tank so top stays the same
+            float newCenterY = waterTopY - depth / 2f;
+            tankObject.transform.position = new Vector3(
+                tankObject.transform.position.x,
+                newCenterY,
+                tankObject.transform.position.z
+            );
+
+            // Force bounds to update immediately so CreateNewValidPoint() uses the proper y values
+            box.enabled = false;
+            box.enabled = true;
+        }
+        else if (box != null)
+        {
+            Vector3 oldSize = box.size;
+            Vector3 newSize = new Vector3(oldSize.x, depth, oldSize.z);
+
+            Vector3 oldCenter = box.center;
+            Vector3 newCenter = new Vector3(oldCenter.x, depth / 2, oldCenter.z);
+
+            box.size = newSize;
+            box.center = newCenter;
+        }
     }
 
     public Vector3 GetSpawnPoint(float minDepth, float maxDepth)
@@ -50,12 +79,12 @@ public class CreateSpawnPoints : MonoBehaviour
             
             Vector3 min = box.bounds.min;
             Vector3 max = box.bounds.max;
-
+            
             // ensure we dont go out of bounds of environ (will want to make sure we set the bounds after loading data
             // to ensure bounds go from globalMinDepth to globalMaxDepth) but keep this as failsafe
             float min_y = Math.Max(max.y - maxDepth, min.y);
             float max_y = max.y - minDepth;
-            
+
             float x = Random.Range(min.x, max.x);
             float y = Random.Range(min_y, max_y);
             float z = Random.Range(min.z, max.z);

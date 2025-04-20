@@ -252,6 +252,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8128668236925612103, guid: 86867519a738a0d4485712c4930643e3, type: 3}
       insertIndex: -1
       addedObject: {fileID: -6415549463682228607}
+    - targetCorrespondingSourceObject: {fileID: 8128668236925612103, guid: 86867519a738a0d4485712c4930643e3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -1711248240503734537}
   m_SourcePrefab: {fileID: -5645937942226959685, guid: 86867519a738a0d4485712c4930643e3, type: 3}
 --- !u!1 &8561059671747464838 stripped
 GameObject:
@@ -441,3 +444,20 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.6
   m_Center: {x: 0.1, y: 0, z: 0.1}
+--- !u!114 &-1711248240503734537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8561059671747464838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f6607a3c11dba84cac14a1063a245c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0.75
+  rotationSpeed: 2
+  buffer: 0.1
+  verticalDrift: 1
+  waterObject: {fileID: 0}

@@ -1647,6 +1647,7 @@ GameObject:
   - component: {fileID: 2045076642}
   - component: {fileID: 2045076641}
   - component: {fileID: 2045076640}
+  - component: {fileID: 2045076643}
   m_Layer: 0
   m_Name: Scene1 (2)
   m_TagString: Untagged
@@ -1684,11 +1685,11 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: 1, z: 1.29}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &2045076641
 MeshRenderer:
@@ -1743,6 +1744,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2045076638}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2045076643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045076638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb58ba084f75bb34d9f3fdaa5c874c57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: AquariumScene
 --- !u!1 &2064289201
 GameObject:
   m_ObjectHideFlags: 0
