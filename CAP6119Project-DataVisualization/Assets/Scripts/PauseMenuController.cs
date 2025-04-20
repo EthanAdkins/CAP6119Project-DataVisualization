@@ -15,8 +15,9 @@ public class PauseMenuController : MonoBehaviour
     [Header("Tab Content Colors")]
     [SerializeField] private Color activeTabColor = new Color(0.2f, 0.5f, 1f); // #3399FF
     [SerializeField] private Color inactiveTabColor = new Color(0.282f, 0.373f, 0.463f); // #485F76
+    
 
-
+    [Header("")]
     public Transform positionTarget; // Assign to player's camera
     public GameObject menuUI; // Assign to main menu
     public InputActionReference toggleKey; // Assign to open/close menu button on controller
