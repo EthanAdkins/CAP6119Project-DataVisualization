@@ -160,7 +160,7 @@ public class FilterMenu : MonoBehaviour
 
         // Add to selected filter
         var newComp = new Filter.FilterTaxonComponent(_selectedLvl, name);
-        Debug.Log($"Filtering to {_selectedLvl.ToString()} {name}");
+        //Debug.Log($"Filtering to {_selectedLvl.ToString()} {name}");
         // -- For now basic One taxon comp for filter --
         // TODO: Enable advanced filtering with multiple components linked via AND and OR
 
@@ -200,7 +200,7 @@ public class FilterMenu : MonoBehaviour
         _selectedMaxDepth = value;
         
         _dFilter = new Filter.FilterDepthComponent((int)_selectedMinDepth, (int)_selectedMaxDepth);
-        Debug.Log($"Filtering to Min Depth of {_selectedMinDepth} and Max Depth of {_selectedMaxDepth}");
+        //Debug.Log($"Filtering to Min Depth of {_selectedMinDepth} and Max Depth of {_selectedMaxDepth}");
 
     }
 
@@ -212,7 +212,7 @@ public class FilterMenu : MonoBehaviour
         if (_dFilter != null) param.Add(_dFilter);
         if (_ocFilter != null) param.Add(_ocFilter); 
         
-        Debug.Log($"Applying {param.Count} filters");
+        //Debug.Log($"Applying {param.Count} filters");
         
         Filter f = new Filter(param.ToArray());
 

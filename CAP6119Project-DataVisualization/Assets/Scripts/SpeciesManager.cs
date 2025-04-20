@@ -245,7 +245,7 @@ public class SpeciesManager : MonoBehaviour // Bit of a misnomer now
         if (match != _active)
         {
             _active = match;
-            Debug.Log($"Match: {match} for {model_lvl.ToString()} {name} Min: {MinDepth} Max: {MaxDepth} Count: {Count}");
+            //Debug.Log($"Match: {match} for {model_lvl.ToString()} {name} Min: {MinDepth} Max: {MaxDepth} Count: {Count}");
             int c = 0;
             foreach (GameObject s in specimens)
             {
