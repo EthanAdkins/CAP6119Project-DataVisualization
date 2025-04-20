@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 public class Filter
 {
@@ -7,6 +9,40 @@ public class Filter
         public abstract bool Match(object specimen);
         public abstract bool Equals(FilterComponent other);
     }
+
+    /*public abstract class FilterExpressionComponent : FilterComponent
+    {
+        public abstract bool Match(object specimen);
+    }
+
+    public class FilterOperationComponent : FilterComponent
+    {
+        public enum Operation
+        {
+            AND = 0,
+            OR = 1
+        }
+
+        private Operation _op;
+
+        public FilterOperationComponent(Operation op = Operation.AND)
+        {
+            _op = op;
+        }
+        public override bool Equals(FilterComponent other)
+        {
+            if (other is FilterOperationComponent oc)
+                return _op == oc._op;
+            return false;
+        }
+
+        public bool Operate(bool v1, bool v2)
+        {
+            if (_op == Operation.OR) return v1 || v2;
+            return v1 && v2;
+        }
+    }
+    */
 
     public class FilterTaxonComponent : FilterComponent
     {
@@ -149,6 +185,7 @@ public class Filter
         }
     }
     private List<FilterComponent> _components = new List<FilterComponent>();
+    //private Stack<FilterComponent> _components = new Stack<FilterComponent>();
     
     // Not all components are required (variable number)
     public Filter(params FilterComponent[] components)
@@ -156,17 +193,44 @@ public class Filter
         foreach (FilterComponent c in components)
         {
             _components.Add(c);
+            //_components.Push(c);
         }
     }
+
+    /*public Filter(Stack<FilterComponent> s)
+    {
+        _components = CopyStack(s);
+    }
+
+    private Stack<FilterComponent> CopyStack(Stack<FilterComponent> s)
+    {
+        FilterComponent[] arr = new FilterComponent[s.Count];
+        s.CopyTo(arr, 0);
+        Array.Reverse(arr);
+        return new Stack<FilterComponent>(arr);
+    }*/
 
     public bool Match(object root)
     {
         bool m = false;
-        // at least one match??
+        //Stack<FilterComponent> s = CopyStack(_components);
+        // AND - ALL MUST MATCH
         m = _components.All(c => c.Match(root));
+        //m = Evaluate(ref s, root);
 
         return m;
     }
+    //
+    // private bool Evaluate(ref Stack<FilterComponent> s, object root)
+    // {
+    //     if (!s.TryPop(out var t)) throw new InvalidExpressionException("Filter Expression Invalid");
+    //     if (t is FilterExpressionComponent e) return e.Match(root);
+    //
+    //     var v2 = Evaluate(ref s, root);
+    //     var v1 = Evaluate(ref s, root);
+    //     return (t as FilterOperationComponent).Operate(v1, v2);
+    //     
+    // }
 
     public bool Equals(Filter other)
     {

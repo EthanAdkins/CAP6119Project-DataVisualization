@@ -10,7 +10,7 @@ public class TaxonomyManager : MonoBehaviour
     public SpecimenData specimenData;
     
     [SerializeField] private GameObject cameraCanvas;
-    private bool _modelsLoading;
+    //private bool _modelsLoading;
     private bool _modelsReady = false;
     public bool ModelsReady
     {
@@ -101,7 +101,7 @@ public class TaxonomyManager : MonoBehaviour
         {
             cameraCanvas.SetActive(true);
         }
-        _modelsLoading = true;
+        //_modelsLoading = true;
         Debug.Log("Start Model Loading: " + Time.time);
         
         _loadRequest = AssetBundle.LoadFromFileAsync("Assets/AssetBundles/specimenmodels");
@@ -122,7 +122,7 @@ public class TaxonomyManager : MonoBehaviour
         }
 
         ModelsReady = true;
-        _modelsLoading = false;
+        //_modelsLoading = false;
         
         Debug.Log("Models Loaded: " + Time.time);
         

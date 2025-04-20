@@ -8,8 +8,6 @@ using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
 public class SpeciesManager : MonoBehaviour // Bit of a misnomer now
 {
-    private string current_spawned_filter = ""; //empty = all
-
     public SpecimenDataManager DataMan;
     public string SpeciesName
     {
@@ -48,6 +46,9 @@ public class SpeciesManager : MonoBehaviour // Bit of a misnomer now
 
     private bool _ready = false;
     private bool _active = false;
+
+    private Filter _filter = null;
+    private bool _filterChanged = false;
 
     public CreateSpawnPoints SpawnPointManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -128,15 +129,15 @@ public class SpeciesManager : MonoBehaviour // Bit of a misnomer now
         if (root == null)
         {
             Debug.LogWarning($"{gameObject.name} SpeciesManager has null root.");
-            return;
+            return; // yield break;
         }
         // do nothing if not ready to spawn
-        if (!_ready) return;
+        if (!_ready) return; // yield break;
         DataMan ??= FindFirstObjectByType<SpecimenDataManager>();
         SpawnPointManager = DataMan.SpawnPointManager;
 
         // do nothing if already spawned
-        if (spawned) return;
+        if (spawned) return; // yield break;
         
         specimens ??= new List<GameObject>();
         if (specimens.Count == 0)
@@ -175,6 +176,8 @@ public class SpeciesManager : MonoBehaviour // Bit of a misnomer now
                 }
 
                 specimens.Add(instance);
+
+                //if (i % 10 == 0) yield return null; // split to max 10 spawns per frame update
             }
         }
 
@@ -182,25 +185,51 @@ public class SpeciesManager : MonoBehaviour // Bit of a misnomer now
         _active = true;
     }
 
-    public void Filter(Filter newFilter)
+    private void OnFilterChanged(Filter newFilter)
     {
-        // Do we need the old filter here actually?
-        // check if we match the filter somehow -- need to create some scheme for this
+        _filter = newFilter;
+        _filterChanged = true;
+    }
+
+    public System.Collections.IEnumerator Filter(Filter newFilter)
+    {
+        // check if we match the filter
         // Disable the entities if not
         bool match = newFilter.Match(root);
 
         if (match != _active)
         {
             _active = match;
+            int c = 0;
             foreach (GameObject s in specimens)
             {
                 s.SetActive(match);
+                if (++c > 10) // filter max of 10 per frame update
+                {
+                    c = 0;
+                    yield return null;
+                }
             }
         }
+    }
+    
+    /// <summary>
+    /// Handle OnLoaded from SpecimenDataManager
+    /// Begin Spawn Coroutine that splits spawn to max 10
+    /// entities across frames
+    /// </summary>
+    private void BeginSpawning()
+    {
+        //StartCoroutine(Spawn());
     }
     
     // Update is called once per frame
     void Update()
     {
+        if (_filterChanged)
+        {
+            _filterChanged = false;
+            StartCoroutine(Filter(_filter)); // split disable / enable of entities across frame updates
+        }
     }
 }
