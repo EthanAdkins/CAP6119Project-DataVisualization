@@ -214,9 +214,10 @@ public class Filter
     {
         bool m = false;
         //Stack<FilterComponent> s = CopyStack(_components);
+        //m = Evaluate(ref s, root);
+        
         // AND - ALL MUST MATCH
         m = _components.All(c => c.Match(root));
-        //m = Evaluate(ref s, root);
 
         return m;
     }

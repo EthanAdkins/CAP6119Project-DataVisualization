@@ -73,6 +73,7 @@ public class FilterMenu : MonoBehaviour
         _maxDepth = md;
         minDepthSlider.UpdateMaxValue(md);
         maxDepthSlider.UpdateMaxValue(md);
+        maxDepthSlider.slider.value = md;
 
         _dFilter = new Filter.FilterDepthComponent(0, (int)md);
     }
@@ -139,6 +140,9 @@ public class FilterMenu : MonoBehaviour
                     .Select(s => s.name));
                 _selectedLvl = TaxonomicLevels.Species;
                 break;
+            case "":
+                _fTaxonComp = null;
+                break;
         }
         
         taxonNameDropdown.AddOptions(taxonNames);
@@ -146,13 +150,17 @@ public class FilterMenu : MonoBehaviour
 
     public void OnTaxonNameSelected(int value)
     {
-        string name = taxonTypeDropdown.options[value].text;
+        string name = taxonNameDropdown.options[value].text;
 
-        if (string.IsNullOrEmpty(name)) _fTaxonComp = null;
-        
+        if (string.IsNullOrEmpty(name))
+        {
+            _fTaxonComp = null;
+            return;
+        }
+
         // Add to selected filter
         var newComp = new Filter.FilterTaxonComponent(_selectedLvl, name);
-        
+        Debug.Log($"Filtering to {_selectedLvl.ToString()} {name}");
         // -- For now basic One taxon comp for filter --
         // TODO: Enable advanced filtering with multiple components linked via AND and OR
 
@@ -192,6 +200,8 @@ public class FilterMenu : MonoBehaviour
         _selectedMaxDepth = value;
         
         _dFilter = new Filter.FilterDepthComponent((int)_selectedMinDepth, (int)_selectedMaxDepth);
+        Debug.Log($"Filtering to Min Depth of {_selectedMinDepth} and Max Depth of {_selectedMaxDepth}");
+
     }
 
     public void ApplyFilter()
@@ -201,6 +211,8 @@ public class FilterMenu : MonoBehaviour
         if (_fTaxonComp != null) param.Add(_fTaxonComp);
         if (_dFilter != null) param.Add(_dFilter);
         if (_ocFilter != null) param.Add(_ocFilter); 
+        
+        Debug.Log($"Applying {param.Count} filters");
         
         Filter f = new Filter(param.ToArray());
 

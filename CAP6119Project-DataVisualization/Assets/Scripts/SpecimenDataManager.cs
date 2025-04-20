@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using Unity.VisualScripting;
 using Debug = UnityEngine.Debug;
 
 public class SpecimenDataManager : MonoBehaviour
@@ -451,19 +452,28 @@ public class SpecimenDataManager : MonoBehaviour
 
     public void SetFilter(Filter newFilter)
     {
-        if (newFilter.Equals(filter)) return; //do nothing if filter has not changed
-
+        switch (newFilter)
+        {
+            case null when filter is null:
+                return;
+            case null when filter is not null:
+                break;
+            case not null:
+                Debug.Log($"Filter Changed: {newFilter.Equals(filter)}");
+                if (newFilter.Equals(filter)) return; //do nothing if filter has not changed
+                break;
+        }
+        
         Filter of = filter;
 
         filter = newFilter;
-        
-        foreach (SpeciesManager m in SpeciesControllers)
-        {
-            m.Filter(newFilter); //update to use struct
-        }
 
-        OnFilterChanged?.Invoke(newFilter);
+        //foreach (SpeciesManager m in SpeciesControllers)
+        //{
+        //    m.Filter(newFilter); //update to use struct
+        //}
 
+        OnFilterChanged?.Invoke(newFilter); 
     }
 
     public SpeciesManager GetRandomFish()

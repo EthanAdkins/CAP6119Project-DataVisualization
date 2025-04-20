@@ -5875,7 +5875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 808ba7f9d9744ad4094af796e66c92dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 0}
+  slider: {fileID: 3641509915906477196}
   _maxValueText: {fileID: 1812317849928612164}
   _selectedValueText: {fileID: 7078209631481244252}
 --- !u!1 &6282415997572035389
@@ -6764,8 +6764,8 @@ MonoBehaviour:
   taxonTypeDropdown: {fileID: 4941581247679040404}
   taxonNameDropdown: {fileID: 2270287525932048349}
   filterCountInputField: {fileID: 8376054815770167077}
-  maxDepthSlider: {fileID: 1723329489776600205}
-  minDepthSlider: {fileID: 7617300532817726615}
+  maxDepthSlider: {fileID: 7617300532817726615}
+  minDepthSlider: {fileID: 1723329489776600205}
   _specMan: {fileID: 0}
 --- !u!1 &7812568172542843030
 GameObject:
@@ -8372,7 +8372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 808ba7f9d9744ad4094af796e66c92dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 0}
+  slider: {fileID: 5666869998012389672}
   _maxValueText: {fileID: 6204559853203003723}
   _selectedValueText: {fileID: 6237216379310190973}
 --- !u!1 &8851900873681920549
