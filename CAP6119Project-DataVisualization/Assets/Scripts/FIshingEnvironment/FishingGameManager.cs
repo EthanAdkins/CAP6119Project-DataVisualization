@@ -21,14 +21,8 @@ public class FishingGameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (DataMan is null)
-        {
-            DataMan = FindFirstObjectByType<SpecimenDataManager>();
-        }
-        else
-        {
-            DataMan = FindFirstObjectByType<SpecimenDataManager>();
-        }
+        
+        DataMan = FindFirstObjectByType<SpecimenDataManager>();
 
         barChart.ClearData();
         barChart.EnsureChartComponent<Title>().text = "Fish Caught";
