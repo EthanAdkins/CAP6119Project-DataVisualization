@@ -3,16 +3,17 @@ using TMPro;
 
 public class DepthDisplay : MonoBehaviour
 {
-    public Transform waterObject;
+    public GameObject waterObject;
+    public Transform marker;
     public TextMeshProUGUI text;
     public float viewWindowHeight = 20f;
     public AquariumScroller aquariumScroller;
     void Update()
     {
-        float waterHeight = waterObject.localScale.y;
+        float waterHeight = marker.localScale.y;
 
         // World Y of the bottom of the water
-        float waterBottomY = waterObject.position.y - (waterHeight / 2f);
+        float waterBottomY = waterObject.GetComponent<Renderer>().bounds.min.y;
         float bottomDepth = waterBottomY + waterHeight;
         float topDepth = bottomDepth - viewWindowHeight;
 

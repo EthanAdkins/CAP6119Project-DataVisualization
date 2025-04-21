@@ -69,6 +69,16 @@ public class SpecimenMovement : MonoBehaviour
         movementCoroutine = StartCoroutine(MovementRoutine());     
     }
 
+    private void OnDisable()
+    {
+        PauseMovement();
+    }
+
+    private void OnEnable()
+    {
+        ResumeMovement();
+    }
+
     Bounds GetObjectBounds(GameObject obj)
     {
         Renderer renderer = obj.GetComponent<Renderer>();
@@ -115,7 +125,7 @@ public class SpecimenMovement : MonoBehaviour
     }
 
     private IEnumerator MovementRoutine()
-    {
+    {   
         while (true)
         {
             PickNewDestination();

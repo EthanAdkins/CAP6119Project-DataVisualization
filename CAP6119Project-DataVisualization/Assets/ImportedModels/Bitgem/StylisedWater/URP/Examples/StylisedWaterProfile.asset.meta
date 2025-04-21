@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 16ca5feb16ef2d744852096378401523
+guid: 05d75389c271387408f4f25b616b2aed
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 0
@@ -11,5 +11,5 @@ AssetOrigin:
   productId: 187485
   packageName: URP Stylized Water Shader - Proto Series
   packageVersion: 1.0
-  assetPath: Assets/Bitgem/StylisedWater/URP/Materials/example-water-01.mat
+  assetPath: Assets/ImportedModels/Bitgem/StylisedWater/URP/Examples/StylisedWaterProfile.asset
   uploadId: 412673
