@@ -2,13 +2,11 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using Unity.VisualScripting;
 using Debug = UnityEngine.Debug;
 
 public class SpecimenDataManager : MonoBehaviour
 {
-    // TODO: REMOVE THIS
-    private bool TestFiltering = false;
-    
     //private MonoBehaviour dataLoader; // set to whatever class Justin creates for loading the data
     private bool _loaded = false;
     private bool _loading = false;
@@ -447,34 +445,35 @@ public class SpecimenDataManager : MonoBehaviour
             // Raise spawn event ONCE when filter changes and after everything loads for the first time
             if (!_spawned) Spawn(); // make this a coroutine too?
         }
-        else if (_spawned && TestFiltering)
-        {
-            Filter.FilterTaxonComponent t = new Filter.FilterTaxonComponent(TaxonomicLevels.Family, "Cancridae");
-            Filter f = new Filter(t);
-            
-            
-            SetFilter(f);
-        }
     }
     
     // Rather than string for filter use a struct
 
 
-    void SetFilter(Filter newFilter)
+    public void SetFilter(Filter newFilter)
     {
-        if (newFilter.Equals(filter)) return; //do nothing if filter has not changed
-
+        switch (newFilter)
+        {
+            case null when filter is null:
+                return;
+            case null when filter is not null:
+                break;
+            case not null:
+                Debug.Log($"Filter Changed: {newFilter.Equals(filter)}");
+                if (newFilter.Equals(filter)) return; //do nothing if filter has not changed
+                break;
+        }
+        
         Filter of = filter;
 
         filter = newFilter;
-        
-        foreach (SpeciesManager m in SpeciesControllers)
-        {
-            m.Filter(newFilter); //update to use struct
-        }
 
-        OnFilterChanged?.Invoke(newFilter);
+        //foreach (SpeciesManager m in SpeciesControllers)
+        //{
+        //    m.Filter(newFilter); //update to use struct
+        //}
 
+        OnFilterChanged?.Invoke(newFilter); 
     }
 
     public SpeciesManager GetRandomFish()
