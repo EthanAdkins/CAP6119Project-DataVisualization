@@ -5578,6 +5578,7 @@ MonoBehaviour:
     totalCount: 0
     numKingdoms: 0
     Kingdoms: []
+  cameraCanvas: {fileID: 0}
 --- !u!4 &1024676872
 Transform:
   m_ObjectHideFlags: 0
@@ -6803,7 +6804,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1157405542}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: AttachTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10545,8 +10546,8 @@ RectTransform:
   - {fileID: 1476477498}
   - {fileID: 1563936738}
   - {fileID: 1113168814}
-  - {fileID: 984570149}
   - {fileID: 177999940}
+  - {fileID: 984570149}
   m_Father: {fileID: 2129635190}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -13047,7 +13048,7 @@ GameObject:
   - component: {fileID: 1845412545}
   - component: {fileID: 1845412544}
   - component: {fileID: 1845412543}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: topPivotLocation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14910,7 +14911,7 @@ GameObject:
   - component: {fileID: 2049372234}
   - component: {fileID: 2049372233}
   - component: {fileID: 2049372238}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
