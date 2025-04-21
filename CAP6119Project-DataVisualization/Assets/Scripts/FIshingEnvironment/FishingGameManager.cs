@@ -21,19 +21,28 @@ public class FishingGameManager : MonoBehaviour
 
     private void Awake()
     {
+        if (DataMan is null)
+        {
+            DataMan = FindFirstObjectByType<SpecimenDataManager>();
+        }
+        else
+        {
+            DataMan = FindFirstObjectByType<SpecimenDataManager>();
+        }
+
         barChart.ClearData();
         barChart.EnsureChartComponent<Title>().text = "Fish Caught";
 
         barChart.AddSerie<Bar>("Fish");
+        _lastCaughtFishText.text = "";
+
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (DataMan is null) DataMan = FindFirstObjectByType<SpecimenDataManager>();
-        _lastCaughtFishText.text = "";
     }
-
+    
     // Update is called once per frame
     void Update()
     {
