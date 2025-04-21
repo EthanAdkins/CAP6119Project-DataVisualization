@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using System.Linq;
+using UnityEngine.Tilemaps;
 
 public class TaxonomyManager : MonoBehaviour
 {
@@ -10,7 +12,7 @@ public class TaxonomyManager : MonoBehaviour
     public SpecimenData specimenData;
     
     [SerializeField] private GameObject cameraCanvas;
-    private bool _modelsLoading;
+    //private bool _modelsLoading;
     private bool _modelsReady = false;
     public bool ModelsReady
     {
@@ -97,11 +99,23 @@ public class TaxonomyManager : MonoBehaviour
     
     void LoadPrefabs()
     {
+        //_modelsLoading = true;
+        // if loaded return 
+        if (ModelsReady) return;
+        
+        // If somehow loaded in memory and LoadPrefabs is called set _modelPrefabs to the loaded instance
+        if (AssetBundle.GetAllLoadedAssetBundles().Any(bundle => bundle.name.Equals("specimenmodels")))
+        {
+            _modelPrefabs = AssetBundle.GetAllLoadedAssetBundles()
+                .First(bundle => bundle.name.Equals("specimenmodels"));
+            ModelsReady = true;
+            
+            return;
+        }
         if (cameraCanvas != null)
         {
             cameraCanvas.SetActive(true);
         }
-        _modelsLoading = true;
         Debug.Log("Start Model Loading: " + Time.time);
         
         _loadRequest = AssetBundle.LoadFromFileAsync("Assets/AssetBundles/specimenmodels");
@@ -122,7 +136,6 @@ public class TaxonomyManager : MonoBehaviour
         }
 
         ModelsReady = true;
-        _modelsLoading = false;
         
         Debug.Log("Models Loaded: " + Time.time);
         

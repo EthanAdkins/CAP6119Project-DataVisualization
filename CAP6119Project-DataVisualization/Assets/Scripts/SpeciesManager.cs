@@ -8,8 +8,6 @@ using UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets;
 
 public class SpeciesManager : MonoBehaviour // Bit of a misnomer now
 {
-    private string current_spawned_filter = ""; //empty = all
-
     public SpecimenDataManager DataMan;
     public string SpeciesName
     {
@@ -48,6 +46,63 @@ public class SpeciesManager : MonoBehaviour // Bit of a misnomer now
 
     private bool _ready = false;
     private bool _active = false;
+
+    private Filter _filter = null;
+    private bool _filterChanged = false;
+
+    public float MinDepth
+    {
+        get
+        {
+            return root switch
+            { // Have to use ugly pattern matching because interfaces don't work with JSONUtility
+                Species s     => s.minDepth,
+                Genus g       => g.minDepth,
+                Family f      => f.minDepth,
+                Order o       => o.minDepth,
+                TaxonClass c  => c.minDepth,
+                Phylum p      => p.minDepth,
+                Kingdom k     => k.minDepth,
+                _             => 0f
+            };
+        }
+    }
+
+    public float MaxDepth
+    {
+        get
+        {
+            return root switch
+            { // Have to use ugly pattern matching because interfaces don't work with JSONUtility
+                Species s     => s.maxDepth,
+                Genus g       => g.maxDepth,
+                Family f      => f.maxDepth,
+                Order o       => o.maxDepth,
+                TaxonClass c  => c.maxDepth,
+                Phylum p      => p.maxDepth,
+                Kingdom k     => k.maxDepth,
+                _             => 0f
+            };
+        }
+    }
+    
+    public int Count
+    {
+        get
+        {
+            return root switch
+            { // Have to use ugly pattern matching because interfaces don't work with JSONUtility
+                Species s     => s.count,
+                Genus g       => g.count,
+                Family f      => f.count,
+                Order o       => o.count,
+                TaxonClass c  => c.count,
+                Phylum p      => p.count,
+                Kingdom k     => k.count,
+                _             => 0
+            };
+        }
+    }
 
     public CreateSpawnPoints SpawnPointManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -104,7 +159,7 @@ public class SpeciesManager : MonoBehaviour // Bit of a misnomer now
         };
 
         Distribution = ((double)count) / (double)TotalSampleCount;
-
+        
         _ready = true;
         spawned = false;
     }
@@ -115,6 +170,7 @@ public class SpeciesManager : MonoBehaviour // Bit of a misnomer now
     {
         if (DataMan is null) DataMan = FindFirstObjectByType<SpecimenDataManager>();
         SpawnPointManager = DataMan.SpawnPointManager;
+        DataMan.OnFilterChanged += OnFilterChanged;
         spawned = false;
     }
 
@@ -128,36 +184,26 @@ public class SpeciesManager : MonoBehaviour // Bit of a misnomer now
         if (root == null)
         {
             Debug.LogWarning($"{gameObject.name} SpeciesManager has null root.");
-            return;
+            return; // yield break;
         }
         // do nothing if not ready to spawn
-        if (!_ready) return;
+        if (!_ready) return; // yield break;
         DataMan ??= FindFirstObjectByType<SpecimenDataManager>();
         SpawnPointManager = DataMan.SpawnPointManager;
 
         // do nothing if already spawned
-        if (spawned) return;
+        if (spawned) return; // yield break;
         
         specimens ??= new List<GameObject>();
         if (specimens.Count == 0)
         {
-            (float min, float max) = root switch
-            { // Have to use ugly pattern matching because interfaces don't work with JSONUtility
-                Species s     => (s.minDepth, s.maxDepth),
-                Genus g       => (g.minDepth, g.maxDepth),
-                Family f      => (f.minDepth, f.maxDepth),
-                Order o       => (o.minDepth, o.maxDepth),
-                TaxonClass c  => (c.minDepth, c.maxDepth),
-                Phylum p      => (p.minDepth, p.maxDepth),
-                Kingdom k     => (k.minDepth, k.maxDepth),
-                _             => (0f, 0f)
-            };
+            
             // Spawn exact count in data (does not allow for adjustable amount of spawns for performance)
             int count = Math.Max((int)Math.Floor(DataMan.TotalDensity * Distribution),1); //spawn min of 1
             for (int i = 0; i < count; i++)
             {
                 // Create a new GameObject from prefab
-                Vector3 point = SpawnPointManager.GetSpawnPoint(min, max, SpeciesPrefab);
+                Vector3 point = SpawnPointManager.GetSpawnPoint(MinDepth, MaxDepth, SpeciesPrefab);
                 
                 // Need to set parent to the SpawnPointManager to ensure correct placement regardless of
                 // Location of manager in the world
@@ -175,6 +221,8 @@ public class SpeciesManager : MonoBehaviour // Bit of a misnomer now
                 }
 
                 specimens.Add(instance);
+
+                //if (i % 10 == 0) yield return null; // split to max 10 spawns per frame update? (maybe make 1 even)
             }
         }
 
@@ -182,25 +230,57 @@ public class SpeciesManager : MonoBehaviour // Bit of a misnomer now
         _active = true;
     }
 
-    public void Filter(Filter newFilter)
+    private void OnFilterChanged(Filter newFilter)
     {
-        // Do we need the old filter here actually?
-        // check if we match the filter somehow -- need to create some scheme for this
+        _filter = newFilter;
+        _filterChanged = true;
+    }
+
+    private System.Collections.IEnumerator Filter(Filter newFilter)
+    {
+        // check if we match the filter
         // Disable the entities if not
         bool match = newFilter.Match(root);
 
         if (match != _active)
         {
             _active = match;
+            //Debug.Log($"Match: {match} for {model_lvl.ToString()} {name} Min: {MinDepth} Max: {MaxDepth} Count: {Count}");
+            int c = 0;
             foreach (GameObject s in specimens)
             {
                 s.SetActive(match);
+                if (++c > 10) // filter max of 10 per frame update
+                {
+                    c = 0;
+                    yield return null;
+                }
             }
         }
+    }
+    
+    /// <summary>
+    /// Handle OnLoaded from SpecimenDataManager
+    /// Begin Spawn Coroutine that splits spawn to max 10
+    /// entities across frames
+    /// </summary>
+    private void BeginSpawning()
+    {
+        //StartCoroutine(Spawn());
     }
     
     // Update is called once per frame
     void Update()
     {
+        if (_filterChanged)
+        {
+            _filterChanged = false;
+            StartCoroutine(Filter(_filter)); // split disable / enable of entities across frame updates
+        }
+    }
+
+    private void OnDestroy()
+    {
+        DataMan.OnFilterChanged -= OnFilterChanged;
     }
 }
