@@ -372,6 +372,7 @@ public class SpecimenDataManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        JSONDataManager = TaxonomyManager.Instance;
         if (SpawnPointManager is null) SpawnPointManager = FindFirstObjectByType<CreateSpawnPoints>();
         
        
@@ -391,7 +392,7 @@ public class SpecimenDataManager : MonoBehaviour
 
     private void Awake()
     {
-        JSONDataManager ??= FindFirstObjectByType<TaxonomyManager>();
+        
     }
 
     // First time spawn only?
