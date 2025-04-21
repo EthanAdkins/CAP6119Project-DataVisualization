@@ -5,6 +5,7 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
+using Bitgem.VFX.StylisedWater;
 
 public class CreateSpawnPoints : MonoBehaviour
 {
@@ -15,7 +16,9 @@ public class CreateSpawnPoints : MonoBehaviour
     private Vector3 buffer = new Vector3(1, 1, 1);
 
     public BoxCollider box;
+    public Renderer rend;
     public GameObject waterObject;
+    public GameObject marker;
     public GameObject tankObject;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -28,27 +31,38 @@ public class CreateSpawnPoints : MonoBehaviour
     {
         if (waterObject != null && tankObject != null)
         {
-            // Lock the top of the water (so if user scrolls before this function is called)
-            float waterTopY = waterObject.transform.position.y + waterObject.transform.localScale.y / 2f;
+            
+            rend = waterObject.GetComponent<Renderer>();
 
             // Set new height 
-            waterObject.transform.localScale = new Vector3(
-                waterObject.transform.localScale.x,
+            float oldDepth = marker.transform.localScale.y;
+            marker.transform.localScale = new Vector3(
+                marker.transform.localScale.x,
                 depth,
-                waterObject.transform.localScale.z
+                marker.transform.localScale.z
             );
 
+            waterObject.GetComponent<WaterVolumeTransforms>().MarkDirty();
+
+            // Lock the top of the water (so if user scrolls before this function is called)
             // Move tank so top stays the same
-            float newCenterY = waterTopY - depth / 2f;
             tankObject.transform.position = new Vector3(
                 tankObject.transform.position.x,
-                newCenterY,
+                tankObject.transform.position.y - (depth - oldDepth), // assume depth > olddepth
                 tankObject.transform.position.z
             );
 
-            // Force bounds to update immediately so CreateNewValidPoint() uses the proper y values
-            box.enabled = false;
-            box.enabled = true;
+            BoxCollider tankObjectBox = tankObject.GetComponent<BoxCollider>();
+            tankObjectBox.size = new Vector3(
+                tankObjectBox.size.x,
+                depth,
+                tankObjectBox.size.z
+            );
+            tankObjectBox.center = new Vector3(
+                tankObjectBox.center.x,
+                (depth / 2) - (oldDepth / 2),
+                tankObjectBox.center.z
+            );
         }
         else if (box != null)
         {
@@ -103,7 +117,13 @@ public class CreateSpawnPoints : MonoBehaviour
             
             Vector3 min = box.bounds.min;
             Vector3 max = box.bounds.max;
-            
+
+            if (waterObject != null)
+            {
+                min = rend.bounds.min;
+                max = rend.bounds.max;
+            }
+
             // ensure we dont go out of bounds of environ (will want to make sure we set the bounds after loading data
             // to ensure bounds go from globalMinDepth to globalMaxDepth) but keep this as failsafe
             float min_y = Math.Max(max.y - maxDepth, min.y);

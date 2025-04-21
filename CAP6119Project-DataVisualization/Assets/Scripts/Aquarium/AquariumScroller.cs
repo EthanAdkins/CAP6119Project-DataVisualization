@@ -3,11 +3,12 @@ using UnityEngine;
 public class AquariumScroller : MonoBehaviour
 {
     public Transform waterObject;
+    public Transform marker;
     public Transform tankObject;
     public float scrollSpeed = 1f;
-    public float waterHeight => waterObject.localScale.y;
-    public float maxY => waterHeight / 2f;
-    public float minY => -waterHeight / 2f;
+    public float waterHeight => marker.localScale.y;
+    public float maxY => 10;
+    public float minY => maxY - waterHeight;
 
     public float scrollInput = 0f; // -1 to 1 range
 
