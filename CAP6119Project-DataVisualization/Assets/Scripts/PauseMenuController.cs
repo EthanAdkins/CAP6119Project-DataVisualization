@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using Unity.VisualScripting;
 
 public class PauseMenuController : MonoBehaviour
 {
@@ -21,11 +22,14 @@ public class PauseMenuController : MonoBehaviour
     public Transform positionTarget; // Assign to player's camera
     public GameObject menuUI; // Assign to main menu
     public InputActionReference toggleKey; // Assign to open/close menu button on controller
-    public TMP_InputField densityInputField; // Assign to model density display
+    public SliderValueController densitySlider; // Assign to model density display
     public SpecimenDataManager specimenDataManager;
     public int modelDensity = 634; // Taken from SpecimenDataManager's totalDensity
     private bool isVisible = false;
     public TextMeshProUGUI currentSceneText;
+
+    private int _minDensity = 0;
+    private int _maxDensity = 0;
     void OnEnable()
     {
         toggleKey.action.performed += ToggleMenu;
@@ -45,18 +49,31 @@ public class PauseMenuController : MonoBehaviour
         menuUI.SetActive(false); // Start hidden
         ShowOptionsTab();
         UpdateSceneLabel();
-
+        
+        // Update min and max density values before Adding listener for density input change
         if (specimenDataManager != null)
         {
             modelDensity = specimenDataManager.TotalDensity;
-            densityInputField.text = modelDensity.ToString(); // Display current value
+            if (TaxonomyManager.Instance.Loaded)
+            {
+                int c = TaxonomyManager.Instance.specimenData.totalCount;
+                _minDensity = (int)(0.25 * c);
+                _maxDensity = (int)(2 * c);
+                densitySlider.UpdateMaxValue(_maxDensity);
+                densitySlider.UpdateMinValue(_minDensity); //cast to int as we want whole numbers
+                densitySlider.slider.value = modelDensity;
+            }
             // Listen for when the user finishes editing the field
-            densityInputField.onEndEdit.AddListener(OnDensityInputChanged);
+            densitySlider.slider.onValueChanged.AddListener(OnDensityInputChanged);
+            
+            filtersTabButton.gameObject.SetActive(specimenDataManager.initialSpawn);
         }
         else
         {
             Debug.LogWarning("SpecimenDataManager reference not set on MainMenuController.");
         }
+
+        
     }
 
     void Update()
@@ -65,6 +82,21 @@ public class PauseMenuController : MonoBehaviour
         {
             // Face the camera
             transform.rotation = Quaternion.LookRotation(transform.position - Camera.main.transform.position);
+
+            if (_maxDensity == 0 && _minDensity == 0)
+            {
+                if (TaxonomyManager.Instance.Loaded && specimenDataManager != null)
+                {
+                    int c = TaxonomyManager.Instance.specimenData.totalCount;
+                    _minDensity = (int)(0.25 * c);
+                    _maxDensity = (int)(2 * c);
+                    densitySlider.slider.onValueChanged.RemoveListener(OnDensityInputChanged);
+                    densitySlider.UpdateMaxValue(_maxDensity);
+                    densitySlider.UpdateMinValue(_minDensity); //cast to int as we want whole numbers
+                    densitySlider.slider.value = specimenDataManager.TotalDensity;
+                    densitySlider.slider.onValueChanged.AddListener(OnDensityInputChanged);
+                }
+            }
         }
     }
 
@@ -115,18 +147,11 @@ public class PauseMenuController : MonoBehaviour
         transform.rotation = Quaternion.LookRotation(transform.position - Camera.main.transform.position);
     }
 
-    void OnDensityInputChanged(string input)
+    void OnDensityInputChanged(float value)
     {
-        if (int.TryParse(input, out int newDensity) && newDensity != 0)
-        {
-            modelDensity = newDensity;
-            Debug.Log($"Model density updated to {modelDensity}");            
-        }
-        else
-        {
-            Debug.LogWarning("Invalid number entered for model density.");
-            densityInputField.text = modelDensity.ToString(); // Reset to previous valid value
-        }
+        modelDensity = (int)value;
+        Debug.Log($"Model density updated to {modelDensity}");
+        //update manager density ??? Do NOT want to do this while the slider is sliding --> Also do not want this tied to filter button ...
     }
 
     public void UpdateSceneLabel()
@@ -143,12 +168,11 @@ public class PauseMenuController : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-
-    public void ChangeModelDensityAndReload()
+    
+    public void ChangeModelDensity()
     {
         if (specimenDataManager.TotalDensity != modelDensity)
-        specimenDataManager.TotalDensity = modelDensity;
-        ResetScene();
+            specimenDataManager.TotalDensity = modelDensity;
     }
 
     public void ChangeScene(string sceneName)
@@ -160,6 +184,10 @@ public class PauseMenuController : MonoBehaviour
     public void QuitApp()
     {
         Debug.Log("Quitting application...");
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
         Application.Quit();
+#endif
     }
 }

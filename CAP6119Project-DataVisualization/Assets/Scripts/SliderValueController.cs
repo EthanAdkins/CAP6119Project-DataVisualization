@@ -7,6 +7,7 @@ public class SliderValueController : MonoBehaviour
 {
     [SerializeField] public UnityEngine.UI.Slider slider;
     [SerializeField] private TMPro.TMP_Text _maxValueText;
+    [SerializeField] private TMPro.TMP_Text _minValueText;
     [SerializeField] private TMPro.TMP_Text _selectedValueText;
 
     private void Start()
@@ -23,5 +24,11 @@ public class SliderValueController : MonoBehaviour
     {
         slider.maxValue = value;
         _maxValueText.text = value.ToString();
+    }
+
+    public void UpdateMinValue(float value)
+    {
+        slider.minValue = value;
+        _minValueText.text = value.ToString();
     }
 }
