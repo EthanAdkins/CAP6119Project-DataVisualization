@@ -11,7 +11,6 @@ public class TaxonomyManager : MonoBehaviour
     public static TaxonomyManager Instance; // Only one instance (Singelton)
     public SpecimenData specimenData;
     
-    [SerializeField] private GameObject cameraCanvas;
     //private bool _modelsLoading;
     private bool _modelsReady = false;
     public bool ModelsReady
@@ -112,10 +111,7 @@ public class TaxonomyManager : MonoBehaviour
             
             return;
         }
-        if (cameraCanvas != null)
-        {
-            cameraCanvas.SetActive(true);
-        }
+ 
         Debug.Log("Start Model Loading: " + Time.time);
         
         _loadRequest = AssetBundle.LoadFromFileAsync("Assets/AssetBundles/specimenmodels");
@@ -139,9 +135,7 @@ public class TaxonomyManager : MonoBehaviour
         
         Debug.Log("Models Loaded: " + Time.time);
         
-        if (cameraCanvas != null) { 
-            cameraCanvas.SetActive(false);
-        }
+       
 
         _loadRequest.completed -= HandleAssetBundleLoaded;
     }

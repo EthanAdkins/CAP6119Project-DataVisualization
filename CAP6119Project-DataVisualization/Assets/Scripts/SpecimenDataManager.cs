@@ -27,6 +27,7 @@ public class SpecimenDataManager : MonoBehaviour
     public int TotalDensity = 1000;
     public CreateSpawnPoints SpawnPointManager;
     [SerializeField] private bool initialSpawn = true;
+    [SerializeField] private GameObject cameraCanvas;
     public bool Loaded
     {
         get
@@ -380,11 +381,19 @@ public class SpecimenDataManager : MonoBehaviour
         
         Loaded = true;
         _loading = false;
+        if (cameraCanvas != null)
+        {
+            cameraCanvas.SetActive(false);
+        }
     }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (cameraCanvas != null)
+        {
+            cameraCanvas.SetActive(true);
+        }
         JSONDataManager = TaxonomyManager.Instance;
         if (SpawnPointManager is null) SpawnPointManager = FindFirstObjectByType<CreateSpawnPoints>();
         
