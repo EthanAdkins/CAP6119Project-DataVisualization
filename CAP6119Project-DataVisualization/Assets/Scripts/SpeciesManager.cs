@@ -45,7 +45,7 @@ public class SpeciesManager : MonoBehaviour // Bit of a misnomer now
     public bool Ready => _ready;
 
     private bool _ready = false;
-    private bool _active = false;
+    private bool _active = true;
 
     private Filter _filter = null;
     private bool _filterChanged = false;
