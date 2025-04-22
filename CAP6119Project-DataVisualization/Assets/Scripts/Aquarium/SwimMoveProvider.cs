@@ -11,7 +11,7 @@ public class SwimMoveProvider : ConstrainedMoveProvider
     [SerializeField] float maxSpeed = 3f;
     [SerializeField] Vector3 baselineDrift = new Vector3(0.1f, 0, 0);
     [SerializeField] float minForce;
-    [SerializeField] float minTimeBetweenStrokes;
+    [SerializeField] float minTimeBetweenStrokes;                    
 
     [Header("References")]
     [SerializeField] InputActionReference leftControllerSwimReference;
@@ -70,7 +70,7 @@ public class SwimMoveProvider : ConstrainedMoveProvider
         bool leftReleased = _prevLeftStroke && !leftPressed;
         bool rightReleased = _prevRightStroke && !rightPressed;
         _prevLeftStroke = leftPressed;
-        _prevRightStroke = rightPressed;
+        _prevRightStroke = rightPressed;                 
 
         if (_cooldownTimer > minTimeBetweenStrokes)
         {
@@ -83,6 +83,11 @@ public class SwimMoveProvider : ConstrainedMoveProvider
                 // convert to world impulse
                 Vector3 localVel = -combinedHandVel;
                 Vector3 worldImpulse = trackingReference.TransformDirection(localVel) * swimForce;
+
+                // if the new impulse points opposite your current velocity by more than 90°, clear the old
+                if (Vector3.Dot(worldImpulse.normalized, _currentVelocity.normalized) < 0f)
+                    _currentVelocity = Vector3.zero;
+
                 // add to swim momentum
                 _currentVelocity += worldImpulse;
                 _currentVelocity = Vector3.ClampMagnitude(_currentVelocity, maxSpeed);
@@ -93,15 +98,15 @@ public class SwimMoveProvider : ConstrainedMoveProvider
         // combine swim drift + constant baseline current
         Vector3 totalVelocity = _currentVelocity + baselineDrift;
 
-        // if we have any velocity, signal movement
-        if (totalVelocity.sqrMagnitude > 0.0001f)
-        {
-            attemptingMove = true;
-            // return distance this frame
-            return totalVelocity * Time.deltaTime;
-        }
+// if we have any velocity, signal movement
+if (totalVelocity.sqrMagnitude > 0.0001f)
+{
+    attemptingMove = true;
+    // return distance this frame
+    return totalVelocity * Time.deltaTime;
+}
 
-        return Vector3.zero;
+return Vector3.zero;
     }
 
     void LateUpdate()

@@ -11,6 +11,7 @@ TagManager:
   - OverheadCamera
   - AngledCamera
   - Specimen
+  - SwimWater
   layers:
   - Default
   - TransparentFX
