@@ -4213,7 +4213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bobberSplash: {fileID: 1603587333}
-  _fishSplash: {fileID: 0}
+  _fishSplash: {fileID: 1332499794}
 --- !u!65 &756576364
 BoxCollider:
   m_ObjectHideFlags: 0
