@@ -4,6 +4,7 @@ using System.Drawing;
 using TMPro;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using XCharts.Runtime;
 
@@ -40,7 +41,7 @@ public class FishingGameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 
     public void caughtFish()
@@ -62,9 +63,17 @@ public class FishingGameManager : MonoBehaviour
             GameObject instance = Instantiate(caughtFish.SpeciesPrefab, _SpawnLocation.position,
                         _SpawnLocation.rotation);
             //instance.AddComponent<XRGrabInteractable>();
-            instance.GetComponent<Rigidbody>().useGravity = false;
-            instance.GetComponent<Rigidbody>().isKinematic = true;
+            Rigidbody rb = instance.GetComponent<Rigidbody>();
+            rb.useGravity = false;
+            rb.isKinematic = true;
 
+            XRGrabInteractable grab = instance.GetComponent<XRGrabInteractable>();
+            if (grab == null)
+            {
+                grab = instance.AddComponent<XRGrabInteractable>();
+            }
+
+            grab.selectExited.AddListener(OnFishReleased);  // Register release callback
             _lastCaughtFish = instance;
 
             if (_CaughtFishSpeciesManagersCounts.ContainsKey(caughtFish))
@@ -84,6 +93,20 @@ public class FishingGameManager : MonoBehaviour
         }
         
 
+    }
+    private void OnFishReleased(SelectExitEventArgs args)
+    {
+        GameObject releasedFish = args.interactableObject.transform.gameObject;
+        Rigidbody rb = releasedFish.GetComponent<Rigidbody>();
+        if (rb != null)
+        {
+            rb.isKinematic = false;
+            rb.useGravity = true;
+            rb.angularDamping = float.PositiveInfinity;
+            rb.linearDamping = 1;
+
+            Debug.Log($"{releasedFish.name} released and physics enabled.");
+        }
     }
 
     public void UpdateFishChart(string level="name", bool changeLevel=false)
