@@ -19,8 +19,6 @@ public class PauseMenuController : MonoBehaviour
     
 
     [Header("")]
-    [SerializeField] private float maxYOffset = 5f; // How far the menu can be above/below the user before pinning
-    private bool playerIsFalling = false; // bool used to pin menu to face if player is, well, falling
     public Transform positionTarget; // Assign to player's camera
     public GameObject menuUI; // Assign to main menu
     public InputActionReference toggleKey; // Assign to open/close menu button on controller
@@ -107,7 +105,6 @@ public class PauseMenuController : MonoBehaviour
         if (isVisible == true)
         {
             HideMenu();
-            playerIsFalling = false;
         }
         else
         {
