@@ -9,7 +9,7 @@ public class FilterMenu : MonoBehaviour
 {
     [SerializeField] private TMP_Dropdown taxonTypeDropdown;
     [SerializeField] private TMP_Dropdown taxonNameDropdown;
-    [SerializeField] private TMP_InputField filterCountInputField;
+    [SerializeField] private SliderValueController filterCountSlider;
     [SerializeField] private SliderValueController maxDepthSlider;
     [SerializeField] private SliderValueController minDepthSlider;
 
@@ -28,6 +28,7 @@ public class FilterMenu : MonoBehaviour
     private float _maxDepth;
     private float _selectedMinDepth;
     private float _selectedMaxDepth;
+    private float _maxCount;
 
 
     private TaxonomicLevels _selectedLvl;
@@ -35,31 +36,39 @@ public class FilterMenu : MonoBehaviour
     private void Start()
     {
         _dataManager = TaxonomyManager.Instance;
+        minDepthSlider.slider.onValueChanged.AddListener(OnMinDepthChanged);
+        maxDepthSlider.slider.onValueChanged.AddListener(OnMaxDepthChanged);
+        filterCountSlider.slider.onValueChanged.AddListener(OnCountFilterInputChanged);
+        
         // Set the Max Depth fields for sliders -- Check the SpecimenDataManager?
         if (_dataManager.Loaded)
         {
-            FindMaxDepth();   
+            FindMaxDepth();
+            _maxCount = _dataManager.specimenData.totalCount;
+            filterCountSlider.UpdateMaxValue(_maxCount);
         }
         
         // We may want to assign this differently when we link up the scenes: perhaps manual assignment would be best
         // To allow for merging scenes and having two of these OR to find and reset to only the active one on scene change?
         _specMan ??= FindFirstObjectByType<SpecimenDataManager>();
-
-        minDepthSlider.slider.onValueChanged.AddListener(OnMinDepthChanged);
-        maxDepthSlider.slider.onValueChanged.AddListener(OnMaxDepthChanged);
-        filterCountInputField.onValueChanged.AddListener(OnCountFilterInputChanged);
     }
 
     void OnDestroy()
     {
         minDepthSlider.slider.onValueChanged.RemoveListener(OnMinDepthChanged);
         maxDepthSlider.slider.onValueChanged.RemoveListener(OnMaxDepthChanged);
-        filterCountInputField.onValueChanged.RemoveListener(OnCountFilterInputChanged);
+        filterCountSlider.slider.onValueChanged.RemoveListener(OnCountFilterInputChanged);
     }
     private void Update()
     {
-        if (_maxDepth > 0) return;
-        if (_dataManager.Loaded) FindMaxDepth();
+        if (_maxDepth > 0 && _maxCount > 0) return;
+        if (!_dataManager.Loaded) return;
+        if (_maxDepth == 0) FindMaxDepth();
+        if (_maxCount == 0)
+        {
+            _maxCount = _dataManager.specimenData.totalCount;
+            filterCountSlider.UpdateMaxValue(_maxCount);
+        }
     }
 
     private void FindMaxDepth()
@@ -172,20 +181,11 @@ public class FilterMenu : MonoBehaviour
     /// Sets the Count Filter component: when Count of 0 is selected remove the filter
     /// </summary>
     /// <param name="input">Value for Count filter</param>
-    void OnCountFilterInputChanged(string input)
+    void OnCountFilterInputChanged(float value)
     {
-        // TODO: Enable Selection of > or <
-        if (int.TryParse(input, out int filterCount))
-        {
-            _ocFilterCount = filterCount;
-            Filter.FilterObservationCount newOC = new Filter.FilterObservationCount(filterCount);
-            _ocFilter = newOC;
-        }
-        else
-        {
-            Debug.LogWarning("Invalid number entered for filter count.");
-            filterCountInputField.text = _ocFilterCount.ToString(); // Reset to previous valid value
-        }
+        _ocFilterCount = (int)value;
+        Filter.FilterObservationCount newOC = new Filter.FilterObservationCount(_ocFilterCount);
+        _ocFilter = newOC;
     }
 
     void OnMinDepthChanged(float value)

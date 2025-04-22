@@ -24,9 +24,22 @@ public class SpecimenDataManager : MonoBehaviour
 
     // Total count of spawned instances --> will wanna mess with this and rendering to ensure that 
     // runtime is not negatively impacted too much as well as allow good representation of data
-    public int TotalDensity = 1000;
+    public int TotalDensity
+    {
+        get
+        {
+            return _td;
+        }
+        set
+        {
+            _td = value;
+            OnUpdateDensity();
+        }
+    }
+
+    private int _td = 1000;
     public CreateSpawnPoints SpawnPointManager;
-    [SerializeField] private bool initialSpawn = true;
+    public bool initialSpawn = true;
     [SerializeField] private GameObject cameraCanvas;
     public bool Loaded
     {
@@ -457,9 +470,14 @@ public class SpecimenDataManager : MonoBehaviour
         }
     }
 
-    // Rather than string for filter use a struct
-
-
+    private void OnUpdateDensity()
+    {
+        foreach (SpeciesManager c in SpeciesControllers)
+        {
+            c.RequiresRespawn = true;
+        }
+    }
+    
     public void SetFilter(Filter newFilter)
     {
         switch (newFilter)
@@ -477,11 +495,6 @@ public class SpecimenDataManager : MonoBehaviour
         Filter of = filter;
 
         filter = newFilter;
-
-        //foreach (SpeciesManager m in SpeciesControllers)
-        //{
-        //    m.Filter(newFilter); //update to use struct
-        //}
 
         OnFilterChanged?.Invoke(newFilter);
     }
