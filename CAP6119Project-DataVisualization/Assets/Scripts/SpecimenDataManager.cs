@@ -72,9 +72,8 @@ public class SpecimenDataManager : MonoBehaviour
         }
     }
 
-    private async Awaitable ProcessData()
+    private System.Collections.IEnumerator ProcessData()
     {
-        await Awaitable.MainThreadAsync();
         sample_count = JSONDataManager.specimenData.totalCount;
         
         if (SpeciesControllers is not null)
@@ -86,6 +85,7 @@ public class SpecimenDataManager : MonoBehaviour
         // walk through and create SpeciesManagers
         // Need to clear strings once going back to the level that that model is from
         float maxDepth = 0;
+        int count = 0;
         
         foreach (Kingdom k in JSONDataManager.specimenData.Kingdoms)
         {
@@ -120,8 +120,9 @@ public class SpecimenDataManager : MonoBehaviour
                 manager.Setup(k, null, null, null, null, null, null, sample_count, model, lvl);
                 
                 SpeciesControllers.Add(manager);
-
-                continue; // No need to continue if model represents this group
+                if (++count % 10 == 0)
+                    yield return null;
+                continue; // No need to continue if model represents this   group
             }
             
             foreach (Phylum p in k.Phyla)
@@ -158,6 +159,8 @@ public class SpecimenDataManager : MonoBehaviour
                     manager.Setup(k, p, null, null, null, null, null, sample_count, model, lvl);
 
                     SpeciesControllers.Add(manager);
+                    if (++count % 10 == 0)
+                        yield return null;
 
                     continue; // Do not proceed further down tree when model found
                 }
@@ -197,6 +200,8 @@ public class SpecimenDataManager : MonoBehaviour
                         manager.Setup(k, p, c, null, null, null, null, sample_count, model, lvl);
 
                         SpeciesControllers.Add(manager);
+                        if (++count % 10 == 0)
+                            yield return null;
 
                         continue; // Do not proceed further down tree when model found
                     }
@@ -235,6 +240,8 @@ public class SpecimenDataManager : MonoBehaviour
                             manager.Setup(k, p, c, o, null, null, null, sample_count, model, lvl);
 
                             SpeciesControllers.Add(manager);
+                            if (++count % 10 == 0)
+                                yield return null;
 
                             continue; // Do not proceed further down tree when model found
                         }
@@ -274,6 +281,8 @@ public class SpecimenDataManager : MonoBehaviour
                                 manager.Setup(k, p, c, o, f, null, null, sample_count, model, lvl);
 
                                 SpeciesControllers.Add(manager);
+                                if (++count % 10 == 0)
+                                    yield return null;
 
                                 continue; // Do not proceed further down tree when model found
                             }
@@ -312,6 +321,8 @@ public class SpecimenDataManager : MonoBehaviour
                                     manager.Setup(k, p, c, o, f, g, null, sample_count, model, lvl);
 
                                     SpeciesControllers.Add(manager);
+                                    if (++count % 10 == 0)
+                                        yield return null;
 
                                     continue; // Do not proceed further down tree when model found
 
@@ -350,6 +361,8 @@ public class SpecimenDataManager : MonoBehaviour
                                         manager.Setup(k, p, c, o, f, g, s, sample_count, model, lvl);
 
                                         SpeciesControllers.Add(manager);
+                                        if (++count % 10 == 0)
+                                            yield return null;
                                     }
                                 }
                             }
@@ -363,11 +376,15 @@ public class SpecimenDataManager : MonoBehaviour
         
         // Add More error handling?
         // Trigger spawn when done
-        //Loaded = true;
-        //_loading = false;
 
         Debug.Log("Processing Done: " + Time.time);
         
+        Loaded = true;
+        _loading = false;
+        if (cameraCanvas != null)
+        {
+            cameraCanvas.SetActive(false);
+        }
     }
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -428,25 +445,21 @@ public class SpecimenDataManager : MonoBehaviour
         {
             _loading = true;
             // If JSONDataManager Loaded:
-            _processingRequest = ProcessData();
+            //_processingRequest = ProcessData();
             
-            //StartCoroutine(ProcessData()); // Analyze if we need to yield return in other points
+            StartCoroutine(ProcessData()); // Analyze if we need to yield return in other points
                                            // (currently spawn one species manager per iteration)
             Debug.Log("Processing Started: " + Time.time);
         }
-        else if (_loading && !_processingRequest.IsCompleted)
+        else if (_loading)
         {
             Debug.Log($"Processing: {Time.deltaTime}");
         }
-        else if (_loading && _processingRequest.IsCompleted)
-        {
-            _loading = false;
-            Loaded = true;
-            if (cameraCanvas != null)
-            {
-                cameraCanvas.SetActive(false);
-            }
-        }
+        //else if (_loading && _processingRequest.IsCompleted)
+        //{
+        //    _loading = false;
+        //    Loaded = true;
+        //}
         else if (Loaded && initialSpawn && !_spawned)
         {
             if (SpeciesControllers.All(m => m.spawned))
