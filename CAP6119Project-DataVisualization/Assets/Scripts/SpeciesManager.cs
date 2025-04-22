@@ -45,10 +45,14 @@ public class SpeciesManager : MonoBehaviour // Bit of a misnomer now
     public bool Ready => _ready;
 
     private bool _ready = false;
-    private bool _active = false;
+    private bool _active = true;
 
     private Filter _filter = null;
     private bool _filterChanged = false;
+
+    // Flag to indicate if we need to respawn
+    public bool RequiresRespawn = false;
+    private bool BeginSpawn = false;
 
     public float MinDepth
     {
@@ -219,6 +223,8 @@ public class SpeciesManager : MonoBehaviour // Bit of a misnomer now
                 {
                     behavior.manager = this;
                 }
+                
+                instance.SetActive(_active);
 
                 specimens.Add(instance);
 
@@ -258,16 +264,68 @@ public class SpeciesManager : MonoBehaviour // Bit of a misnomer now
             }
         }
     }
-    
-    /// <summary>
-    /// Handle OnLoaded from SpecimenDataManager
-    /// Begin Spawn Coroutine that splits spawn to max 10
-    /// entities across frames
-    /// </summary>
-    private void BeginSpawning()
+
+    private System.Collections.IEnumerator Respawn()
     {
-        //StartCoroutine(Spawn());
+        int currentCount = specimens.Count;
+
+        int desiredCount = Math.Max((int)Math.Floor(DataMan.TotalDensity * Distribution),1); //spawn min of 1;
+        
+        if (currentCount == desiredCount) yield break;
+        if (currentCount > desiredCount)
+        {
+            int removeCount = currentCount - desiredCount;
+            
+            // delete x instances
+            for (int i = 0; i < removeCount; i++)
+            {
+                GameObject remove = specimens[^1];
+
+                specimens.Remove(remove);
+                
+                GameObject.Destroy(remove);
+
+                if (i % 2 == 0)
+                {
+                    yield return null;
+                }
+            }
+        }
+        else if (currentCount < desiredCount)
+        {
+            int newCount = desiredCount - currentCount;
+
+            for (int i = 0; i < newCount; i++)
+            {
+                // Create a new GameObject from prefab
+                Vector3 point = SpawnPointManager.GetSpawnPoint(MinDepth, MaxDepth, SpeciesPrefab);
+
+                // Need to set parent to the SpawnPointManager to ensure correct placement regardless of
+                // Location of manager in the world
+                GameObject instance = Instantiate(SpeciesPrefab, point,
+                    quaternion.identity, gameObject.transform); //test what happens when setting parent to this manager
+                // Also need to figure out spawn placement and want to avoid overlaps, perhaps consider using waypoints
+                // Can define size on count of waypoints consumed?
+                // Behavior will be secondary --> but how they move if we want movement to avoid weird behavior
+                // is gonna be a challenge
+
+                // Add reference to this manager to spawned instance for selection
+                if (instance.TryGetComponent<SpecimenBehavior>(out SpecimenBehavior behavior))
+                {
+                    behavior.manager = this;
+                }
+                
+                instance.SetActive(_active);
+
+                specimens.Add(instance);
+
+                if (i % 2 == 0) yield return null;
+            }
+        }
+
+        spawned = true;
     }
+    
     
     // Update is called once per frame
     void Update()
@@ -276,6 +334,13 @@ public class SpeciesManager : MonoBehaviour // Bit of a misnomer now
         {
             _filterChanged = false;
             StartCoroutine(Filter(_filter)); // split disable / enable of entities across frame updates
+        }
+
+        if (_ready && RequiresRespawn)
+        {
+            spawned = false;
+            RequiresRespawn = false;
+            StartCoroutine(Respawn());
         }
     }
 
