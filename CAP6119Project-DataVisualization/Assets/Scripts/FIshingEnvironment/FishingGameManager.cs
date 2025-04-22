@@ -62,6 +62,10 @@ public class FishingGameManager : MonoBehaviour
         {
             GameObject instance = Instantiate(caughtFish.SpeciesPrefab, _SpawnLocation.position,
                         _SpawnLocation.rotation);
+            if (instance.TryGetComponent<SpecimenBehavior>(out SpecimenBehavior behavior))
+            {
+                behavior.manager = caughtFish;
+            }
             //instance.AddComponent<XRGrabInteractable>();
             Rigidbody rb = instance.GetComponent<Rigidbody>();
             rb.useGravity = false;
