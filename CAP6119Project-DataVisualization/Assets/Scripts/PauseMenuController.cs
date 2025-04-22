@@ -61,21 +61,29 @@ public class PauseMenuController : MonoBehaviour
 
     void Update()
     {
-        // If visible, follow the player’s view
         if (isVisible)
         {
-            FollowPosition();
+            // Face the camera
+            transform.rotation = Quaternion.LookRotation(transform.position - Camera.main.transform.position);
         }
     }
 
     private void ToggleMenu(InputAction.CallbackContext context)
     {
-        isVisible = !isVisible;
-        menuUI.SetActive(isVisible);
+        if (isVisible == true)
+        {
+            HideMenu();
+        }
+        else
+        {
+            FollowPosition();
+            ShowMenu();
+
+        }
     }
 
     public void ShowMenu() => menuUI.SetActive(isVisible = true);
-    public void HideMenu() => menuUI.SetActive(false);
+    public void HideMenu() => menuUI.SetActive(isVisible = false);
 
     public void ShowFiltersTab()
     {
