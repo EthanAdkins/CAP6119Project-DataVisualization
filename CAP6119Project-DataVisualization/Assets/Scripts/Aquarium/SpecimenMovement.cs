@@ -20,6 +20,7 @@ public class SpecimenMovement : MonoBehaviour
     private float initialY;
     private Coroutine movementCoroutine;
     private bool isPaused = false;
+    private string sceneName;
 
     private void Awake()
     {
@@ -43,7 +44,9 @@ public class SpecimenMovement : MonoBehaviour
     }
     void Start()
     {
-        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "AquariumScene")
+        sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+
+        if ( !(sceneName == "AquariumScene" || sceneName == "SwimScene") )
         {
             this.enabled = false;
             return;
@@ -52,7 +55,14 @@ public class SpecimenMovement : MonoBehaviour
         // Find waterObject, if not found, disable script
         if (waterObject == null)
         {
-            waterObject = GameObject.FindWithTag("AquariumWater");
+            if (sceneName == "AquariumScene")
+            {
+                waterObject = GameObject.FindWithTag("AquariumWater");
+            }
+            else if (sceneName == "SwimScene")
+            {
+                waterObject = GameObject.FindWithTag("SwimWater");
+            }
         }
         if (waterObject != null)
         {
