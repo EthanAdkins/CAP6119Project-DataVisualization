@@ -6,7 +6,7 @@ public class VerticalAudioCrossfade : MonoBehaviour
     public AudioSource underwaterAudio;
 
     public GameObject tank; 
-    public float transitionY = 0f; // height at which to crossfade
+    public float transitionY = -80f; // height at which to crossfade
     public float fadeRange = 20f; // how many units above/below to start fading
     public float add = 10f;
     private Transform target; // transform to track for crossfade
@@ -15,7 +15,7 @@ public class VerticalAudioCrossfade : MonoBehaviour
     void Update()
     {
         box = tank.GetComponent<BoxCollider>();
-        add = box.center.y + (box.size.y / 2);
+        add = 10f; // hardcoded, time constraints
         target = tank.transform; 
         float t = Mathf.Clamp01((target.position.y - transitionY + add) / fadeRange);
 
