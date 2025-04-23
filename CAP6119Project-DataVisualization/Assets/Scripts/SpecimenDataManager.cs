@@ -510,4 +510,55 @@ public class SpecimenDataManager : MonoBehaviour
         return SpeciesControllers[UnityEngine.Random.Range(0, SpeciesControllers.Count)];
     }
 
+    public SpeciesManager FindSpeciesManager(string name, TaxonomicLevels level)
+    {
+        if (SpeciesControllers == null)
+        {
+            Debug.LogWarning("SpeciesControllers list is null.");
+            return null;
+        }
+
+        foreach (var manager in SpeciesControllers)
+        {
+            if (manager == null) continue;
+
+            // Match based on level and corresponding name
+            switch (level)
+            {
+                case TaxonomicLevels.Kingdom:
+                    if (manager.kingdom != null && manager.kingdom.name.Equals(name, StringComparison.OrdinalIgnoreCase))
+                        return manager;
+                    break;
+                case TaxonomicLevels.Phylum:
+                    if (manager.phylum != null && manager.phylum.name.Equals(name, StringComparison.OrdinalIgnoreCase))
+                        return manager;
+                    break;
+                case TaxonomicLevels.Class:
+                    if (manager.taxclass != null && manager.taxclass.name.Equals(name, StringComparison.OrdinalIgnoreCase))
+                        return manager;
+                    break;
+                case TaxonomicLevels.Order:
+                    if (manager.order != null && manager.order.name.Equals(name, StringComparison.OrdinalIgnoreCase))
+                        return manager;
+                    break;
+                case TaxonomicLevels.Family:
+                    if (manager.family != null && manager.family.name.Equals(name, StringComparison.OrdinalIgnoreCase))
+                        return manager;
+                    break;
+                case TaxonomicLevels.Genus:
+                    if (manager.genus != null && manager.genus.name.Equals(name, StringComparison.OrdinalIgnoreCase))
+                        return manager;
+                    break;
+                case TaxonomicLevels.Species:
+                    if (manager.SpeciesName.Equals(name, StringComparison.OrdinalIgnoreCase))
+                        return manager;
+                    break;
+            }
+        }
+
+        Debug.LogWarning($"No SpeciesManager found for name: {name} at level: {level}");
+        return null;
+    }
+
+
 }
