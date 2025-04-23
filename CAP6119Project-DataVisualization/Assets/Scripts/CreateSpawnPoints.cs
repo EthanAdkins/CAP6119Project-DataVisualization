@@ -42,7 +42,7 @@ public class CreateSpawnPoints : MonoBehaviour
                 marker.transform.localScale.z
             );
 
-            waterObject.GetComponent<WaterVolumeTransforms>().MarkDirty();
+            // waterObject.GetComponent<WaterVolumeTransforms>().MarkDirty();
 
             // Lock the top of the water (so if user scrolls before this function is called)
             // Move tank so top stays the same
