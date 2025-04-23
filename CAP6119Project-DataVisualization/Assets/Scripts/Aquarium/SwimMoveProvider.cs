@@ -11,7 +11,9 @@ public class SwimMoveProvider : ConstrainedMoveProvider
     [SerializeField] float maxSpeed = 3f;
     [SerializeField] Vector3 baselineDrift = new Vector3(0.1f, 0, 0);
     [SerializeField] float minForce;
-    [SerializeField] float minTimeBetweenStrokes;                    
+    [SerializeField] float minTimeBetweenStrokes;
+    [SerializeField] AudioSource strokeAudioSource;
+    [SerializeField] float maxVelocityForVolume = 3f; // tweak based on how strong strokes get
 
     [Header("References")]
     [SerializeField] InputActionReference leftControllerSwimReference;
@@ -92,6 +94,12 @@ public class SwimMoveProvider : ConstrainedMoveProvider
                 _currentVelocity += worldImpulse;
                 _currentVelocity = Vector3.ClampMagnitude(_currentVelocity, maxSpeed);
                 _cooldownTimer = 0f;
+
+                float strokeStrength = combinedHandVel.magnitude;
+                float volume = Mathf.Clamp01(strokeStrength / maxVelocityForVolume);
+
+                strokeAudioSource.volume = volume;
+                strokeAudioSource.Play();
             }
         }
 
