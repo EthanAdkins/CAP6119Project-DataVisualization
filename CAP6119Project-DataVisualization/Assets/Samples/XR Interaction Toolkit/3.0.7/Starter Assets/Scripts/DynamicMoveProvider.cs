@@ -84,6 +84,12 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
         [Tooltip("Whether to use the specified head transform or right controller transform to direct the XR Origin's movement for the right hand.")]
         MovementDirection m_RightHandMovementDirection;
 
+        [SerializeField] AudioSource joystickMoveAudio;
+        [SerializeField] float movementSoundInterval = 1f;
+        [SerializeField] float movementSoundVolume = 0.5f;
+        private float movementSoundTimer = 0f;
+        private bool wasMovingLastFrame = false;
+
         /// <summary>
         /// Whether to use the specified head transform or controller transform to direct the XR Origin's movement for the right hand.
         /// </summary>
@@ -184,6 +190,30 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
             var combinedRotation = Quaternion.Slerp(m_RightMovementPose.rotation, m_LeftMovementPose.rotation, leftHandBlend);
             m_CombinedTransform.SetPositionAndRotation(combinedPosition, combinedRotation);
 
+            if (joystickMoveAudio != null)
+            {
+                // Detect if the joystick is being held
+                bool isMoving = input != Vector2.zero;
+
+                if (isMoving)
+                {
+                    movementSoundTimer += Time.deltaTime;
+
+                    if (movementSoundTimer >= movementSoundInterval)
+                    {
+                        joystickMoveAudio.volume = movementSoundVolume;
+                        joystickMoveAudio.Play();
+                        movementSoundTimer = 0f;
+                    }
+                }
+                else if (wasMovingLastFrame)
+                {
+                    // reset timer when you release the stick
+                    movementSoundTimer = movementSoundInterval;
+                }
+
+                wasMovingLastFrame = isMoving;
+            }
             return base.ComputeDesiredMove(input);
         }
     }
