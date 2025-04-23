@@ -268,42 +268,42 @@ public class FishingGameManager : MonoBehaviour
             {
                 string result = g.name;
                 foreach (var sp in g.Species)
-                    result += BuildPhyloTreeRecursive(sp, depth + 1);
+                    result = BuildPhyloTreeRecursive(sp, depth + 1);
                 return result;
             }
             else if (node is Family f)
             {
                 string result = f.name;
                 foreach (var ge in f.Genera)
-                    result += BuildPhyloTreeRecursive(ge, depth + 1);
+                    result = BuildPhyloTreeRecursive(ge, depth + 1);
                 return result;
             }
             else if (node is Order o)
             {
                 string result = o.name;
                 foreach (var fa in o.Families)
-                    result += BuildPhyloTreeRecursive(fa, depth + 1);
+                    result = BuildPhyloTreeRecursive(fa, depth + 1);
                 return result;
             }
             else if (node is TaxonClass c)
             {
                 string result = c.name;
                 foreach (var or in c.Orders)
-                    result += BuildPhyloTreeRecursive(or, depth + 1);
+                    result = BuildPhyloTreeRecursive(or, depth + 1);
                 return result;
             }
             else if (node is Phylum p)
             {
                 string result = p.name;
                 foreach (var cl in p.Classes)
-                    result += BuildPhyloTreeRecursive(cl, depth + 1);
+                    result = BuildPhyloTreeRecursive(cl, depth + 1);
                 return result;
             }
             else if (node is Kingdom k)
             {
                 string result = k.name;
                 foreach (var ph in k.Phyla)
-                    result += BuildPhyloTreeRecursive(ph, 1);
+                    result = BuildPhyloTreeRecursive(ph, 1);
                 return result;
             }
             else return "";
@@ -317,42 +317,42 @@ public class FishingGameManager : MonoBehaviour
         {
             string result = g.name;
             foreach (var sp in g.Species)
-                result += BuildPhyloTreeRecursive(sp, depth + 1);
+                result = BuildPhyloTreeRecursive(sp, depth + 1);
             return result;
         }
         else if (root is Family f)
         {
             string result = f.name;
             foreach (var ge in f.Genera)
-                result += BuildPhyloTreeRecursive(ge, depth + 1);
+                result = BuildPhyloTreeRecursive(ge, depth + 1);
             return result;
         }
         else if (root is Order o)
         {
             string result = o.name;
             foreach (var fa in o.Families)
-                result += BuildPhyloTreeRecursive(fa, depth + 1);
+                result = BuildPhyloTreeRecursive(fa, depth + 1);
             return result;
         }
         else if (root is TaxonClass c)
         {
             string result = c.name;
             foreach (var or in c.Orders)
-                result += BuildPhyloTreeRecursive(or, depth + 1);
+                result = BuildPhyloTreeRecursive(or, depth + 1);
             return result;
         }
         else if (root is Phylum p)
         {
             string result = p.name;
             foreach (var cl in p.Classes)
-                result += BuildPhyloTreeRecursive(cl, depth + 1);
+                result = BuildPhyloTreeRecursive(cl, depth + 1);
             return result;
         }
         else if (root is Kingdom k)
         {
             string result = k.name;
             foreach (var ph in k.Phyla)
-                result += BuildPhyloTreeRecursive(ph, depth + 1);
+                result = BuildPhyloTreeRecursive(ph, depth + 1);
             return result;
         }
         else return "No taxonomic info found.";
