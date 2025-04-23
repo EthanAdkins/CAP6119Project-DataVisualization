@@ -37,7 +37,7 @@ public class SpecimenDataManager : MonoBehaviour
         }
     }
 
-    private int _td = 1000;
+    private int _td = 634;
     public CreateSpawnPoints SpawnPointManager;
     public bool initialSpawn = true;
     [SerializeField] private GameObject cameraCanvas;

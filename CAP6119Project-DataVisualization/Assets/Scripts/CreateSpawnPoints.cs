@@ -34,35 +34,39 @@ public class CreateSpawnPoints : MonoBehaviour
             
             rend = waterObject.GetComponent<Renderer>();
 
-            // Set new height 
+            
             float oldDepth = marker.transform.localScale.y;
-            marker.transform.localScale = new Vector3(
-                marker.transform.localScale.x,
-                depth,
-                marker.transform.localScale.z
-            );
 
-            waterObject.GetComponent<WaterVolumeTransforms>().MarkDirty();
+            if (depth != oldDepth)
+            {
+                // Set new depth
+                marker.transform.localScale = new Vector3(
+                    marker.transform.localScale.x,
+                    depth,
+                    marker.transform.localScale.z
+                );
 
-            // Lock the top of the water (so if user scrolls before this function is called)
-            // Move tank so top stays the same
-            tankObject.transform.position = new Vector3(
-                tankObject.transform.position.x,
-                tankObject.transform.position.y - (depth - oldDepth), // assume depth > olddepth
-                tankObject.transform.position.z
-            );
+                // waterObject.GetComponent<WaterVolumeTransforms>().MarkDirty();
 
-            BoxCollider tankObjectBox = tankObject.GetComponent<BoxCollider>();
-            tankObjectBox.size = new Vector3(
-                tankObjectBox.size.x,
-                depth,
-                tankObjectBox.size.z
-            );
-            tankObjectBox.center = new Vector3(
-                tankObjectBox.center.x,
-                (depth / 2) - (oldDepth / 2),
-                tankObjectBox.center.z
-            );
+                // Lock the top of the water (so if user scrolls before this function is called)
+                // Move tank so top stays the same
+                tankObject.transform.position = new Vector3(
+                    tankObject.transform.position.x,
+                    tankObject.transform.position.y - (depth - oldDepth), // assume depth > olddepth
+                    tankObject.transform.position.z
+                );
+                BoxCollider tankObjectBox = tankObject.GetComponent<BoxCollider>();
+                tankObjectBox.size = new Vector3(
+                    tankObjectBox.size.x,
+                    depth,
+                    tankObjectBox.size.z
+                );
+                tankObjectBox.center = new Vector3(
+                    tankObjectBox.center.x,
+                    (depth / 2) - (oldDepth / 2),
+                    tankObjectBox.center.z
+                );
+            }
         }
         else if (box != null)
         {

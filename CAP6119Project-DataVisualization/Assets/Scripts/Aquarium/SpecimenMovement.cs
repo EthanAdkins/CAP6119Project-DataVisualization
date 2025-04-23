@@ -46,7 +46,7 @@ public class SpecimenMovement : MonoBehaviour
     {
         sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
 
-        if ( !(sceneName == "AquariumScene" || sceneName == "SwimScene") )
+        if ( !(sceneName == "Aquarium" || sceneName == "Habitat") )
         {
             this.enabled = false;
             return;
@@ -55,11 +55,11 @@ public class SpecimenMovement : MonoBehaviour
         // Find waterObject, if not found, disable script
         if (waterObject == null)
         {
-            if (sceneName == "AquariumScene")
+            if (sceneName == "Aquarium")
             {
                 waterObject = GameObject.FindWithTag("AquariumWater");
             }
-            else if (sceneName == "SwimScene")
+            else if (sceneName == "Habitat")
             {
                 waterObject = GameObject.FindWithTag("SwimWater");
             }
