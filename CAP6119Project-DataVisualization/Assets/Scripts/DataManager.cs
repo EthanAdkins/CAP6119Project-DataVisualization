@@ -111,10 +111,12 @@ public class TaxonomyManager : MonoBehaviour
             
             return;
         }
+
+        string assetsFile = Path.Combine(Application.streamingAssetsPath, "AssetBundles/specimenmodels");
  
         Debug.Log("Start Model Loading: " + Time.time);
         
-        _loadRequest = AssetBundle.LoadFromFileAsync("Assets/AssetBundles/specimenmodels");
+        _loadRequest = AssetBundle.LoadFromFileAsync(assetsFile);
 
         _loadRequest.completed += HandleAssetBundleLoaded;
         
