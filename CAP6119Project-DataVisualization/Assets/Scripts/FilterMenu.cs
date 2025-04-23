@@ -68,6 +68,8 @@ public class FilterMenu : MonoBehaviour
         {
             _maxCount = _dataManager.specimenData.totalCount;
             filterCountSlider.UpdateMaxValue(_maxCount);
+            filterCountSlider.slider.value = _maxCount;
+            _ocFilterCount = (int)_maxCount;
         }
     }
 
@@ -83,6 +85,8 @@ public class FilterMenu : MonoBehaviour
         minDepthSlider.UpdateMaxValue(md);
         maxDepthSlider.UpdateMaxValue(md);
         maxDepthSlider.slider.value = md;
+        _selectedMinDepth = 0;
+        _selectedMaxDepth = md;
 
         _dFilter = new Filter.FilterDepthComponent(0, (int)md);
     }

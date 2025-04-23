@@ -2,6 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
+using UnityEngine;
+
 public class Filter
 {
     public abstract class FilterComponent
@@ -54,22 +58,338 @@ public class Filter
             _taxon = lvl;
             _name = name;
         }
-
+        
+        // NOT robust enough if CHILD IN PARENT THEN TRUE
         public override bool Match(object root)
         {
-            return _taxon switch
-            {
-                TaxonomicLevels.Kingdom => root is Kingdom k && k.name.Equals(_name),
-                TaxonomicLevels.Class => root is TaxonClass c && c.name.Equals(_name),
-                TaxonomicLevels.Family => root is Family f && f.name.Equals(_name),
-                TaxonomicLevels.Species => root is Species s && s.name.Equals(_name),
-                TaxonomicLevels.Genus => root is Genus g && g.name.Equals(_name),
-                TaxonomicLevels.Order => root is Order o && o.name.Equals(_name),
-                TaxonomicLevels.Phylum => root is Phylum p && p.name.Equals(_name),
-                _ => false
-            };
+            return FindTaxonNames(root).Contains(_name);
         }
 
+        private List<string> FindTaxonNames(object root)
+        {
+            foreach (Kingdom k in TaxonomyManager.Instance.specimenData.Kingdoms)
+            {
+                if (root is Kingdom kr)
+                {
+                    if (kr.name == k.name)
+                    {
+                        List<string> retVal = new List<string>();
+                        switch (_taxon)
+                        {
+                            case TaxonomicLevels.Kingdom: 
+                                retVal.Add(kr.name); 
+                                return retVal;
+                                
+                            case TaxonomicLevels.Phylum: 
+                                retVal.AddRange(k.Phyla.Select(p => p.name)); 
+                                return retVal;
+                                
+                            case TaxonomicLevels.Class :
+                                retVal.AddRange(k.Phyla.SelectMany(p => p.Classes)
+                                    .Select(c => c.name)); 
+                                return retVal;
+                            case TaxonomicLevels.Order:
+                                retVal.AddRange(k.Phyla.SelectMany(p => p.Classes)
+                                    .SelectMany(c => c.Orders)
+                                    .Select(o => o.name)); 
+                                return retVal;
+                            case TaxonomicLevels.Family:
+                                retVal.AddRange(k.Phyla.SelectMany(p => p.Classes)
+                                    .SelectMany(c => c.Orders)
+                                    .SelectMany(o => o.Families)
+                                    .Select(f => f.name));
+                                return retVal;
+                            case TaxonomicLevels.Genus:
+                                retVal.AddRange(k.Phyla.SelectMany(p => p.Classes)
+                                    .SelectMany(c => c.Orders)
+                                    .SelectMany(o => o.Families)
+                                    .SelectMany(f => f.Genera)
+                                    .Select(g => g.name));
+                                return retVal;
+                            case TaxonomicLevels.Species:
+                                retVal.AddRange(k.Phyla.SelectMany(p => p.Classes)
+                                    .SelectMany(c => c.Orders)
+                                    .SelectMany(o => o.Families)
+                                    .SelectMany(f => f.Genera)
+                                    .SelectMany(g => g.Species)
+                                    .Select(s => s.name));
+                                return retVal;
+                            default: 
+                                return retVal;
+                        }
+                    }
+                }
+                else
+                    foreach (Phylum p in k.Phyla)
+                    {
+                        if (root is Phylum pr)
+                        {
+                            if (pr.name == p.name)
+                            {
+                                List<string> retVal = new List<string>();
+                                switch (_taxon)
+                                {
+                                    case TaxonomicLevels.Kingdom:
+                                        retVal.Add(k.name);
+                                        return retVal;
+
+                                    case TaxonomicLevels.Phylum:
+                                        retVal.Add(pr.name);
+                                        return retVal;
+
+                                    case TaxonomicLevels.Class:
+                                        retVal.AddRange(pr.Classes.Select(c => c.name));
+                                        return retVal;
+                                    case TaxonomicLevels.Order:
+                                        retVal.AddRange(pr.Classes.SelectMany(c => c.Orders)
+                                            .Select(o => o.name));
+                                        return retVal;
+                                    case TaxonomicLevels.Family:
+                                        retVal.AddRange(pr.Classes.SelectMany(c => c.Orders)
+                                            .SelectMany(o => o.Families)
+                                            .Select(f => f.name));
+                                        return retVal;
+                                    case TaxonomicLevels.Genus:
+                                        retVal.AddRange(pr.Classes.SelectMany(c => c.Orders)
+                                            .SelectMany(o => o.Families)
+                                            .SelectMany(f => f.Genera)
+                                            .Select(g => g.name));
+                                        return retVal;
+                                    case TaxonomicLevels.Species:
+                                        retVal.AddRange(pr.Classes.SelectMany(c => c.Orders)
+                                            .SelectMany(o => o.Families)
+                                            .SelectMany(f => f.Genera)
+                                            .SelectMany(g => g.Species)
+                                            .Select(s => s.name));
+                                        return retVal;
+                                    default:
+                                        return retVal;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            foreach (TaxonClass c in p.Classes)
+                            {
+                                if (root is TaxonClass cr)
+                                {
+                                    if (c.name == cr.name)
+                                    {
+                                        List<string> retVal = new List<string>();
+                                        switch (_taxon)
+                                        {
+                                            case TaxonomicLevels.Kingdom:
+                                                retVal.Add(k.name);
+                                                return retVal;
+
+                                            case TaxonomicLevels.Phylum:
+                                                retVal.Add(p.name);
+                                                return retVal;
+
+                                            case TaxonomicLevels.Class:
+                                                retVal.Add(c.name);
+                                                return retVal;
+                                            case TaxonomicLevels.Order:
+                                                retVal.AddRange(c.Orders.Select(o => o.name));
+                                                return retVal;
+                                            case TaxonomicLevels.Family:
+                                                retVal.AddRange(c.Orders.SelectMany(o => o.Families)
+                                                    .Select(f => f.name));
+                                                return retVal;
+                                            case TaxonomicLevels.Genus:
+                                                retVal.AddRange(c.Orders.SelectMany(o => o.Families)
+                                                    .SelectMany(f => f.Genera)
+                                                    .Select(g => g.name));
+                                                return retVal;
+                                            case TaxonomicLevels.Species:
+                                                retVal.AddRange(c.Orders.SelectMany(o => o.Families)
+                                                    .SelectMany(f => f.Genera)
+                                                    .SelectMany(g => g.Species)
+                                                    .Select(s => s.name));
+                                                return retVal;
+                                            default:
+                                                return retVal;
+                                        }
+                                    }
+                                }
+                                else
+                                {
+                                    //continue down
+                                    foreach (Order o in c.Orders)
+                                    {
+                                        if (root is Order or)
+                                        {
+                                            if (o.name == or.name)
+                                            {
+                                                List<string> retVal = new List<string>();
+                                                switch (_taxon)
+                                                {
+                                                    case TaxonomicLevels.Kingdom:
+                                                        retVal.Add(k.name);
+                                                        return retVal;
+
+                                                    case TaxonomicLevels.Phylum:
+                                                        retVal.Add(p.name);
+                                                        return retVal;
+
+                                                    case TaxonomicLevels.Class:
+                                                        retVal.Add(c.name);
+                                                        return retVal;
+                                                    case TaxonomicLevels.Order:
+                                                        retVal.Add(o.name);
+                                                        return retVal;
+                                                    case TaxonomicLevels.Family:
+                                                        retVal.AddRange(o.Families.Select(f => f.name));
+                                                        return retVal;
+                                                    case TaxonomicLevels.Genus:
+                                                        retVal.AddRange(o.Families.SelectMany(f => f.Genera)
+                                                            .Select(g => g.name));
+                                                        return retVal;
+                                                    case TaxonomicLevels.Species:
+                                                        retVal.AddRange(o.Families.SelectMany(f => f.Genera)
+                                                            .SelectMany(g => g.Species)
+                                                            .Select(s => s.name));
+                                                        return retVal;
+                                                    default:
+                                                        return retVal;
+                                                }
+                                            }
+                                        }
+                                        else
+                                        {
+                                            foreach (Family f in o.Families)
+                                            {
+                                                if (root is Family fr)
+                                                {
+                                                    if (f.name == fr.name)
+                                                    {
+                                                        List<string> retVal = new List<string>();
+                                                        switch (_taxon)
+                                                        {
+                                                            case TaxonomicLevels.Kingdom:
+                                                                retVal.Add(k.name);
+                                                                return retVal;
+
+                                                            case TaxonomicLevels.Phylum:
+                                                                retVal.Add(p.name);
+                                                                return retVal;
+
+                                                            case TaxonomicLevels.Class:
+                                                                retVal.Add(c.name);
+                                                                return retVal;
+                                                            case TaxonomicLevels.Order:
+                                                                retVal.Add(o.name);
+                                                                return retVal;
+                                                            case TaxonomicLevels.Family:
+                                                                retVal.Add(f.name);
+                                                                return retVal;
+                                                            case TaxonomicLevels.Genus:
+                                                                retVal.AddRange(f.Genera.Select(g => g.name));
+                                                                return retVal;
+                                                            case TaxonomicLevels.Species:
+                                                                retVal.AddRange(f.Genera.SelectMany(g => g.Species)
+                                                                    .Select(s => s.name));
+                                                                return retVal;
+                                                            default:
+                                                                return retVal;
+                                                        }
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    foreach (Genus g in f.Genera)
+                                                    {
+                                                        if (root is Genus gr)
+                                                        {
+                                                            if (g.name == gr.name)
+                                                            {
+                                                                List<string> retVal = new List<string>();
+                                                                switch (_taxon)
+                                                                {
+                                                                    case TaxonomicLevels.Kingdom:
+                                                                        retVal.Add(k.name);
+                                                                        return retVal;
+
+                                                                    case TaxonomicLevels.Phylum:
+                                                                        retVal.Add(p.name);
+                                                                        return retVal;
+
+                                                                    case TaxonomicLevels.Class:
+                                                                        retVal.Add(c.name);
+                                                                        return retVal;
+                                                                    case TaxonomicLevels.Order:
+                                                                        retVal.Add(o.name);
+                                                                        return retVal;
+                                                                    case TaxonomicLevels.Family:
+                                                                        retVal.Add(f.name);
+                                                                        return retVal;
+                                                                    case TaxonomicLevels.Genus:
+                                                                        retVal.Add(g.name);
+                                                                        return retVal;
+                                                                    case TaxonomicLevels.Species:
+                                                                        retVal.AddRange(g.Species.Select(s => s.name));
+                                                                        return retVal;
+                                                                    default:
+                                                                        return retVal;
+                                                                }
+                                                            }
+                                                        }
+                                                        else
+                                                        {
+                                                            foreach (Species s in g.Species)
+                                                            {
+                                                                if (root is Species sr)
+                                                                {
+                                                                    if (s.name == sr.name)
+                                                                    {
+                                                                        List<string> retVal = new List<string>();
+                                                                        switch (_taxon)
+                                                                        {
+                                                                            case TaxonomicLevels.Kingdom:
+                                                                                retVal.Add(k.name);
+                                                                                return retVal;
+
+                                                                            case TaxonomicLevels.Phylum:
+                                                                                retVal.Add(p.name);
+                                                                                return retVal;
+
+                                                                            case TaxonomicLevels.Class:
+                                                                                retVal.Add(c.name);
+                                                                                return retVal;
+                                                                            case TaxonomicLevels.Order:
+                                                                                retVal.Add(o.name);
+                                                                                return retVal;
+                                                                            case TaxonomicLevels.Family:
+                                                                                retVal.Add(f.name);
+                                                                                return retVal;
+                                                                            case TaxonomicLevels.Genus:
+                                                                                retVal.Add(g.name);
+                                                                                return retVal;
+                                                                            case TaxonomicLevels.Species:
+                                                                                retVal.Add(s.name);
+                                                                                return retVal;
+                                                                            default:
+                                                                                return retVal;
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+            }
+            
+            //return empty list if not found
+            return new List<string>();
+        }
+        
         public override bool Equals(FilterComponent other)
         {
             if (other is FilterTaxonComponent ot)
