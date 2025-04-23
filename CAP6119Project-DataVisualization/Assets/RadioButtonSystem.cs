@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Linq;
+using System;
+
 public class RadioButtonSystem : MonoBehaviour
 {
     ToggleGroup toggleGroup;
@@ -20,7 +22,8 @@ public class RadioButtonSystem : MonoBehaviour
             return;
         }else
         {
-            gameManager.UpdateFishChart(toggle.GetComponentInChildren<Text>().text, true);
+            Enum.TryParse(toggle.GetComponentInChildren<Text>().text, out TaxonomicLevels level);
+            gameManager.UpdateFishChart(level, true);
         }
     }
 }

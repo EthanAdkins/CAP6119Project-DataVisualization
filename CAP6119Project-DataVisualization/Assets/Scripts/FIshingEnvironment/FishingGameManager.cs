@@ -1,3 +1,4 @@
+using GLTFast.Schema;
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Drawing;
@@ -16,7 +17,7 @@ public class FishingGameManager : MonoBehaviour
     public BarChart barChart;
     private Dictionary<SpeciesManager, int> _CaughtFishSpeciesManagersCounts = new Dictionary<SpeciesManager, int>();
     private GameObject _lastCaughtFish;
-    public string currentLevel = "name";
+    public TaxonomicLevels currentLevel = TaxonomicLevels.Kingdom;
     [SerializeField] private TMP_Text _lastCaughtFishText;
     private readonly string caughtFishSignTextPrefix = "You Caught a ";
 
@@ -113,20 +114,99 @@ public class FishingGameManager : MonoBehaviour
         }
     }
 
-    public void UpdateFishChart(string level="name", bool changeLevel=false)
+    public void UpdateFishChart(TaxonomicLevels level=TaxonomicLevels.Phylum, bool changeLevel=false)
     {
         if (changeLevel)
         {
             currentLevel = level;
         }
-        level = level.ToLower();
         barChart.ClearData();
         int maxValue = 0;
         Dictionary<string, int> fishLevelCounts = new Dictionary<string, int>();
         foreach (var kvp in _CaughtFishSpeciesManagersCounts)
         {
             string fishName = "";
-            fishName = GetTaxonNameFromSpeciesManager(kvp.Key, level);
+            switch (level)
+            {
+                case TaxonomicLevels.Kingdom:
+                    if (kvp.Key.kingdom == null)
+                    {
+                        fishName = BuildPhyloTree(kvp.Key.root);
+                        break;
+                    }
+                    else
+                    {
+                        fishName = kvp.Key.kingdom.name;
+                        break;
+                    }
+                case TaxonomicLevels.Phylum:
+                    if (kvp.Key.phylum == null)
+                    {
+                        fishName = BuildPhyloTree(kvp.Key.root);
+                        break;
+                    }
+                    else
+                    {
+                        fishName = kvp.Key.phylum.name;
+                        break;
+                    }
+                case TaxonomicLevels.Class:
+                    if (kvp.Key.taxclass == null)
+                    {
+                        fishName = BuildPhyloTree(kvp.Key.root);
+                        break;
+                    }
+                    else
+                    {
+                        fishName = kvp.Key.taxclass.name;
+                        break;
+                    }
+                case TaxonomicLevels.Order:
+                    if (kvp.Key.order == null)
+                    {
+                        fishName = BuildPhyloTree(kvp.Key.root);
+                        break;
+                    }
+                    else
+                    {
+                        fishName = kvp.Key.order.name;
+                        break;
+                    }
+                case TaxonomicLevels.Family:
+                    if (kvp.Key.family == null)
+                    {
+                        fishName = BuildPhyloTree(kvp.Key.root);
+                        break;
+                    }
+                    else
+                    {
+                        fishName = kvp.Key.family.name;
+                        break;
+                    }
+                case TaxonomicLevels.Genus:
+                    if (kvp.Key.genus == null)
+                    {
+                        fishName = BuildPhyloTree(kvp.Key.root);
+                        break;
+                    }
+                    else
+                    {
+                        fishName = kvp.Key.genus.name;
+                        break;
+                    }
+                case TaxonomicLevels.Species:
+                    if (kvp.Key.species == null)
+                    {
+                        fishName = BuildPhyloTree(kvp.Key.root);
+                        break;
+                    }
+                    else
+                    {
+                        fishName = kvp.Key.species.commonName;
+                        break;
+                    }
+
+            }
 
             if (fishLevelCounts.ContainsKey(fishName))
             {
@@ -156,35 +236,6 @@ public class FishingGameManager : MonoBehaviour
         barChart.RefreshChart(); 
     }
 
-    private string GetTaxonNameFromSpeciesManager(SpeciesManager manager, string level)
-    {
-        level = level.ToLower();
-
-        // Try direct access first (safe null checks)
-        switch (level)
-        {
-            case "kingdom": return manager.kingdom?.name ?? "[Unknown Kingdom]";
-            case "phylum": return manager.phylum?.name ?? "[Unknown Phylum]";
-            case "taxclass": return manager.taxclass?.name ?? "[Unknown Class]";
-            case "order": return manager.order?.name ?? "[Unknown Order]";
-            case "family": return manager.family?.name ?? "[Unknown Family]";
-            case "genus": return manager.genus?.name ?? "[Unknown Genus]";
-            case "species": return manager.species?.name ?? "[Unknown Species]";
-            default:
-                // Fallback: use model_lvl and root
-                return manager.model_lvl switch
-                {
-                    TaxonomicLevels.Kingdom => ((Kingdom)manager.root).name,
-                    TaxonomicLevels.Phylum => ((Phylum)manager.root).name,
-                    TaxonomicLevels.Class => ((TaxonClass)manager.root).name,
-                    TaxonomicLevels.Order => ((Order)manager.root).name,
-                    TaxonomicLevels.Family => ((Family)manager.root).name,
-                    TaxonomicLevels.Genus => ((Genus)manager.root).name,
-                    TaxonomicLevels.Species => ((Species)manager.root).name,
-                    _ => "[Unknown Level]"
-                };
-        }
-    }
     private string GetTaxonDisplayName(SpeciesManager manager)
     {
         string name = manager.root switch
@@ -202,5 +253,108 @@ public class FishingGameManager : MonoBehaviour
         string level = manager.model_lvl.ToString();
 
         return $"[{level}] {name}";
+    }
+    private string BuildPhyloTree(object root, int depth = 0)
+    {
+        // Recursive version called after root is identified
+        // - Skip to bottom of this definition for start of function logic
+        string BuildPhyloTreeRecursive(object node, int depth)
+        {
+            if (node is Species s) // Base case
+            {
+                return s.commonName;
+            }
+            else if (node is Genus g)
+            {
+                string result = g.name;
+                foreach (var sp in g.Species)
+                    result += BuildPhyloTreeRecursive(sp, depth + 1);
+                return result;
+            }
+            else if (node is Family f)
+            {
+                string result = f.name;
+                foreach (var ge in f.Genera)
+                    result += BuildPhyloTreeRecursive(ge, depth + 1);
+                return result;
+            }
+            else if (node is Order o)
+            {
+                string result = o.name;
+                foreach (var fa in o.Families)
+                    result += BuildPhyloTreeRecursive(fa, depth + 1);
+                return result;
+            }
+            else if (node is TaxonClass c)
+            {
+                string result = c.name;
+                foreach (var or in c.Orders)
+                    result += BuildPhyloTreeRecursive(or, depth + 1);
+                return result;
+            }
+            else if (node is Phylum p)
+            {
+                string result = p.name;
+                foreach (var cl in p.Classes)
+                    result += BuildPhyloTreeRecursive(cl, depth + 1);
+                return result;
+            }
+            else if (node is Kingdom k)
+            {
+                string result = k.name;
+                foreach (var ph in k.Phyla)
+                    result += BuildPhyloTreeRecursive(ph, 1);
+                return result;
+            }
+            else return "";
+        }
+
+        if (root is Species s) // Base case
+        {
+            return s.commonName;
+        }
+        else if (root is Genus g)
+        {
+            string result = g.name;
+            foreach (var sp in g.Species)
+                result += BuildPhyloTreeRecursive(sp, depth + 1);
+            return result;
+        }
+        else if (root is Family f)
+        {
+            string result = f.name;
+            foreach (var ge in f.Genera)
+                result += BuildPhyloTreeRecursive(ge, depth + 1);
+            return result;
+        }
+        else if (root is Order o)
+        {
+            string result = o.name;
+            foreach (var fa in o.Families)
+                result += BuildPhyloTreeRecursive(fa, depth + 1);
+            return result;
+        }
+        else if (root is TaxonClass c)
+        {
+            string result = c.name;
+            foreach (var or in c.Orders)
+                result += BuildPhyloTreeRecursive(or, depth + 1);
+            return result;
+        }
+        else if (root is Phylum p)
+        {
+            string result = p.name;
+            foreach (var cl in p.Classes)
+                result += BuildPhyloTreeRecursive(cl, depth + 1);
+            return result;
+        }
+        else if (root is Kingdom k)
+        {
+            string result = k.name;
+            foreach (var ph in k.Phyla)
+                result += BuildPhyloTreeRecursive(ph, depth + 1);
+            return result;
+        }
+        else return "No taxonomic info found.";
     }
 }
