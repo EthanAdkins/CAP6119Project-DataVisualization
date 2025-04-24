@@ -11,6 +11,7 @@ public class RadioButtonSystem : MonoBehaviour
     {
         toggleGroup = GetComponent<ToggleGroup>();
         gameManager = FindFirstObjectByType<FishingGameManager>();
+        Submit();
     }
 
     public void Submit()
