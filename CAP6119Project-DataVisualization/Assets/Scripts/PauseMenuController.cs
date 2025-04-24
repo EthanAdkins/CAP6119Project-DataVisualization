@@ -58,7 +58,7 @@ public class PauseMenuController : MonoBehaviour
             {
                 int c = TaxonomyManager.Instance.specimenData.totalCount;
                 _minDensity = (int)(0.25 * c);
-                _maxDensity = (int)(2 * c);
+                _maxDensity = (int)(1.25 * c);
                 densitySlider.UpdateMaxValue(_maxDensity);
                 densitySlider.UpdateMinValue(_minDensity); //cast to int as we want whole numbers
                 densitySlider.slider.value = modelDensity;
@@ -89,7 +89,7 @@ public class PauseMenuController : MonoBehaviour
                 {
                     int c = TaxonomyManager.Instance.specimenData.totalCount;
                     _minDensity = (int)(0.25 * c);
-                    _maxDensity = (int)(2 * c);
+                    _maxDensity = (int)(1.25 * c);
                     densitySlider.slider.onValueChanged.RemoveListener(OnDensityInputChanged);
                     densitySlider.UpdateMaxValue(_maxDensity);
                     densitySlider.UpdateMinValue(_minDensity); //cast to int as we want whole numbers
