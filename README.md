@@ -31,12 +31,14 @@ More features and fixes are planned in the future!
    - Unity XR Plug-in Management
    - OpenXR (with necessary feature groups enabled)
    - XR Interaction Toolkit
-3. Connect your VR headset (Oculus, SteamVR, etc.) and ensure it’s active.
-4. Go to `File > Build Settings`.
+3. Build Asset Bundles by right-clicking on lower file menu and selecting `Build AssetBundles`.
+4. Move `AssetBundles` to `StreamingAssets` folder.
+5. Connect your VR headset (Oculus, SteamVR, etc.) and ensure it’s active.
+6. Go to `File > Build Settings`.
    - Select `PC, Mac & Linux Standalone > Windows`
    - Add the main scene(s) to the build list
    - Click **Build and Run**
-5. Unity will generate a `.exe` you can use to launch the experience.
+7. Unity will generate a `.exe` you can use to launch the experience.
 
 ---
 
