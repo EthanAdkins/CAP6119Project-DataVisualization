@@ -13,7 +13,7 @@ More features and fixes are planned in the future!
 # Usage for VR
 ## Running the Application (VR) - For Users and Data Scientist
 
-1. Download the latest build [here](https://drive.google.com/drive/folders/1Mi9cVYlLdTlemFYia55Ezm7GIt1kFDYH?usp=drive_link).
+1. Download the `LatestBuild` folder [here](https://drive.google.com/drive/folders/1xt5dO2B0euFzpGLgT-GWIFoDq8gEAgVc?usp=drive_link).
 2. Make sure your VR headset (e.g., Oculus Rift, Quest via Link, HTC Vive) is connected and recognized by SteamVR or OpenXR.
 3. Double-click `CAP6119Project-DataVisualization.exe` to launch the VR experience.
 4. Put on your headset and begin exploring!
